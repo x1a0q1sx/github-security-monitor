@@ -8,14 +8,13 @@
 :root {
     --bg: #0f172a; --card: #1e293b; --border: #334155;
     --text: #f8fafc; --text2: #94a3b8; --text3: #64748b;
-    --blue: #6366f1; --green: #22c55e; --red: #ef4444; --yellow: #f59e0b;
+    --blue: #6366f1; --green: #22c55e; --red: #ef4444; --yellow: #f59e0b; --pink: #ec4899;
     --grad: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;}
 ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
 
-/* Layout */
 .app{display:flex;min-height:100vh;}
 .sidebar{width:240px;background:var(--card);border-right:1px solid var(--border);position:fixed;height:100vh;z-index:100;display:flex;flex-direction:column;}
 .sidebar-h{padding:24px 20px;border-bottom:1px solid var(--border);}
@@ -28,94 +27,119 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .nav-item svg{width:18px;height:18px;flex-shrink:0;}
 .main{margin-left:240px;flex:1;padding:24px;}
 
-/* Stats */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px;}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden;}
 .stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
 .stat .v{font-size:28px;font-weight:700;margin:8px 0 2px;}
 .stat .l{font-size:13px;color:var(--text2);}
 
-/* Card */
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:20px;}
-.card-h{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border);}
+.card-h{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px;}
 .card-h h3{font-size:15px;font-weight:600;}
 .card-b{padding:20px;}
 
-/* Badge */
 .badge{display:inline-block;padding:3px 8px;border-radius:12px;font-size:11px;font-weight:600;}
 .b-cve{background:rgba(239,68,68,.15);color:var(--red);}
 .b-keyword{background:rgba(99,102,241,.15);color:var(--blue);}
 .b-tool{background:rgba(34,197,94,.15);color:var(--green);}
 .b-user{background:rgba(245,158,11,.15);color:var(--yellow);}
-.b-trending{background:rgba(236,72,153,.15);color:#ec4899;}
+.b-trending{background:rgba(236,72,153,.15);color:var(--pink);}
 
-/* Table */
 .tbl{width:100%;border-collapse:collapse;}
-.tbl th{text-align:left;padding:12px 14px;font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;background:var(--bg);border-bottom:1px solid var(--border);}
+.tbl th{text-align:left;padding:12px 14px;font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;background:var(--bg);border-bottom:1px solid var(--border);white-space:nowrap;}
 .tbl td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:13px;}
-.tbl tr:hover td{background:rgba(99,102,241,.05);}
-.tbl .name{color:var(--blue);font-weight:600;font-size:13px;}
+.tbl tbody tr{cursor:pointer;transition:background .15s;}
+.tbl tbody tr:hover td{background:rgba(99,102,241,.1);}
 .tbl a{color:var(--blue);text-decoration:none;}
 .tbl a:hover{text-decoration:underline;}
 .tbl .stars{color:var(--yellow);}
-.tbl .time{color:var(--text3);font-size:12px;}
+.tbl .time{color:var(--text3);font-size:12px;white-space:nowrap;}
 
-/* Controls */
-.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
 .btn{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:none;transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
 .btn-p{background:var(--blue);color:#fff;}
 .btn-p:hover{opacity:.9;}
 .sel{background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:8px 12px;font-size:13px;cursor:pointer;outline:none;}
-.np{display:flex;align-items:center;gap:8px;justify-content:space-between;padding:14px 20px;border-top:1px solid var(--border);}
+.np{display:flex;align-items:center;gap:8px;justify-content:space-between;padding:14px 20px;border-top:1px solid var(--border);flex-wrap:wrap;}
 .np-info{font-size:13px;color:var(--text2);}
 .np-btn{padding:6px 12px;background:var(--border);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:12px;cursor:pointer;transition:all .2s;}
 .np-btn:hover:not(:disabled){background:var(--blue);border-color:var(--blue);}
 .np-btn:disabled{opacity:.4;cursor:default;}
 
-/* Loading / Empty */
-.spin{display:flex;align-items:center;justify-content:center;padding:40px;}
-.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin 1s linear infinite;}
+.spin{text-align:center;padding:40px;color:var(--text3);}
+.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 12px;}
 @keyframes spin{to{transform:rotate(360deg)}}
 .empty{text-align:center;padding:50px 20px;color:var(--text3);}
 .empty svg{width:60px;height:60px;margin-bottom:12px;}
 
-/* Tabs */
-.tabs{display:flex;gap:4px;padding:4px;background:var(--bg);border-radius:8px;margin-bottom:16px;}
-.tab{padding:8px 16px;border-radius:6px;font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .2s;}
+.tabs{display:flex;gap:4px;padding:4px;background:var(--bg);border-radius:8px;margin-bottom:16px;flex-wrap:wrap;}
+.tab{padding:6px 14px;border-radius:6px;font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .2s;border:none;background:none;}
 .tab:hover{color:var(--text);}
 .tab.active{background:var(--blue);color:#fff;}
 
-/* Trending card */
-.trend-item{display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:8px;margin-bottom:8px;transition:background .2s;}
-.trend-item:hover{background:var(--border);}
-.trend-rank{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;}
-.trend-rank.top3{background:var(--grad);color:#fff;}
-.trend-info{flex:1;min-width:0;}
-.trend-name{font-weight:600;font-size:14px;}
-.trend-name a{color:var(--text);text-decoration:none;}
-.trend-name a:hover{color:var(--blue);}
-.trend-desc{font-size:12px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.trend-meta{font-size:12px;color:var(--text3);flex-shrink:0;text-align:right;}
+/* Recent list - vertical card layout */
+.recent-list{display:flex;flex-direction:column;gap:10px;}
+.recent-card{background:var(--bg);border-radius:10px;padding:14px 16px;transition:all .2s;border:1px solid transparent;cursor:pointer;}
+.recent-card:hover{background:var(--border);border-color:var(--blue);}
+.recent-top{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.recent-name{font-weight:600;font-size:14px;color:var(--blue);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.recent-desc{font-size:12px;color:var(--text2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.recent-meta{display:flex;gap:16px;font-size:11px;color:var(--text3);margin-top:6px;}
 
-/* Executions */
-.exec-item{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;}
-.exec-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+/* Trending list */
+.trend-list{display:flex;flex-direction:column;gap:8px;}
+.trend-item2{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--bg);border-radius:10px;transition:all .2s;border:1px solid var(--border);}
+.trend-item2:hover{background:var(--card);border-color:var(--blue);}
+.trend-rank{min-width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;background:var(--border);color:var(--text2);}
+.trend-rank.top3{background:var(--grad);color:#fff;}
+.trend-info2{flex:1;min-width:0;}
+.trend-name2{font-weight:600;font-size:14px;margin-bottom:2px;}
+.trend-name2 a{color:var(--text);text-decoration:none;}
+.trend-name2 a:hover{color:var(--blue);}
+.trend-desc2{font-size:12px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.trend-meta2{font-size:12px;color:var(--text3);flex-shrink:0;text-align:right;line-height:1.6;}
+
+/* Exec history list */
+.exec-list{display:flex;flex-direction:column;}
+.exec-item2{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--border);transition:background .15s;}
+.exec-item2:hover{background:rgba(99,102,241,.05);}
+.exec-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
 .exec-dot.s{background:var(--green);}
 .exec-dot.e{background:var(--red);}
-.exec-main{flex:1;}
-.exec-results{color:var(--text3);font-size:12px;}
+.exec-main2{flex:1;}
+.exec-type{font-weight:600;font-size:14px;margin-bottom:2px;}
+.exec-time{font-size:12px;color:var(--text3);}
+.exec-results2{font-size:12px;color:var(--text2);flex-shrink:0;text-align:right;}
 
-/* Responsive */
-@media(max-width:768px){
-.sidebar{transform:translateX(-100%);transition:transform .3s;}
-.sidebar.open{transform:translateX(0);}
-.main{margin-left:0;}
-.stats{grid-template-columns:repeat(2,1fr);}
-}
+/* Modal */
+.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;}
+.modal-box{background:var(--card);border:1px solid var(--border);border-radius:14px;width:100%;max-width:650px;max-height:85vh;overflow-y:auto;}
+.modal-h{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--card);z-index:1;}
+.modal-h h3{font-size:17px;}
+.modal-close{background:none;border:none;color:var(--text2);font-size:24px;cursor:pointer;padding:4px 8px;border-radius:6px;}
+.modal-close:hover{background:var(--border);color:var(--text);}
+.modal-b{padding:22px;}
+.modal-field{margin-bottom:16px;}
+.modal-field label{display:block;font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.modal-field .val{font-size:14px;color:var(--text);}
+.modal-field a.val{color:var(--blue);word-break:break-all;}
+.modal-desc{background:var(--bg);border-radius:8px;padding:14px;font-size:13px;color:var(--text2);line-height:1.7;max-height:200px;overflow-y:auto;white-space:pre-wrap;}
+
+/* Tags filter */
+.tag-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.tag-chip{padding:4px 10px;border-radius:14px;font-size:11px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:var(--bg);color:var(--text2);transition:all .15s;}
+.tag-chip:hover{border-color:var(--blue);color:var(--text);}
+.tag-chip.active{background:var(--blue);color:#fff;border-color:var(--blue);}
 
 /* Toast */
 @keyframes slidein{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
 .toast{position:fixed;top:20px;right:20px;background:var(--card);border:1px solid var(--green);border-radius:10px;padding:14px 20px;font-size:13px;z-index:9999;animation:slidein .3s;box-shadow:0 8px 24px rgba(0,0,0,.4);}
+
+@media(max-width:768px){
+.sidebar{display:none;}
+.main{margin-left:0;}
+.stats{grid-template-columns:repeat(2,1fr);}
+.modal-box{margin:10px;max-height:90vh;}
+}
 </style>
 </head>
 <body>
@@ -158,13 +182,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
             <div class="stat"><div class="l">This Week</div><div class="v" id="s-week">-</div></div>
             <div class="stat"><div class="l" id="s-bytype" style="font-size:13px;"></div><div class="v">-</div></div>
         </div>
-        <div class="card"><div class="card-h"><h3>Recent Records</h3></div><div id="recent" class="spin"><div class="spinner"></div></div></div>
+        <div class="card"><div class="card-h"><h3>Recent Records</h3></div><div class="card-b"><div id="recent" class="spin"><div class="spinner"></div></div></div></div>
     </div>
 
     <!-- RECORDS -->
     <div id="page-records" class="page" style="display:none">
         <h2 style="font-size:22px;margin-bottom:4px;">Records</h2>
-        <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">All monitored security projects</p>
+        <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">All monitored security projects - click a row to view details</p>
         <div class="tabs" id="type-tabs">
             <div class="tab active" data-type="">All</div>
             <div class="tab" data-type="cve">CVE</div>
@@ -172,12 +196,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
             <div class="tab" data-type="tool">Tool</div>
             <div class="tab" data-type="user_repo">User Repo</div>
         </div>
+        <div id="tag-filter" class="tag-filter"></div>
         <div class="card">
-            <div class="card-h" style="flex-wrap:wrap;gap:8px;">
+            <div class="card-h">
                 <input id="r-search" class="sel" placeholder="Search name/author..." style="flex:1;max-width:300px;">
                 <button class="btn btn-p" onclick="loadRecords()">Search</button>
             </div>
-            <div id="records-table"></div>
+            <div style="overflow-x:auto;"><div id="records-table"></div></div>
             <div class="np"><div class="np-info" id="r-info">-</div><div style="display:flex;gap:8px;">
                 <button class="np-btn" onclick="goPage(-1)">Prev</button>
                 <span style="padding:6px 8px;font-size:13px;" id="r-pg">-</span>
@@ -206,23 +231,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
         <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">Monitor is configured in <code>config.yaml</code> and runs via GitHub Actions</p>
         <div class="card"><div class="card-h"><h3>Schedule</h3></div><div class="card-b">
             <table class="tbl"><tr><th>Trigger</th><th>Cron</th><th>Content</th></tr>
-            <tr><td>Daily x4</td><td>02:00, 08:00, 14:00, 20:00 UTC</td><td>CVE + Keyw+rd + User + Tool</td></tr>
+            <tr><td>Daily x4</td><td>02:00, 08:00, 14:00, 20:00 UTC</td><td>CVE + Keyword + User + Tool</td></tr>
             <tr><td>Weekly</td><td>Monday 01:00 UTC</td><td>Trending Repos</td></tr></table>
         </div></div>
     </div>
 </main>
 </div>
+
+<!-- Detail Modal -->
+<div id="detail-modal" class="modal-overlay" style="display:none" onclick="if(event.target===this)closeModal()">
+    <div class="modal-box">
+        <div class="modal-h"><h3 id="modal-title">Record Detail</h3><button class="modal-close" onclick="closeModal()">&times;</button></div>
+        <div class="modal-b" id="modal-body"></div>
+    </div>
+</div>
+
 <script>
-const BASE = '.'; // GitHub Pages root
+const BASE = '.';
 
-// State
-let state = {page:'dash',currentPage:1,pageSize:20,totalRecords:0,typeFilter:'',records:[],trending:[],executions:[]};
+let state = {page:'dash',currentPage:1,pageSize:20,totalRecords:0,typeFilter:'',tagFilter:null,records:[],trending:[],executions:[]};
 
-// Navigation
 document.querySelectorAll('.nav-item').forEach(el=>el.onclick=()=>navigate(el.dataset.page));
 function navigate(p){state.page=p;document.querySelectorAll('.nav-item').forEach(e=>e.classList.toggle('active',e.dataset.page===p));document.querySelectorAll('.page').forEach(e=>e.style.display=e.id==='page-'+p?'block':'none');refreshCurrentPage();}
 
-// Load data
 async function loadJSON(file){
     try{const r=await fetch(BASE+'/data/'+file);return await r.json();}catch(e){console.error(e);return null;}
 }
@@ -264,22 +295,40 @@ function updateDashboard(data){
     const bt=data.by_type||{};
     document.getElementById('s-bytype').innerHTML=Object.entries(bt).map(([k,v])=>`<span class="badge b-${k}">${k}: ${v}</span>`).join(' ');
 
-    // Recent
-    const recent=(data.items||[]).slice(-8).reverse();
-    document.getElementById('recent').innerHTML=recent.length?recent.map(r=>`<div class="trend-item">
-        <span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span>
-        <div class="trend-info"><div class="trend-name"><a href="${r.repo_url}" target="_blank">${r.repo_name}</a></div>
-        <div class="trend-desc">${r.repo_description||''}</div></div>
-        <div class="trend-meta">${r.stars||0}⭐<br>${(r.discovered_at||'').slice(0,16)}</div>
-    </div>`).join(''):'<div class="empty">No records yet. Wait for first Action run.</div>';
+    // Recent: vertical card layout
+    const recent=(data.items||[]).slice(-10).reverse();
+    const el=document.getElementById('recent');
+    if(!recent.length){el.innerHTML='<div class="empty">No records yet. Wait for first Action run.</div>';return;}
+    el.innerHTML=`<div class="recent-list">${recent.map(r=>`
+        <div class="recent-card" onclick="showDetail(${JSON.stringify(r).replace(/"/g,'&quot;')})">
+            <div class="recent-top">
+                <span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span>
+                <span class="recent-name"><a href="${r.repo_url}" target="_blank" onclick="event.stopPropagation()">${r.repo_name}</a></span>
+            </div>
+            <div class="recent-desc">${r.repo_description||'No description'}</div>
+            <div class="recent-meta">
+                <span>⭐ ${r.stars||0}</span><span>${r.language||'N/A'}</span><span>${(r.discovered_at||'').slice(0,16)}</span>
+            </div>
+        </div>`).join('')}</div>`;
 }
 
 function loadRecords(){
     let items=[...state.records];
     const type=document.querySelector('#type-tabs .tab.active')?.dataset.type||'';
     if(type) items=items.filter(r=>r.monitor_type===type);
+    const tag=state.tagFilter;
+    if(tag) items=items.filter(r=>(r.tags||'').split(',').map(t=>t.trim()).includes(tag));
     const q=(document.getElementById('r-search')?.value||'').toLowerCase();
     if(q) items=items.filter(r=>(r.repo_name||'').toLowerCase().includes(q)||(r.author||'').toLowerCase().includes(q));
+
+    // Build tag filter chips
+    const allTags=new Set();
+    items.forEach(r=>(r.tags||'').split(',').forEach(t=>{t=t.trim();if(t)allTags.add(t);}));
+    const tagsList=[...allTags].sort();
+    document.getElementById('tag-filter').innerHTML=tagsList.length?tagsList.map(t=>`<span class="tag-chip${t===tag?' active':''}" onclick="state.tagFilter='${t===(state.tagFilter||'')?null:t}';state.currentPage=1;loadRecords();">${t}</span>`).join(''):'';
+    // Also update type tabs tag filter context
+    document.querySelector('#type-tabs .tab.active')||document.querySelector('#type-tabs .tab');
+
     state.totalRecords=items.length;
     const maxPage=Math.max(1,Math.ceil(items.length/state.pageSize));
     if(state.currentPage>maxPage) state.currentPage=maxPage;
@@ -288,13 +337,13 @@ function loadRecords(){
 
     document.getElementById('records-table').innerHTML=page.length?`<table class="tbl"><thead><tr>
         <th>Type</th><th>Name</th><th>Author</th><th>Stars</th><th>Lang</th><th>Tags</th><th>Discovered</th></tr></thead><tbody>
-        ${page.map(r=>`<tr>
+        ${page.map(r=>`<tr onclick='showDetail(${JSON.stringify(r).replace(/'/g,"&#39;")})'>
             <td><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></td>
-            <td><a href="${r.repo_url}" target="_blank">${r.repo_name}</a></td>
+            <td><a href="${r.repo_url}" target="_blank" onclick="event.stopPropagation()">${r.repo_name}</a></td>
             <td>${r.author||'-'}</td>
             <td class="stars">${r.stars||0}⭐</td>
             <td>${r.language||'-'}</td>
-            <td>${(r.tags||'').split(',').slice(0,3).map(t=>'<span class="badge">'+t+'</span>').join(' ')}</td>
+            <td>${(r.tags||'').split(',').slice(0,3).map(t=>`<span class="badge">${t.trim()}</span>`).join(' ')}</td>
             <td class="time">${(r.discovered_at||'').slice(0,16)}</td>
         </tr>`).join('')}</tbody></table>`:'<div class="empty">No records found</div>';
 
@@ -308,32 +357,64 @@ document.getElementById('type-tabs').onclick=e=>{
     if(e.target.classList.contains('tab')){
         document.querySelectorAll('#type-tabs .tab').forEach(t=>t.classList.remove('active'));
         e.target.classList.add('active');
-        state.currentPage=1;
+        state.currentPage=1; state.tagFilter=null;
         loadRecords();
     }
 };
 
 function loadTrending(){
-    document.getElementById('trending-list').innerHTML=state.trending.length?state.trending.map((r,i)=>`<div class="trend-item">
-        <div class="trend-rank${i<3?' top3':''}">${i+1}</div>
-        <div class="trend-info"><div class="trend-name"><a href="${r.repo_url}" target="_blank">${r.repo_name}</a></div>
-        <div class="trend-desc">${r.repo_description||''}</div></div>
-        <div class="trend-meta">${r.stars||0}⭐<br>${r.forks||0}🍴</div>
-    </div>`).join(''):'<div class="empty">No trending data yet. Runs every Monday.</div>';
+    const el=document.getElementById('trending-list');
+    if(!state.trending.length){el.innerHTML='<div class="empty">No trending data yet. Runs every Monday.</div>';return;}
+    el.innerHTML=`<div class="trend-list">${state.trending.map((r,i)=>`
+        <div class="trend-item2">
+            <div class="trend-rank${i<3?' top3':''}">${i+1}</div>
+            <div class="trend-info2">
+                <div class="trend-name2"><a href="${r.repo_url}" target="_blank">${r.repo_name}</a></div>
+                <div class="trend-desc2">${r.repo_description||''}</div>
+            </div>
+            <div class="trend-meta2">${r.stars||0} ⭐<br>${r.forks||0} forks</div>
+        </div>`).join('')}</div>`;
 }
 
 function loadExecutions(){
-    document.getElementById('execs-list').innerHTML=state.executions.length?state.executions.slice(-20).reverse().map(e=>{
+    const el=document.getElementById('execs-list');
+    if(!state.executions.length){el.innerHTML='<div class="empty">No executions yet</div>';return;}
+    el.innerHTML=`<div class="exec-list">${state.executions.slice(-30).reverse().map(e=>{
         const ok=e.status==='success';
-        return `<div class="exec-item">
+        return `<div class="exec-item2">
             <div class="exec-dot ${ok?'s':'e'}"></div>
-            <div class="exec-main"><strong>${e.type||'?'}</strong> <span style="color:var(--text3)">${e.started_at?.slice(0,19)||''}</span></div>
-            <div class="exec-results">${e.total_new||0} new · ${e.duration_seconds?.toFixed(1)||0}s</div>
+            <div class="exec-main2">
+                <div class="exec-type">${e.type||'?'}</div>
+                <div class="exec-time">${e.started_at?.slice(0,19)||''}</div>
+            </div>
+            <div class="exec-results2">${e.total_new||0} new<br>${e.duration_seconds?.toFixed(1)||0}s</div>
         </div>`;
-    }).join(''):'<div class="empty">No executions yet</div>';
+    }).join('')}</div>`;
 }
 
-// Init
+// Detail Modal
+function showDetail(r){
+    if(!r) return;
+    document.getElementById('modal-title').textContent=r.repo_name||'Record Detail';
+    const desc=r.repo_description||'';
+    const isEnglish=!!desc && !/[\u4e00-\u9fff]/.test(desc);
+    document.getElementById('modal-body').innerHTML=`
+        <div class="modal-field"><label>Type</label><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></div>
+        <div class="modal-field"><label>URL</label><a class="val" href="${r.repo_url}" target="_blank">${r.repo_url}</a></div>
+        <div class="modal-field"><label>Author</label><div class="val">${r.author||'-'}</div></div>
+        <div class="modal-field"><label>Stars</label><div class="val">${r.stars||0} ⭐</div></div>
+        <div class="modal-field"><label>Language</label><div class="val">${r.language||'-'}</div></div>
+        <div class="modal-field"><label>Tags</label><div class="val">${(r.tags||'').split(',').map(t=>'<span class="badge">'+t.trim()+'</span>').join(' ')||'-'}</div></div>
+        <div class="modal-field"><label>Keyword</label><div class="val">${r.monitor_keyword||'-'}</div></div>
+        <div class="modal-field"><label>Discovered</label><div class="val">${(r.discovered_at||'').slice(0,19)}</div></div>
+        <div class="modal-field"><label>Description${isEnglish?' (英文原文)':''}</label><div class="modal-desc">${desc||'No description'}</div></div>
+    `;
+    document.getElementById('detail-modal').style.display='flex';
+}
+
+function closeModal(){document.getElementById('detail-modal').style.display='none';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
 init();
 </script>
 </body>
