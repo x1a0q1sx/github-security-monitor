@@ -224,7 +224,7 @@ function navigate(p){state.page=p;document.querySelectorAll('.nav-item').forEach
 
 // Load data
 async function loadJSON(file){
-    try{const r=await fetch(BASE+'/../data/'+file);return await r.json();}catch(e){console.error(e);return null;}
+    try{const r=await fetch(BASE+'/data/'+file);return await r.json();}catch(e){console.error(e);return null;}
 }
 
 async function init(){
