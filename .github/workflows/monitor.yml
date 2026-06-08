@@ -1,0 +1,51 @@
+name: GitHub Security Monitor
+
+on:
+  schedule:
+    # 每天 4 次 UTC (北京时间 10:00, 16:00, 22:00, 凌晨 04:00)
+    - cron: '0 2,8,14,20 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        type: choice
+        options: [daily, trending, all]
+        default: daily
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+
+      - name: Daily Monitor
+        if: github.event_name == 'schedule' || github.event.inputs.mode == 'daily' || github.event.inputs.mode == 'all'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          DINGDING_WEBHOOK: ${{ secrets.DINGDING_WEBHOOK }}
+          DINGDING_SECRET: ${{ secrets.DINGDING_SECRET }}
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+        run: python monitor/run.py --daily
+
+      - name: Trending Monitor
+        if: github.event.inputs.mode == 'trending' || github.event.inputs.mode == 'all'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python monitor/run.py --trending
+
+      - name: Commit & Push Data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet || git commit -m "[bot] monitor $(date -u +%Y-%m-%dT%H:%M)"
+          git push

@@ -1,0 +1,295 @@
+all_config:
+  black_user:
+  - AlAIAL90
+  - algotables
+  debug:
+    enable: 1
+  dingding:
+    app_name: dingding
+    enable: 1
+    secretKey: ""  # GitHub Secret: DINGDING_SECRET
+    webhook: ""    # GitHub Secret: DINGDING_WEBHOOK
+  feishu:
+    app_name: feishu
+    enable: 0
+    webhook: ""    # GitHub Secret: FEISHU_WEBHOOK
+  github_token: ""  # GitHub Secret: GH_TOKEN
+  monitor:
+    cve_interval: 20
+    interval: 20
+    keyword_interval: 20
+    max_push_per_user: 3
+    tool_interval: 120
+    update_days: 90
+    user_interval: 120
+  pushplus:
+    app_name: pushplus
+    enable: 0
+    token: your_pushplus_token
+  rules:
+    complex_keyword:
+      skip_existing: true
+      skip_low_stars: false
+      skip_no_info: true
+      skip_test_projects: false
+    cve:
+      skip_existing: true
+      skip_low_stars: false
+      skip_no_info: true
+      skip_test_projects: false
+    keyword:
+      skip_existing: true
+      skip_low_stars: false
+      skip_no_info: true
+      skip_test_projects: false
+    scored_keyword:
+      skip_existing: true
+      skip_low_stars: false
+      skip_no_info: true
+      skip_test_projects: false
+    user:
+      skip_existing: true
+      skip_low_stars: false
+      skip_no_info: true
+      skip_test_projects: false
+  score_threshold: 5
+  scored_keywords:
+  - keyword: cobaltstrike
+    score: 5
+  - keyword: cobalt strike
+    score: 5
+  - keyword: cs beacon
+    score: 5
+  - keyword: shadowpad
+    score: 5
+  - keyword: plugx
+    score: 5
+  - keyword: 0day
+    score: 5
+  - keyword: c2
+    score: 5
+  - keyword: shellcode
+    score: 5
+  - keyword: reflective dll injection
+    score: 5
+  - keyword: process hollowing
+    score: 5
+  - keyword: direct syscall
+    score: 5
+  - keyword: ntdll unhook
+    score: 5
+  - keyword: edr bypass
+    score: 5
+  - keyword: amsi bypass
+    score: 5
+  - keyword: in-memory execution
+    score: 5
+  - keyword: fileless execution
+    score: 5
+  - keyword: godzilla webshell
+    score: 5
+  - keyword: malleable c2
+    score: 4
+  - keyword: aggressor script
+    score: 4
+  - keyword: cs teamserver
+    score: 4
+  - keyword: cs aggressor
+    score: 4
+  - keyword: mythic c2
+    score: 4
+  - keyword: sliver c2
+    score: 4
+  - keyword: havoc c2
+    score: 4
+  - keyword: meterpreter
+    score: 4
+  - keyword: manual mapping
+    score: 4
+  - keyword: process doppelganging
+    score: 4
+  - keyword: api unhooking
+    score: 4
+  - keyword: indirect syscall
+    score: 4
+  - keyword: syscall evasion
+    score: 4
+  - keyword: shellcode encryption
+    score: 4
+  - keyword: shellcode obfuscation
+    score: 4
+  - keyword: shellcode loader
+    score: 4
+  - keyword: shellcode injection
+    score: 4
+  - keyword: payload loader
+    score: 4
+  - keyword: rce
+    score: 4
+  - keyword: exploit
+    score: 4
+  - keyword: cve
+    score: 4
+  - keyword: apt攻击
+    score: 4
+  - keyword: apt工具
+    score: 4
+  - keyword: covenant c2
+    score: 3
+  - keyword: poshc2
+    score: 3
+  - keyword: merlin c2
+    score: 3
+  - keyword: empire c2
+    score: 3
+  - keyword: silenttrinity
+    score: 3
+  - keyword: koadic c2
+    score: 3
+  - keyword: thread hijacking
+    score: 3
+  - keyword: module stomping
+    score: 3
+  - keyword: earlybird injection
+    score: 3
+  - keyword: sleep obfuscation
+    score: 3
+  - keyword: stack spoofing
+    score: 3
+  - keyword: payload obfuscation
+    score: 3
+  - keyword: webshell
+    score: 3
+  - keyword: 内存加载
+    score: 3
+  - keyword: 内存执行
+    score: 3
+  - keyword: 反射加载
+    score: 3
+  - keyword: 反射注入
+    score: 3
+  - keyword: 手动映射
+    score: 3
+  - keyword: 进程注入
+    score: 3
+  - keyword: 线程劫持
+    score: 3
+  - keyword: 系统调用绕过
+    score: 3
+  - keyword: 红队框架
+    score: 4
+  - keyword: 红队工具
+    score: 3
+  - keyword: 红队
+    score: 3
+  - keyword: post exploitation
+    score: 3
+  - keyword: exploitation
+    score: 3
+  - keyword: payload generator
+    score: 3
+  - keyword: payload builder
+    score: 3
+  - keyword: shellcode runner
+    score: 3
+  - keyword: fileless
+    score: 3
+  - keyword: quasar rat
+    score: 2
+  - keyword: async rat
+    score: 2
+  - keyword: pupy rat
+    score: 2
+  - keyword: njrat
+    score: 2
+  - keyword: remcos rat
+    score: 2
+  - keyword: av bypass
+    score: 2
+  - keyword: defender bypass
+    score: 2
+  - keyword: etw bypass
+    score: 2
+  - keyword: implant server
+    score: 2
+  - keyword: agent framework
+    score: 2
+  - keyword: 漏洞利用
+    score: 3
+  - keyword: 漏洞挖掘
+    score: 3
+  - keyword: 渗透测试
+    score: 2
+  - keyword: 内网
+    score: 2
+  - keyword: 反序列化
+    score: 2
+  - keyword: xxe
+    score: 2
+  - keyword: ssrf
+    score: 2
+  - keyword: sql injection
+    score: 2
+  - keyword: security research
+    score: 1
+  - keyword: malware analysis
+    score: 1
+  - keyword: reverse engineering
+    score: 1
+  - keyword: binary analysis
+    score: 1
+  - keyword: threat hunting
+    score: 1
+  - keyword: incident response
+    score: 1
+  - keyword: scanner
+    score: 1
+  - keyword: fuzz
+    score: 1
+  - keyword: network scanner
+    score: 1
+  - keyword: port scanner
+    score: 1
+  - keyword: 漏洞分析
+    score: 1
+  - keyword: 安全研究
+    score: 1
+  - keyword: 逆向分析
+    score: 1
+  - keyword: 信息收集
+    score: 1
+  - keyword: 资产收集
+    score: 1
+  - keyword: 子域名扫描
+    score: 1
+  - keyword: 端口扫描
+    score: 1
+  - keyword: 漏洞扫描
+    score: 1
+  server:
+    app_name: server
+    enable: 0
+    sckey: your_server_sckey
+  tgbot:
+    app_name: tgbot
+    enable: 0
+    group_id: your_group_id
+    token: your_tgbot_token
+  tools_list:
+  - https://api.github.com/repos/BeichenDream/Godzilla
+  - https://api.github.com/repos/rebeyond/Behinder
+  - https://api.github.com/repos/AntSwordProject/antSword
+  - https://api.github.com/repos/gentilkiwi/mimikatz
+  - https://api.github.com/repos/ehang-io/nps
+  - https://api.github.com/repos/chaitin/xray
+  - https://api.github.com/repos/shadow1ng/fscan
+  translate:
+    enable: 1
+  user_list:
+  - yhy0
+  - su18
+  - BeichenDream
+  - phith0n
+  - zhzyker
+  - lijiejie
+  - projectdiscovery
