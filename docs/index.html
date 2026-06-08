@@ -81,13 +81,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .recent-card{background:var(--bg);border-radius:10px;padding:14px 16px;transition:all .2s;border:1px solid transparent;cursor:pointer;}
 .recent-card:hover{background:var(--border);border-color:var(--blue);}
 .recent-top{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
-.recent-name{font-weight:600;font-size:14px;color:var(--blue);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.recent-name{font-weight:600;font-size:14px;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .recent-desc{font-size:12px;color:var(--text2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .recent-meta{display:flex;gap:16px;font-size:11px;color:var(--text3);margin-top:6px;}
 
 /* Trending list */
 .trend-list{display:flex;flex-direction:column;gap:8px;}
-.trend-item2{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--bg);border-radius:10px;transition:all .2s;border:1px solid var(--border);}
+.trend-item2{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--bg);border-radius:10px;transition:all .2s;border:1px solid var(--border);overflow:hidden;}
 .trend-item2:hover{background:var(--card);border-color:var(--blue);}
 .trend-rank{min-width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;background:var(--border);color:var(--text2);}
 .trend-rank.top3{background:var(--grad);color:#fff;}
@@ -145,27 +145,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <body>
 <div class="app">
 <aside class="sidebar">
-    <div class="sidebar-h"><h1>GitHub Monitor</h1><div class="sub">Security Project Tracker</div></div>
+    <div class="sidebar-h"><h1>GitHub 安全监控</h1><div class="sub">安全项目追踪系统</div></div>
     <nav class="sidebar-nav">
         <div class="nav-item active" data-page="dash">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            Dashboard
+            仪表盘
         </div>
         <div class="nav-item" data-page="records">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Records
+            监控记录
         </div>
         <div class="nav-item" data-page="trending">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            Trending
+            热门飙升
         </div>
         <div class="nav-item" data-page="execs">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Run History
+            执行历史
         </div>
         <div class="nav-item" data-page="config">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-            Config
+            配置
         </div>
     </nav>
     <div style="padding:14px;border-top:1px solid var(--border);font-size:11px;color:var(--text3);">V4 · GitHub Actions</div>
@@ -174,12 +174,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <main class="main">
     <!-- DASHBOARD -->
     <div id="page-dash" class="page">
-        <h2 style="font-size:22px;margin-bottom:4px;">Dashboard</h2>
-        <p style="color:var(--text2);font-size:13px;margin-bottom:20px;">Security project monitor overview</p>
+        <h2 style="font-size:22px;margin-bottom:4px;">仪表盘</h2>
+        <p style="color:var(--text2);font-size:13px;margin-bottom:20px;">安全项目监控概览</p>
         <div class="stats">
-            <div class="stat"><div class="l">Total Records</div><div class="v" id="s-total">-</div></div>
-            <div class="stat"><div class="l">Today New</div><div class="v" id="s-today">-</div></div>
-            <div class="stat"><div class="l">This Week</div><div class="v" id="s-week">-</div></div>
+            <div class="stat"><div class="l">总记录数</div><div class="v" id="s-total">-</div></div>
+            <div class="stat"><div class="l">今日新增</div><div class="v" id="s-today">-</div></div>
+            <div class="stat"><div class="l">本周新增</div><div class="v" id="s-week">-</div></div>
             <div class="stat"><div class="l" id="s-bytype" style="font-size:13px;"></div><div class="v">-</div></div>
         </div>
         <div class="card"><div class="card-h"><h3>Recent Records</h3></div><div class="card-b"><div id="recent" class="spin"><div class="spinner"></div></div></div></div>
@@ -187,52 +187,52 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
     <!-- RECORDS -->
     <div id="page-records" class="page" style="display:none">
-        <h2 style="font-size:22px;margin-bottom:4px;">Records</h2>
-        <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">All monitored security projects - click a row to view details</p>
+        <h2 style="font-size:22px;margin-bottom:4px;">监控记录</h2>
+        <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">所有监控到的安全项目 - 点击行查看详情</p>
         <div class="tabs" id="type-tabs">
-            <div class="tab active" data-type="">All</div>
+            <div class="tab active" data-type="">全部</div>
             <div class="tab" data-type="cve">CVE</div>
-            <div class="tab" data-type="keyword">Keyword</div>
-            <div class="tab" data-type="tool">Tool</div>
-            <div class="tab" data-type="user_repo">User Repo</div>
+            <div class="tab" data-type="keyword">关键词</div>
+            <div class="tab" data-type="tool">工具</div>
+            <div class="tab" data-type="user_repo">用户仓库</div>
         </div>
         <div id="tag-filter" class="tag-filter"></div>
         <div class="card">
             <div class="card-h">
-                <input id="r-search" class="sel" placeholder="Search name/author..." style="flex:1;max-width:300px;">
-                <button class="btn btn-p" onclick="loadRecords()">Search</button>
+                <input id="r-search" class="sel" placeholder="搜索名称/作者..." style="flex:1;max-width:300px;">
+                <button class="btn btn-p" onclick="loadRecords()">搜索</button>
             </div>
             <div style="overflow-x:auto;"><div id="records-table"></div></div>
             <div class="np"><div class="np-info" id="r-info">-</div><div style="display:flex;gap:8px;">
-                <button class="np-btn" onclick="goPage(-1)">Prev</button>
+                <button class="np-btn" onclick="goPage(-1)">上页</button>
                 <span style="padding:6px 8px;font-size:13px;" id="r-pg">-</span>
-                <button class="np-btn" onclick="goPage(1)">Next</button>
+                <button class="np-btn" onclick="goPage(1)">下页</button>
             </div></div>
         </div>
     </div>
 
     <!-- TRENDING -->
     <div id="page-trending" class="page" style="display:none">
-        <h2 style="font-size:22px;margin-bottom:4px;">Trending</h2>
-        <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">Weekly hot security projects (updated every Monday)</p>
+        <h2 style="font-size:22px;margin-bottom:4px;">热门飙升</h2>
+        <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">每周热门安全项目（每周一自动更新）</p>
         <div id="trending-list" class="spin"><div class="spinner"></div></div>
     </div>
 
     <!-- EXECUTIONS -->
     <div id="page-execs" class="page" style="display:none">
-        <h2 style="font-size:22px;margin-bottom:4px;">Run History</h2>
+        <h2 style="font-size:22px;margin-bottom:4px;">执行历史</h2>
         <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">Monitor execution logs</p>
         <div id="execs-list" class="spin"><div class="spinner"></div></div>
     </div>
 
     <!-- CONFIG -->
     <div id="page-config" class="page" style="display:none">
-        <h2 style="font-size:22px;margin-bottom:4px;">Configuration</h2>
+        <h2 style="font-size:22px;margin-bottom:4px;">配置说明</h2>
         <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">Monitor is configured in <code>config.yaml</code> and runs via GitHub Actions</p>
-        <div class="card"><div class="card-h"><h3>Schedule</h3></div><div class="card-b">
-            <table class="tbl"><tr><th>Trigger</th><th>Cron</th><th>Content</th></tr>
-            <tr><td>Daily x4</td><td>02:00, 08:00, 14:00, 20:00 UTC</td><td>CVE + Keyword + User + Tool</td></tr>
-            <tr><td>Weekly</td><td>Monday 01:00 UTC</td><td>Trending Repos</td></tr></table>
+        <div class="card"><div class="card-h"><h3>定时计划</h3></div><div class="card-b">
+            <table class="tbl"><tr><th>触发</th><th>Cron表达式</th><th>内容</th></tr>
+            <tr><td>每日 4 次</td><td>02:00, 08:00, 14:00, 20:00 UTC</td><td>CVE + Keyword + User + Tool</td></tr>
+            <tr><td>每周</td><td>Monday 01:00 UTC</td><td>热门项目</td></tr></table>
         </div></div>
     </div>
 </main>
@@ -241,7 +241,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <!-- Detail Modal -->
 <div id="detail-modal" class="modal-overlay" style="display:none" onclick="if(event.target===this)closeModal()">
     <div class="modal-box">
-        <div class="modal-h"><h3 id="modal-title">Record Detail</h3><button class="modal-close" onclick="closeModal()">&times;</button></div>
+        <div class="modal-h"><h3 id="modal-title">记录详情</h3><button class="modal-close" onclick="closeModal()">&times;</button></div>
         <div class="modal-b" id="modal-body"></div>
     </div>
 </div>
@@ -336,7 +336,7 @@ function loadRecords(){
     const page=items.slice(start,start+state.pageSize);
 
     document.getElementById('records-table').innerHTML=page.length?`<table class="tbl"><thead><tr>
-        <th>Type</th><th>Name</th><th>Author</th><th>Stars</th><th>Lang</th><th>Tags</th><th>Discovered</th></tr></thead><tbody>
+        <th>类型</th><th>名称</th><th>作者</th><th>Stars</th><th>语言</th><th>标签</th><th>发现时间</th></tr></thead><tbody>
         ${page.map(r=>`<tr onclick='showDetail(${JSON.stringify(r).replace(/'/g,"&#39;")})'>
             <td><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></td>
             <td><a href="${r.repo_url}" target="_blank" onclick="event.stopPropagation()">${r.repo_name}</a></td>
@@ -345,7 +345,7 @@ function loadRecords(){
             <td>${r.language||'-'}</td>
             <td>${(r.tags||'').split(',').slice(0,3).map(t=>`<span class="badge">${t.trim()}</span>`).join(' ')}</td>
             <td class="time">${(r.discovered_at||'').slice(0,16)}</td>
-        </tr>`).join('')}</tbody></table>`:'<div class="empty">No records found</div>';
+        </tr>`).join('')}</tbody></table>`:'<div class="empty">暂无记录</div>';
 
     document.getElementById('r-info').textContent=`Showing ${start+1}-${Math.min(start+state.pageSize,items.length)} of ${items.length}`;
     document.getElementById('r-pg').textContent=`${state.currentPage} / ${maxPage}`;
@@ -364,7 +364,7 @@ document.getElementById('type-tabs').onclick=e=>{
 
 function loadTrending(){
     const el=document.getElementById('trending-list');
-    if(!state.trending.length){el.innerHTML='<div class="empty">No trending data yet. Runs every Monday.</div>';return;}
+    if(!state.trending.length){el.innerHTML='<div class="empty">暂无热门数据，每周一自动更新</div>';return;}
     el.innerHTML=`<div class="trend-list">${state.trending.map((r,i)=>`
         <div class="trend-item2">
             <div class="trend-rank${i<3?' top3':''}">${i+1}</div>
@@ -378,7 +378,7 @@ function loadTrending(){
 
 function loadExecutions(){
     const el=document.getElementById('execs-list');
-    if(!state.executions.length){el.innerHTML='<div class="empty">No executions yet</div>';return;}
+    if(!state.executions.length){el.innerHTML='<div class="empty">暂无执行记录</div>';return;}
     el.innerHTML=`<div class="exec-list">${state.executions.slice(-30).reverse().map(e=>{
         const ok=e.status==='success';
         return `<div class="exec-item2">
@@ -399,14 +399,14 @@ function showDetail(r){
     const desc=r.repo_description||'';
     const isEnglish=!!desc && !/[\u4e00-\u9fff]/.test(desc);
     document.getElementById('modal-body').innerHTML=`
-        <div class="modal-field"><label>Type</label><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></div>
-        <div class="modal-field"><label>URL</label><a class="val" href="${r.repo_url}" target="_blank">${r.repo_url}</a></div>
-        <div class="modal-field"><label>Author</label><div class="val">${r.author||'-'}</div></div>
+        <div class="modal-field"><label>类型</label><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></div>
+        <div class="modal-field"><label>链接</label><a class="val" href="${r.repo_url}" target="_blank">${r.repo_url}</a></div>
+        <div class="modal-field"><label>作者</label><div class="val">${r.author||'-'}</div></div>
         <div class="modal-field"><label>Stars</label><div class="val">${r.stars||0} ⭐</div></div>
-        <div class="modal-field"><label>Language</label><div class="val">${r.language||'-'}</div></div>
-        <div class="modal-field"><label>Tags</label><div class="val">${(r.tags||'').split(',').map(t=>'<span class="badge">'+t.trim()+'</span>').join(' ')||'-'}</div></div>
-        <div class="modal-field"><label>Keyword</label><div class="val">${r.monitor_keyword||'-'}</div></div>
-        <div class="modal-field"><label>Discovered</label><div class="val">${(r.discovered_at||'').slice(0,19)}</div></div>
+        <div class="modal-field"><label>语言</label><div class="val">${r.language||'-'}</div></div>
+        <div class="modal-field"><label>标签</label><div class="val">${(r.tags||'').split(',').map(t=>'<span class="badge">'+t.trim()+'</span>').join(' ')||'-'}</div></div>
+        <div class="modal-field"><label>关键词</label><div class="val">${r.monitor_keyword||'-'}</div></div>
+        <div class="modal-field"><label>发现时间</label><div class="val">${(r.discovered_at||'').slice(0,19)}</div></div>
         <div class="modal-field"><label>Description${isEnglish?' (英文原文)':''}</label><div class="modal-desc">${desc||'No description'}</div></div>
         ${r.description_cn&&r.description_cn!==desc?`<div class="modal-field"><label>Description (中文翻译)</label><div class="modal-desc">${r.description_cn}</div></div>`:''}
     `;
