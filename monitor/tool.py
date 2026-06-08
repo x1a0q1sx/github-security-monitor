@@ -2,7 +2,7 @@
 import datetime
 from typing import List, Dict
 
-from monitor.config import load_config, load_records, save_records, is_duplicate
+from monitor.config import load_config, load_records, save_records, is_duplicate, translate_en_to_zh
 
 cfg = load_config()
 
@@ -54,6 +54,7 @@ def run_tool() -> List[Dict]:
             'language': repo.get('language', ''),
             'created_at': repo.get('created_at', ''),
             'pushed_at': repo.get('pushed_at', ''),
+                'description_cn': translate_en_to_zh(desc),
             'discovered_at': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         })
 

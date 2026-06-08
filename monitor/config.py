@@ -1,6 +1,8 @@
-"""GitHub Security Monitor - 配置加载"""
+""""GitHub Security Monitor - 配置加载"""
 import yaml
 import os
+import json
+import requests
 from pathlib import Path
 from typing import List, Dict, Any
 
@@ -80,3 +82,24 @@ def save_trending(data: Dict):
 def is_duplicate(records: Dict, repo_url: str) -> bool:
     """检查 URL 是否已存在"""
     return any(item.get('repo_url') == repo_url for item in records.get('items', []))
+
+
+def translate_en_to_zh(text: str) -> str:
+    """使用 Google Translate API 将英文翻译为中文（免费）"""
+    if not text or not text.strip():
+        return text
+    # 如果已经是中文为主，跳过
+    chinese_count = sum(1 for c in text if '\u4e00' <= c <= '\u9fff')
+    if chinese_count > len(text) * 0.3:
+        return text
+    try:
+        url = "https://translate.googleapis.com/translate_a/single"
+        params = {"client": "gtx", "sl": "en", "tl": "zh-CN", "dt": "t", "q": text[:1500]}
+        resp = requests.get(url, params=params, timeout=5)
+        if resp.status_code == 200:
+            result = resp.json()
+            translated = ''.join([s[0] for s in result[0] if s[0]])
+            return translated if translated else text
+        return text
+    except Exception:
+        return text

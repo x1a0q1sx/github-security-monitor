@@ -4,7 +4,7 @@ import datetime
 from typing import List, Dict
 from datetime import timedelta
 
-from monitor.config import load_config, load_records, save_records, is_duplicate
+from monitor.config import load_config, load_records, save_records, is_duplicate, translate_en_to_zh
 
 cfg = load_config()
 
@@ -84,6 +84,7 @@ def run_cve(since_hours: int = 7) -> List[Dict]:
                 'language': lang,
                 'created_at': item.get('created_at', ''),
                 'pushed_at': item.get('pushed_at', ''),
+                'description_cn': translate_en_to_zh(desc),
                 'discovered_at': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             })
         except Exception:
