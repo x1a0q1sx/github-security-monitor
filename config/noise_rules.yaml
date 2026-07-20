@@ -1,0 +1,87 @@
+# Noise / false-positive rules applied during scoring & filtering
+
+drop_name_patterns:
+  - '(?i)homework'
+  - '(?i)assignment'
+  - '(?i)^lab[-_ ]?\d'
+  - '(?i)course[-_ ]?project'
+  - '(?i)my[-_ ]?personal[-_ ]?readme'
+  - '(?i)^test[-_]?repo'
+  - '(?i)^demo[-_]?test'
+  - '(?i)学习笔记'
+  - '(?i)作业提交'
+  - '(?i)期末'
+
+drop_description_patterns:
+  - '(?i)my personal readme'
+  - '(?i)this is my first repository'
+  - '(?i)university (course|homework|assignment)'
+  - '(?i)for educational purposes only\s*$'
+
+penalty_terms:
+  - term: tutorial
+    penalty: 1.5
+  - term: course
+    penalty: 1.5
+  - term: homework
+    penalty: 3.0
+  - term: assignment
+    penalty: 3.0
+  - term: notes
+    penalty: 1.0
+  - term: 学习
+    penalty: 1.0
+  - term: 作业
+    penalty: 3.0
+  - term: 课程
+    penalty: 1.5
+  - term: cheat sheet
+    penalty: 0.5
+  - term: awesome-
+    penalty: 0.5
+
+# Non-security senses that often false-hit short tokens like c2
+false_friend_patterns:
+  - token: c2
+    unless_any:
+      - command and control
+      - cobalt
+      - beacon
+      - malleable
+      - implant
+      - red team
+      - redteam
+      - c2 framework
+      - teamserver
+      - mythic
+      - sliver
+      - havoc
+      - 远控
+      - 木马
+    name_block_patterns:
+      - '(?i)c2[0-9a-f]{4,}'          # hash-like
+      - '(?i)[-_]c2[-_]'              # component codes
+      - '(?i)(rope|pose|encoder|transformer|diffusion|llm|model).*c2'
+      - '(?i)c2.*(rope|pose|encoder|transformer)'
+
+  - token: rce
+    unless_any:
+      - remote code
+      - exploit
+      - vulnerability
+      - cve-
+      - 远程代码
+      - 漏洞
+
+  - token: 0day
+    unless_any:
+      - exploit
+      - vulnerability
+      - poc
+      - cve
+      - 漏洞
+      - 利用
+
+# Authors / repos always dropped (extends config black_users)
+extra_black_users: []
+extra_black_repos: []

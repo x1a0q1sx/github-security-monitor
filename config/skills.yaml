@@ -1,0 +1,72 @@
+# Seed skills always considered (high-signal catalog)
+# Plus query templates for discovery sources.
+
+seed_skills:
+  - id: nextlevelbuilder/ui-ux-pro-max
+    name: ui-ux-pro-max
+    display_name: UI UX Pro Max
+    description: UI/UX design intelligence — styles, palettes, typography, UX guidelines across 22 stacks.
+    source: seed
+    repo_url: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+    homepage: https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max
+    install: "npx skills add nextlevelbuilder/ui-ux-pro-max-skill@ui-ux-pro-max -g -y"
+    category: [design, frontend]
+    tags: [ui, ux, design-system]
+    stats: { stars: 0, installs: 272500, downloads: 0 }
+
+  - id: anthropics/frontend-design
+    name: frontend-design
+    display_name: Frontend Design
+    description: Official-style frontend design guidance for polished UI implementation.
+    source: seed
+    repo_url: https://github.com/anthropics/claude-plugins-official
+    homepage: https://github.com/anthropics/claude-plugins-official
+    install: "Use Claude plugin marketplace: frontend-design"
+    category: [design, frontend]
+    tags: [frontend, ui]
+    stats: { stars: 0, installs: 0, downloads: 0 }
+
+  - id: find-skills
+    name: find-skills
+    display_name: Find Skills
+    description: Discover and install agent skills from SkillHub / skills.sh / ClawHub.
+    source: seed
+    repo_url: ""
+    homepage: https://lightmake.site
+    install: "local skill: find-skills"
+    category: [productivity, meta]
+    tags: [skills, discovery]
+    stats: { stars: 0, installs: 0, downloads: 0 }
+
+security_boost_terms:
+  - security
+  - secure
+  - pentest
+  - penetration
+  - vulnerability
+  - cve
+  - exploit
+  - malware
+  - threat
+  - osint
+  - forensics
+  - code review
+  - sast
+  - dast
+  - appsec
+  - blue team
+  - red team
+  - incident
+  - hardening
+  - 安全
+  - 渗透
+  - 漏洞
+
+category_keywords:
+  security: [security, pentest, cve, vuln, malware, threat, appsec, osint]
+  design: [ui, ux, design, frontend, css, tailwind]
+  devops: [deploy, ci, cd, docker, kubernetes, github actions]
+  testing: [test, qa, e2e, playwright, jest]
+  productivity: [productivity, workflow, notes, todo]
+  documentation: [docs, readme, changelog, write]
+  git: [git, pr, review, commit]

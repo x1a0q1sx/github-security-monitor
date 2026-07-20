@@ -1,0 +1,113 @@
+# GitHub Security Monitor V5 — main config
+# Secrets via env: GITHUB_TOKEN / GH_TOKEN, DINGDING_WEBHOOK, DINGDING_SECRET, FEISHU_WEBHOOK
+
+version: 5
+
+github:
+  token: ""  # env GITHUB_TOKEN or GH_TOKEN
+  request_timeout: 20
+  min_request_interval_ms: 350
+  search_page_size: 30
+  max_retries: 3
+
+monitor:
+  # B 平衡档：final >= 6；精确词 + 有描述可过，c2 等禁止单独过线
+  min_final_score: 6.0
+  min_stars: 0
+  allow_zero_stars_if_precise: true
+  skip_forks: true
+  skip_empty_description: false  # soft: quality penalty; hard-drop only when also low score
+  skip_no_info: true             # drop empty desc + 0 stars + no language
+  max_per_author_per_run: 3
+  keyword_window_days: 3
+  cve_window_days: 2
+  user_window_days: 7
+  records_soft_limit: 8000
+  translate: true                # 英文描述 -> 中文 description_cn
+  translate_sleep_ms: 50         # 每条翻译间隔，避免打爆免费接口
+
+notify:
+  dingding:
+    enable: true
+    webhook: ""
+    secret: ""
+  feishu:
+    enable: false
+    webhook: ""
+  min_notify_score: 7.0
+  max_items_per_message: 20
+
+black_users:
+  - AlAIAL90
+  - algotables
+
+users:
+  - yhy0
+  - su18
+  - BeichenDream
+  - phith0n
+  - zhzyker
+  - lijiejie
+  - projectdiscovery
+
+tools:
+  - owner: BeichenDream
+    repo: Godzilla
+  - owner: rebeyond
+    repo: Behinder
+  - owner: AntSwordProject
+    repo: antSword
+  - owner: gentilkiwi
+    repo: mimikatz
+  - owner: ehang-io
+    repo: nps
+  - owner: chaitin
+    repo: xray
+  - owner: shadow1ng
+    repo: fscan
+
+trending:
+  min_stars: 50
+  top_n: 30
+  queries:
+    - "topic:security stars:>50"
+    - "redteam stars:>50"
+    - "offensive-security stars:>30"
+    - "penetration-testing stars:>50"
+    - "malware-analysis stars:>30"
+    - "reverse-engineering stars:>30"
+    - "threat-hunting stars:>30"
+    - "cobalt-strike stars:>30"
+    - "vulnerability exploit stars:>50"
+    - "bug-bounty stars:>50"
+
+skills:
+  enable: true
+  min_final_score: 5.0
+  max_items: 80
+  prefer_security_weight: 1.35
+  sources:
+    skillhub: true
+    github: true
+    seed: true
+  skillhub:
+    base_url: "https://lightmake.site"
+    queries:
+      - security
+      - pentest
+      - code review
+      - cve
+      - devops
+      - git
+      - ui ux
+      - testing
+      - documentation
+      - productivity
+    limit_per_query: 10
+  github:
+    queries:
+      - "SKILL.md path:/ filename:SKILL.md"
+      - "ai-skills in:topics"
+      - "claude skill in:readme stars:>5"
+    per_page: 20
+  installed_slugs: []  # optional suppress list

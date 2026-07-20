@@ -1,129 +1,349 @@
-"""GitHub Security Monitor V4 — CLI 入口
-用法:
-    python monitor/run.py --daily       # 每天4次执行: CVE + 关键词 + 用户 + 工具
-    python monitor/run.py --trending     # 每周1次: 热门飙升
-    python monitor/run.py --all          # 全部执行（调试用）
-"""
-import sys
-import os
-import datetime
-import argparse
+"""GitHub Security Monitor V5 — CLI entrypoint.
 
-# 确保项目根目录在 Python 路径中（兼容 GitHub Actions 和本地运行）
+Usage:
+  python -m monitor.run --daily
+  python -m monitor.run --trending
+  python -m monitor.run --skills
+  python -m monitor.run --all
+  python -m monitor.run --migrate-only
+"""
+from __future__ import annotations
+
+import argparse
+import os
+import sys
+import traceback
+from datetime import datetime
+from typing import Any, Dict, List
+
+# project root on path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from monitor.config import load_executions, save_executions
+from monitor.config import (
+    load_keywords_config,
+    load_main_config,
+    load_noise_config,
+    load_skills_config,
+)
+from monitor.github_client import GitHubClient
+from monitor.models import Record
+from monitor.notify import notify_new_records, notify_skills, notify_summary
+from monitor.scoring import Scorer
+from monitor.storage import Storage
 
 
-def main():
-    parser = argparse.ArgumentParser(description='GitHub Security Monitor V4')
-    parser.add_argument('--daily', action='store_true', help='Daily monitor (CVE+Keyword+User+Tool)')
-    parser.add_argument('--trending', action='store_true', help='Weekly trending repos')
-    parser.add_argument('--all', action='store_true', help='Run all monitors (debug)')
-    parser.add_argument('--cve', action='store_true', help='CVE only')
-    parser.add_argument('--keyword', action='store_true', help='Keyword only')
-    parser.add_argument('--user', action='store_true', help='User only')
-    parser.add_argument('--tool', action='store_true', help='Tool only')
-    parser.add_argument('--hours', type=int, default=7, help='Time window in hours (default: 7)')
-    args = parser.parse_args()
-
-    start_time = datetime.datetime.now()
-    print(f"\n{'='*50}")
-    print(f"GitHub Security Monitor V4")
-    print(f"Started: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"Mode: {'Daily' if args.daily else 'Trending' if args.trending else 'Custom'}")
-    print(f"{'='*50}\n")
-
-    results = {}
-    executions = load_executions()
-
-    if args.daily or args.all:
-        results.update(_run_daily(args.hours))
-    elif args.trending:
-        results.update(_run_trending())
-    else:
-        if args.cve:
-            from monitor.cve import run_cve
-            results['cve'] = len(run_cve(args.hours))
-        if args.keyword:
-            from monitor.kw_monitor import run_keyword
-            results['keyword'] = len(run_keyword(args.hours))
-        if args.user:
-            from monitor.user import run_user
-            results['user'] = len(run_user())
-        if args.tool:
-            from monitor.tool import run_tool
-            results['tool'] = len(run_tool())
-
-    # 发送通知
-    from monitor.notify import notify_summary
-    notify_summary(results)
-
-    # 记录执行历史
-    end_time = datetime.datetime.now()
-    total_new = sum(results.values())
-    execution = {
-        'id': len(executions) + 1,
-        'type': 'daily' if args.daily else 'trending' if args.trending else 'custom',
-        'status': 'success' if sum(results.values()) >= 0 else 'partial',
-        'started_at': start_time.isoformat(),
-        'finished_at': end_time.isoformat(),
-        'duration_seconds': (end_time - start_time).total_seconds(),
-        'results': results,
-        'total_new': total_new
-    }
-    executions.append(execution)
-    save_executions(executions)
-
-    print(f"\n{'='*50}")
-    print(f"COMPLETED in {execution['duration_seconds']:.1f}s")
-    print(f"Results: {results}")
-    print(f"Total new: {total_new}")
-    print(f"{'='*50}\n")
+def build_client(cfg: Dict[str, Any]) -> GitHubClient:
+    gh = cfg.get("github") or {}
+    return GitHubClient(
+        token=gh.get("token") or "",
+        timeout=int(gh.get("request_timeout") or 20),
+        min_interval_ms=int(gh.get("min_request_interval_ms") or 350),
+        max_retries=int(gh.get("max_retries") or 3),
+    )
 
 
-def _run_daily(hours: int) -> dict:
-    results = {}
+def build_scorer(cfg: Dict[str, Any]) -> Scorer:
+    return Scorer(
+        keywords_cfg=load_keywords_config(),
+        noise_cfg=load_noise_config(),
+        monitor_cfg=cfg.get("monitor") or {},
+        black_users=cfg.get("black_users") or [],
+    )
+
+
+def _enrich_cn(cfg: Dict[str, Any], records: List[Record]) -> None:
+    """Translate English descriptions when monitor.translate is enabled."""
+    mon = cfg.get("monitor") or {}
+    if not mon.get("translate", True):
+        return
+    from monitor.translate import enrich_records_cn
+
+    sleep_ms = float(mon.get("translate_sleep_ms") or 50)
+    n = enrich_records_cn(records, enabled=True, sleep_s=max(sleep_ms, 0) / 1000.0)
+    if n:
+        print(f"  [translate] filled description_cn for {n} records")
+
+
+def _save_new(
+    storage: Storage,
+    records: List[Record],
+    soft_limit: int,
+    cfg: Dict[str, Any] | None = None,
+) -> List[Dict[str, Any]]:
+    if not records:
+        return []
+    if cfg is not None:
+        _enrich_cn(cfg, records)
+    result = storage.append_records(records, soft_limit=soft_limit)
+    return [r.to_dict() for r in result["items"]]
+
+
+def run_daily(cfg: Dict[str, Any], storage: Storage, hours: int | None = None) -> Dict[str, Any]:
+    from monitor.sources.cve import run_cve
+    from monitor.sources.keyword import run_keyword
+    from monitor.sources.tool import run_tool
+    from monitor.sources.user import run_user
+
+    client = build_client(cfg)
+    scorer = build_scorer(cfg)
+    mon = cfg.get("monitor") or {}
+    min_final = float(mon.get("min_final_score") or 6.0)
+    max_author = int(mon.get("max_per_author_per_run") or 3)
+    soft_limit = int(mon.get("records_soft_limit") or 8000)
+    # hours arg maps roughly to window days
+    kw_days = int(mon.get("keyword_window_days") or 3)
+    cve_days = int(mon.get("cve_window_days") or 2)
+    user_days = int(mon.get("user_window_days") or 7)
+    if hours:
+        kw_days = max(1, int(round(hours / 24)) or 1)
+        cve_days = kw_days
+
+    known = storage.known_urls()
+    results: Dict[str, Any] = {}
+    all_new: List[Dict[str, Any]] = []
+
+    # CVE
     try:
-        from monitor.cve import run_cve
-        results['cve'] = len(run_cve(hours))
+        kept, stats = run_cve(client, scorer, known, window_days=cve_days, min_final=min_final, max_per_author=max_author)
+        added = _save_new(storage, kept, soft_limit, cfg)
+        all_new.extend(added)
+        results["cve"] = {**stats, "kept": len(added)}
     except Exception as e:
         print(f"[ERROR] CVE: {e}")
-        results['cve'] = -1
+        traceback.print_exc()
+        results["cve"] = {"kept": -1, "error": str(e)}
 
+    # Keyword
     try:
-        from monitor.kw_monitor import run_keyword
-        results['keyword'] = len(run_keyword(hours))
+        known = storage.known_urls()
+        kept, stats = run_keyword(
+            client,
+            scorer,
+            load_keywords_config(),
+            known,
+            window_days=kw_days,
+            min_final=min_final,
+            max_per_author=max_author,
+            per_page=int((cfg.get("github") or {}).get("search_page_size") or 30),
+        )
+        added = _save_new(storage, kept, soft_limit, cfg)
+        all_new.extend(added)
+        results["keyword"] = {**stats, "kept": len(added)}
     except Exception as e:
         print(f"[ERROR] Keyword: {e}")
-        results['keyword'] = -1
+        traceback.print_exc()
+        results["keyword"] = {"kept": -1, "error": str(e)}
 
+    # User
     try:
-        from monitor.user import run_user
-        results['user'] = len(run_user())
+        known = storage.known_urls()
+        kept, stats = run_user(
+            client,
+            scorer,
+            cfg.get("users") or [],
+            known,
+            window_days=user_days,
+            min_final=max(5.0, min_final - 1),
+            max_per_author=5,
+        )
+        added = _save_new(storage, kept, soft_limit, cfg)
+        all_new.extend(added)
+        results["user"] = {**stats, "kept": len(added)}
     except Exception as e:
         print(f"[ERROR] User: {e}")
-        results['user'] = -1
+        traceback.print_exc()
+        results["user"] = {"kept": -1, "error": str(e)}
 
+    # Tool
     try:
-        from monitor.tool import run_tool
-        results['tool'] = len(run_tool())
+        known = storage.known_urls()
+        state = storage.load_tool_state()
+        kept, new_state, stats = run_tool(
+            client,
+            scorer,
+            cfg.get("tools") or [],
+            known,
+            state,
+            min_final=max(5.0, min_final - 1),
+        )
+        storage.save_tool_state(new_state)
+        added = _save_new(storage, kept, soft_limit, cfg)
+        all_new.extend(added)
+        results["tool"] = {**stats, "kept": len(added)}
     except Exception as e:
         print(f"[ERROR] Tool: {e}")
-        results['tool'] = -1
+        traceback.print_exc()
+        results["tool"] = {"kept": -1, "error": str(e)}
 
+    notify_new_records(cfg, all_new, prefix="Daily")
     return results
 
 
-def _run_trending() -> dict:
-    try:
-        from monitor.trending import run_trending
-        results = {'trending': len(run_trending())}
-    except Exception as e:
-        print(f"[ERROR] Trending: {e}")
-        results = {'trending': -1}
-    return results
+def run_trending(cfg: Dict[str, Any], storage: Storage) -> Dict[str, Any]:
+    from monitor.sources.trending import run_trending as _run
+
+    client = build_client(cfg)
+    tcfg = cfg.get("trending") or {}
+    doc = _run(
+        client,
+        queries=tcfg.get("queries") or None,
+        min_stars=int(tcfg.get("min_stars") or 50),
+        top_n=int(tcfg.get("top_n") or 30),
+    )
+    storage.save_trending(doc)
+    return {"trending": {"kept": doc.get("total", 0)}}
 
 
-if __name__ == '__main__':
-    main()
+def run_skills(cfg: Dict[str, Any], storage: Storage) -> Dict[str, Any]:
+    from monitor.sources.skills import run_skills as _run
+
+    if not (cfg.get("skills") or {}).get("enable", True):
+        print("[SKILLS] disabled in config")
+        return {"skills": {"kept": 0}}
+
+    client = build_client(cfg)
+    cards, stats = _run(client, cfg.get("skills") or {}, load_skills_config())
+    doc = {
+        "version": 5,
+        "items": [c.to_dict() for c in cards],
+        "total": len(cards),
+        "last_updated": datetime.now().isoformat(timespec="seconds"),
+    }
+    storage.save_skills(doc)
+    notify_skills(cfg, doc["items"])
+    return {"skills": stats}
+
+
+def run_migrate(storage: Storage, cfg: Dict[str, Any]) -> Dict[str, Any]:
+    import importlib.util
+    from pathlib import Path
+
+    path = Path(__file__).resolve().parent.parent / "scripts" / "migrate_v5.py"
+    spec = importlib.util.spec_from_file_location("migrate_v5", path)
+    mod = importlib.util.module_from_spec(spec)
+    assert spec and spec.loader
+    spec.loader.exec_module(mod)
+    return mod.migrate(storage, cfg)
+
+
+def main(argv: List[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="GitHub Security Monitor V5")
+    parser.add_argument("--daily", action="store_true", help="CVE + keyword + user + tool")
+    parser.add_argument("--trending", action="store_true", help="Weekly high-star security catalog")
+    parser.add_argument("--skills", action="store_true", help="Discover & rank agent skills")
+    parser.add_argument("--all", action="store_true", help="daily + trending + skills")
+    parser.add_argument("--cve", action="store_true")
+    parser.add_argument("--keyword", action="store_true")
+    parser.add_argument("--user", action="store_true")
+    parser.add_argument("--tool", action="store_true")
+    parser.add_argument("--migrate-only", action="store_true", help="Rescore/archive historical records")
+    parser.add_argument("--hours", type=int, default=0, help="Optional time window hint (hours)")
+    parser.add_argument("--publish", action="store_true", help="Copy data/*.json to docs/data/")
+    args = parser.parse_args(argv)
+
+    cfg = load_main_config()
+    storage = Storage()
+    start = datetime.now()
+    print("=" * 50)
+    print("GitHub Security Monitor V5")
+    print(f"Started: {start.strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 50)
+
+    results: Dict[str, Any] = {}
+
+    if args.migrate_only or not any(
+        [args.daily, args.trending, args.skills, args.all, args.cve, args.keyword, args.user, args.tool]
+    ):
+        # default help if nothing selected — but migrate-only is explicit
+        if args.migrate_only:
+            results["migrate"] = run_migrate(storage, cfg)
+        elif not any([args.daily, args.trending, args.skills, args.all, args.cve, args.keyword, args.user, args.tool]):
+            parser.print_help()
+            return 2
+
+    if args.all or args.daily:
+        results.update(run_daily(cfg, storage, hours=args.hours or None))
+    if args.all or args.trending:
+        results.update(run_trending(cfg, storage))
+    if args.all or args.skills:
+        results.update(run_skills(cfg, storage))
+
+    # individual sources
+    if args.cve or args.keyword or args.user or args.tool:
+        # reuse daily pieces
+        mon = cfg.get("monitor") or {}
+        client = build_client(cfg)
+        scorer = build_scorer(cfg)
+        known = storage.known_urls()
+        min_final = float(mon.get("min_final_score") or 6.0)
+        soft_limit = int(mon.get("records_soft_limit") or 8000)
+        if args.cve:
+            from monitor.sources.cve import run_cve
+
+            kept, stats = run_cve(client, scorer, known, window_days=int(mon.get("cve_window_days") or 2), min_final=min_final)
+            added = _save_new(storage, kept, soft_limit, cfg)
+            results["cve"] = {**stats, "kept": len(added)}
+        if args.keyword:
+            from monitor.sources.keyword import run_keyword
+
+            known = storage.known_urls()
+            kept, stats = run_keyword(
+                client, scorer, load_keywords_config(), known,
+                window_days=int(mon.get("keyword_window_days") or 3), min_final=min_final,
+            )
+            added = _save_new(storage, kept, soft_limit, cfg)
+            results["keyword"] = {**stats, "kept": len(added)}
+        if args.user:
+            from monitor.sources.user import run_user
+
+            known = storage.known_urls()
+            kept, stats = run_user(client, scorer, cfg.get("users") or [], known, window_days=int(mon.get("user_window_days") or 7))
+            added = _save_new(storage, kept, soft_limit, cfg)
+            results["user"] = {**stats, "kept": len(added)}
+        if args.tool:
+            from monitor.sources.tool import run_tool
+
+            known = storage.known_urls()
+            state = storage.load_tool_state()
+            kept, new_state, stats = run_tool(client, scorer, cfg.get("tools") or [], known, state)
+            storage.save_tool_state(new_state)
+            added = _save_new(storage, kept, soft_limit, cfg)
+            results["tool"] = {**stats, "kept": len(added)}
+
+    notify_summary(cfg, {k: (v.get("kept") if isinstance(v, dict) else v) for k, v in results.items()})
+
+    if args.publish or args.daily or args.trending or args.skills or args.all or args.migrate_only:
+        storage.publish_to_docs()
+
+    end = datetime.now()
+    total_new = 0
+    for v in results.values():
+        if isinstance(v, dict):
+            try:
+                total_new += max(int(v.get("kept") or 0), 0)
+            except Exception:
+                pass
+
+    storage.append_execution(
+        {
+            "type": "all" if args.all else "daily" if args.daily else "custom",
+            "status": "success",
+            "started_at": start.isoformat(timespec="seconds"),
+            "finished_at": end.isoformat(timespec="seconds"),
+            "duration_seconds": (end - start).total_seconds(),
+            "results": results,
+            "total_new": total_new,
+            "version": 5,
+        }
+    )
+
+    print("=" * 50)
+    print(f"COMPLETED in {(end - start).total_seconds():.1f}s")
+    print(f"Results: {results}")
+    print(f"Total new/kept: {total_new}")
+    print("=" * 50)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

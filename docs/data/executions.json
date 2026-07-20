@@ -2515,5 +2515,74 @@
       "tool": 0
     },
     "total_new": 19
+  },
+  {
+    "type": "custom",
+    "status": "success",
+    "started_at": "2026-07-18T21:37:42",
+    "finished_at": "2026-07-18T21:37:44",
+    "duration_seconds": 2.433948,
+    "results": {
+      "migrate": {
+        "total": 3973,
+        "kept": 169,
+        "noise": 3804,
+        "keep_rate": 0.0425,
+        "by_confidence": {
+          "noise": 3549,
+          "medium": 151,
+          "high": 18,
+          "low": 255
+        },
+        "by_type_source": {
+          "cve": 744,
+          "keyword": 3222,
+          "tool": 7
+        },
+        "archive": "ata/archive/pre-v5-20260718-213742-records.json",
+        "noise_file": "ata/archive/noise-20260718-213742.json"
+      }
+    },
+    "total_new": 169,
+    "version": 5,
+    "id": 170
+  },
+  {
+    "type": "custom",
+    "status": "success",
+    "started_at": "2026-07-18T21:38:03",
+    "finished_at": "2026-07-18T21:38:09",
+    "duration_seconds": 6.098344,
+    "results": {
+      "skills": {
+        "source": "skills",
+        "collected": 139,
+        "unique": 138,
+        "kept": 42,
+        "security": 31
+      }
+    },
+    "total_new": 42,
+    "version": 5,
+    "id": 171
+  },
+  {
+    "type": "custom",
+    "status": "success",
+    "started_at": "2026-07-18T21:38:55",
+    "finished_at": "2026-07-18T21:39:00",
+    "duration_seconds": 5.051025,
+    "results": {
+      "skills": {
+        "source": "skills",
+        "collected": 136,
+        "unique": 135,
+        "kept": 44,
+        "security": 31
+      }
+    },
+    "total_new": 44,
+    "version": 5,
+    "id": 172
   }
 ]

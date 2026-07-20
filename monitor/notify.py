@@ -1,109 +1,127 @@
-"""通知模块 — 支持钉钉/飞书/Server酱/PushPlus/Telegram"""
+"""Notification helpers (DingTalk / Feishu)."""
+from __future__ import annotations
+
+import base64
 import hashlib
 import hmac
-import base64
 import time
 import urllib.parse
-from typing import Dict
+from typing import Any, Dict, List, Sequence
 
-from monitor.config import load_config
-
-cfg = load_config()
+import requests
 
 
-def send_dingding(title: str, content: str):
-    """钉钉机器人通知"""
-    ding = cfg.get('dingding', {})
-    if not ding.get('enable') or not ding.get('webhook'):
+def _ding_sign(secret: str) -> tuple[str, str]:
+    timestamp = str(round(time.time() * 1000))
+    string_to_sign = f"{timestamp}\n{secret}"
+    hmac_code = hmac.new(secret.encode("utf-8"), string_to_sign.encode("utf-8"), digestmod=hashlib.sha256).digest()
+    sign = urllib.parse.quote_plus(base64.b64encode(hmac_code))
+    return timestamp, sign
+
+
+def send_dingding(webhook: str, secret: str, title: str, content: str) -> bool:
+    if not webhook:
+        return False
+    url = webhook
+    if secret:
+        ts, sign = _ding_sign(secret)
+        sep = "&" if "?" in webhook else "?"
+        url = f"{webhook}{sep}timestamp={ts}&sign={sign}"
+    text = content if len(content) <= 5000 else content[:5000] + "\n\n...truncated"
+    payload = {"msgtype": "markdown", "markdown": {"title": title, "text": f"### {title}\n\n{text}"}}
+    try:
+        r = requests.post(url, json=payload, timeout=10)
+        return r.status_code == 200
+    except Exception as e:
+        print(f"  dingding failed: {e}")
         return False
 
-    import requests
-    timestamp = str(round(time.time() * 1000))
-    secret = ding.get('secretKey', '')
-    sign = ''
-    if secret:
-        string_to_sign = f'{timestamp}\n{secret}'
-        hmac_code = hmac.new(
-            secret.encode('utf-8'), string_to_sign.encode('utf-8'),
-            digestmod=hashlib.sha256
-        ).digest()
-        sign = urllib.parse.quote_plus(base64.b64encode(hmac_code))
 
-    webhook = ding['webhook']
-    if sign:
-        webhook = f"{webhook}&timestamp={timestamp}&sign={sign}"
-
-    text_content = content.replace('\n', '\n\n')
-    if len(text_content) > 5000:
-        text_content = text_content[:5000] + '\n\n...内容过长已截断'
-
-    payload = {
-        "msgtype": "markdown",
-        "markdown": {
-            "title": title,
-            "text": f"# {title}\n\n{text_content}"
-        }
-    }
+def send_feishu(webhook: str, title: str, content: str) -> bool:
+    if not webhook:
+        return False
+    text = f"{title}\n\n{content}"
+    if len(text) > 3000:
+        text = text[:3000] + "\n..."
+    payload = {"msg_type": "text", "content": {"text": text}}
     try:
         r = requests.post(webhook, json=payload, timeout=10)
         return r.status_code == 200
     except Exception as e:
-        print(f"  钉钉通知失败: {e}")
+        print(f"  feishu failed: {e}")
         return False
 
 
-def send_feishu(title: str, content: str):
-    """飞书机器人通知"""
-    feishu = cfg.get('feishu', {})
-    if not feishu.get('enable') or not feishu.get('webhook'):
-        return False
-
-    import requests
-    text_content = content.replace('\n', '\n\n')
-    if len(text_content) > 3000:
-        text_content = text_content[:3000] + '\n\n...内容过长已截断'
-
-    payload = {
-        "msg_type": "text",
-        "content": {"text": f"{title}\n\n{text_content}"}
-    }
-    try:
-        r = requests.post(feishu['webhook'], json=payload, timeout=10)
-        return r.status_code == 200
-    except Exception as e:
-        print(f"  飞书通知失败: {e}")
-        return False
-
-
-def notify_batch(new_items: list, prefix: str = ""):
-    """批量发送通知，每个新项目一条"""
-    if not new_items:
+def notify_new_records(cfg: Dict[str, Any], items: Sequence[Dict[str, Any]], prefix: str = "新增") -> None:
+    notify = cfg.get("notify") or {}
+    min_score = float(notify.get("min_notify_score") or 0)
+    max_items = int(notify.get("max_items_per_message") or 20)
+    filtered = [i for i in items if float(i.get("final_score") or 0) >= min_score]
+    if not filtered:
         return
-
-    msg = f"{prefix} 新增 {len(new_items)} 个安全项目:\n"
-    for item in new_items:
-        msg += f"\n- [{item['repo_name']}]({item['repo_url']})"
-        if item.get('stars'):
-            msg += f" ⭐{item['stars']}"
-        if item.get('tags'):
-            msg += f" [{item['tags']}]"
-
+    lines = [f"{prefix} {len(filtered)} 个高分项目（展示 Top {min(len(filtered), max_items)}）:\n"]
+    for item in filtered[:max_items]:
+        score = item.get("final_score", 0)
+        stars = item.get("stars", 0)
+        conf = item.get("confidence", "")
+        lines.append(
+            f"- [{item.get('repo_name')}]({item.get('repo_url')}) "
+            f"⭐{stars} score={score} ({conf})"
+        )
+    text = "\n".join(lines)
     title = f"[GitHub安全监控] {prefix}"
-    send_dingding(title, msg)
-    send_feishu(title, msg)
+    ding = notify.get("dingding") or {}
+    if ding.get("enable"):
+        send_dingding(ding.get("webhook", ""), ding.get("secret", ""), title, text)
+    feishu = notify.get("feishu") or {}
+    if feishu.get("enable"):
+        send_feishu(feishu.get("webhook", ""), title, text)
 
 
-def notify_summary(results: Dict[str, int]):
-    """发送执行汇总通知"""
-    total = sum(results.values())
-    if total == 0:
+def notify_skills(cfg: Dict[str, Any], skills: Sequence[Dict[str, Any]]) -> None:
+    if not skills:
         return
+    notify = cfg.get("notify") or {}
+    top = skills[:10]
+    lines = ["Skill 发现推荐 Top:\n"]
+    for s in top:
+        final = (s.get("scores") or {}).get("final", 0)
+        lines.append(f"- {s.get('display_name') or s.get('name')} ({s.get('source')}) score={final}")
+        if s.get("install"):
+            lines.append(f"  `{s.get('install')}`")
+    text = "\n".join(lines)
+    title = "[GitHub安全监控] Skills"
+    ding = notify.get("dingding") or {}
+    if ding.get("enable"):
+        send_dingding(ding.get("webhook", ""), ding.get("secret", ""), title, text)
 
-    msg = f"本次监控执行汇总:\n"
-    for name, count in results.items():
-        msg += f"  {name}: {count} 个新项目\n"
-    msg += f"  总计: {total} 个"
 
+def notify_summary(cfg: Dict[str, Any], results: Dict[str, Any]) -> None:
+    total = 0
+    lines = ["本次执行汇总:\n"]
+    for k, v in results.items():
+        if isinstance(v, dict):
+            kept = v.get("kept", v.get("updated", 0))
+        else:
+            kept = v
+        try:
+            kept_n = int(kept)
+        except Exception:
+            kept_n = 0
+        if kept_n < 0:
+            lines.append(f"- {k}: ERROR")
+        else:
+            lines.append(f"- {k}: {kept_n}")
+            total += max(kept_n, 0)
+    lines.append(f"\n合计新项目: {total}")
+    if total <= 0:
+        return
     title = "[GitHub安全监控] 执行汇总"
-    send_dingding(title, msg)
-    send_feishu(title, msg)
+    text = "\n".join(lines)
+    notify = cfg.get("notify") or {}
+    ding = notify.get("dingding") or {}
+    if ding.get("enable"):
+        send_dingding(ding.get("webhook", ""), ding.get("secret", ""), title, text)
+    feishu = notify.get("feishu") or {}
+    if feishu.get("enable"):
+        send_feishu(feishu.get("webhook", ""), title, text)

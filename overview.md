@@ -1,43 +1,44 @@
-# V4 本地测试结果
+# V5 本地验证
 
-## 测试数据
+## 迁移结果（2026-07-18）
 
-| 数据文件 | 内容 | 大小 |
-|---------|------|------|
-| records.json | 229 条监控记录 | ~130KB |
-| executions.json | 2 次执行记录 | ~300B |
-| trending.json | 30 个热门项目 | ~12KB |
-
-## 记录分布
-
-| 类型 | 数量 |
+| 指标 | 数值 |
 |------|------|
-| CVE | 20 |
-| Keyword | 202 |
-| Tool | 7 |
+| 历史总数 | 3973 |
+| 保留 (final≥6) | **169 (4.25%)** |
+| 噪声归档 | 3804 |
+| high / medium | 18 / 151 |
 
-## 热门 Top 5
+主数据：`data/records.json`
+原始备份：`data/archive/pre-v5-*-records.json`
+噪声：`data/archive/noise-*.json`
 
-1. sherlock-project/sherlock - 84,712 ⭐
-2. swisskyrepo/PayloadsAllTheThings - 78,256 ⭐
-3. NationalSecurityAgency/ghidra - 69,345 ⭐
-4. x64dbg/x64dbg - 48,593 ⭐
-5. KeygraphHQ/shannon - 44,363 ⭐
+## Skill 发现
 
-## 执行耗时
+| 指标 | 数值 |
+|------|------|
+| 采集 | 139 |
+| 去重 | 138 |
+| 保留 | 42 |
+| 安全向 | 31 |
 
-| 模式 | 耗时 | 新增 |
-|------|------|------|
-| --cve --hours 24 | 5.1s | 20 |
-| --daily --hours 24 | 447.9s | 209 |
+输出：`data/skills.json`
 
-- 本地关键词监控较慢（106 关键词，每词 1 个 API 调用）
-- GitHub Actions 环境下速度类似，但由 cron 自动触发
+## 评分冒烟
 
-## 文件结构验证
+| 样本 | 结果 |
+|------|------|
+| C2RoPE（ML 假友） | noise / 低分 |
+| 0day personal readme | hard drop |
+| malleable c2 profile | high ~8.8 |
+| CVE poc | medium ~6.8 |
+| 空描述 hash 名 | no_info drop |
 
-- ✅ config.yaml 加载正常
-- ✅ CVE/Keyword/User/Tool/Trending 模块正常
-- ✅ JSON 数据读写正常
-- ✅ 执行历史记录正常
-- ✅ docs/index.html 仪表盘可用
+## 命令
+
+```bash
+python -m monitor.run --migrate-only --publish
+python -m monitor.run --daily --publish
+python -m monitor.run --skills --publish
+python -m monitor.run --trending --publish
+```

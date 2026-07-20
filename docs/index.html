@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub Security Monitor</title>
+<title>GitHub Security Monitor V5</title>
 <style>
 :root {
-    --bg: #0a0e1a; --card: #151a2e; --border: #2a3050;
-    --text: #e8ecf4; --text2: #a0acc8; --text3: #6b7694;
-    --blue: #818cf8; --green: #4ade80; --red: #f87171; --yellow: #fbbf24; --pink: #f472b6;
-    --grad: linear-gradient(135deg,#818cf8 0%,#c084fc 100%);
+  --bg:#0a0e1a; --card:#151a2e; --border:#2a3050;
+  --text:#e8ecf4; --text2:#a0acc8; --text3:#6b7694;
+  --blue:#818cf8; --green:#4ade80; --red:#f87171; --yellow:#fbbf24; --pink:#f472b6; --cyan:#22d3ee;
+  --grad:linear-gradient(135deg,#818cf8 0%,#c084fc 100%);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;}
 ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
-
 .app{display:flex;min-height:100vh;}
 .sidebar{width:240px;background:var(--card);border-right:1px solid var(--border);position:fixed;height:100vh;z-index:100;display:flex;flex-direction:column;}
 .sidebar-h{padding:24px 20px;border-bottom:1px solid var(--border);}
@@ -26,25 +25,28 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .nav-item.active{background:var(--blue);color:#fff;}
 .nav-item svg{width:18px;height:18px;flex-shrink:0;}
 .main{margin-left:240px;flex:1;padding:24px;overflow:hidden;min-width:0;}
-
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px;}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:24px;}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;position:relative;overflow:hidden;}
 .stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);}
-.stat .v{font-size:28px;font-weight:700;margin:8px 0 2px;}
-.stat .l{font-size:13px;color:var(--text2);}
-
+.stat .v{font-size:26px;font-weight:700;margin:8px 0 2px;}
+.stat .l{font-size:12px;color:var(--text2);}
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:20px;}
 .card-h{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px;}
 .card-h h3{font-size:15px;font-weight:600;}
 .card-b{padding:20px;}
-
-.badge{display:inline-block;padding:3px 8px;border-radius:12px;font-size:11px;font-weight:600;}
+.badge{display:inline-block;padding:3px 8px;border-radius:12px;font-size:11px;font-weight:600;margin:1px;}
 .b-cve{background:rgba(239,68,68,.15);color:var(--red);}
 .b-keyword{background:rgba(99,102,241,.15);color:var(--blue);}
-.b-tool{background:rgba(34,197,94,.15);color:var(--green);}
-.b-user{background:rgba(245,158,11,.15);color:var(--yellow);}
+.b-tool,.b-tool_update{background:rgba(34,197,94,.15);color:var(--green);}
+.b-user_repo{background:rgba(245,158,11,.15);color:var(--yellow);}
 .b-trending{background:rgba(236,72,153,.15);color:var(--pink);}
-
+.b-high{background:rgba(74,222,128,.18);color:var(--green);}
+.b-medium{background:rgba(129,140,248,.18);color:var(--blue);}
+.b-low{background:rgba(251,191,36,.18);color:var(--yellow);}
+.b-noise{background:rgba(107,118,148,.2);color:var(--text3);}
+.b-skillhub{background:rgba(34,211,238,.15);color:var(--cyan);}
+.b-github{background:rgba(168,85,247,.15);color:#c084fc;}
+.b-seed{background:rgba(251,191,36,.15);color:var(--yellow);}
 .tbl{width:100%;border-collapse:collapse;}
 .tbl th{text-align:left;padding:12px 14px;font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;background:var(--bg);border-bottom:1px solid var(--border);white-space:nowrap;}
 .tbl td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:13px;}
@@ -54,370 +56,430 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .tbl a:hover{text-decoration:underline;}
 .tbl .stars{color:var(--yellow);}
 .tbl .time{color:var(--text3);font-size:12px;white-space:nowrap;}
-
+.score{font-variant-numeric:tabular-nums;font-weight:700;color:var(--cyan);}
 .btn{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:none;transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
 .btn-p{background:var(--blue);color:#fff;}
 .btn-p:hover{opacity:.9;}
+.btn-g{background:var(--border);color:var(--text);}
 .sel{background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:8px 12px;font-size:13px;cursor:pointer;outline:none;}
 .np{display:flex;align-items:center;gap:8px;justify-content:space-between;padding:14px 20px;border-top:1px solid var(--border);flex-wrap:wrap;}
 .np-info{font-size:13px;color:var(--text2);}
-.np-btn{padding:6px 12px;background:var(--border);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:12px;cursor:pointer;transition:all .2s;}
+.np-btn{padding:6px 12px;background:var(--border);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:12px;cursor:pointer;}
 .np-btn:hover:not(:disabled){background:var(--blue);border-color:var(--blue);}
 .np-btn:disabled{opacity:.4;cursor:default;}
-
 .spin{text-align:center;padding:40px;color:var(--text3);}
 .spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 12px;}
 @keyframes spin{to{transform:rotate(360deg)}}
 .empty{text-align:center;padding:50px 20px;color:var(--text3);}
-.empty svg{width:60px;height:60px;margin-bottom:12px;}
-
 .tabs{display:flex;gap:4px;padding:4px;background:var(--bg);border-radius:8px;margin-bottom:16px;flex-wrap:wrap;}
-.tab{padding:6px 14px;border-radius:6px;font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .2s;border:none;background:none;}
+.tab{padding:6px 14px;border-radius:6px;font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;border:none;background:none;}
 .tab:hover{color:var(--text);}
 .tab.active{background:var(--blue);color:#fff;}
-
-/* Recent list - vertical card layout */
-.recent-list{display:flex;flex-direction:column;gap:10px;}
-.recent-card{background:var(--bg);border-radius:10px;padding:14px 16px;transition:all .2s;border:1px solid transparent;cursor:pointer;}
-.recent-card:hover{background:var(--border);border-color:var(--blue);}
+.recent-list,.trend-list,.skill-grid,.exec-list{display:flex;flex-direction:column;gap:10px;}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+.recent-card,.skill-card,.trend-item2{background:var(--bg);border-radius:10px;padding:14px 16px;border:1px solid var(--border);transition:all .2s;cursor:pointer;}
+.recent-card:hover,.skill-card:hover,.trend-item2:hover{border-color:var(--blue);background:rgba(99,102,241,.08);}
 .recent-top{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
-.recent-name{font-weight:600;font-size:14px;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.recent-name{font-weight:600;font-size:14px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .recent-name a{color:inherit;text-decoration:none;}
-.recent-name a:hover{text-decoration:underline;}
 .recent-desc{font-size:12px;color:var(--text2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.recent-meta{display:flex;gap:16px;font-size:11px;color:var(--text3);margin-top:6px;}
-
-/* Trending list */
-.trend-list{display:flex;flex-direction:column;gap:8px;}
-.trend-item2{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--bg);border-radius:10px;transition:all .2s;border:1px solid var(--border);overflow:hidden;}
-.trend-item2:hover{background:var(--card);border-color:var(--blue);}
-.trend-rank{min-width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;background:var(--border);color:var(--text2);}
+.recent-meta{display:flex;gap:12px;font-size:11px;color:var(--text3);margin-top:6px;flex-wrap:wrap;}
+.trend-item2{display:flex;align-items:center;gap:14px;cursor:default;}
+.trend-rank{min-width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;background:var(--border);color:var(--text2);}
 .trend-rank.top3{background:var(--grad);color:#fff;}
 .trend-info2{flex:1;min-width:0;}
-.trend-name2{font-weight:600;font-size:14px;margin-bottom:2px;word-break:break-all;overflow-wrap:anywhere;}
+.trend-name2{font-weight:600;font-size:14px;margin-bottom:2px;word-break:break-all;}
 .trend-name2 a{color:var(--text);text-decoration:none;}
 .trend-name2 a:hover{color:var(--blue);}
 .trend-desc2{font-size:12px;color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.trend-meta2{font-size:12px;color:var(--text3);flex-shrink:0;text-align:right;line-height:1.6;}
-
-/* Exec history list */
-.exec-list{display:flex;flex-direction:column;}
-.exec-item2{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--border);transition:background .15s;}
-.exec-item2:hover{background:rgba(99,102,241,.05);}
+.trend-meta2{font-size:12px;color:var(--text3);flex-shrink:0;text-align:right;}
+.skill-card h4{font-size:15px;margin-bottom:6px;}
+.skill-card p{font-size:12px;color:var(--text2);min-height:36px;margin-bottom:10px;}
+.skill-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.install-box{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;background:var(--card);border:1px solid var(--border);border-radius:6px;padding:8px;color:var(--text2);word-break:break-all;}
+.exec-item2{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--border);}
 .exec-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
-.exec-dot.s{background:var(--green);}
-.exec-dot.e{background:var(--red);}
+.exec-dot.s{background:var(--green);} .exec-dot.e{background:var(--red);}
 .exec-main2{flex:1;}
-.exec-type{font-weight:600;font-size:14px;margin-bottom:2px;}
+.exec-type{font-weight:600;font-size:14px;}
 .exec-time{font-size:12px;color:var(--text3);}
-.exec-results2{font-size:12px;color:var(--text2);flex-shrink:0;text-align:right;}
-
-/* Modal */
-.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;}
-.modal-box{background:var(--card);border:1px solid var(--border);border-radius:14px;width:100%;max-width:650px;max-height:85vh;overflow-y:auto;}
+.exec-results2{font-size:12px;color:var(--text2);text-align:right;}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;}
+.modal-box{background:var(--card);border:1px solid var(--border);border-radius:14px;width:100%;max-width:680px;max-height:85vh;overflow-y:auto;}
 .modal-h{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--card);z-index:1;}
-.modal-h h3{font-size:17px;}
 .modal-close{background:none;border:none;color:var(--text2);font-size:24px;cursor:pointer;padding:4px 8px;border-radius:6px;}
-.modal-close:hover{background:var(--border);color:var(--text);}
 .modal-b{padding:22px;}
-.modal-field{margin-bottom:16px;}
+.modal-field{margin-bottom:14px;}
 .modal-field label{display:block;font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
 .modal-field .val{font-size:14px;color:var(--text);}
 .modal-field a.val{color:var(--blue);word-break:break-all;}
 .modal-desc{background:var(--bg);border-radius:8px;padding:14px;font-size:13px;color:var(--text2);line-height:1.7;max-height:200px;overflow-y:auto;white-space:pre-wrap;}
-
-/* Tags filter */
 .tag-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
-.tag-chip{padding:4px 10px;border-radius:14px;font-size:11px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:var(--bg);color:var(--text2);transition:all .15s;}
-.tag-chip:hover{border-color:var(--blue);color:var(--text);}
-.tag-chip.active{background:var(--blue);color:#fff;border-color:var(--blue);}
-
-/* Toast */
-@keyframes slidein{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
-.toast{position:fixed;top:20px;right:20px;background:var(--card);border:1px solid var(--green);border-radius:10px;padding:14px 20px;font-size:13px;z-index:9999;animation:slidein .3s;box-shadow:0 8px 24px rgba(0,0,0,.4);}
-
-@media(max-width:768px){
-.sidebar{display:none;}
-.main{margin-left:0;}
-.stats{grid-template-columns:repeat(2,1fr);}
-.modal-box{margin:10px;max-height:90vh;}
-}
+.tag-chip{padding:4px 10px;border-radius:14px;font-size:11px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:var(--bg);color:var(--text2);}
+.tag-chip:hover,.tag-chip.active{border-color:var(--blue);color:#fff;background:var(--blue);}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center;}
+.toast{position:fixed;top:20px;right:20px;background:var(--card);border:1px solid var(--green);border-radius:10px;padding:14px 20px;font-size:13px;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.4);}
+@media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;}.stats{grid-template-columns:repeat(2,1fr);}}
 </style>
 </head>
 <body>
 <div class="app">
 <aside class="sidebar">
-    <div class="sidebar-h"><h1>GitHub 安全监控</h1><div class="sub">安全项目追踪系统</div></div>
-    <nav class="sidebar-nav">
-        <div class="nav-item active" data-page="dash">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            仪表盘
-        </div>
-        <div class="nav-item" data-page="records">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            监控记录
-        </div>
-        <div class="nav-item" data-page="trending">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-            热门飙升
-        </div>
-        <div class="nav-item" data-page="execs">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            执行历史
-        </div>
-        <div class="nav-item" data-page="config">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-            配置
-        </div>
-    </nav>
-    <div style="padding:14px;border-top:1px solid var(--border);font-size:11px;color:var(--text3);">V4 · GitHub Actions</div>
+  <div class="sidebar-h"><h1>GitHub 安全监控</h1><div class="sub">V5 · 降噪评分 + Skill 推荐</div></div>
+  <nav class="sidebar-nav">
+    <div class="nav-item active" data-page="dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>仪表盘</div>
+    <div class="nav-item" data-page="records"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>监控记录</div>
+    <div class="nav-item" data-page="skills"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>Skill 推荐</div>
+    <div class="nav-item" data-page="trending"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>热门项目</div>
+    <div class="nav-item" data-page="execs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>执行历史</div>
+    <div class="nav-item" data-page="config"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.6V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>配置</div>
+  </nav>
+  <div style="padding:14px;border-top:1px solid var(--border);font-size:11px;color:var(--text3);">V5 · Actions + Pages</div>
 </aside>
 
 <main class="main">
-    <!-- DASHBOARD -->
-    <div id="page-dash" class="page">
-        <h2 style="font-size:22px;margin-bottom:4px;">仪表盘</h2>
-        <p style="color:var(--text2);font-size:13px;margin-bottom:20px;">安全项目监控概览</p>
-        <div class="stats">
-            <div class="stat"><div class="l">总记录数</div><div class="v" id="s-total">-</div></div>
-            <div class="stat"><div class="l">今日新增</div><div class="v" id="s-today">-</div></div>
-            <div class="stat"><div class="l">本周新增</div><div class="v" id="s-week">-</div></div>
-            <div class="stat"><div class="l" id="s-bytype" style="font-size:13px;"></div><div class="v">-</div></div>
+  <div id="page-dash" class="page">
+    <h2 style="font-size:22px;margin-bottom:4px;">仪表盘</h2>
+    <p style="color:var(--text2);font-size:13px;margin-bottom:20px;">高置信安全项目 + Skill 推荐概览</p>
+    <div class="stats">
+      <div class="stat"><div class="l">有效记录</div><div class="v" id="s-total">-</div></div>
+      <div class="stat"><div class="l">高置信</div><div class="v" id="s-high">-</div></div>
+      <div class="stat"><div class="l">今日新增</div><div class="v" id="s-today">-</div></div>
+      <div class="stat"><div class="l">Skills</div><div class="v" id="s-skills">-</div></div>
+    </div>
+    <div class="card"><div class="card-h"><h3>高分最近发现</h3><span id="s-meta" style="font-size:12px;color:var(--text3)"></span></div>
+      <div class="card-b"><div id="recent" class="spin"><div class="spinner"></div></div></div>
+    </div>
+  </div>
+
+  <div id="page-records" class="page" style="display:none">
+    <h2 style="font-size:22px;margin-bottom:4px;">监控记录</h2>
+    <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">按 final_score 排序 · 默认隐藏噪声</p>
+    <div class="tabs" id="type-tabs">
+      <div class="tab active" data-type="">全部</div>
+      <div class="tab" data-type="cve">CVE</div>
+      <div class="tab" data-type="keyword">关键词</div>
+      <div class="tab" data-type="tool">工具</div>
+      <div class="tab" data-type="tool_update">工具更新</div>
+      <div class="tab" data-type="user_repo">用户仓库</div>
+    </div>
+    <div class="filters">
+      <select id="conf-filter" class="sel">
+        <option value="hm">高+中置信</option>
+        <option value="h">仅高置信</option>
+        <option value="all">全部置信</option>
+      </select>
+      <select id="min-score" class="sel">
+        <option value="0">分数不限</option>
+        <option value="6" selected>≥ 6.0</option>
+        <option value="7">≥ 7.0</option>
+        <option value="8">≥ 8.0</option>
+      </select>
+      <input id="r-search" class="sel" placeholder="搜索名称/作者/关键词..." style="flex:1;min-width:180px;max-width:320px;">
+      <button class="btn btn-p" onclick="state.currentPage=1;loadRecords()">筛选</button>
+    </div>
+    <div id="tag-filter" class="tag-filter"></div>
+    <div class="card">
+      <div style="overflow-x:auto;"><div id="records-table"></div></div>
+      <div class="np"><div class="np-info" id="r-info">-</div>
+        <div style="display:flex;gap:8px;">
+          <button class="np-btn" onclick="goPage(-1)">上页</button>
+          <span style="padding:6px 8px;font-size:13px;" id="r-pg">-</span>
+          <button class="np-btn" onclick="goPage(1)">下页</button>
         </div>
-        <div class="card"><div class="card-h"><h3>Recent Records</h3></div><div class="card-b"><div id="recent" class="spin"><div class="spinner"></div></div></div></div>
+      </div>
     </div>
+  </div>
 
-    <!-- RECORDS -->
-    <div id="page-records" class="page" style="display:none">
-        <h2 style="font-size:22px;margin-bottom:4px;">监控记录</h2>
-        <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">所有监控到的安全项目 - 点击行查看详情</p>
-        <div class="tabs" id="type-tabs">
-            <div class="tab active" data-type="">全部</div>
-            <div class="tab" data-type="cve">CVE</div>
-            <div class="tab" data-type="keyword">关键词</div>
-            <div class="tab" data-type="tool">工具</div>
-            <div class="tab" data-type="user_repo">用户仓库</div>
-        </div>
-        <div id="tag-filter" class="tag-filter"></div>
-        <div class="card">
-            <div class="card-h">
-                <input id="r-search" class="sel" placeholder="搜索名称/作者..." style="flex:1;max-width:300px;">
-                <button class="btn btn-p" onclick="loadRecords()">搜索</button>
-            </div>
-            <div style="overflow-x:auto;"><div id="records-table"></div></div>
-            <div class="np"><div class="np-info" id="r-info">-</div><div style="display:flex;gap:8px;">
-                <button class="np-btn" onclick="goPage(-1)">上页</button>
-                <span style="padding:6px 8px;font-size:13px;" id="r-pg">-</span>
-                <button class="np-btn" onclick="goPage(1)">下页</button>
-            </div></div>
-        </div>
+  <div id="page-skills" class="page" style="display:none">
+    <h2 style="font-size:22px;margin-bottom:4px;">Skill 发现推荐</h2>
+    <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">全量 skill 目录 · 安全向加权 · 来自 SkillHub / GitHub / Seed</p>
+    <div class="tabs" id="skill-tabs">
+      <div class="tab active" data-cat="">全部</div>
+      <div class="tab" data-cat="security">安全</div>
+      <div class="tab" data-cat="design">设计</div>
+      <div class="tab" data-cat="devops">DevOps</div>
+      <div class="tab" data-cat="testing">测试</div>
+      <div class="tab" data-cat="productivity">效率</div>
     </div>
+    <div class="filters">
+      <input id="skill-search" class="sel" placeholder="搜索 skill..." style="flex:1;max-width:320px;">
+      <button class="btn btn-p" onclick="loadSkills()">搜索</button>
+    </div>
+    <div id="skills-list" class="spin"><div class="spinner"></div></div>
+  </div>
 
-    <!-- TRENDING -->
-    <div id="page-trending" class="page" style="display:none">
-        <h2 style="font-size:22px;margin-bottom:4px;">热门飙升</h2>
-        <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">每周热门安全项目（每周一自动更新）</p>
-        <div id="trending-list" class="spin"><div class="spinner"></div></div>
-    </div>
+  <div id="page-trending" class="page" style="display:none">
+    <h2 style="font-size:22px;margin-bottom:4px;">热门安全项目</h2>
+    <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">高 Star 安全类仓库目录（每周更新）</p>
+    <div id="trending-list" class="spin"><div class="spinner"></div></div>
+  </div>
 
-    <!-- EXECUTIONS -->
-    <div id="page-execs" class="page" style="display:none">
-        <h2 style="font-size:22px;margin-bottom:4px;">执行历史</h2>
-        <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">Monitor execution logs</p>
-        <div id="execs-list" class="spin"><div class="spinner"></div></div>
-    </div>
+  <div id="page-execs" class="page" style="display:none">
+    <h2 style="font-size:22px;margin-bottom:4px;">执行历史</h2>
+    <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">含过滤统计的运行日志</p>
+    <div id="execs-list" class="spin"><div class="spinner"></div></div>
+  </div>
 
-    <!-- CONFIG -->
-    <div id="page-config" class="page" style="display:none">
-        <h2 style="font-size:22px;margin-bottom:4px;">配置说明</h2>
-        <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">Monitor is configured in <code>config.yaml</code> and runs via GitHub Actions</p>
-        <div class="card"><div class="card-h"><h3>定时计划</h3></div><div class="card-b">
-            <table class="tbl"><tr><th>触发</th><th>Cron表达式</th><th>内容</th></tr>
-            <tr><td>每日 4 次</td><td>02:00, 08:00, 14:00, 20:00 UTC</td><td>CVE + Keyword + User + Tool</td></tr>
-            <tr><td>每周</td><td>Monday 01:00 UTC</td><td>热门项目</td></tr></table>
-        </div></div>
-    </div>
+  <div id="page-config" class="page" style="display:none">
+    <h2 style="font-size:22px;margin-bottom:4px;">配置说明</h2>
+    <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">主配置在 <code>config/</code>，由 GitHub Actions 定时执行</p>
+    <div class="card"><div class="card-h"><h3>V5 关键变化</h3></div><div class="card-b" style="font-size:13px;color:var(--text2);line-height:1.8;">
+      <ul style="padding-left:18px;">
+        <li>关键词分层 S/A/B + 质量分，默认 final ≥ 6</li>
+        <li><code>c2</code> / <code>rce</code> / <code>0day</code> 禁止单独过线</li>
+        <li>工具监控改为 pushed_at / release 变更检测</li>
+        <li>新增 Skill 发现推荐（SkillHub + GitHub + Seed）</li>
+        <li>历史噪声归档到 <code>data/archive/</code></li>
+      </ul>
+    </div></div>
+    <div class="card"><div class="card-h"><h3>定时计划</h3></div><div class="card-b">
+      <table class="tbl"><tr><th>触发</th><th>Cron (UTC)</th><th>内容</th></tr>
+      <tr><td>Daily ×4</td><td>02/08/14/20:00</td><td>CVE + Keyword + User + Tool</td></tr>
+      <tr><td>Skills ×2</td><td>03:00 / 15:00</td><td>Skill 发现推荐</td></tr>
+      <tr><td>Weekly</td><td>Mon 01:00</td><td>热门项目</td></tr></table>
+    </div></div>
+  </div>
 </main>
 </div>
 
-<!-- Detail Modal -->
 <div id="detail-modal" class="modal-overlay" style="display:none" onclick="if(event.target===this)closeModal()">
-    <div class="modal-box">
-        <div class="modal-h"><h3 id="modal-title">记录详情</h3><button class="modal-close" onclick="closeModal()">&times;</button></div>
-        <div class="modal-b" id="modal-body"></div>
-    </div>
+  <div class="modal-box">
+    <div class="modal-h"><h3 id="modal-title">详情</h3><button class="modal-close" onclick="closeModal()">&times;</button></div>
+    <div class="modal-b" id="modal-body"></div>
+  </div>
 </div>
 
 <script>
 const BASE = '.';
-
-let state = {page:'dash',currentPage:1,pageSize:20,totalRecords:0,typeFilter:'',tagFilter:null,records:[],trending:[],executions:[]};
-
-document.querySelectorAll('.nav-item').forEach(el=>el.onclick=()=>navigate(el.dataset.page));
-function navigate(p){state.page=p;document.querySelectorAll('.nav-item').forEach(e=>e.classList.toggle('active',e.dataset.page===p));document.querySelectorAll('.page').forEach(e=>e.style.display=e.id==='page-'+p?'block':'none');refreshCurrentPage();}
-
-async function loadJSON(file){
-    try{const r=await fetch(BASE+'/data/'+file);return await r.json();}catch(e){console.error(e);return null;}
-}
-
-async function init(){
-    const data=await loadJSON('records.json');
-    if(data){
-        state.records=data.items||[];
-        state.totalRecords=data.total||0;
-        updateDashboard(data);
-    }
-    const trending=await loadJSON('trending.json');
-    if(trending) state.trending=trending.items||[];
-    const execs=await loadJSON('executions.json');
-    if(execs) state.executions=Array.isArray(execs)?execs:[];
-    refreshCurrentPage();
-}
-
-function refreshCurrentPage(){
-    if(state.page==='dash') updateDashboard(null);
-    else if(state.page==='records') loadRecords();
-    else if(state.page==='trending') loadTrending();
-    else if(state.page==='execs') loadExecutions();
-}
-
-function updateDashboard(data){
-    if(!data) data={items:state.records,total:state.totalRecords,by_type:{},last_updated:''};
-    document.getElementById('s-total').textContent=data.total||data.items?.length||0;
-    let today=0,week=0;
-    const td=new Date().toISOString().slice(0,10);
-    const wd=new Date(Date.now()-7*86400000).toISOString().slice(0,10);
-    (data.items||[]).forEach(r=>{
-        const d=(r.discovered_at||'').slice(0,10);
-        if(d===td)today++;
-        if(d>=wd)week++;
-    });
-    document.getElementById('s-today').textContent=today;
-    document.getElementById('s-week').textContent=week;
-    const bt=data.by_type||{};
-    document.getElementById('s-bytype').innerHTML=Object.entries(bt).map(([k,v])=>`<span class="badge b-${k}">${k}: ${v}</span>`).join(' ');
-
-    // Recent: vertical card layout
-    const recent=(data.items||[]).slice(-10).reverse();
-    const el=document.getElementById('recent');
-    if(!recent.length){el.innerHTML='<div class="empty">No records yet. Wait for first Action run.</div>';return;}
-    el.innerHTML=`<div class="recent-list">${recent.map(r=>`
-        <div class="recent-card" onclick="showDetail(${JSON.stringify(r).replace(/"/g,'&quot;')})">
-            <div class="recent-top">
-                <span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span>
-                <span class="recent-name"><a href="${r.repo_url}" target="_blank" onclick="event.stopPropagation()">${r.repo_name}</a></span>
-            </div>
-            <div class="recent-desc">${r.repo_description||'No description'}</div>
-            <div class="recent-meta">
-                <span>⭐ ${r.stars||0}</span><span>${r.language||'N/A'}</span><span>${(r.discovered_at||'').slice(0,16)}</span>
-            </div>
-        </div>`).join('')}</div>`;
-}
-
-function loadRecords(){
-    let items=[...state.records];
-    const type=document.querySelector('#type-tabs .tab.active')?.dataset.type||'';
-    if(type) items=items.filter(r=>r.monitor_type===type);
-    const tag=state.tagFilter;
-    if(tag) items=items.filter(r=>(r.tags||'').split(',').map(t=>t.trim()).includes(tag));
-    const q=(document.getElementById('r-search')?.value||'').toLowerCase();
-    if(q) items=items.filter(r=>(r.repo_name||'').toLowerCase().includes(q)||(r.author||'').toLowerCase().includes(q));
-
-    // Build tag filter chips
-    const allTags=new Set();
-    items.forEach(r=>(r.tags||'').split(',').forEach(t=>{t=t.trim();if(t)allTags.add(t);}));
-    const tagsList=[...allTags].sort();
-    document.getElementById('tag-filter').innerHTML=tagsList.length?tagsList.map(t=>`<span class="tag-chip${t===tag?' active':''}" onclick="state.tagFilter='${t===(state.tagFilter||'')?null:t}';state.currentPage=1;loadRecords();">${t}</span>`).join(''):'';
-    // Also update type tabs tag filter context
-    document.querySelector('#type-tabs .tab.active')||document.querySelector('#type-tabs .tab');
-
-    state.totalRecords=items.length;
-    const maxPage=Math.max(1,Math.ceil(items.length/state.pageSize));
-    if(state.currentPage>maxPage) state.currentPage=maxPage;
-    const start=(state.currentPage-1)*state.pageSize;
-    const page=items.slice(start,start+state.pageSize);
-
-    document.getElementById('records-table').innerHTML=page.length?`<table class="tbl"><thead><tr>
-        <th>类型</th><th>名称</th><th>作者</th><th>Stars</th><th>语言</th><th>标签</th><th>发现时间</th></tr></thead><tbody>
-        ${page.map(r=>`<tr onclick='showDetail(${JSON.stringify(r).replace(/'/g,"&#39;")})'>
-            <td><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></td>
-            <td><a href="${r.repo_url}" target="_blank" onclick="event.stopPropagation()">${r.repo_name}</a></td>
-            <td>${r.author||'-'}</td>
-            <td class="stars">${r.stars||0}⭐</td>
-            <td>${r.language||'-'}</td>
-            <td>${(r.tags||'').split(',').slice(0,3).map(t=>`<span class="badge">${t.trim()}</span>`).join(' ')}</td>
-            <td class="time">${(r.discovered_at||'').slice(0,16)}</td>
-        </tr>`).join('')}</tbody></table>`:'<div class="empty">暂无记录</div>';
-
-    document.getElementById('r-info').textContent=`Showing ${start+1}-${Math.min(start+state.pageSize,items.length)} of ${items.length}`;
-    document.getElementById('r-pg').textContent=`${state.currentPage} / ${maxPage}`;
-    document.querySelectorAll('.np-btn').forEach((b,i)=>b.disabled=(i===0&&state.currentPage<=1)||(i===1&&state.currentPage>=maxPage));
-}
-
-function goPage(d){state.currentPage+=d;loadRecords();}
-document.getElementById('type-tabs').onclick=e=>{
-    if(e.target.classList.contains('tab')){
-        document.querySelectorAll('#type-tabs .tab').forEach(t=>t.classList.remove('active'));
-        e.target.classList.add('active');
-        state.currentPage=1; state.tagFilter=null;
-        loadRecords();
-    }
+const state = {
+  page:'dash', currentPage:1, pageSize:20, totalRecords:0,
+  typeFilter:'', tagFilter:null, confFilter:'hm', minScore:6,
+  skillCat:'', records:[], skills:[], trending:[], executions:[], meta:{}
 };
 
+document.querySelectorAll('.nav-item').forEach(el => el.onclick = () => navigate(el.dataset.page));
+function navigate(p){
+  state.page=p;
+  document.querySelectorAll('.nav-item').forEach(e=>e.classList.toggle('active', e.dataset.page===p));
+  document.querySelectorAll('.page').forEach(e=>e.style.display = e.id==='page-'+p ? 'block':'none');
+  refreshCurrentPage();
+}
+async function loadJSON(file){
+  try{const r=await fetch(BASE+'/data/'+file+'?t='+Date.now()); if(!r.ok) return null; return await r.json();}
+  catch(e){console.error(e); return null;}
+}
+async function init(){
+  const data=await loadJSON('records.json');
+  if(data){ state.records=data.items||[]; state.totalRecords=data.total||0; state.meta=data.meta||{}; }
+  const skills=await loadJSON('skills.json');
+  if(skills) state.skills=skills.items||[];
+  const trending=await loadJSON('trending.json');
+  if(trending) state.trending=trending.items||[];
+  const execs=await loadJSON('executions.json');
+  if(execs) state.executions=Array.isArray(execs)?execs:[];
+  refreshCurrentPage();
+}
+function refreshCurrentPage(){
+  if(state.page==='dash') updateDashboard();
+  else if(state.page==='records') loadRecords();
+  else if(state.page==='skills') loadSkills();
+  else if(state.page==='trending') loadTrending();
+  else if(state.page==='execs') loadExecutions();
+}
+function confOk(r){
+  const c=(r.confidence||'').toLowerCase();
+  if(state.confFilter==='h') return c==='high';
+  if(state.confFilter==='hm') return c==='high' || c==='medium' || (!c && (r.final_score||0)>=6);
+  return true;
+}
+function updateDashboard(){
+  const items=state.records||[];
+  const high=items.filter(r=>(r.confidence||'')==='high' || (r.final_score||0)>=8).length;
+  const td=new Date().toISOString().slice(0,10);
+  const today=items.filter(r=>(r.discovered_at||'').slice(0,10)===td).length;
+  document.getElementById('s-total').textContent=items.length;
+  document.getElementById('s-high').textContent=high;
+  document.getElementById('s-today').textContent=today;
+  document.getElementById('s-skills').textContent=(state.skills||[]).length;
+  document.getElementById('s-meta').textContent=state.meta.migrated_at?('migrated '+state.meta.migrated_at):'';
+  const recent=[...items].sort((a,b)=>(b.final_score||0)-(a.final_score||0)).slice(0,12);
+  const el=document.getElementById('recent');
+  if(!recent.length){el.innerHTML='<div class="empty">暂无记录。先跑 migrate 或 daily。</div>';return;}
+  el.innerHTML=`<div class="recent-list">${recent.map((r,idx)=>`
+    <div class="recent-card" data-idx="${idx}" onclick="showRecordByUrl('${(r.repo_url||'').replace(/'/g,"&#39;")}')">
+      <div class="recent-top">
+        <span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span>
+        <span class="badge b-${r.confidence||'low'}">${r.confidence||'n/a'}</span>
+        <span class="recent-name"><a href="${r.repo_url}" target="_blank" onclick="event.stopPropagation()">${esc(r.repo_name)}</a></span>
+        <span class="score">${(r.final_score||0).toFixed? (r.final_score||0).toFixed(1): r.final_score||0}</span>
+      </div>
+      <div class="recent-desc">${esc(displayDesc(r))}</div>
+      <div class="recent-meta">
+        <span>⭐ ${r.stars||0}</span><span>${esc(r.language||'N/A')}</span><span>${esc((r.discovered_at||'').slice(0,16))}</span>
+      </div>
+    </div>`).join('')}</div>`;
+}
+function filteredRecords(){
+  let items=[...state.records];
+  const type=document.querySelector('#type-tabs .tab.active')?.dataset.type||'';
+  if(type){
+    if(type==='tool') items=items.filter(r=>r.monitor_type==='tool'||r.monitor_type==='tool_update');
+    else items=items.filter(r=>r.monitor_type===type);
+  }
+  state.confFilter=document.getElementById('conf-filter')?.value||'hm';
+  state.minScore=parseFloat(document.getElementById('min-score')?.value||'0');
+  items=items.filter(confOk);
+  items=items.filter(r=>(r.final_score||0) >= state.minScore || state.minScore===0);
+  if(state.tagFilter) items=items.filter(r=>(r.tags||'').split(',').map(t=>t.trim()).includes(state.tagFilter));
+  const q=(document.getElementById('r-search')?.value||'').toLowerCase();
+  if(q) items=items.filter(r=>((r.repo_name||'')+(r.author||'')+(r.monitor_keyword||'')+(r.repo_description||'')).toLowerCase().includes(q));
+  items.sort((a,b)=>(b.final_score||0)-(a.final_score||0));
+  return items;
+}
+function loadRecords(){
+  const items=filteredRecords();
+  const allTags=new Set();
+  items.forEach(r=>(r.tags||'').split(',').forEach(t=>{t=t.trim(); if(t) allTags.add(t);}));
+  document.getElementById('tag-filter').innerHTML=[...allTags].sort().slice(0,30).map(t=>
+    `<span class="tag-chip${t===state.tagFilter?' active':''}" onclick="state.tagFilter=(state.tagFilter==='${t.replace(/'/g,"\\'")}'?null:'${t.replace(/'/g,"\\'")}');state.currentPage=1;loadRecords();">${esc(t)}</span>`
+  ).join('');
+  state.totalRecords=items.length;
+  const maxPage=Math.max(1, Math.ceil(items.length/state.pageSize));
+  if(state.currentPage>maxPage) state.currentPage=maxPage;
+  const start=(state.currentPage-1)*state.pageSize;
+  const page=items.slice(start, start+state.pageSize);
+  document.getElementById('records-table').innerHTML = page.length ? `<table class="tbl"><thead><tr>
+    <th>分</th><th>置信</th><th>类型</th><th>名称</th><th>作者</th><th>Stars</th><th>标签</th><th>时间</th>
+  </tr></thead><tbody>${page.map(r=>`<tr onclick="showRecordByUrl('${(r.repo_url||'').replace(/'/g,"&#39;")}')">
+    <td class="score">${Number(r.final_score||0).toFixed(1)}</td>
+    <td><span class="badge b-${r.confidence||'low'}">${r.confidence||'n/a'}</span></td>
+    <td><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></td>
+    <td><a href="${r.repo_url}" target="_blank" onclick="event.stopPropagation()">${esc(r.repo_name)}</a></td>
+    <td>${esc(r.author||'-')}</td>
+    <td class="stars">${r.stars||0}⭐</td>
+    <td>${(r.tags||'').split(',').slice(0,3).map(t=>`<span class="badge">${esc(t.trim())}</span>`).join(' ')}</td>
+    <td class="time">${esc((r.discovered_at||'').slice(0,16))}</td>
+  </tr>`).join('')}</tbody></table>` : '<div class="empty">暂无匹配记录</div>';
+  document.getElementById('r-info').textContent=`${items.length?start+1:0}-${Math.min(start+state.pageSize,items.length)} / ${items.length}`;
+  document.getElementById('r-pg').textContent=`${state.currentPage} / ${maxPage}`;
+}
+function goPage(d){state.currentPage+=d; if(state.currentPage<1)state.currentPage=1; loadRecords();}
+document.getElementById('type-tabs').onclick=e=>{
+  if(!e.target.classList.contains('tab')) return;
+  document.querySelectorAll('#type-tabs .tab').forEach(t=>t.classList.remove('active'));
+  e.target.classList.add('active'); state.currentPage=1; state.tagFilter=null; loadRecords();
+};
+document.getElementById('skill-tabs').onclick=e=>{
+  if(!e.target.classList.contains('tab')) return;
+  document.querySelectorAll('#skill-tabs .tab').forEach(t=>t.classList.remove('active'));
+  e.target.classList.add('active'); state.skillCat=e.target.dataset.cat||''; loadSkills();
+};
+function loadSkills(){
+  let items=[...state.skills];
+  if(state.skillCat){
+    items=items.filter(s=>(s.category||[]).includes(state.skillCat) || (state.skillCat==='security' && (s.security_relevant||0)>=0.4));
+  }
+  const q=(document.getElementById('skill-search')?.value||'').toLowerCase();
+  if(q) items=items.filter(s=>((s.name||'')+(s.display_name||'')+(s.description||'')).toLowerCase().includes(q));
+  items.sort((a,b)=>((b.scores||{}).final||0)-((a.scores||{}).final||0));
+  const el=document.getElementById('skills-list');
+  if(!items.length){el.innerHTML='<div class="empty">暂无 skill 数据。运行 python -m monitor.run --skills</div>';return;}
+  el.innerHTML=`<div class="skill-grid">${items.map(s=>`
+    <div class="skill-card">
+      <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start;">
+        <h4>${esc(s.display_name||s.name)}</h4>
+        <span class="score">${Number((s.scores||{}).final||0).toFixed(1)}</span>
+      </div>
+      <div style="margin-bottom:8px;">
+        <span class="badge b-${s.source||'seed'}">${esc(s.source||'?')}</span>
+        ${(s.category||[]).slice(0,3).map(c=>`<span class="badge">${esc(c)}</span>`).join('')}
+        ${(s.security_relevant||0)>=0.4?'<span class="badge b-high">security</span>':''}
+      </div>
+      <p>${esc(s.description||'')}</p>
+      <div class="recent-meta">
+        <span>⬇ ${((s.stats||{}).installs||0)}</span>
+        <span>⭐ ${((s.stats||{}).stars||0)}</span>
+        <span>DL ${((s.stats||{}).downloads||0)}</span>
+      </div>
+      <div class="install-box">${esc(s.install||s.homepage||'')}</div>
+      <div class="skill-actions">
+        <button class="btn btn-p" onclick="copyText(\`${(s.install||'').replace(/`/g,'\\`')}\`)">复制安装</button>
+        ${s.homepage?`<a class="btn btn-g" href="${s.homepage}" target="_blank">主页</a>`:''}
+        ${s.repo_url?`<a class="btn btn-g" href="${s.repo_url}" target="_blank">Repo</a>`:''}
+      </div>
+    </div>`).join('')}</div>`;
+}
 function loadTrending(){
-    const el=document.getElementById('trending-list');
-    if(!state.trending.length){el.innerHTML='<div class="empty">暂无热门数据，每周一自动更新</div>';return;}
-    el.innerHTML=`<div class="trend-list">${state.trending.map((r,i)=>`
-        <div class="trend-item2">
-            <div class="trend-rank${i<3?' top3':''}">${i+1}</div>
-            <div class="trend-info2">
-                <div class="trend-name2"><a href="${r.repo_url}" target="_blank">${r.repo_name}</a></div>
-                <div class="trend-desc2">${r.repo_description||''}</div>
-            </div>
-            <div class="trend-meta2">${r.stars||0} ⭐<br>${r.forks||0} forks</div>
-        </div>`).join('')}</div>`;
+  const el=document.getElementById('trending-list');
+  if(!state.trending.length){el.innerHTML='<div class="empty">暂无热门数据</div>';return;}
+  el.innerHTML=`<div class="trend-list">${state.trending.map((r,i)=>`
+    <div class="trend-item2">
+      <div class="trend-rank${i<3?' top3':''}">${i+1}</div>
+      <div class="trend-info2">
+        <div class="trend-name2"><a href="${r.repo_url}" target="_blank">${esc(r.repo_name)}</a></div>
+        <div class="trend-desc2">${esc(r.repo_description||'')}</div>
+      </div>
+      <div class="trend-meta2">${r.stars||0} ⭐<br>${r.forks||0} forks</div>
+    </div>`).join('')}</div>`;
 }
-
 function loadExecutions(){
-    const el=document.getElementById('execs-list');
-    if(!state.executions.length){el.innerHTML='<div class="empty">暂无执行记录</div>';return;}
-    el.innerHTML=`<div class="exec-list">${state.executions.slice(-30).reverse().map(e=>{
-        const ok=e.status==='success';
-        return `<div class="exec-item2">
-            <div class="exec-dot ${ok?'s':'e'}"></div>
-            <div class="exec-main2">
-                <div class="exec-type">${e.type||'?'}</div>
-                <div class="exec-time">${e.started_at?.slice(0,19)||''}</div>
-            </div>
-            <div class="exec-results2">${e.total_new||0} new<br>${e.duration_seconds?.toFixed(1)||0}s</div>
-        </div>`;
-    }).join('')}</div>`;
+  const el=document.getElementById('execs-list');
+  if(!state.executions.length){el.innerHTML='<div class="empty">暂无执行记录</div>';return;}
+  el.innerHTML=`<div class="exec-list">${state.executions.slice(-40).reverse().map(e=>{
+    const ok=e.status!=='error';
+    const detail = e.results ? Object.entries(e.results).map(([k,v])=>{
+      if(v && typeof v==='object') return `${k}:${v.kept??v.updated??0}`;
+      return `${k}:${v}`;
+    }).join(' ') : '';
+    return `<div class="exec-item2">
+      <div class="exec-dot ${ok?'s':'e'}"></div>
+      <div class="exec-main2">
+        <div class="exec-type">${esc(e.type||'?')} ${e.version?('v'+e.version):''}</div>
+        <div class="exec-time">${esc((e.started_at||'').slice(0,19))} · ${esc(detail)}</div>
+      </div>
+      <div class="exec-results2">${e.total_new||0} new<br>${Number(e.duration_seconds||0).toFixed(1)}s</div>
+    </div>`;
+  }).join('')}</div>`;
 }
-
-// Detail Modal
-function showDetail(r){
-    if(!r) return;
-    document.getElementById('modal-title').textContent=r.repo_name||'Record Detail';
-    const desc=r.repo_description||'';
-    const isEnglish=!!desc && !/[\u4e00-\u9fff]/.test(desc);
-    document.getElementById('modal-body').innerHTML=`
-        <div class="modal-field"><label>类型</label><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></div>
-        <div class="modal-field"><label>链接</label><a class="val" href="${r.repo_url}" target="_blank">${r.repo_url}</a></div>
-        <div class="modal-field"><label>作者</label><div class="val">${r.author||'-'}</div></div>
-        <div class="modal-field"><label>Stars</label><div class="val">${r.stars||0} ⭐</div></div>
-        <div class="modal-field"><label>语言</label><div class="val">${r.language||'-'}</div></div>
-        <div class="modal-field"><label>标签</label><div class="val">${(r.tags||'').split(',').map(t=>'<span class="badge">'+t.trim()+'</span>').join(' ')||'-'}</div></div>
-        <div class="modal-field"><label>关键词</label><div class="val">${r.monitor_keyword||'-'}</div></div>
-        <div class="modal-field"><label>发现时间</label><div class="val">${(r.discovered_at||'').slice(0,19)}</div></div>
-        <div class="modal-field"><label>Description${isEnglish?' (英文原文)':''}</label><div class="modal-desc">${desc||'No description'}</div></div>
-        ${r.description_cn&&r.description_cn!==desc?`<div class="modal-field"><label>Description (中文翻译)</label><div class="modal-desc">${r.description_cn}</div></div>`:''}
-    `;
-    document.getElementById('detail-modal').style.display='flex';
+function displayDesc(r){
+  const cn=(r.description_cn||'').trim();
+  const en=(r.repo_description||'').trim();
+  if(cn && cn!==en) return cn;
+  return en || '暂无描述';
 }
-
+function showRecordByUrl(url){
+  const r=state.records.find(x=>x.repo_url===url);
+  if(!r) return;
+  document.getElementById('modal-title').textContent=r.repo_name||'详情';
+  const en=(r.repo_description||'').trim();
+  const cn=(r.description_cn||'').trim();
+  const hasCn=cn && cn!==en;
+  document.getElementById('modal-body').innerHTML=`
+    <div class="modal-field"><label>评分</label><div class="val score">${Number(r.final_score||0).toFixed(2)}
+      (rel ${Number(r.relevance_score||0).toFixed(2)} / qual ${Number(r.quality_score||0).toFixed(2)})
+      <span class="badge b-${r.confidence||'low'}">${r.confidence||'n/a'}</span></div></div>
+    <div class="modal-field"><label>类型</label><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></div>
+    <div class="modal-field"><label>链接</label><a class="val" href="${r.repo_url}" target="_blank">${esc(r.repo_url)}</a></div>
+    <div class="modal-field"><label>作者 / Stars / 语言</label><div class="val">${esc(r.author||'-')} · ⭐${r.stars||0} · ${esc(r.language||'-')}</div></div>
+    <div class="modal-field"><label>命中</label><div class="val">${esc(r.monitor_keyword||'-')}</div></div>
+    <div class="modal-field"><label>原因</label><div class="val">${(r.reasons||[]).map(x=>`<span class="badge">${esc(x)}</span>`).join(' ')||'-'}</div></div>
+    <div class="modal-field"><label>描述（中文）</label><div class="modal-desc">${esc(hasCn?cn:(en||'暂无描述'))}</div></div>
+    ${hasCn?`<div class="modal-field"><label>描述（英文原文）</label><div class="modal-desc">${esc(en)}</div></div>`:''}
+  `;
+  document.getElementById('detail-modal').style.display='flex';
+}
 function closeModal(){document.getElementById('detail-modal').style.display='none';}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function copyText(t){
+  if(!t) return;
+  navigator.clipboard.writeText(t).then(()=>toast('已复制安装命令')).catch(()=>toast('复制失败'));
+}
+function toast(msg){
+  const n=document.createElement('div'); n.className='toast'; n.textContent=msg; document.body.appendChild(n);
+  setTimeout(()=>n.remove(),1800);
+}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-
 init();
 </script>
 </body>

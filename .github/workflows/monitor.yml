@@ -10,7 +10,7 @@ on:
         description: 'Run mode'
         required: true
         type: choice
-        options: [daily, trending, all]
+        options: [daily, trending, skills, all, migrate]
         default: daily
 
 permissions:
@@ -27,6 +27,12 @@ jobs:
           cache: 'pip'
       - run: pip install -r requirements.txt
 
+      - name: Migrate historical scores
+        if: github.event.inputs.mode == 'migrate'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python -m monitor.run --migrate-only --publish
+
       - name: Daily Monitor
         if: github.event_name == 'schedule' || github.event.inputs.mode == 'daily' || github.event.inputs.mode == 'all'
         env:
@@ -34,19 +40,28 @@ jobs:
           DINGDING_WEBHOOK: ${{ secrets.DINGDING_WEBHOOK }}
           DINGDING_SECRET: ${{ secrets.DINGDING_SECRET }}
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
-        run: python monitor/run.py --daily
+        run: python -m monitor.run --daily --publish
 
       - name: Trending Monitor
         if: github.event.inputs.mode == 'trending' || github.event.inputs.mode == 'all'
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: python monitor/run.py --trending
+        run: python -m monitor.run --trending --publish
+
+      - name: Skills Discovery
+        if: github.event.inputs.mode == 'skills' || github.event.inputs.mode == 'all'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          DINGDING_WEBHOOK: ${{ secrets.DINGDING_WEBHOOK }}
+          DINGDING_SECRET: ${{ secrets.DINGDING_SECRET }}
+        run: python -m monitor.run --skills --publish
 
       - name: Commit & Push Data
         run: |
-          cp data/*.json docs/data/
+          mkdir -p docs/data
+          cp -f data/*.json docs/data/ 2>/dev/null || true
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ docs/data/
-          git diff --staged --quiet || git commit -m "[bot] monitor $(date -u +%Y-%m-%dT%H:%M)"
+          git add data/ docs/data/ config/ || true
+          git diff --staged --quiet || git commit -m "[bot] monitor v5 $(date -u +%Y-%m-%dT%H:%M)"
           git push

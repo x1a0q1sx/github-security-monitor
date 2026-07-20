@@ -1,0 +1,178 @@
+# Layered keywords for relevance scoring.
+# S: precise — may pass alone (if quality ok)
+# A: contextual — MUST combine with security context or another A/S term
+# B: broad — additive only, never enough alone
+
+score_threshold_legacy: 5  # unused in V5 final gate; kept for reference
+
+tiers:
+  S:
+    - { keyword: "cobalt strike", score: 5 }
+    - { keyword: "cobaltstrike", score: 5 }
+    - { keyword: "cs beacon", score: 5 }
+    - { keyword: "malleable c2", score: 5 }
+    - { keyword: "aggressor script", score: 4 }
+    - { keyword: "cs teamserver", score: 4 }
+    - { keyword: "cs aggressor", score: 4 }
+    - { keyword: "shadowpad", score: 5 }
+    - { keyword: "plugx", score: 5 }
+    - { keyword: "mythic c2", score: 4 }
+    - { keyword: "sliver c2", score: 4 }
+    - { keyword: "havoc c2", score: 4 }
+    - { keyword: "covenant c2", score: 3 }
+    - { keyword: "poshc2", score: 3 }
+    - { keyword: "merlin c2", score: 3 }
+    - { keyword: "empire c2", score: 3 }
+    - { keyword: "silenttrinity", score: 3 }
+    - { keyword: "koadic c2", score: 3 }
+    - { keyword: "meterpreter", score: 4 }
+    - { keyword: "godzilla webshell", score: 5 }
+    - { keyword: "reflective dll injection", score: 5 }
+    - { keyword: "process hollowing", score: 5 }
+    - { keyword: "process doppelganging", score: 4 }
+    - { keyword: "direct syscall", score: 5 }
+    - { keyword: "indirect syscall", score: 4 }
+    - { keyword: "syscall evasion", score: 4 }
+    - { keyword: "ntdll unhook", score: 5 }
+    - { keyword: "api unhooking", score: 4 }
+    - { keyword: "edr bypass", score: 5 }
+    - { keyword: "amsi bypass", score: 5 }
+    - { keyword: "etw bypass", score: 3 }
+    - { keyword: "av bypass", score: 3 }
+    - { keyword: "defender bypass", score: 3 }
+    - { keyword: "in-memory execution", score: 5 }
+    - { keyword: "fileless execution", score: 5 }
+    - { keyword: "shellcode loader", score: 4 }
+    - { keyword: "shellcode injection", score: 4 }
+    - { keyword: "shellcode encryption", score: 4 }
+    - { keyword: "shellcode obfuscation", score: 4 }
+    - { keyword: "shellcode runner", score: 3 }
+    - { keyword: "payload loader", score: 4 }
+    - { keyword: "manual mapping", score: 4 }
+    - { keyword: "module stomping", score: 3 }
+    - { keyword: "thread hijacking", score: 3 }
+    - { keyword: "earlybird injection", score: 3 }
+    - { keyword: "sleep obfuscation", score: 3 }
+    - { keyword: "stack spoofing", score: 3 }
+    - { keyword: "quasar rat", score: 3 }
+    - { keyword: "async rat", score: 3 }
+    - { keyword: "pupy rat", score: 3 }
+    - { keyword: "njrat", score: 2 }
+    - { keyword: "remcos rat", score: 3 }
+    - { keyword: "红队框架", score: 4 }
+    - { keyword: "红队工具", score: 3 }
+
+  A:
+    # Ambiguous / high-noise alone — need second signal
+    - { keyword: "c2", score: 3, whole_word: true }
+    - { keyword: "0day", score: 4, whole_word: true }
+    - { keyword: "shellcode", score: 4 }
+    - { keyword: "webshell", score: 3 }
+    - { keyword: "rce", score: 3, whole_word: true }
+    - { keyword: "beacon", score: 2, whole_word: true }
+    - { keyword: "implant", score: 2 }
+    - { keyword: "fileless", score: 3 }
+    - { keyword: "post exploitation", score: 3 }
+    - { keyword: "red team", score: 3 }
+    - { keyword: "redteam", score: 3 }
+    - { keyword: "红队", score: 3 }
+    - { keyword: "apt工具", score: 4 }
+    - { keyword: "apt攻击", score: 4 }
+    - { keyword: "内存加载", score: 3 }
+    - { keyword: "内存执行", score: 3 }
+    - { keyword: "反射加载", score: 3 }
+    - { keyword: "反射注入", score: 3 }
+    - { keyword: "进程注入", score: 3 }
+    - { keyword: "手动映射", score: 3 }
+    - { keyword: "系统调用绕过", score: 3 }
+
+  B:
+    - { keyword: "exploit", score: 2 }
+    - { keyword: "exploitation", score: 2 }
+    - { keyword: "cve", score: 2, whole_word: true }
+    - { keyword: "payload generator", score: 2 }
+    - { keyword: "payload builder", score: 2 }
+    - { keyword: "payload obfuscation", score: 2 }
+    - { keyword: "sql injection", score: 2 }
+    - { keyword: "ssrf", score: 2, whole_word: true }
+    - { keyword: "xxe", score: 2, whole_word: true }
+    - { keyword: "反序列化", score: 2 }
+    - { keyword: "漏洞利用", score: 3 }
+    - { keyword: "漏洞挖掘", score: 3 }
+    - { keyword: "漏洞分析", score: 1 }
+    - { keyword: "渗透测试", score: 2 }
+    - { keyword: "scanner", score: 1 }
+    - { keyword: "fuzz", score: 1 }
+    - { keyword: "network scanner", score: 1 }
+    - { keyword: "port scanner", score: 1 }
+    - { keyword: "security research", score: 1 }
+    - { keyword: "malware analysis", score: 1 }
+    - { keyword: "reverse engineering", score: 1 }
+    - { keyword: "binary analysis", score: 1 }
+    - { keyword: "threat hunting", score: 1 }
+    - { keyword: "incident response", score: 1 }
+    - { keyword: "agent framework", score: 1 }
+    - { keyword: "implant server", score: 2 }
+    - { keyword: "安全研究", score: 1 }
+    - { keyword: "逆向分析", score: 1 }
+    - { keyword: "信息收集", score: 1 }
+    - { keyword: "资产收集", score: 1 }
+    - { keyword: "子域名扫描", score: 1 }
+    - { keyword: "端口扫描", score: 1 }
+    - { keyword: "漏洞扫描", score: 1 }
+    - { keyword: "内网", score: 1 }
+
+# Extra security-context terms that can "unlock" tier-A keywords
+security_context:
+  - exploit
+  - vulnerability
+  - malware
+  - redteam
+  - red team
+  - offensive
+  - pentest
+  - penetration
+  - cybersecurity
+  - infosec
+  - ransomware
+  - backdoor
+  - trojan
+  - payload
+  - privilege
+  - escalation
+  - lateral
+  - phishing
+  - c2 framework
+  - command and control
+  - beacon
+  - shellcode
+  - bypass
+  - evasion
+  - 漏洞
+  - 免杀
+  - 渗透
+  - 木马
+  - 后门
+  - 远控
+  - 红队
+  - 蓝队
+  - 安全
+
+# GitHub search queries used by keyword source (batched).
+# Prefer precise phrases; A-tier single tokens are searched with security qualifier.
+search_queries:
+  S:
+    - '"cobalt strike" OR cobaltstrike OR "malleable c2" OR "aggressor script"'
+    - '"sliver c2" OR "mythic c2" OR "havoc c2" OR "covenant c2" OR meterpreter'
+    - '"process hollowing" OR "reflective dll" OR "direct syscall" OR "ntdll unhook"'
+    - '"amsi bypass" OR "edr bypass" OR "etw bypass" OR "shellcode loader"'
+    - '"godzilla webshell" OR "quasar rat" OR "async rat" OR poshc2 OR silenttrinity'
+    - 'shadowpad OR plugx OR "fileless execution" OR "in-memory execution"'
+  A:
+    - 'shellcode (bypass OR loader OR injection OR encryption OR evasion)'
+    - 'webshell (godzilla OR behinder OR antsword OR manage)'
+    - '"red team" OR redteam (tool OR framework OR c2 OR arsenal)'
+    - '0day (exploit OR poc OR vulnerability)'
+  B:
+    - '"sql injection" OR ssrf OR xxe (tool OR scanner OR payload)'
+    - '"malware analysis" OR "threat hunting" OR "incident response" stars:>5'
