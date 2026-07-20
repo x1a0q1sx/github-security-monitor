@@ -2603,5 +2603,56 @@
     "total_new": 47,
     "version": 5,
     "id": 173
+  },
+  {
+    "type": "daily",
+    "status": "success",
+    "started_at": "2026-07-20T06:33:12",
+    "finished_at": "2026-07-20T06:33:43",
+    "duration_seconds": 31.066819,
+    "results": {
+      "cve": {
+        "candidates": 80,
+        "duplicates": 1,
+        "dropped": 4,
+        "low_score": 66,
+        "kept": 9,
+        "drop_reasons": {
+          "no_info": 1,
+          "author_cap": 3
+        },
+        "source": "cve"
+      },
+      "keyword": {
+        "candidates": 52,
+        "duplicates": 9,
+        "dropped": 0,
+        "low_score": 31,
+        "kept": 12,
+        "drop_reasons": {},
+        "source": "keyword",
+        "queries": 12
+      },
+      "user": {
+        "candidates": 0,
+        "duplicates": 0,
+        "dropped": 0,
+        "low_score": 0,
+        "kept": 0,
+        "drop_reasons": {},
+        "source": "user"
+      },
+      "tool": {
+        "checked": 7,
+        "updated": 3,
+        "initialized": 7,
+        "errors": 0,
+        "source": "tool",
+        "kept": 3
+      }
+    },
+    "total_new": 24,
+    "version": 5,
+    "id": 174
   }
 ]
