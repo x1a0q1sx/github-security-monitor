@@ -7115,18 +7115,89 @@
         "webshells"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "SentinelXofficial/sxwp2shell",
+      "repo_url": "https://github.com/SentinelXofficial/sxwp2shell",
+      "repo_description": "WordPress wp2shell pre-auth RCE exploit kit (CVE-2026-63030 + CVE-2026-60137)",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "SentinelXofficial",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-07-20T10:41:11Z",
+      "pushed_at": "2026-07-20T10:49:05Z",
+      "description_cn": "WordPress wp2shell 预授权 RCE 漏洞利用套件 (CVE-2026-63030 + CVE-2026-60137)",
+      "discovered_at": "2026-07-20 15:44:02",
+      "final_score": 6.52,
+      "relevance_score": 8.5,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "Whispergate/JanusLoader",
+      "repo_url": "https://github.com/Whispergate/JanusLoader",
+      "repo_description": "RISC-V VM based shellcode loader",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode loader(4S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "Whispergate",
+      "stars": 2,
+      "language": "C++",
+      "created_at": "2026-06-28T17:53:07Z",
+      "pushed_at": "2026-07-19T08:44:19Z",
+      "description_cn": "基于 RISC-V VM 的 shellcode 加载器",
+      "discovered_at": "2026-07-20 15:44:07",
+      "final_score": 6.07,
+      "relevance_score": 8.0,
+      "quality_score": 3.7,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode loader(4S)",
+        "shellcode(4A)",
+        "stars>=1",
+        "desc_short",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode loader",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 194,
-  "last_updated": "2026-07-20T10:39:13",
+  "total": 196,
+  "last_updated": "2026-07-20T15:44:11",
   "by_type": {
-    "keyword": 171,
-    "cve": 16,
+    "keyword": 172,
+    "cve": 17,
     "tool": 7
   },
   "by_confidence": {
     "high": 18,
-    "medium": 174,
+    "medium": 176,
     "low": 2
   },
   "meta": {
