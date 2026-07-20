@@ -10,6 +10,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 import traceback
@@ -226,6 +227,29 @@ def run_migrate(storage: Storage, cfg: Dict[str, Any]) -> Dict[str, Any]:
     return mod.migrate(storage, cfg)
 
 
+def run_suggest_keywords(storage: Storage) -> Dict[str, Any]:
+    import importlib.util
+    from pathlib import Path
+
+    path = Path(__file__).resolve().parent.parent / "scripts" / "suggest_keywords.py"
+    spec = importlib.util.spec_from_file_location("suggest_keywords", path)
+    mod = importlib.util.module_from_spec(spec)
+    assert spec and spec.loader
+    spec.loader.exec_module(mod)
+    doc = mod.suggest_keywords()
+    out = storage.data_dir / "keyword_suggestions.json"
+    out.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(
+        f"[suggest] {len(doc.get('suggestions') or [])} suggestions, "
+        f"{len(doc.get('noise_terms') or [])} noise terms"
+    )
+    return {
+        "kept": len(doc.get("suggestions") or []),
+        "noise_terms": len(doc.get("noise_terms") or []),
+        "stats": doc.get("stats") or {},
+    }
+
+
 def main(argv: List[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="GitHub Security Monitor V5")
     parser.add_argument("--daily", action="store_true", help="CVE + keyword + user + tool")
@@ -237,6 +261,11 @@ def main(argv: List[str] | None = None) -> int:
     parser.add_argument("--user", action="store_true")
     parser.add_argument("--tool", action="store_true")
     parser.add_argument("--migrate-only", action="store_true", help="Rescore/archive historical records")
+    parser.add_argument(
+        "--suggest-keywords",
+        action="store_true",
+        help="Suggest keyword additions/demotions from keep+noise history",
+    )
     parser.add_argument("--hours", type=int, default=0, help="Optional time window hint (hours)")
     parser.add_argument("--publish", action="store_true", help="Copy data/*.json to docs/data/")
     args = parser.parse_args(argv)
@@ -251,15 +280,26 @@ def main(argv: List[str] | None = None) -> int:
 
     results: Dict[str, Any] = {}
 
-    if args.migrate_only or not any(
-        [args.daily, args.trending, args.skills, args.all, args.cve, args.keyword, args.user, args.tool]
-    ):
-        # default help if nothing selected — but migrate-only is explicit
-        if args.migrate_only:
-            results["migrate"] = run_migrate(storage, cfg)
-        elif not any([args.daily, args.trending, args.skills, args.all, args.cve, args.keyword, args.user, args.tool]):
-            parser.print_help()
-            return 2
+    selected = any(
+        [
+            args.daily,
+            args.trending,
+            args.skills,
+            args.all,
+            args.cve,
+            args.keyword,
+            args.user,
+            args.tool,
+            args.migrate_only,
+            args.suggest_keywords,
+        ]
+    )
+    if not selected:
+        parser.print_help()
+        return 2
+
+    if args.migrate_only:
+        results["migrate"] = run_migrate(storage, cfg)
 
     if args.all or args.daily:
         results.update(run_daily(cfg, storage, hours=args.hours or None))
@@ -267,6 +307,8 @@ def main(argv: List[str] | None = None) -> int:
         results.update(run_trending(cfg, storage))
     if args.all or args.skills:
         results.update(run_skills(cfg, storage))
+    if args.suggest_keywords or args.all:
+        results["suggest_keywords"] = run_suggest_keywords(storage)
 
     # individual sources
     if args.cve or args.keyword or args.user or args.tool:

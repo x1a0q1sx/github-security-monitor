@@ -130,6 +130,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <div class="nav-item active" data-page="dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>仪表盘</div>
     <div class="nav-item" data-page="records"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>监控记录</div>
     <div class="nav-item" data-page="skills"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>Skill 推荐</div>
+    <div class="nav-item" data-page="keywords"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h10M4 17h13"/></svg>关键词建议</div>
     <div class="nav-item" data-page="trending"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>热门项目</div>
     <div class="nav-item" data-page="execs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>执行历史</div>
     <div class="nav-item" data-page="config"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.6V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>配置</div>
@@ -193,7 +194,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
   <div id="page-skills" class="page" style="display:none">
     <h2 style="font-size:22px;margin-bottom:4px;">Skill 发现推荐</h2>
-    <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">全量 skill 目录 · 安全向加权 · 来自 SkillHub / GitHub / Seed</p>
+    <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">全量 skill 目录 · 安全向加权 · 来自 SkillHub / GitHub / Seed · 点击行查看详情</p>
     <div class="tabs" id="skill-tabs">
       <div class="tab active" data-cat="">全部</div>
       <div class="tab" data-cat="security">安全</div>
@@ -204,9 +205,44 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     </div>
     <div class="filters">
       <input id="skill-search" class="sel" placeholder="搜索 skill..." style="flex:1;max-width:320px;">
-      <button class="btn btn-p" onclick="loadSkills()">搜索</button>
+      <button class="btn btn-p" onclick="state.skillPage=1;loadSkills()">搜索</button>
     </div>
-    <div id="skills-list" class="spin"><div class="spinner"></div></div>
+    <div class="card">
+      <div style="overflow-x:auto;"><div id="skills-table"></div></div>
+      <div class="np"><div class="np-info" id="sk-info">-</div>
+        <div style="display:flex;gap:8px;">
+          <button class="np-btn" onclick="goSkillPage(-1)">上页</button>
+          <span style="padding:6px 8px;font-size:13px;" id="sk-pg">-</span>
+          <button class="np-btn" onclick="goSkillPage(1)">下页</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-keywords" class="page" style="display:none">
+    <h2 style="font-size:22px;margin-bottom:4px;">关键词建议</h2>
+    <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">
+      从历史 keep / noise 记录自动挖掘候选词 · 仅建议不自动改配置 · 人工确认后写入 <code>config/keywords.yaml</code>
+    </p>
+    <div class="stats" style="margin-bottom:16px;">
+      <div class="stat"><div class="l">建议数</div><div class="v" id="kw-total">-</div></div>
+      <div class="stat"><div class="l">Keep 样本</div><div class="v" id="kw-keep">-</div></div>
+      <div class="stat"><div class="l">Noise 样本</div><div class="v" id="kw-noise">-</div></div>
+      <div class="stat"><div class="l">现有词表</div><div class="v" id="kw-exist">-</div></div>
+    </div>
+    <div class="tabs" id="kw-tabs">
+      <div class="tab active" data-kw="add">建议新增</div>
+      <div class="tab" data-kw="demote">建议降权/噪声</div>
+      <div class="tab" data-kw="noise">噪声高频词</div>
+    </div>
+    <div class="filters">
+      <input id="kw-search" class="sel" placeholder="搜索建议词..." style="flex:1;max-width:320px;">
+      <button class="btn btn-p" onclick="loadKeywords()">筛选</button>
+    </div>
+    <div class="card">
+      <div class="card-h"><h3 id="kw-title">建议新增</h3><span id="kw-meta" style="font-size:12px;color:var(--text3)"></span></div>
+      <div style="overflow-x:auto;"><div id="kw-table"></div></div>
+    </div>
   </div>
 
   <div id="page-trending" class="page" style="display:none">
@@ -231,13 +267,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
         <li>工具监控改为 pushed_at / release 变更检测</li>
         <li>新增 Skill 发现推荐（SkillHub + GitHub + Seed）</li>
         <li>历史噪声归档到 <code>data/archive/</code></li>
+        <li>关键词自动建议：<code>python -m monitor.run --suggest-keywords --publish</code></li>
+        <li>描述优先显示中文 <code>description_cn</code>（多源翻译）</li>
       </ul>
+    </div></div>
+    <div class="card"><div class="card-h"><h3>当前关键词分层</h3></div><div class="card-b" style="font-size:13px;color:var(--text2);line-height:1.8;">
+      <p>配置文件：<code>config/keywords.yaml</code></p>
+      <ul style="padding-left:18px;margin-top:8px;">
+        <li><b>S 精确</b>：工具/技术专名，可单独过线（约 54 词）</li>
+        <li><b>A 上下文</b>：歧义词，需安全上下文或叠词（约 21 词）</li>
+        <li><b>B 泛化</b>：宽泛词，只加成（约 34 词）</li>
+      </ul>
+      <p style="margin-top:10px;">建议流程：跑 <code>--suggest-keywords</code> → 在「关键词建议」页审阅 → 人工写入 keywords.yaml → 再跑 daily。</p>
     </div></div>
     <div class="card"><div class="card-h"><h3>定时计划</h3></div><div class="card-b">
       <table class="tbl"><tr><th>触发</th><th>Cron (UTC)</th><th>内容</th></tr>
       <tr><td>Daily ×4</td><td>02/08/14/20:00</td><td>CVE + Keyword + User + Tool</td></tr>
       <tr><td>Skills ×2</td><td>03:00 / 15:00</td><td>Skill 发现推荐</td></tr>
-      <tr><td>Weekly</td><td>Mon 01:00</td><td>热门项目</td></tr></table>
+      <tr><td>Weekly</td><td>Mon 01:00</td><td>热门项目 + 关键词建议（可扩展）</td></tr></table>
     </div></div>
   </div>
 </main>
@@ -255,7 +302,30 @@ const BASE = '.';
 const state = {
   page:'dash', currentPage:1, pageSize:20, totalRecords:0,
   typeFilter:'', tagFilter:null, confFilter:'hm', minScore:6,
-  skillCat:'', records:[], skills:[], trending:[], executions:[], meta:{}
+  skillCat:'', skillPage:1, skillPageSize:20,
+  sortKey:'final_score', sortDir:'desc',
+  skillSortKey:'final', skillSortDir:'desc',
+  kwTab:'add',
+  records:[], skills:[], trending:[], executions:[], meta:{},
+  keywordSuggestions:null
+};
+
+const RECORD_SORTS = {
+  final_score:{label:'分', get:r=>Number(r.final_score||0), cls:'score'},
+  stars:{label:'Stars', get:r=>Number(r.stars||0), cls:'stars'},
+  confidence:{label:'置信', get:r=>{const o={high:3,medium:2,low:1,noise:0};return o[(r.confidence||'').toLowerCase()]||0;}},
+  discovered_at:{label:'时间', get:r=>(r.discovered_at||''), cls:'time'},
+  repo_name:{label:'名称', get:r=>(r.repo_name||'').toLowerCase()},
+  author:{label:'作者', get:r=>(r.author||'').toLowerCase()},
+};
+const SKILL_SORTS = {
+  final:{label:'分', get:s=>Number((s.scores||{}).final||0), cls:'score'},
+  popularity:{label:'热度', get:s=>Number((s.scores||{}).popularity||0)},
+  relevance:{label:'相关', get:s=>Number((s.scores||{}).relevance||0)},
+  installs:{label:'安装', get:s=>Number((s.stats||{}).installs||0)},
+  stars:{label:'Stars', get:s=>Number((s.stats||{}).stars||0), cls:'stars'},
+  discovered_at:{label:'发现时间', get:s=>(s.discovered_at||''), cls:'time'},
+  name:{label:'名称', get:s=>(s.display_name||s.name||'').toLowerCase()},
 };
 
 document.querySelectorAll('.nav-item').forEach(el => el.onclick = () => navigate(el.dataset.page));
@@ -278,12 +348,15 @@ async function init(){
   if(trending) state.trending=trending.items||[];
   const execs=await loadJSON('executions.json');
   if(execs) state.executions=Array.isArray(execs)?execs:[];
+  const kws=await loadJSON('keyword_suggestions.json');
+  if(kws) state.keywordSuggestions=kws;
   refreshCurrentPage();
 }
 function refreshCurrentPage(){
   if(state.page==='dash') updateDashboard();
   else if(state.page==='records') loadRecords();
   else if(state.page==='skills') loadSkills();
+  else if(state.page==='keywords') loadKeywords();
   else if(state.page==='trending') loadTrending();
   else if(state.page==='execs') loadExecutions();
 }
@@ -334,8 +407,34 @@ function filteredRecords(){
   if(state.tagFilter) items=items.filter(r=>(r.tags||'').split(',').map(t=>t.trim()).includes(state.tagFilter));
   const q=(document.getElementById('r-search')?.value||'').toLowerCase();
   if(q) items=items.filter(r=>((r.repo_name||'')+(r.author||'')+(r.monitor_keyword||'')+(r.repo_description||'')).toLowerCase().includes(q));
-  items.sort((a,b)=>(b.final_score||0)-(a.final_score||0));
+  const sort=RECORD_SORTS[state.sortKey];
+  const dir=state.sortDir==='desc'?-1:1;
+  if(sort) items.sort((a,b)=>{
+    const va=sort.get(a), vb=sort.get(b);
+    return va<vb?-1*dir:va>vb?1*dir:0;
+  });
   return items;
+}
+function sortHeader(activeKey, which){
+  const sorts=which==='rec'?RECORD_SORTS:SKILL_SORTS;
+  const dir=which==='rec'?state.sortDir:state.skillSortDir;
+  return Object.entries(sorts).map(([key,def])=>{
+    const isActive=key===activeKey;
+    const arrow=isActive?(dir==='desc'?' ▼':' ▲'):'';
+    const color=isActive?'color:var(--blue);':'';
+    return `<th style="cursor:pointer;user-select:none;${color}" onclick="setSort('${key}','${which}')">${def.label}${arrow}</th>`;
+  }).join('');
+}
+function setSort(key,which){
+  if(which==='rec'){
+    if(state.sortKey===key) state.sortDir=state.sortDir==='desc'?'asc':'desc';
+    else {state.sortKey=key; state.sortDir='desc';}
+    state.currentPage=1; loadRecords();
+  }else{
+    if(state.skillSortKey===key) state.skillSortDir=state.skillSortDir==='desc'?'asc':'desc';
+    else {state.skillSortKey=key; state.skillSortDir='desc';}
+    state.skillPage=1; loadSkills();
+  }
 }
 function loadRecords(){
   const items=filteredRecords();
@@ -350,16 +449,16 @@ function loadRecords(){
   const start=(state.currentPage-1)*state.pageSize;
   const page=items.slice(start, start+state.pageSize);
   document.getElementById('records-table').innerHTML = page.length ? `<table class="tbl"><thead><tr>
-    <th>分</th><th>置信</th><th>类型</th><th>名称</th><th>作者</th><th>Stars</th><th>标签</th><th>时间</th>
+    ${sortHeader(state.sortKey, 'rec')}<th>类型</th><th>标签</th>
   </tr></thead><tbody>${page.map(r=>`<tr onclick="showRecordByUrl('${(r.repo_url||'').replace(/'/g,"&#39;")}')">
     <td class="score">${Number(r.final_score||0).toFixed(1)}</td>
     <td><span class="badge b-${r.confidence||'low'}">${r.confidence||'n/a'}</span></td>
-    <td><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></td>
+    <td class="stars">${r.stars||0}⭐</td>
+    <td class="time">${esc((r.discovered_at||'').slice(0,16))}</td>
     <td><a href="${r.repo_url}" target="_blank" onclick="event.stopPropagation()">${esc(r.repo_name)}</a></td>
     <td>${esc(r.author||'-')}</td>
-    <td class="stars">${r.stars||0}⭐</td>
+    <td><span class="badge b-${r.monitor_type||'keyword'}">${r.monitor_type||'?'}</span></td>
     <td>${(r.tags||'').split(',').slice(0,3).map(t=>`<span class="badge">${esc(t.trim())}</span>`).join(' ')}</td>
-    <td class="time">${esc((r.discovered_at||'').slice(0,16))}</td>
   </tr>`).join('')}</tbody></table>` : '<div class="empty">暂无匹配记录</div>';
   document.getElementById('r-info').textContent=`${items.length?start+1:0}-${Math.min(start+state.pageSize,items.length)} / ${items.length}`;
   document.getElementById('r-pg').textContent=`${state.currentPage} / ${maxPage}`;
@@ -373,42 +472,155 @@ document.getElementById('type-tabs').onclick=e=>{
 document.getElementById('skill-tabs').onclick=e=>{
   if(!e.target.classList.contains('tab')) return;
   document.querySelectorAll('#skill-tabs .tab').forEach(t=>t.classList.remove('active'));
-  e.target.classList.add('active'); state.skillCat=e.target.dataset.cat||''; loadSkills();
+  e.target.classList.add('active'); state.skillCat=e.target.dataset.cat||''; state.skillPage=1; loadSkills();
 };
-function loadSkills(){
+document.getElementById('kw-tabs').onclick=e=>{
+  if(!e.target.classList.contains('tab')) return;
+  document.querySelectorAll('#kw-tabs .tab').forEach(t=>t.classList.remove('active'));
+  e.target.classList.add('active'); state.kwTab=e.target.dataset.kw||'add'; loadKeywords();
+};
+function filteredSkills(){
   let items=[...state.skills];
   if(state.skillCat){
     items=items.filter(s=>(s.category||[]).includes(state.skillCat) || (state.skillCat==='security' && (s.security_relevant||0)>=0.4));
   }
   const q=(document.getElementById('skill-search')?.value||'').toLowerCase();
-  if(q) items=items.filter(s=>((s.name||'')+(s.display_name||'')+(s.description||'')).toLowerCase().includes(q));
-  items.sort((a,b)=>((b.scores||{}).final||0)-((a.scores||{}).final||0));
-  const el=document.getElementById('skills-list');
-  if(!items.length){el.innerHTML='<div class="empty">暂无 skill 数据。运行 python -m monitor.run --skills</div>';return;}
-  el.innerHTML=`<div class="skill-grid">${items.map(s=>`
-    <div class="skill-card">
-      <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start;">
-        <h4>${esc(s.display_name||s.name)}</h4>
-        <span class="score">${Number((s.scores||{}).final||0).toFixed(1)}</span>
-      </div>
-      <div style="margin-bottom:8px;">
-        <span class="badge b-${s.source||'seed'}">${esc(s.source||'?')}</span>
-        ${(s.category||[]).slice(0,3).map(c=>`<span class="badge">${esc(c)}</span>`).join('')}
-        ${(s.security_relevant||0)>=0.4?'<span class="badge b-high">security</span>':''}
-      </div>
-      <p>${esc(s.description||'')}</p>
-      <div class="recent-meta">
-        <span>⬇ ${((s.stats||{}).installs||0)}</span>
-        <span>⭐ ${((s.stats||{}).stars||0)}</span>
-        <span>DL ${((s.stats||{}).downloads||0)}</span>
-      </div>
-      <div class="install-box">${esc(s.install||s.homepage||'')}</div>
-      <div class="skill-actions">
-        <button class="btn btn-p" onclick="copyText(\`${(s.install||'').replace(/`/g,'\\`')}\`)">复制安装</button>
+  if(q) items=items.filter(s=>((s.name||'')+(s.display_name||'')+(s.description||'')+(s.tags||[]).join(' ')).toLowerCase().includes(q));
+  const sort=SKILL_SORTS[state.skillSortKey];
+  const dir=state.skillSortDir==='desc'?-1:1;
+  if(sort) items.sort((a,b)=>{
+    const va=sort.get(a), vb=sort.get(b);
+    return va<vb?-1*dir:va>vb?1*dir:0;
+  });
+  return items;
+}
+function loadSkills(){
+  const items=filteredSkills();
+  const maxPage=Math.max(1, Math.ceil(items.length/state.skillPageSize));
+  if(state.skillPage>maxPage) state.skillPage=maxPage;
+  const start=(state.skillPage-1)*state.skillPageSize;
+  const page=items.slice(start, start+state.skillPageSize);
+  const el=document.getElementById('skills-table');
+  if(!items.length){el.innerHTML='<div class="empty">暂无 skill 数据。运行 python -m monitor.run --skills</div>';document.getElementById('sk-info').textContent='0 / 0';document.getElementById('sk-pg').textContent='1 / 1';return;}
+  el.innerHTML=`<table class="tbl"><thead><tr>
+    ${sortHeader(state.skillSortKey, 'skill')}<th>来源</th><th>分类</th><th>安全</th><th>操作</th>
+  </tr></thead><tbody>${page.map((s)=>`
+    <tr onclick="showSkillById('${esc(s.id||s.name)}')">
+      <td class="score">${Number((s.scores||{}).final||0).toFixed(1)}</td>
+      <td>${Number((s.scores||{}).popularity||0).toFixed(1)}</td>
+      <td>${Number((s.scores||{}).relevance||0).toFixed(1)}</td>
+      <td>${Number((s.stats||{}).installs||0)}</td>
+      <td class="stars">${((s.stats||{}).stars||0)}⭐</td>
+      <td class="time">${esc((s.discovered_at||'').slice(0,16))}</td>
+      <td><a href="${s.repo_url||s.homepage||'#'}" target="_blank" onclick="event.stopPropagation()">${esc(s.display_name||s.name)}</a></td>
+      <td><span class="badge b-${s.source||'seed'}">${esc(s.source||'?')}</span></td>
+      <td>${(s.category||[]).slice(0,2).map(c=>`<span class="badge">${esc(c)}</span>`).join(' ')||'-'}</td>
+      <td>${(s.security_relevant||0)>=0.4?'<span class="badge b-high">✔</span>':'-'}</td>
+      <td onclick="event.stopPropagation()"><button class="np-btn" onclick="copyText(\`${(s.install||'').replace(/`/g,'\\`')}\`)">复制安装</button></td>
+    </tr>`).join('')}</tbody></table>`;
+  document.getElementById('sk-info').textContent=`${start+1}-${Math.min(start+state.skillPageSize,items.length)} / ${items.length}`;
+  document.getElementById('sk-pg').textContent=`${state.skillPage} / ${maxPage}`;
+}
+function goSkillPage(d){state.skillPage+=d; if(state.skillPage<1)state.skillPage=1; loadSkills();}
+function loadKeywords(){
+  const doc=state.keywordSuggestions;
+  const el=document.getElementById('kw-table');
+  if(!doc){
+    el.innerHTML='<div class="empty">暂无关键词建议。运行：python -m monitor.run --suggest-keywords --publish</div>';
+    ['kw-total','kw-keep','kw-noise','kw-exist'].forEach(id=>{const n=document.getElementById(id); if(n)n.textContent='-';});
+    return;
+  }
+  const st=doc.stats||{};
+  document.getElementById('kw-total').textContent=st.suggestions??(doc.suggestions||[]).length;
+  document.getElementById('kw-keep').textContent=st.keep_records??'-';
+  document.getElementById('kw-noise').textContent=st.noise_records??'-';
+  document.getElementById('kw-exist').textContent=st.existing_keywords??'-';
+  document.getElementById('kw-meta').textContent=doc.generated_at?('生成于 '+doc.generated_at):'';
+
+  const q=(document.getElementById('kw-search')?.value||'').toLowerCase();
+  let rows=[];
+  let title='建议新增';
+  if(state.kwTab==='add'){
+    rows=(doc.suggestions||[]).filter(s=>s.action==='add');
+    title='建议新增';
+  }else if(state.kwTab==='demote'){
+    rows=(doc.suggestions||[]).filter(s=>s.action==='demote');
+    title='建议降权';
+  }else{
+    rows=(doc.noise_terms||[]).map(n=>({
+      keyword:n.keyword, action:'noise', suggested_tier:'-', suggested_score:null,
+      keep_df:n.keep_df||0, noise_df:n.noise_df||0, precision:0, lift:0, samples:[]
+    }));
+    title='噪声高频词';
+  }
+  if(q) rows=rows.filter(r=>(r.keyword||'').toLowerCase().includes(q));
+  document.getElementById('kw-title').textContent=title+'（'+rows.length+'）';
+
+  if(!rows.length){el.innerHTML='<div class="empty">无匹配项</div>';return;}
+
+  if(state.kwTab==='noise'){
+    el.innerHTML=`<table class="tbl"><thead><tr>
+      <th>词</th><th>Noise 出现</th><th>Keep 出现</th><th>建议</th>
+    </tr></thead><tbody>${rows.map(r=>`
+      <tr>
+        <td><code>${esc(r.keyword)}</code></td>
+        <td>${r.noise_df}</td>
+        <td>${r.keep_df}</td>
+        <td><span class="badge b-noise">可考虑 penalty / 忽略</span></td>
+      </tr>`).join('')}</tbody></table>`;
+    return;
+  }
+
+  el.innerHTML=`<table class="tbl"><thead><tr>
+    <th>动作</th><th>建议层级</th><th>分值</th><th>关键词</th><th>Keep</th><th>Noise</th><th>Precision</th><th>Lift</th><th>样例</th><th>YAML</th>
+  </tr></thead><tbody>${rows.map(r=>{
+    const yamlLine=r.action==='add'
+      ? `- { keyword: "${r.keyword}", score: ${r.suggested_score||3} }`
+      : `# demote / review: ${r.keyword}`;
+    return `<tr>
+      <td><span class="badge ${r.action==='add'?'b-high':'b-low'}">${esc(r.action)}</span></td>
+      <td>${esc(r.suggested_tier||'-')}</td>
+      <td class="score">${r.suggested_score??'-'}</td>
+      <td><code>${esc(r.keyword)}</code></td>
+      <td>${r.keep_df}</td>
+      <td>${r.noise_df}</td>
+      <td>${Number(r.precision||0).toFixed(2)}</td>
+      <td>${Number(r.lift||0).toFixed(1)}</td>
+      <td style="max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${esc((r.samples||[]).join(', '))}">${esc((r.samples||[]).slice(0,2).join(', ')||'-')}</td>
+      <td onclick="event.stopPropagation()"><button class="np-btn" onclick="copyText(\`${yamlLine.replace(/`/g,'\\`')}\`)">复制</button></td>
+    </tr>`;
+  }).join('')}</tbody></table>`;
+}
+function showSkillById(id){
+  const s=state.skills.find(x=>(x.id||x.name)===id);
+  if(!s) return;
+  document.getElementById('modal-title').textContent=s.display_name||s.name||'Skill 详情';
+  const sc=s.scores||{};
+  const st=s.stats||{};
+  document.getElementById('modal-body').innerHTML=`
+    <div class="modal-field"><label>评分</label><div class="val score">final ${Number(sc.final||0).toFixed(2)}
+      (热度 ${Number(sc.popularity||0).toFixed(2)} / 相关 ${Number(sc.relevance||0).toFixed(2)})
+      ${(s.security_relevant||0)>=0.4?'<span class="badge b-high">security</span>':''}</div></div>
+    <div class="modal-field"><label>来源 / 发现时间</label><div class="val">
+      <span class="badge b-${s.source||'seed'}">${esc(s.source||'?')}</span>
+      ${esc((s.discovered_at||'').slice(0,19)||'-')}
+      ${s.updated_at?(' · 更新 '+esc(String(s.updated_at).slice(0,10))):''}
+    </div></div>
+    <div class="modal-field"><label>名称 / ID</label><div class="val">${esc(s.display_name||s.name)} <span style="color:var(--text3);">${esc(s.id||'')}</span></div></div>
+    <div class="modal-field"><label>链接</label>${s.repo_url?`<a class="val" href="${s.repo_url}" target="_blank">${esc(s.repo_url)}</a>`:'<div class="val">-</div>'}</div>
+    ${s.homepage&&s.homepage!==s.repo_url?`<div class="modal-field"><label>主页</label><a class="val" href="${s.homepage}" target="_blank">${esc(s.homepage)}</a></div>`:''}
+    <div class="modal-field"><label>分类 / 标签</label><div class="val">${(s.category||[]).map(c=>`<span class="badge">${esc(c)}</span>`).join(' ')||'-'} ${(s.tags||[]).slice(0,8).map(t=>`<span class="badge">${esc(t)}</span>`).join(' ')}</div></div>
+    <div class="modal-field"><label>统计</label><div class="val">安装 ${Number(st.installs||0).toLocaleString()} · Stars ${st.stars||0} · 下载 ${Number(st.downloads||0).toLocaleString()}</div></div>
+    <div class="modal-field"><label>原因</label><div class="val">${(s.reasons||[]).map(x=>`<span class="badge">${esc(x)}</span>`).join(' ')||'-'}</div></div>
+    <div class="modal-field"><label>安装命令</label><div class="install-box">${esc(s.install||'')}</div>
+      <div class="skill-actions" style="margin-top:8px;">
+        ${s.install?`<button class="btn btn-p" onclick="copyText(\`${(s.install||'').replace(/`/g,'\\`')}\`)">复制安装</button>`:''}
         ${s.homepage?`<a class="btn btn-g" href="${s.homepage}" target="_blank">主页</a>`:''}
         ${s.repo_url?`<a class="btn btn-g" href="${s.repo_url}" target="_blank">Repo</a>`:''}
-      </div>
-    </div>`).join('')}</div>`;
+      </div></div>
+    <div class="modal-field"><label>描述</label><div class="modal-desc">${esc(s.description||'暂无描述')}</div></div>
+  `;
+  document.getElementById('detail-modal').style.display='flex';
 }
 function loadTrending(){
   const el=document.getElementById('trending-list');

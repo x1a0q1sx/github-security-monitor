@@ -1,0 +1,317 @@
+{
+  "version": 5,
+  "generated_at": "2026-07-20T15:23:03",
+  "stats": {
+    "keep_records": 169,
+    "noise_records": 3804,
+    "existing_keywords": 136,
+    "candidates_seen": 7585,
+    "suggestions": 6
+  },
+  "suggestions": [
+    {
+      "keyword": "tartarus",
+      "action": "add",
+      "suggested_tier": "A",
+      "suggested_score": 3,
+      "keep_df": 4,
+      "noise_df": 1,
+      "precision": 0.8,
+      "lift": 18.81,
+      "avg_stars_keep": 14.8,
+      "is_proper": false,
+      "samples": [
+        "magnetar",
+        "Advanced-Syscall-And-EDR-Evasion-Research",
+        "Dynloader"
+      ]
+    },
+    {
+      "keyword": "tartarus gate",
+      "action": "add",
+      "suggested_tier": "S",
+      "suggested_score": 4,
+      "keep_df": 4,
+      "noise_df": 1,
+      "precision": 0.8,
+      "lift": 18.81,
+      "avg_stars_keep": 14.8,
+      "is_proper": true,
+      "samples": [
+        "magnetar",
+        "Advanced-Syscall-And-EDR-Evasion-Research",
+        "Dynloader"
+      ]
+    },
+    {
+      "keyword": "interactive shell",
+      "action": "add",
+      "suggested_tier": "B",
+      "suggested_score": 2,
+      "keep_df": 4,
+      "noise_df": 5,
+      "precision": 0.444,
+      "lift": 10.45,
+      "avg_stars_keep": 4.0,
+      "is_proper": true,
+      "samples": [
+        "CVE-2026-48909",
+        "CVE-2026-15409",
+        "CVE-2026-14762"
+      ]
+    },
+    {
+      "keyword": "windows x64",
+      "action": "add",
+      "suggested_tier": "B",
+      "suggested_score": 2,
+      "keep_df": 4,
+      "noise_df": 5,
+      "precision": 0.444,
+      "lift": 10.45,
+      "avg_stars_keep": 2.0,
+      "is_proper": true,
+      "samples": [
+        "Morpheus",
+        "FiveDeez",
+        "SheolGate"
+      ]
+    },
+    {
+      "keyword": "security context",
+      "action": "demote",
+      "suggested_tier": null,
+      "suggested_score": null,
+      "keep_df": 87,
+      "noise_df": 404,
+      "precision": 0.177,
+      "lift": 4.17,
+      "avg_stars_keep": 440.5,
+      "is_proper": true,
+      "samples": [
+        "Penetration_Testing_POC",
+        "JS-Tap",
+        "C2PE"
+      ]
+    },
+    {
+      "keyword": "blue team",
+      "action": "demote",
+      "suggested_tier": null,
+      "suggested_score": null,
+      "keep_df": 3,
+      "noise_df": 13,
+      "precision": 0.188,
+      "lift": 4.41,
+      "avg_stars_keep": 865.7,
+      "is_proper": true,
+      "samples": [
+        "RedTeam_BlueTeam_HW",
+        "kiro-cybersecurity-skills",
+        "RCE-CVE-2017-0199-detection-analysis"
+      ]
+    }
+  ],
+  "noise_terms": [
+    {
+      "keyword": "without",
+      "noise_df": 156,
+      "keep_df": 1
+    },
+    {
+      "keyword": "without context",
+      "noise_df": 121,
+      "keep_df": 0
+    },
+    {
+      "keyword": "unauthenticated",
+      "noise_df": 97,
+      "keep_df": 2
+    },
+    {
+      "keyword": "static",
+      "noise_df": 83,
+      "keep_df": 2
+    },
+    {
+      "keyword": "automation",
+      "noise_df": 69,
+      "keep_df": 1
+    },
+    {
+      "keyword": "covering",
+      "noise_df": 67,
+      "keep_df": 2
+    },
+    {
+      "keyword": "enumeration",
+      "noise_df": 62,
+      "keep_df": 2
+    },
+    {
+      "keyword": "dashboard",
+      "noise_df": 59,
+      "keep_df": 0
+    },
+    {
+      "keyword": "authentication",
+      "noise_df": 58,
+      "keep_df": 1
+    },
+    {
+      "keyword": "report",
+      "noise_df": 54,
+      "keep_df": 0
+    },
+    {
+      "keyword": "response only",
+      "noise_df": 54,
+      "keep_df": 0
+    },
+    {
+      "keyword": "synthetics",
+      "noise_df": 54,
+      "keep_df": 0
+    },
+    {
+      "keyword": "powered",
+      "noise_df": 53,
+      "keep_df": 2
+    },
+    {
+      "keyword": "reports",
+      "noise_df": 52,
+      "keep_df": 1
+    },
+    {
+      "keyword": "real time",
+      "noise_df": 51,
+      "keep_df": 1
+    },
+    {
+      "keyword": "learning",
+      "noise_df": 51,
+      "keep_df": 2
+    },
+    {
+      "keyword": "arbitrary",
+      "noise_df": 50,
+      "keep_df": 1
+    },
+    {
+      "keyword": "service",
+      "noise_df": 48,
+      "keep_df": 0
+    },
+    {
+      "keyword": "injection only",
+      "noise_df": 48,
+      "keep_df": 0
+    },
+    {
+      "keyword": "writeups",
+      "noise_df": 46,
+      "keep_df": 1
+    },
+    {
+      "keyword": "public",
+      "noise_df": 46,
+      "keep_df": 2
+    },
+    {
+      "keyword": "vulnerable",
+      "noise_df": 45,
+      "keep_df": 2
+    },
+    {
+      "keyword": "against",
+      "noise_df": 44,
+      "keep_df": 0
+    },
+    {
+      "keyword": "detects",
+      "noise_df": 43,
+      "keep_df": 1
+    },
+    {
+      "keyword": "traffic",
+      "noise_df": 43,
+      "keep_df": 2
+    },
+    {
+      "keyword": "research only",
+      "noise_df": 43,
+      "keep_df": 0
+    },
+    {
+      "keyword": "secure",
+      "noise_df": 40,
+      "keep_df": 1
+    },
+    {
+      "keyword": "real world",
+      "noise_df": 40,
+      "keep_df": 1
+    },
+    {
+      "keyword": "claude",
+      "noise_df": 39,
+      "keep_df": 1
+    },
+    {
+      "keyword": "native",
+      "noise_df": 39,
+      "keep_df": 2
+    },
+    {
+      "keyword": "defensive",
+      "noise_df": 39,
+      "keep_df": 2
+    },
+    {
+      "keyword": "across",
+      "noise_df": 39,
+      "keep_df": 2
+    },
+    {
+      "keyword": "critical",
+      "noise_df": 38,
+      "keep_df": 1
+    },
+    {
+      "keyword": "ai powered",
+      "noise_df": 38,
+      "keep_df": 1
+    },
+    {
+      "keyword": "comprehensive",
+      "noise_df": 37,
+      "keep_df": 2
+    },
+    {
+      "keyword": "practical",
+      "noise_df": 37,
+      "keep_df": 0
+    },
+    {
+      "keyword": "kernel",
+      "noise_df": 36,
+      "keep_df": 1
+    },
+    {
+      "keyword": "demonstrating",
+      "noise_df": 36,
+      "keep_df": 2
+    },
+    {
+      "keyword": "engineering only",
+      "noise_df": 36,
+      "keep_df": 0
+    },
+    {
+      "keyword": "synthetic",
+      "noise_df": 36,
+      "keep_df": 0
+    }
+  ]
+}

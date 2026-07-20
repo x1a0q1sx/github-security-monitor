@@ -163,7 +163,13 @@ class Storage:
     # ---- publish to docs ----
     def publish_to_docs(self) -> None:
         DOCS_DATA_DIR.mkdir(parents=True, exist_ok=True)
-        for name in ("records.json", "executions.json", "trending.json", "skills.json"):
+        for name in (
+            "records.json",
+            "executions.json",
+            "trending.json",
+            "skills.json",
+            "keyword_suggestions.json",
+        ):
             src = self.data_dir / name
             if src.exists():
                 dest = DOCS_DATA_DIR / name
