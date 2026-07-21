@@ -56,11 +56,13 @@ def run_cve(
         min_final=min_final,
         max_per_author=max_per_author,
     )
-    # extra: require some substance for cve
+    # CVE with a real ID is allowed even with thin description; only drop empty
+    # zero-star shells that also lack any CVE id in name (already filtered above).
     final_kept = []
     for r in kept:
         desc = (r.repo_description or "").strip()
-        if r.stars == 0 and len(desc) < 10:
+        has_cve = bool(re.search(r"CVE-\d{4}-\d+", f"{r.repo_name} {desc}", re.I))
+        if r.stars == 0 and len(desc) < 8 and not has_cve:
             stats["low_score"] = stats.get("low_score", 0) + 1
             stats["kept"] = max(0, stats.get("kept", 1) - 1)
             continue

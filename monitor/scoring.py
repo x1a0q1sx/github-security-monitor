@@ -28,7 +28,11 @@ def _parse_gh_time(value: str) -> Optional[datetime]:
 
 
 def _norm(text: str) -> str:
-    return (text or "").lower()
+    # normalize separators so "amsi-bypass" matches keyword "amsi bypass"
+    t = (text or "").lower()
+    t = re.sub(r"[_\-/]+", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t
 
 
 def _contains(term: str, text: str, whole_word: bool = False) -> bool:
@@ -228,7 +232,8 @@ class Scorer:
             q += 0.7
             reasons.append("stars>=1")
         else:
-            q -= 1.2
+            # mild penalty; precise hits can still pass with good relevance
+            q -= 0.6
             reasons.append("stars=0")
 
         if desc:
@@ -330,12 +335,16 @@ class Scorer:
 
         # star gate
         stars = int(record.stars or 0)
-        precise = tier_hits.get("S", 0) > 0 or record.monitor_type in ("tool", "tool_update", "user_repo")
+        precise = tier_hits.get("S", 0) > 0 or record.monitor_type in ("tool", "tool_update", "user_repo", "cve")
+        has_desc = bool((record.repo_description or "").strip())
         if stars < self.min_stars:
             final -= 2.0
             reasons.append("below_min_stars")
-        if stars == 0 and not (self.allow_zero_precise and precise and (record.repo_description or "").strip()):
-            if record.monitor_type == "keyword":
+        # Zero-star soft penalty: skip for precise S hits that already have a description.
+        if stars == 0 and record.monitor_type == "keyword":
+            if self.allow_zero_precise and precise and has_desc:
+                reasons.append("zero_star_precise_ok")
+            else:
                 final -= 1.5
                 reasons.append("zero_star_soft_penalty")
 

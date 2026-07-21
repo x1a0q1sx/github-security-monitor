@@ -39,6 +39,8 @@ def build_client(cfg: Dict[str, Any]) -> GitHubClient:
         token=gh.get("token") or "",
         timeout=int(gh.get("request_timeout") or 20),
         min_interval_ms=int(gh.get("min_request_interval_ms") or 350),
+        # Search API ~30/min authenticated → default ~2.2s between search calls
+        search_min_interval_ms=int(gh.get("search_min_interval_ms") or 2200),
         max_retries=int(gh.get("max_retries") or 3),
     )
 

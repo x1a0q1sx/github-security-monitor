@@ -11,7 +11,7 @@
 | `rules.skip_*` 配置不生效 | 统一 `Scorer` + `filters` 质量门 |
 | Tool 见过一次永不再报 | 持久化 `tool_state.json`，检测 `pushed_at` / release |
 | User 监控几乎为 0 | 窗口扩到 7 天，兼顾新建仓 |
-| 翻译未接入仪表盘 | 默认开启；多源翻译写入 `description_cn`，UI 优先中文 |
+| 批量 OR 搜索饿死长尾词 | **S 词逐个单搜**；A/B 保留上下文 batch；Search 独立限速 ~2.2s/次 |
 | 历史脏数据 | `--migrate-only` 重算分数并归档噪声 |
 | 无能力发现 | 新增 **Skill 发现推荐**（SkillHub + GitHub + Seed） |
 

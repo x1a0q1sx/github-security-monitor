@@ -158,21 +158,26 @@ security_context:
   - 蓝队
   - 安全
 
-# GitHub search queries used by keyword source (batched).
-# Prefer precise phrases; A-tier single tokens are searched with security qualifier.
+# GitHub search queries.
+#
+# S-tier keywords are searched ONE-BY-ONE from tiers.S (see sources/keyword.py).
+# Do NOT put high-value S terms into big OR batches — GitHub returns only
+# per_page hits for the whole union, so hot terms starve long-tail tools.
+#
+# A/B remain contextual batches (ambiguous tokens need qualifiers).
 search_queries:
-  S:
-    - '"cobalt strike" OR cobaltstrike OR "malleable c2" OR "aggressor script"'
-    - '"sliver c2" OR "mythic c2" OR "havoc c2" OR "covenant c2" OR meterpreter'
-    - '"process hollowing" OR "reflective dll" OR "direct syscall" OR "ntdll unhook"'
-    - '"amsi bypass" OR "edr bypass" OR "etw bypass" OR "shellcode loader"'
-    - '"godzilla webshell" OR "quasar rat" OR "async rat" OR poshc2 OR silenttrinity'
-    - 'shadowpad OR plugx OR "fileless execution" OR "in-memory execution"'
+  # S: intentionally empty — auto-built as single-keyword searches from tiers.S
+  S: []
   A:
-    - 'shellcode (bypass OR loader OR injection OR encryption OR evasion)'
-    - 'webshell (godzilla OR behinder OR antsword OR manage)'
-    - '"red team" OR redteam (tool OR framework OR c2 OR arsenal)'
-    - '0day (exploit OR poc OR vulnerability)'
+    - 'shellcode (bypass OR loader OR injection OR encryption OR evasion OR runner)'
+    - 'webshell (godzilla OR behinder OR antsword OR manage OR china)'
+    - '("red team" OR redteam) (tool OR framework OR c2 OR arsenal OR operator)'
+    - '0day (exploit OR poc OR vulnerability OR rce)'
+    - 'rce (exploit OR vulnerability OR poc OR cve OR remote)'
+    - '(implant OR beacon) (c2 OR cobalt OR sliver OR mythic OR redteam OR framework)'
+    - '("post exploitation" OR "post-exploitation") (tool OR framework OR framework)'
+    - '(内存加载 OR 内存执行 OR 反射加载 OR 反射注入 OR 进程注入) (工具 OR 免杀 OR 红队 OR shellcode)'
   B:
-    - '"sql injection" OR ssrf OR xxe (tool OR scanner OR payload)'
-    - '"malware analysis" OR "threat hunting" OR "incident response" stars:>5'
+    - '("sql injection" OR ssrf OR xxe) (tool OR scanner OR payload OR exploit)'
+    - '("malware analysis" OR "threat hunting" OR "incident response") stars:>5'
+    - '(scanner OR fuzz) (security OR vulnerability OR exploit) stars:>10'

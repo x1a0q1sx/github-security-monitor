@@ -7,17 +7,21 @@ github:
   token: ""  # env GITHUB_TOKEN or GH_TOKEN
   request_timeout: 20
   min_request_interval_ms: 350
+  # Search API is a separate budget (~30/min with token, ~10/min anonymous).
+  # 2200ms ≈ 27 search calls/min, safely under authenticated limit.
+  search_min_interval_ms: 2200
   search_page_size: 30
   max_retries: 3
 
 monitor:
-  # B 平衡档：final >= 6；精确词 + 有描述可过，c2 等禁止单独过线
-  min_final_score: 6.0
+  # Slightly relaxed vs first V5 cut: catch near-miss S/A hits without reopening
+  # pure-noise flood. S keywords are searched one-by-one (not OR-batched).
+  min_final_score: 5.5
   min_stars: 0
   allow_zero_stars_if_precise: true
   skip_forks: true
   skip_empty_description: false  # soft: quality penalty; hard-drop only when also low score
-  skip_no_info: true             # drop empty desc + 0 stars + no language
+  skip_no_info: true             # drop empty desc + 0 stars + no language (CVE exempt in source)
   max_per_author_per_run: 3
   keyword_window_days: 3
   cve_window_days: 2
