@@ -16,11 +16,19 @@ on:
 permissions:
   contents: write
 
+# Serialize all data-writing jobs so concurrent bot commits don't reject each other
+concurrency:
+  group: gsm-data-update
+  cancel-in-progress: false
+
 jobs:
   monitor:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -58,10 +66,29 @@ jobs:
 
       - name: Commit & Push Data
         run: |
+          set -euo pipefail
           mkdir -p docs/data
           cp -f data/*.json docs/data/ 2>/dev/null || true
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ docs/data/ config/ || true
-          git diff --staged --quiet || git commit -m "[bot] monitor v5 $(date -u +%Y-%m-%dT%H:%M)"
-          git push
+          git add data/ docs/data/ || true
+          if git diff --staged --quiet; then
+            echo "No data changes to commit"
+            exit 0
+          fi
+          git commit -m "[bot] monitor v5 $(date -u +%Y-%m-%dT%H:%M)"
+
+          # Rebase onto latest main and push with retries (belt-and-suspenders
+          # with concurrency group, in case another writer still sneaks in).
+          for i in 1 2 3 4 5 6; do
+            git fetch origin main
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "Pushed on attempt ${i}"
+              exit 0
+            fi
+            echo "Push attempt ${i} failed; retrying..."
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 4))
+          done
+          echo "Failed to push after retries"
+          exit 1

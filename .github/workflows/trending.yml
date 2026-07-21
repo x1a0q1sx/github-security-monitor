@@ -2,35 +2,61 @@ name: Weekly Trending Monitor
 
 on:
   schedule:
-    # 每周一 01:00 UTC (北京时间周一 09:00)
-    - cron: '0 1 * * 1'
+    # 每周一 01:30 UTC (错开 monitor 01? monitor is 02:00)
+    - cron: '30 1 * * 1'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: gsm-data-update
+  cancel-in-progress: false
 
 jobs:
   trending:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
       - run: pip install -r requirements.txt
+
       - name: Run Weekly Trending
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           DINGDING_WEBHOOK: ${{ secrets.DINGDING_WEBHOOK }}
           DINGDING_SECRET: ${{ secrets.DINGDING_SECRET }}
         run: python -m monitor.run --trending --publish
+
       - name: Commit & Push Data
         run: |
+          set -euo pipefail
           mkdir -p docs/data
           cp -f data/*.json docs/data/ 2>/dev/null || true
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ docs/data/
-          git diff --staged --quiet || git commit -m "[bot] weekly trending $(date -u +%Y-%m-%dT%H:%M)"
-          git push
+          git add data/ docs/data/ || true
+          if git diff --staged --quiet; then
+            echo "No data changes to commit"
+            exit 0
+          fi
+          git commit -m "[bot] weekly trending $(date -u +%Y-%m-%dT%H:%M)"
+
+          for i in 1 2 3 4 5 6; do
+            git fetch origin main
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "Pushed on attempt ${i}"
+              exit 0
+            fi
+            echo "Push attempt ${i} failed; retrying..."
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 4))
+          done
+          echo "Failed to push after retries"
+          exit 1
