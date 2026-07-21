@@ -494,6 +494,12 @@ function filteredSkills(){
   });
   return items;
 }
+function skillDesc(s){
+  const cn=(s.description_cn||s.description_zh||'').trim();
+  const en=(s.description||'').trim();
+  if(cn && cn!==en) return cn;
+  return en || '暂无描述';
+}
 function loadSkills(){
   const items=filteredSkills();
   const maxPage=Math.max(1, Math.ceil(items.length/state.skillPageSize));
@@ -503,7 +509,7 @@ function loadSkills(){
   const el=document.getElementById('skills-table');
   if(!items.length){el.innerHTML='<div class="empty">暂无 skill 数据。运行 python -m monitor.run --skills</div>';document.getElementById('sk-info').textContent='0 / 0';document.getElementById('sk-pg').textContent='1 / 1';return;}
   el.innerHTML=`<table class="tbl"><thead><tr>
-    ${sortHeader(state.skillSortKey, 'skill')}<th>来源</th><th>分类</th><th>安全</th><th>操作</th>
+    ${sortHeader(state.skillSortKey, 'skill')}<th>来源</th><th>分类</th><th>安全</th><th>描述</th><th>操作</th>
   </tr></thead><tbody>${page.map((s)=>`
     <tr onclick="showSkillById('${esc(s.id||s.name)}')">
       <td class="score">${Number((s.scores||{}).final||0).toFixed(1)}</td>
@@ -516,6 +522,7 @@ function loadSkills(){
       <td><span class="badge b-${s.source||'seed'}">${esc(s.source||'?')}</span></td>
       <td>${(s.category||[]).slice(0,2).map(c=>`<span class="badge">${esc(c)}</span>`).join(' ')||'-'}</td>
       <td>${(s.security_relevant||0)>=0.4?'<span class="badge b-high">✔</span>':'-'}</td>
+      <td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${esc(skillDesc(s))}">${esc(skillDesc(s))}</td>
       <td onclick="event.stopPropagation()"><button class="np-btn" onclick="copyText(\`${(s.install||'').replace(/`/g,'\\`')}\`)">复制安装</button></td>
     </tr>`).join('')}</tbody></table>`;
   document.getElementById('sk-info').textContent=`${start+1}-${Math.min(start+state.skillPageSize,items.length)} / ${items.length}`;
@@ -597,6 +604,9 @@ function showSkillById(id){
   document.getElementById('modal-title').textContent=s.display_name||s.name||'Skill 详情';
   const sc=s.scores||{};
   const st=s.stats||{};
+  const en=(s.description||'').trim();
+  const cn=(s.description_cn||s.description_zh||'').trim();
+  const hasCn=cn && cn!==en;
   document.getElementById('modal-body').innerHTML=`
     <div class="modal-field"><label>评分</label><div class="val score">final ${Number(sc.final||0).toFixed(2)}
       (热度 ${Number(sc.popularity||0).toFixed(2)} / 相关 ${Number(sc.relevance||0).toFixed(2)})
@@ -618,7 +628,8 @@ function showSkillById(id){
         ${s.homepage?`<a class="btn btn-g" href="${s.homepage}" target="_blank">主页</a>`:''}
         ${s.repo_url?`<a class="btn btn-g" href="${s.repo_url}" target="_blank">Repo</a>`:''}
       </div></div>
-    <div class="modal-field"><label>描述</label><div class="modal-desc">${esc(s.description||'暂无描述')}</div></div>
+    <div class="modal-field"><label>描述（中文）</label><div class="modal-desc">${esc(hasCn?cn:(en||'暂无描述'))}</div></div>
+    ${hasCn?`<div class="modal-field"><label>描述（英文原文）</label><div class="modal-desc">${esc(en)}</div></div>`:''}
   `;
   document.getElementById('detail-modal').style.display='flex';
 }

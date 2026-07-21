@@ -132,12 +132,18 @@ def fetch_skillhub(
                 continue
             seen.add(slug)
             desc = item.get("description") or item.get("summary") or ""
-            text = f"{item.get('displayName') or item.get('name') or ''} {desc} {' '.join(item.get('tags') or [])}"
+            # SkillHub often ships a Chinese blurb separately
+            desc_cn = (
+                item.get("description_zh")
+                or item.get("summary_zh")
+                or item.get("description_cn")
+                or ""
+            )
+            text = f"{item.get('displayName') or item.get('name') or ''} {desc} {desc_cn} {' '.join(item.get('tags') or [])}"
             sec = _security_score(text, boost_terms)
             cats = _categorize(text, category_keywords)
             if sec >= 0.4 and "security" not in cats:
                 cats.insert(0, "security")
-            owner = item.get("owner_name") or item.get("owner") or ""
             install = f"# skillhub slug: {slug}"
             homepage = item.get("homepage") or f"{base_url}/skills/{slug}"
             cards.append(
@@ -146,6 +152,7 @@ def fetch_skillhub(
                     name=item.get("name") or slug,
                     display_name=item.get("displayName") or item.get("name") or slug,
                     description=desc,
+                    description_cn=desc_cn,
                     source="skillhub",
                     repo_url="",
                     homepage=homepage,
@@ -232,6 +239,7 @@ def load_seed_skills(seed_items: Sequence[Dict[str, Any]], boost_terms: Sequence
             name=item.get("name") or "",
             display_name=item.get("display_name") or item.get("name") or "",
             description=desc,
+            description_cn=item.get("description_cn") or item.get("description_zh") or "",
             source=item.get("source") or "seed",
             repo_url=item.get("repo_url") or "",
             homepage=item.get("homepage") or "",
@@ -302,12 +310,37 @@ def run_skills(
     ranked = sorted(best.values(), key=lambda x: (x.scores or {}).get("final", 0), reverse=True)
     ranked = [c for c in ranked if (c.scores or {}).get("final", 0) >= min_final][:max_items]
 
+    # Fill description_cn when missing (reuse free multi-provider translator)
+    translated = 0
+    try:
+        from monitor.translate import is_mostly_chinese, translate_en_to_zh
+
+        for c in ranked:
+            desc = (c.description or "").strip()
+            cn = (c.description_cn or "").strip()
+            if not desc:
+                continue
+            if cn and (is_mostly_chinese(cn) or any("一" <= ch <= "鿿" for ch in cn)):
+                continue
+            if is_mostly_chinese(desc):
+                c.description_cn = desc
+                continue
+            out = translate_en_to_zh(desc)
+            if out and out != desc and any("一" <= ch <= "鿿" for ch in out):
+                c.description_cn = out
+                translated += 1
+        if translated:
+            print(f"  [skills] translated description_cn for {translated} skills")
+    except Exception as e:
+        print(f"  [skills] translate skipped: {e}")
+
     stats = {
         "source": "skills",
         "collected": len(all_cards),
         "unique": len(best),
         "kept": len(ranked),
         "security": sum(1 for c in ranked if c.security_relevant >= 0.4 or "security" in (c.category or [])),
+        "translated": translated,
     }
     print(f"[SKILLS] collected={stats['collected']} unique={stats['unique']} kept={stats['kept']}")
     return ranked, stats

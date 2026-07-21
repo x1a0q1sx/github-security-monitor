@@ -90,6 +90,7 @@ class SkillCard:
     name: str
     display_name: str = ""
     description: str = ""
+    description_cn: str = ""
     source: str = "unknown"
     repo_url: str = ""
     homepage: str = ""
