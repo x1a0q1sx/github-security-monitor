@@ -10023,18 +10023,140 @@
         "sliver"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "GODofExploit/exploit-arsenal",
+      "repo_url": "https://github.com/GODofExploit/exploit-arsenal",
+      "repo_description": "253 standalone, live-validated CVE exploit PoCs (pure-Python stdlib) across web apps, AI/ML platforms and the Linux kernel; 76 in the CISA KEV catalog. For authorized security testing and education.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用",
+      "author": "GODofExploit",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-06-23T08:55:10Z",
+      "pushed_at": "2026-07-22T09:56:39Z",
+      "description_cn": "253 个独立的、实时验证的 CVE 跨 Web 应用程序、AI/ML 平台和 Linux 内核利用 PoC（纯 Python 标准库）； CISA KEV 目录中的 76。用于授权的安全测试和教育。",
+      "discovered_at": "2026-07-22 10:16:20",
+      "final_score": 7.61,
+      "relevance_score": 9.0,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "appsec",
+        "cisa-kev",
+        "cve",
+        "cybersecurity",
+        "deserialization",
+        "ethical-hacking",
+        "exploit",
+        "exploit-development",
+        "infosec",
+        "penetration-testing",
+        "poc",
+        "proof-of-concept",
+        "python",
+        "rce",
+        "red-team",
+        "security",
+        "security-research",
+        "vulnerability"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "magicCzc/Little-Red-Ant",
+      "repo_url": "https://github.com/magicCzc/Little-Red-Ant",
+      "repo_description": "Little Red Ant 是一个集成了 AI 内容创作、RPA 自动化发布、数据趋势分析 和 账号矩阵管理 的全栈小红书运营辅助工具。它旨在帮助创作者和运营团队高效地生成爆款内容、管理多个账号，并基于数据驱动决策。  🚀 核心功能",
+      "monitor_type": "keyword",
+      "monitor_keyword": "红队工具(3S), 红队(3A)",
+      "tags": "红队",
+      "author": "magicCzc",
+      "stars": 25,
+      "language": "TypeScript",
+      "created_at": "2026-01-19T01:12:46Z",
+      "pushed_at": "2026-07-22T10:02:45Z",
+      "description_cn": "Little Red Ant 是一个集成了 AI 内容创作、RPA 自动化发布、数据趋势分析 和 账号矩阵管理 的全栈小红书运营辅助工具。它旨在帮助创作者和运营团队高效地生成爆款内容、管理多个账号，并基于数据驱动决策。  🚀 核心功能",
+      "discovered_at": "2026-07-22 10:16:02",
+      "final_score": 5.96,
+      "relevance_score": 6.0,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "红队工具(3S)",
+        "红队(3A)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "红队工具",
+        "红队"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "alanl1234/xiaohongshu-matrices-cli",
+      "repo_url": "https://github.com/alanl1234/xiaohongshu-matrices-cli",
+      "repo_description": "支持多账号的小红书矩阵管理 CLI 工具，本地优先，具备统一治理功能（包括速率限制、去重及责任追溯）。可作为skill使用——拆解目标并筛选素材，支持跨平台操作，发布可强制要求人工审核。适合多账号的小红书运营团队，私信和评论表现良好。",
+      "monitor_type": "keyword",
+      "monitor_keyword": "红队工具(3S), 红队(3A)",
+      "tags": "红队",
+      "author": "alanl1234",
+      "stars": 20,
+      "language": "Python",
+      "created_at": "2026-07-18T06:11:02Z",
+      "pushed_at": "2026-07-22T07:43:49Z",
+      "description_cn": "支持多账号的小红书矩阵管理 CLI 工具，本地优先，具备统一治理功能（包括速率限制、去重及责任追溯）。可作为skill使用——拆解目标并筛选素材，支持跨平台操作，发布可强制要求人工审核。适合多账号的小红书运营团队，私信和评论表现良好。",
+      "discovered_at": "2026-07-22 10:16:02",
+      "final_score": 5.96,
+      "relevance_score": 6.0,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "红队工具(3S)",
+        "红队(3A)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "红队工具",
+        "红队"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 260,
-  "last_updated": "2026-07-22T05:00:33",
+  "total": 263,
+  "last_updated": "2026-07-22T10:16:36",
   "by_type": {
-    "keyword": 228,
+    "keyword": 231,
     "cve": 25,
     "tool": 7
   },
   "by_confidence": {
     "high": 26,
-    "medium": 232,
+    "medium": 235,
     "low": 2
   },
   "meta": {
