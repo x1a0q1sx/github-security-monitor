@@ -9890,18 +9890,151 @@
         "vulnerability-scanner"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "nickvourd/Supernova",
+      "repo_url": "https://github.com/nickvourd/Supernova",
+      "repo_description": "Shellcode encryptor & obfuscator tool",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), redteam(3A), security_context(+1.5)",
+      "tags": "免杀,Shellcode,红队",
+      "author": "nickvourd",
+      "stars": 1031,
+      "language": "Go",
+      "created_at": "2023-08-08T11:30:34Z",
+      "pushed_at": "2026-07-21T23:48:32Z",
+      "description_cn": "Shellcode 加密器和混淆器工具",
+      "discovered_at": "2026-07-22 05:00:04",
+      "final_score": 8.86,
+      "relevance_score": 8.5,
+      "quality_score": 9.3,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "redteam(3A)",
+        "security_context(+1.5)",
+        "stars>=500",
+        "desc_short",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "redteam"
+      ],
+      "is_fork": false,
+      "topics": [
+        "aes",
+        "aes-128-cbc",
+        "aes-192-cbc",
+        "aes-256-cbc",
+        "caesar-cipher",
+        "chacha20",
+        "decryption",
+        "encryption",
+        "evasion",
+        "go",
+        "golang",
+        "malware-development",
+        "obfuscation",
+        "pentest",
+        "rc4",
+        "redteam",
+        "rot",
+        "rot13",
+        "shellcode",
+        "xor"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "hnytgl/FastJson-JsonType-RCE",
+      "repo_url": "https://github.com/hnytgl/FastJson-JsonType-RCE",
+      "repo_description": "Fastjson 1.2.66-1.2.83 @JSONType RCE exploit toolkit - internal red team testing only",
+      "monitor_type": "keyword",
+      "monitor_keyword": "red team(3A), exploit(2B), rce(3A), security_context(+1.5)",
+      "tags": "漏洞利用,红队",
+      "author": "hnytgl",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-07-22T03:07:22Z",
+      "pushed_at": "2026-07-22T03:07:33Z",
+      "description_cn": "Fastjson 1.2.66-1.2.83 @JSONType RCE 漏洞利用工具包 - 仅内部红队测试",
+      "discovered_at": "2026-07-22 05:00:15",
+      "final_score": 7.48,
+      "relevance_score": 10.25,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "red team(3A)",
+        "exploit(2B)",
+        "rce(3A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "red team",
+        "exploit",
+        "rce"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "schwarztim/sec-sliver-c2-mcp",
+      "repo_url": "https://github.com/schwarztim/sec-sliver-c2-mcp",
+      "repo_description": "MCP server for Sliver C2 - Adversary emulation framework integration for AI assistants",
+      "monitor_type": "keyword",
+      "monitor_keyword": "sliver c2(4S), c2(3A)",
+      "tags": "C2",
+      "author": "schwarztim",
+      "stars": 4,
+      "language": "JavaScript",
+      "created_at": "2026-01-29T16:36:20Z",
+      "pushed_at": "2026-07-22T00:22:19Z",
+      "description_cn": "Sliver C2 的 MCP 服务器 - AI 助手的对手仿真框架集成",
+      "discovered_at": "2026-07-22 04:58:49",
+      "final_score": 7.47,
+      "relevance_score": 8.75,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "sliver c2(4S)",
+        "c2(3A)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "sliver c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [
+        "c2",
+        "kali-linux",
+        "mcp",
+        "model-context-protocol",
+        "security",
+        "sliver"
+      ],
+      "archived": false
     }
   ],
-  "total": 257,
-  "last_updated": "2026-07-21T21:00:40",
+  "total": 260,
+  "last_updated": "2026-07-22T05:00:33",
   "by_type": {
-    "keyword": 225,
+    "keyword": 228,
     "cve": 25,
     "tool": 7
   },
   "by_confidence": {
     "high": 26,
-    "medium": 229,
+    "medium": 232,
     "low": 2
   },
   "meta": {
