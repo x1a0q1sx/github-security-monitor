@@ -12344,19 +12344,84 @@
         "x64"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "zainsial866/WinLoadLab",
+      "repo_url": "https://github.com/zainsial866/WinLoadLab",
+      "repo_description": "An educational Windows Internals project comparing embedded and binary shellcode loading techniques using the Win32 API. Designed for reverse engineers, malware analysts, and detection engineers to study memory execution, executable memory allocation, and defensive detection concepts in a controlled lab environment.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode loader(4S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "zainsial866",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-07-25T16:30:42Z",
+      "pushed_at": "2026-07-25T16:42:51Z",
+      "description_cn": "一个教育性的 Windows Internals 项目，比较使用 Win32 API 的嵌入式和二进制 shellcode 加载技术。专为逆向工程师、恶意软件分析师和检测工程师设计，用于在受控实验室环境中研究内存执行、可执行内存分配和防御检测概念。",
+      "discovered_at": "2026-07-25 20:41:05",
+      "final_score": 5.66,
+      "relevance_score": 8.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode loader(4S)",
+        "shellcode(4A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "shellcode loader",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "sam-walkerty125/amsi-bypass-generator-2026",
+      "repo_url": "https://github.com/sam-walkerty125/amsi-bypass-generator-2026",
+      "repo_description": "AMSI Bypass Generator v2026 is a PowerShell snippet generator for security testing, helping assess Defender and EDR detection behavior in controlled lab environments through configurable AMSI-focused test snippets.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "amsi bypass(5S)",
+      "tags": "免杀",
+      "author": "sam-walkerty125",
+      "stars": 6,
+      "language": "HTML",
+      "created_at": "2026-07-25T14:07:42Z",
+      "pushed_at": "2026-07-25T14:07:56Z",
+      "description_cn": "AMSI Bypass Generator v2026 是一款用于安全测试的 PowerShell 代码片段生成器，通过可配置的以 AMSI 为中心的测试代码片段，帮助评估受控实验室环境中的 Defender 和 EDR 检测行为。",
+      "discovered_at": "2026-07-25 20:39:38",
+      "final_score": 5.64,
+      "relevance_score": 6.25,
+      "quality_score": 4.9,
+      "confidence": "medium",
+      "reasons": [
+        "amsi bypass(5S)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "amsi bypass"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 313,
-  "last_updated": "2026-07-25T14:57:12",
+  "total": 315,
+  "last_updated": "2026-07-25T20:42:53",
   "by_type": {
-    "keyword": 269,
+    "keyword": 271,
     "cve": 36,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 26,
-    "medium": 285,
+    "medium": 287,
     "low": 2
   },
   "meta": {
