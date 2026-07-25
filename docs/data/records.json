@@ -12217,19 +12217,146 @@
         "wargame"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "liyuxuan504-byte/CVE-2026-14266",
+      "repo_url": "https://github.com/liyuxuan504-byte/CVE-2026-14266",
+      "repo_description": "7-Zip XZ Decoder Heap Buffer Overflow - Full analysis, root cause, PoC, and RCE exploitation roadmap",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploitation(2B), exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "liyuxuan504-byte",
+      "stars": 0,
+      "language": "PowerShell",
+      "created_at": "2026-07-25T12:13:30Z",
+      "pushed_at": "2026-07-25T12:32:36Z",
+      "description_cn": "7-Zip XZ 解码器堆缓冲区溢出 - 全面分析、根本原因、PoC 和 RCE 开发路线图",
+      "discovered_at": "2026-07-25 14:53:50",
+      "final_score": 7.31,
+      "relevance_score": 11.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploitation(2B)",
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploitation",
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "neko205-mx/O.B.J_Mirage",
+      "repo_url": "https://github.com/neko205-mx/O.B.J_Mirage",
+      "repo_description": "serverless化的多语言webshell管理器，兼容冰蝎-A serverless, multi-language webshell manager compatible with Behinder.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploitation(2B), webshell(3A), exploit(2B), security_context(+1.5)",
+      "tags": "漏洞利用,Webshell",
+      "author": "neko205-mx",
+      "stars": 2,
+      "language": "TypeScript",
+      "created_at": "2026-07-25T08:02:58Z",
+      "pushed_at": "2026-07-25T08:10:02Z",
+      "description_cn": "无服务器化的多语言webshel​​l管理器，兼容冰蝎-与Behinder兼容的无服务器、多语言webshel​​l管理器。",
+      "discovered_at": "2026-07-25 14:56:48",
+      "final_score": 6.97,
+      "relevance_score": 8.5,
+      "quality_score": 5.1,
+      "confidence": "medium",
+      "reasons": [
+        "exploitation(2B)",
+        "webshell(3A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploitation",
+        "webshell",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [
+        "awd",
+        "awd-tools",
+        "ctf",
+        "ctf-tools",
+        "jsp-webshell",
+        "php-webshell",
+        "post-exploitation",
+        "webshell"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "NtBackdoor/System-Call-Resolver",
+      "repo_url": "https://github.com/NtBackdoor/System-Call-Resolver",
+      "repo_description": "A lightweight x64 C++ library for extracting System Service Numbers (SSNs) and syscall instruction addresses from Windows native DLLs, primarily for use with indirect syscalls.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), direct syscall(5S)",
+      "tags": "keyword",
+      "author": "NtBackdoor",
+      "stars": 0,
+      "language": "C++",
+      "created_at": "2026-07-25T11:47:31Z",
+      "pushed_at": "2026-07-25T11:48:25Z",
+      "description_cn": "一个轻量级 x64 C++ 库，用于从 Windows 本机 DLL 中提取系统服务号 (SSN) 和系统调用指令地址，主要用于间接系统调用。",
+      "discovered_at": "2026-07-25 14:54:57",
+      "final_score": 6.66,
+      "relevance_score": 9.0,
+      "quality_score": 3.8,
+      "confidence": "medium",
+      "reasons": [
+        "indirect syscall(4S)",
+        "direct syscall(5S)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "direct syscall"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cpp",
+        "indirect-syscalls",
+        "malware-development",
+        "ntdll",
+        "ssn",
+        "syscalls",
+        "x64"
+      ],
+      "archived": false
     }
   ],
-  "total": 310,
-  "last_updated": "2026-07-25T09:29:25",
+  "total": 313,
+  "last_updated": "2026-07-25T14:57:12",
   "by_type": {
-    "keyword": 267,
-    "cve": 35,
+    "keyword": 269,
+    "cve": 36,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 26,
-    "medium": 282,
+    "medium": 285,
     "low": 2
   },
   "meta": {
