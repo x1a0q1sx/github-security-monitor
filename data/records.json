@@ -12539,19 +12539,68 @@
         "vps"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "shinthink/CVE-2026-58480",
+      "repo_url": "https://github.com/shinthink/CVE-2026-58480",
+      "repo_description": "CVE-2026-58480 / CVE-2026-15158 — Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbitrary file upload via double-extension bypass.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "免杀,POC,漏洞利用,CVE",
+      "author": "shinthink",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-07-26T08:59:36Z",
+      "pushed_at": "2026-07-26T09:46:11Z",
+      "description_cn": "CVE-2026-58480 / CVE-2026-15158 — Blocksy Companion Pro < 2.1.47 中未经身份验证的 RCE（安装次数超过 30 万次）。通过双扩展绕过预验证任意文件上传。",
+      "discovered_at": "2026-07-26 09:49:46",
+      "final_score": 7.02,
+      "relevance_score": 9.0,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "blocksy",
+        "cve",
+        "exploit",
+        "infosec",
+        "poc",
+        "rce",
+        "security",
+        "vulnerability",
+        "wordpress"
+      ],
+      "archived": false
     }
   ],
-  "total": 318,
-  "last_updated": "2026-07-26T05:23:37",
+  "total": 319,
+  "last_updated": "2026-07-26T09:49:51",
   "by_type": {
     "keyword": 274,
-    "cve": 36,
+    "cve": 37,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 26,
-    "medium": 290,
+    "medium": 291,
     "low": 2
   },
   "meta": {
