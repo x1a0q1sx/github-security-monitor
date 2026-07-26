@@ -12409,19 +12409,149 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "doudoudedi/hackEmbedded",
+      "repo_url": "https://github.com/doudoudedi/hackEmbedded",
+      "repo_description": "This tool is used for encrypt backdoor,shellcode,socks5 proxy generation,Information retrieval and POC arrangement for various architecture devices",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), exploit(2B), cve(2B), security_context(+1.5)",
+      "tags": "Shellcode,POC,漏洞利用",
+      "author": "doudoudedi",
+      "stars": 208,
+      "language": "Python",
+      "created_at": "2022-04-26T06:32:41Z",
+      "pushed_at": "2026-07-26T01:13:22Z",
+      "description_cn": "该工具用于各种架构设备的加密后门、shellcode、socks5代理生成、信息检索和POC整理",
+      "discovered_at": "2026-07-26 05:23:08",
+      "final_score": 9.14,
+      "relevance_score": 9.5,
+      "quality_score": 8.7,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "exploit(2B)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=100",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "exploit",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve",
+        "exploit",
+        "iot",
+        "linux",
+        "poc",
+        "python",
+        "reverse-shell",
+        "security"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "chainreactors/aiscan",
+      "repo_url": "https://github.com/chainreactors/aiscan",
+      "repo_description": "AI-driven pi-like agent for cyber security — single binary for  pentest, red team, bug  bounty",
+      "monitor_type": "keyword",
+      "monitor_keyword": "red team(3A), redteam(3A), security_context(+1.5)",
+      "tags": "红队",
+      "author": "chainreactors",
+      "stars": 210,
+      "language": "Go",
+      "created_at": "2026-05-07T13:46:47Z",
+      "pushed_at": "2026-07-26T05:08:14Z",
+      "description_cn": "AI 驱动的类似 pi 的网络安全代理 — 用于渗透测试、红队、错误赏金的单一二进制文件",
+      "discovered_at": "2026-07-26 05:23:35",
+      "final_score": 8.04,
+      "relevance_score": 7.5,
+      "quality_score": 8.7,
+      "confidence": "medium",
+      "reasons": [
+        "red team(3A)",
+        "redteam(3A)",
+        "security_context(+1.5)",
+        "stars>=100",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "red team",
+        "redteam"
+      ],
+      "is_fork": false,
+      "topics": [
+        "agent",
+        "ai",
+        "ai-pentesting",
+        "pentesting",
+        "redteam"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "ffffffff0x/f8x",
+      "repo_url": "https://github.com/ffffffff0x/f8x",
+      "repo_description": "红/蓝队环境自动化部署工具 | Red/Blue team environment automation deployment tool",
+      "monitor_type": "keyword",
+      "monitor_keyword": "红队工具(3S), 红队(3A)",
+      "tags": "红队",
+      "author": "ffffffff0x",
+      "stars": 2147,
+      "language": "Shell",
+      "created_at": "2021-01-21T06:27:27Z",
+      "pushed_at": "2026-07-25T21:19:17Z",
+      "description_cn": "红/蓝队环境自动化部署工具|红/蓝团队环境自动化部署工具",
+      "discovered_at": "2026-07-26 05:23:01",
+      "final_score": 7.3,
+      "relevance_score": 6.0,
+      "quality_score": 8.9,
+      "confidence": "medium",
+      "reasons": [
+        "红队工具(3S)",
+        "红队(3A)",
+        "stars>=500",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "红队工具",
+        "红队"
+      ],
+      "is_fork": false,
+      "topics": [
+        "bash",
+        "bash-script",
+        "ctf",
+        "ctf-tools",
+        "ffffffff0x",
+        "linux",
+        "pentest-tool",
+        "shell",
+        "vps"
+      ],
+      "archived": false
     }
   ],
-  "total": 315,
-  "last_updated": "2026-07-25T20:42:53",
+  "total": 318,
+  "last_updated": "2026-07-26T05:23:37",
   "by_type": {
-    "keyword": 271,
+    "keyword": 274,
     "cve": 36,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 26,
-    "medium": 287,
+    "medium": 290,
     "low": 2
   },
   "meta": {
