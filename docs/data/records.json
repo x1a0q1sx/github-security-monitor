@@ -12588,18 +12588,112 @@
         "wordpress"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "j-dahl7/mcp-attack-detection-sentinel",
+      "repo_url": "https://github.com/j-dahl7/mcp-attack-detection-sentinel",
+      "repo_description": "Sentinel detection lab for MCP attack chains: CVE-2026-26118 SSRF token theft, tool poisoning, cross-server exfiltration, identity post-exploitation. Maps to OWASP Agentic Top 10. 5 analytics rules, 7 hunting queries, workbook. Companion to nineliveszerotrust.com.",
+      "monitor_type": "cve",
+      "monitor_keyword": "post exploitation(3A), exploitation(2B), exploit(2B), ssrf(2B), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "j-dahl7",
+      "stars": 1,
+      "language": "PowerShell",
+      "created_at": "2026-03-17T16:37:53Z",
+      "pushed_at": "2026-07-26T14:51:06Z",
+      "description_cn": "MCP 攻击链的 Sentinel 检测实验室：CVE-2026-26118 SSRF 令牌盗窃、工具中毒、跨服务器渗透、身份后利用。映射到 OWASP Agentic Top 10。5 个分析规则、7 个搜寻查询、工作簿。 nineliveszerotrust.com 的伴侣。",
+      "discovered_at": "2026-07-26 14:55:55",
+      "final_score": 8.89,
+      "relevance_score": 12.0,
+      "quality_score": 5.1,
+      "confidence": "high",
+      "reasons": [
+        "post exploitation(3A)",
+        "exploitation(2B)",
+        "exploit(2B)",
+        "ssrf(2B)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "post exploitation",
+        "exploitation",
+        "exploit",
+        "ssrf",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "agentic-ai",
+        "kql",
+        "mcp-security",
+        "microsoft-sentinel",
+        "owasp"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "xec412/XeraLdr",
+      "repo_url": "https://github.com/xec412/XeraLdr",
+      "repo_description": "A stealthy and modular Windows loader designed to bypass modern EDR solutions using Module Stomping, Stack Duplication, and Advanced Sleep Obfuscation.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "sleep obfuscation(3S), module stomping(3S), shellcode(4A)",
+      "tags": "免杀,Shellcode",
+      "author": "xec412",
+      "stars": 72,
+      "language": "C",
+      "created_at": "2026-07-06T14:23:10Z",
+      "pushed_at": "2026-07-26T12:28:29Z",
+      "description_cn": "一种隐秘的模块化 Windows 加载程序，旨在使用模块 Stomping、堆栈复制和高级睡眠混淆来绕过现代 EDR 解决方案。",
+      "discovered_at": "2026-07-26 14:58:07",
+      "final_score": 8.61,
+      "relevance_score": 10.0,
+      "quality_score": 6.9,
+      "confidence": "high",
+      "reasons": [
+        "sleep obfuscation(3S)",
+        "module stomping(3S)",
+        "shellcode(4A)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "sleep obfuscation",
+        "module stomping",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [
+        "edr-evasion",
+        "malware-development",
+        "module-stomping",
+        "proxyapi",
+        "red-team",
+        "shellcode-loader",
+        "sleep-obfuscation",
+        "stealth-loader",
+        "win32api",
+        "zilean"
+      ],
+      "archived": false
     }
   ],
-  "total": 319,
-  "last_updated": "2026-07-26T09:49:51",
+  "total": 321,
+  "last_updated": "2026-07-26T14:59:12",
   "by_type": {
-    "keyword": 274,
-    "cve": 37,
+    "keyword": 275,
+    "cve": 38,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
-    "high": 26,
+    "high": 28,
     "medium": 291,
     "low": 2
   },
