@@ -13173,19 +13173,62 @@
         "zsh"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "JMarchiori13/process-injection-arsenal",
+      "repo_url": "https://github.com/JMarchiori13/process-injection-arsenal",
+      "repo_description": "Red team process injection research — remote thread, APC, thread hijacking, hollowing, module stomping, mapping injection. Lab/educational project.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "thread hijacking(3S), module stomping(3S), red team(3A)",
+      "tags": "红队",
+      "author": "JMarchiori13",
+      "stars": 1,
+      "language": "",
+      "created_at": "2026-07-27T17:04:05Z",
+      "pushed_at": "2026-07-27T18:14:43Z",
+      "description_cn": "红队进程注入研究——远程线程、APC、线程劫持、挖空、模块踩踏、映射注入。实验室/教育项目。",
+      "discovered_at": "2026-07-27 21:03:19",
+      "final_score": 6.79,
+      "relevance_score": 9.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "thread hijacking(3S)",
+        "module stomping(3S)",
+        "red team(3A)",
+        "stars>=1",
+        "desc_ok",
+        "no_language",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "thread hijacking",
+        "module stomping",
+        "red team"
+      ],
+      "is_fork": false,
+      "topics": [
+        "mitre-attack",
+        "offensive-security",
+        "process-injection",
+        "red-team",
+        "security-research",
+        "windows-security"
+      ],
+      "archived": false
     }
   ],
-  "total": 332,
-  "last_updated": "2026-07-27T16:10:01",
+  "total": 333,
+  "last_updated": "2026-07-27T21:04:25",
   "by_type": {
-    "keyword": 285,
+    "keyword": 286,
     "cve": 39,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 33,
-    "medium": 297,
+    "medium": 298,
     "low": 2
   },
   "meta": {
