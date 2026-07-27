@@ -1,20 +1,5 @@
 [
   {
-    "id": 20,
-    "type": "daily",
-    "status": "success",
-    "started_at": "2026-06-12T11:34:14.771807",
-    "finished_at": "2026-06-12T11:37:02.318224",
-    "duration_seconds": 167.546417,
-    "results": {
-      "cve": 9,
-      "keyword": 17,
-      "user": 0,
-      "tool": 0
-    },
-    "total_new": 26
-  },
-  {
     "id": 21,
     "type": "daily",
     "status": "success",
@@ -19586,6 +19571,649 @@
       }
     },
     "total_new": 2,
+    "version": 5,
+    "id": 201
+  },
+  {
+    "type": "daily",
+    "status": "success",
+    "started_at": "2026-07-27T16:06:35",
+    "finished_at": "2026-07-27T16:10:14",
+    "duration_seconds": 218.895245,
+    "results": {
+      "cve": {
+        "candidates": 69,
+        "duplicates": 7,
+        "dropped": 3,
+        "low_score": 59,
+        "kept": 0,
+        "drop_reasons": {
+          "no_info": 2,
+          "author_cap": 1
+        },
+        "source": "cve"
+      },
+      "keyword": {
+        "candidates": 193,
+        "duplicates": 75,
+        "dropped": 6,
+        "low_score": 111,
+        "kept": 1,
+        "drop_reasons": {
+          "no_info": 6
+        },
+        "source": "keyword",
+        "queries": 65,
+        "queries_ok": 63,
+        "queries_err": 2,
+        "sum_total_count": 48138,
+        "fetched_raw": 1389,
+        "unique_windowed": 193,
+        "query_stats": [
+          {
+            "tier": "S",
+            "label": "amsi bypass",
+            "total_count": 209,
+            "fetched": 30,
+            "windowed": 2,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "cobalt strike",
+            "total_count": 793,
+            "fetched": 30,
+            "windowed": 10,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "cobaltstrike",
+            "total_count": 493,
+            "fetched": 30,
+            "windowed": 5,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "cs beacon",
+            "total_count": 13,
+            "fetched": 13,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "direct syscall",
+            "total_count": 148,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "edr bypass",
+            "total_count": 83,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "fileless execution",
+            "total_count": 15,
+            "fetched": 15,
+            "windowed": 2,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "godzilla webshell",
+            "total_count": 3,
+            "fetched": 3,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "in-memory execution",
+            "total_count": 59,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "malleable c2",
+            "total_count": 56,
+            "fetched": 30,
+            "windowed": 2,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "ntdll unhook",
+            "total_count": 23,
+            "fetched": 23,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "plugx",
+            "total_count": 58,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "process hollowing",
+            "total_count": 281,
+            "fetched": 30,
+            "windowed": 2,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "reflective dll injection",
+            "total_count": 65,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "shadowpad",
+            "total_count": 9,
+            "fetched": 9,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "aggressor script",
+            "total_count": 145,
+            "fetched": 30,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "api unhooking",
+            "total_count": 7,
+            "fetched": 7,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "cs aggressor",
+            "total_count": 3,
+            "fetched": 3,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "cs teamserver",
+            "total_count": 0,
+            "fetched": 0,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "havoc c2",
+            "total_count": 65,
+            "fetched": 30,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "indirect syscall",
+            "total_count": 139,
+            "fetched": 30,
+            "windowed": 2,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "manual mapping",
+            "total_count": 169,
+            "fetched": 30,
+            "windowed": 9,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "meterpreter",
+            "total_count": 636,
+            "fetched": 30,
+            "windowed": 7,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "mythic c2",
+            "total_count": 74,
+            "fetched": 30,
+            "windowed": 2,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "payload loader",
+            "total_count": 63,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "process doppelganging",
+            "total_count": 17,
+            "fetched": 17,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "shellcode encryption",
+            "total_count": 19,
+            "fetched": 19,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "shellcode injection",
+            "total_count": 184,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "shellcode loader",
+            "total_count": 375,
+            "fetched": 30,
+            "windowed": 6,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "shellcode obfuscation",
+            "total_count": 41,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "sliver c2",
+            "total_count": 118,
+            "fetched": 30,
+            "windowed": 6,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "syscall evasion",
+            "total_count": 6,
+            "fetched": 6,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "红队框架",
+            "total_count": 29,
+            "fetched": 29,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "async rat",
+            "total_count": 91,
+            "fetched": 30,
+            "windowed": 2,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "av bypass",
+            "total_count": 95,
+            "fetched": 30,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "covenant c2",
+            "total_count": 19,
+            "fetched": 19,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "defender bypass",
+            "total_count": 62,
+            "fetched": 30,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "earlybird injection",
+            "total_count": 2,
+            "fetched": 2,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "empire c2",
+            "total_count": 15,
+            "fetched": 15,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "etw bypass",
+            "total_count": 33,
+            "fetched": 30,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "koadic c2",
+            "total_count": 0,
+            "fetched": 0,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "merlin c2",
+            "total_count": 1,
+            "fetched": 1,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "module stomping",
+            "total_count": 22,
+            "fetched": 22,
+            "windowed": 2,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "poshc2",
+            "total_count": 26,
+            "fetched": 26,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "pupy rat",
+            "total_count": 2,
+            "fetched": 2,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "quasar rat",
+            "total_count": 58,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "remcos rat",
+            "total_count": 35,
+            "fetched": 30,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "shellcode runner",
+            "total_count": 109,
+            "fetched": 30,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "silenttrinity",
+            "total_count": 18,
+            "fetched": 18,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "sleep obfuscation",
+            "total_count": 34,
+            "fetched": 30,
+            "windowed": 2,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "stack spoofing",
+            "total_count": 45,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "thread hijacking",
+            "total_count": 96,
+            "fetched": 30,
+            "windowed": 1,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "红队工具",
+            "total_count": 177,
+            "fetched": 30,
+            "windowed": 5,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "S",
+            "label": "njrat",
+            "total_count": 356,
+            "fetched": 30,
+            "windowed": 6,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "A",
+            "label": "shellcode (bypass OR loader OR injection OR encryption OR ev",
+            "total_count": 5003,
+            "fetched": 30,
+            "windowed": 19,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "A",
+            "label": "webshell (godzilla OR behinder OR antsword OR manage OR chin",
+            "total_count": 2844,
+            "fetched": 30,
+            "windowed": 24,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "A",
+            "label": "(\"red team\" OR redteam) (tool OR framework OR c2 OR arsenal ",
+            "total_count": 0,
+            "fetched": 0,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "A",
+            "label": "0day (exploit OR poc OR vulnerability OR rce)",
+            "total_count": 861,
+            "fetched": 30,
+            "windowed": 7,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "A",
+            "label": "rce (exploit OR vulnerability OR poc OR cve OR remote)",
+            "total_count": 9097,
+            "fetched": 30,
+            "windowed": 29,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "A",
+            "label": "(implant OR beacon) (c2 OR cobalt OR sliver OR mythic OR red",
+            "total_count": 0,
+            "fetched": 0,
+            "windowed": 0,
+            "ok": false
+          },
+          {
+            "tier": "A",
+            "label": "(\"post exploitation\" OR \"post-exploitation\") (tool OR framew",
+            "total_count": 0,
+            "fetched": 0,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "A",
+            "label": "(内存加载 OR 内存执行 OR 反射加载 OR 反射注入 OR 进程注入) (工具 OR 免杀 OR 红队 OR sh",
+            "total_count": 0,
+            "fetched": 0,
+            "windowed": 0,
+            "ok": false
+          },
+          {
+            "tier": "B",
+            "label": "(\"sql injection\" OR ssrf OR xxe) (tool OR scanner OR payload",
+            "total_count": 0,
+            "fetched": 0,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "B",
+            "label": "(\"malware analysis\" OR \"threat hunting\" OR \"incident respons",
+            "total_count": 0,
+            "fetched": 0,
+            "windowed": 0,
+            "incomplete": false,
+            "ok": true
+          },
+          {
+            "tier": "B",
+            "label": "(scanner OR fuzz) (security OR vulnerability OR exploit) sta",
+            "total_count": 24639,
+            "fetched": 30,
+            "windowed": 30,
+            "incomplete": false,
+            "ok": true
+          }
+        ]
+      },
+      "user": {
+        "candidates": 0,
+        "duplicates": 0,
+        "dropped": 0,
+        "low_score": 0,
+        "kept": 0,
+        "drop_reasons": {},
+        "source": "user"
+      },
+      "tool": {
+        "checked": 7,
+        "updated": 0,
+        "initialized": 0,
+        "errors": 0,
+        "source": "tool",
+        "kept": 0
+      }
+    },
+    "total_new": 1,
     "version": 5,
     "id": 201
   }

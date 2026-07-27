@@ -13122,19 +13122,70 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "modernish/modernish",
+      "repo_url": "https://github.com/modernish/modernish",
+      "repo_description": "Modernish is a library for writing robust, portable, readable, and powerful programs for POSIX-based shells and utilities.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), security_context(+1.5)",
+      "tags": "Shellcode",
+      "author": "modernish",
+      "stars": 937,
+      "language": "Shell",
+      "created_at": "2016-02-03T22:48:38Z",
+      "pushed_at": "2026-07-27T15:07:25Z",
+      "description_cn": "Modernish 是一个库，用于为基于 POSIX 的 shell 和实用程序编写健壮、可移植、可读且功能强大的程序。",
+      "discovered_at": "2026-07-27 16:09:33",
+      "final_score": 7.03,
+      "relevance_score": 5.5,
+      "quality_score": 8.9,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "security_context(+1.5)",
+        "stars>=500",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [
+        "ash",
+        "bash",
+        "dash",
+        "ksh",
+        "ksh93",
+        "library",
+        "mksh",
+        "posix",
+        "posix-compatible",
+        "posix-compliant",
+        "posix-sh",
+        "sh",
+        "shell",
+        "shell-extension",
+        "shell-scripting",
+        "shellcode",
+        "yash",
+        "zsh"
+      ],
+      "archived": false
     }
   ],
-  "total": 331,
-  "last_updated": "2026-07-27T11:12:38",
+  "total": 332,
+  "last_updated": "2026-07-27T16:10:01",
   "by_type": {
-    "keyword": 284,
+    "keyword": 285,
     "cve": 39,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 33,
-    "medium": 296,
+    "medium": 297,
     "low": 2
   },
   "meta": {
