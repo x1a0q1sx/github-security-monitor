@@ -13216,19 +13216,129 @@
         "windows-security"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "DeniedBypass/DeniedLoader",
+      "repo_url": "https://github.com/DeniedBypass/DeniedLoader",
+      "repo_description": "DeniedLoader — C-based jittered beacon loader (6m66s) with indirect syscalls. Injects MiniDeniedXYZ (Rust shellcode) into trusted processes. Dropper creates 500+ decoy subdirectories in System32 masquerading as a RealTek audio driver for deep persistence.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), direct syscall(5S), shellcode(4A), beacon(2A)",
+      "tags": "C2,免杀,Shellcode",
+      "author": "DeniedBypass",
+      "stars": 1,
+      "language": "",
+      "created_at": "2026-07-27T21:40:11Z",
+      "pushed_at": "2026-07-27T21:40:12Z",
+      "description_cn": "DeniedLoader — 具有间接系统调用的基于 C 的抖动信标加载器 (6m66s)。将 MiniDeniedXYZ (Rust shellcode) 注入受信任的进程。 Dropper 在 System32 中创建 500 多个诱饵子目录，伪装成 RealTek 音频驱动程序以实现深度持久性。",
+      "discovered_at": "2026-07-28 04:53:49",
+      "final_score": 8.0,
+      "relevance_score": 12.0,
+      "quality_score": 3.1,
+      "confidence": "medium",
+      "reasons": [
+        "indirect syscall(4S)",
+        "direct syscall(5S)",
+        "shellcode(4A)",
+        "beacon(2A)",
+        "stars>=1",
+        "desc_ok",
+        "no_language",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "direct syscall",
+        "shellcode",
+        "beacon"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "winterknight1337/Gaia",
+      "repo_url": "https://github.com/winterknight1337/Gaia",
+      "repo_description": "Lightweight Mythic C2 Installation and Configuration Tool. Focused on students, CTF players, developers, and researchers.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "mythic c2(4S), c2(3A)",
+      "tags": "C2",
+      "author": "winterknight1337",
+      "stars": 5,
+      "language": "Python",
+      "created_at": "2026-01-07T16:38:54Z",
+      "pushed_at": "2026-07-28T04:11:23Z",
+      "description_cn": "轻量级 Mythic C2 安装和配置工具。专注于学生、CTF 玩家、开发者和研究人员。",
+      "discovered_at": "2026-07-28 04:53:58",
+      "final_score": 6.06,
+      "relevance_score": 7.0,
+      "quality_score": 4.9,
+      "confidence": "medium",
+      "reasons": [
+        "mythic c2(4S)",
+        "c2(3A)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "mythic c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "EncodedMind/CTFs",
+      "repo_url": "https://github.com/EncodedMind/CTFs",
+      "repo_description": "In-depth CTF writeups focusing on binary exploitation, shellcode development, WebAssembly reverse engineering and cryptography.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "reverse engineering(1B), exploitation(2B), shellcode(4A), exploit(2B), security_context(+1.5)",
+      "tags": "Shellcode,漏洞利用",
+      "author": "EncodedMind",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-07-27T21:59:02Z",
+      "pushed_at": "2026-07-27T22:22:49Z",
+      "description_cn": "深入的 CTF 文章，重点关注二进制利用、shellcode 开发、WebAssembly 逆向工程和密码学。",
+      "discovered_at": "2026-07-28 04:55:33",
+      "final_score": 5.54,
+      "relevance_score": 10.5,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "reverse engineering(1B)",
+        "exploitation(2B)",
+        "shellcode(4A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "reverse engineering",
+        "exploitation",
+        "shellcode",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 333,
-  "last_updated": "2026-07-27T21:04:25",
+  "total": 336,
+  "last_updated": "2026-07-28T04:56:01",
   "by_type": {
-    "keyword": 286,
+    "keyword": 289,
     "cve": 39,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 33,
-    "medium": 298,
+    "medium": 301,
     "low": 2
   },
   "meta": {
