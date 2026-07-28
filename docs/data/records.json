@@ -13548,19 +13548,59 @@
         "security-tools"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "tc4dy/CVE-2026-53921-PoC-Exploit",
+      "repo_url": "https://github.com/tc4dy/CVE-2026-53921-PoC-Exploit",
+      "repo_description": "CVE-2026-53921 – odhcpd Stack Overflow (CVSS 9.8) 🛡️  Vuln detailed and comprehensive Write-Up and Verifier & Multi-exploit for OpenWrt DHCPv6 RCE. Dual-vector (IA_NA/IA_PD) overflow with MIPS/ARM shellcode, ROP chains, SOCKS5 proxy, persistence, log wiping & mass scanning. Use Ethically, Stay Legal. 🔒",
+      "monitor_type": "cve",
+      "monitor_keyword": "shellcode(4A), exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "Shellcode,POC,漏洞利用,CVE",
+      "author": "tc4dy",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-07-28T17:23:28Z",
+      "pushed_at": "2026-07-28T17:54:28Z",
+      "description_cn": "CVE-2026-53921 – odhcpd 堆栈溢出 (CVSS 9.8) 🛡️ Vuln 详细且全面的 OpenWrt DHCPv6 RCE 编写、验证器和多重利用。双向量 (IA_NA/IA_PD) 溢出，具有 MIPS/ARM shellcode、ROP 链、SOCKS5 代理、持久性、日志擦除和批量扫描。合乎道德地使用，保持合法。 🔒",
+      "discovered_at": "2026-07-28 20:57:24",
+      "final_score": 7.86,
+      "relevance_score": 12.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 341,
-  "last_updated": "2026-07-28T16:01:05",
+  "total": 342,
+  "last_updated": "2026-07-28T20:57:28",
   "by_type": {
     "keyword": 294,
-    "cve": 39,
+    "cve": 40,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 34,
-    "medium": 305,
+    "medium": 306,
     "low": 2
   },
   "meta": {
