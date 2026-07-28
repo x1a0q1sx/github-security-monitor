@@ -13326,19 +13326,96 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "0xricksanchez/Shellcoder",
+      "repo_url": "https://github.com/0xricksanchez/Shellcoder",
+      "repo_description": "BinjaryNinja plugin for a ShellStorm like assembly/disassembly experience",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), exploit(2B), security_context(+1.5)",
+      "tags": "Shellcode,漏洞利用",
+      "author": "0xricksanchez",
+      "stars": 17,
+      "language": "Python",
+      "created_at": "2024-07-19T14:09:59Z",
+      "pushed_at": "2026-07-28T08:15:17Z",
+      "description_cn": "BinjaryNinja 插件，提供类似 ShellStorm 的汇编/反汇编体验",
+      "discovered_at": "2026-07-28 10:25:14",
+      "final_score": 7.33,
+      "relevance_score": 8.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [
+        "assembler",
+        "binaryninja-plugin",
+        "disassembler",
+        "exploit-development",
+        "pwn",
+        "shellcode"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "CodeXTF2/ScreenshotBOF",
+      "repo_url": "https://github.com/CodeXTF2/ScreenshotBOF",
+      "repo_description": "An alternative screenshot capability for Cobalt Strike that uses WinAPI and does not perform a fork & run. Screenshot downloaded in memory.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "cobalt strike(5S)",
+      "tags": "C2",
+      "author": "CodeXTF2",
+      "stars": 500,
+      "language": "C",
+      "created_at": "2022-10-23T08:58:22Z",
+      "pushed_at": "2026-07-28T09:17:17Z",
+      "description_cn": "Cobalt Strike 的替代屏幕截图功能使用 WinAPI 并且不执行 fork & run。屏幕截图下载到内存中。",
+      "discovered_at": "2026-07-28 10:22:17",
+      "final_score": 6.75,
+      "relevance_score": 5.0,
+      "quality_score": 8.9,
+      "confidence": "medium",
+      "reasons": [
+        "cobalt strike(5S)",
+        "stars>=500",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "cobalt strike"
+      ],
+      "is_fork": false,
+      "topics": [
+        "bof",
+        "cna",
+        "cobalt-strike",
+        "screenshot"
+      ],
+      "archived": false
     }
   ],
-  "total": 336,
-  "last_updated": "2026-07-28T04:56:01",
+  "total": 338,
+  "last_updated": "2026-07-28T10:25:42",
   "by_type": {
-    "keyword": 289,
+    "keyword": 291,
     "cve": 39,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 33,
-    "medium": 301,
+    "medium": 303,
     "low": 2
   },
   "meta": {
