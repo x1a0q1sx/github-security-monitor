@@ -13643,18 +13643,58 @@
         "virtualization"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "tc4dy/CVE-2026-61511-PoC-Exploit",
+      "repo_url": "https://github.com/tc4dy/CVE-2026-61511-PoC-Exploit",
+      "repo_description": "CVE-2026-61511 – vBulletin Pre-Auth RCE (CVSS 9.8). Vuln 5.x/6.x (unpatched). Multi-exploit via Endpoint Pool, AJAX, PHPFuck WAF bypass. Full toolkit: reverse shell, proxy, persistence, webshell, database operations, firewall control, log management, mass scanning. 2 versions: multi-exploit & safe-check. Python 3.8+ Use Ethically, Stay Legal. 🔒",
+      "monitor_type": "cve",
+      "monitor_keyword": "webshell(3A), exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "免杀,POC,漏洞利用,Webshell,CVE",
+      "author": "tc4dy",
+      "stars": 3,
+      "language": "Python",
+      "created_at": "2026-07-29T08:18:31Z",
+      "pushed_at": "2026-07-29T10:15:23Z",
+      "description_cn": "CVE-2026-61511 – vBulletin 预授权 RCE (CVSS 9.8)。漏洞 5.x/6.x（未修补）。通过端点池、AJAX、PHPFuck WAF 绕过进行多重利用。完整的工具包：反向shell、代理、持久化、webshel​​l、数据库操作、防火墙控制、日志管理、批量扫描。 2 个版本：多重利用和安全检查。 Python 3.8+ 合乎道德地使用，保持合法。 🔒",
+      "discovered_at": "2026-07-29 10:28:18",
+      "final_score": 8.45,
+      "relevance_score": 12.0,
+      "quality_score": 4.1,
+      "confidence": "high",
+      "reasons": [
+        "webshell(3A)",
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "webshell",
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 343,
-  "last_updated": "2026-07-29T05:01:55",
+  "total": 344,
+  "last_updated": "2026-07-29T10:28:22",
   "by_type": {
     "keyword": 295,
-    "cve": 40,
+    "cve": 41,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
-    "high": 34,
+    "high": 35,
     "medium": 307,
     "low": 2
   },
