@@ -13588,19 +13588,74 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "D7EAD/mkPIVM",
+      "repo_url": "https://github.com/D7EAD/mkPIVM",
+      "repo_description": "Generate polymorphic, position-independent virtual machines (PIVMs) from arbitrary x86/x64 shellcode.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploitation(2B), shellcode(4A), exploit(2B), security_context(+1.5)",
+      "tags": "C2,免杀,Shellcode,漏洞利用",
+      "author": "D7EAD",
+      "stars": 421,
+      "language": "C++",
+      "created_at": "2026-05-14T16:45:50Z",
+      "pushed_at": "2026-07-29T01:09:38Z",
+      "description_cn": "从任意 x86/x64 shellcode 生成多态、位置无关的虚拟机 (PIVM)。",
+      "discovered_at": "2026-07-29 05:01:26",
+      "final_score": 9.14,
+      "relevance_score": 9.5,
+      "quality_score": 8.7,
+      "confidence": "medium",
+      "reasons": [
+        "exploitation(2B)",
+        "shellcode(4A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars>=100",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploitation",
+        "shellcode",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cobalt-strike",
+        "edr",
+        "evasion",
+        "exploit",
+        "exploitation",
+        "havoc",
+        "malware",
+        "metasploit",
+        "mythic",
+        "obfuscation",
+        "red-team",
+        "research",
+        "reverse-engineering",
+        "shellcode",
+        "sliver",
+        "virtual-machine",
+        "virtualization"
+      ],
+      "archived": false
     }
   ],
-  "total": 342,
-  "last_updated": "2026-07-28T20:57:28",
+  "total": 343,
+  "last_updated": "2026-07-29T05:01:55",
   "by_type": {
-    "keyword": 294,
+    "keyword": 295,
     "cve": 40,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 34,
-    "medium": 306,
+    "medium": 307,
     "low": 2
   },
   "meta": {
