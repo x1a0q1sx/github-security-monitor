@@ -13683,19 +13683,94 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "Nariod/RustPacker",
+      "repo_url": "https://github.com/Nariod/RustPacker",
+      "repo_description": "Template-based shellcode packer written in Rust, with indirect syscall support. Made with <3 for pentesters.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), direct syscall(5S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "Nariod",
+      "stars": 333,
+      "language": "Rust",
+      "created_at": "2022-09-19T06:23:23Z",
+      "pushed_at": "2026-07-29T12:15:05Z",
+      "description_cn": "用 Rust 编写的基于模板的 shellcode 加壳器，具有间接系统调用支持。使用 <3 为渗透测试人员制作。",
+      "discovered_at": "2026-07-29 15:44:42",
+      "final_score": 10.04,
+      "relevance_score": 12.0,
+      "quality_score": 7.65,
+      "confidence": "high",
+      "reasons": [
+        "indirect syscall(4S)",
+        "direct syscall(5S)",
+        "shellcode(4A)",
+        "stars>=100",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "direct syscall",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [
+        "packer",
+        "pentesting",
+        "rust"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "ilizavr/CVE-2022-30024",
+      "repo_url": "https://github.com/ilizavr/CVE-2022-30024",
+      "repo_description": "Tplink wr841 v10 rce exploit",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "漏洞利用,CVE",
+      "author": "ilizavr",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-07-28T09:43:58Z",
+      "pushed_at": "2026-07-29T13:05:36Z",
+      "description_cn": "tplink wr841 v10 rce利用",
+      "discovered_at": "2026-07-29 15:46:50",
+      "final_score": 6.62,
+      "relevance_score": 9.0,
+      "quality_score": 3.7,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_short",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 344,
-  "last_updated": "2026-07-29T10:28:22",
+  "total": 346,
+  "last_updated": "2026-07-29T15:47:06",
   "by_type": {
-    "keyword": 295,
+    "keyword": 297,
     "cve": 41,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
-    "high": 35,
-    "medium": 307,
+    "high": 36,
+    "medium": 308,
     "low": 2
   },
   "meta": {
