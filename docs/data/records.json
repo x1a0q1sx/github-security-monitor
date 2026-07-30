@@ -13899,19 +13899,130 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "Groppoxx/CVE-2024-36104-PoC",
+      "repo_url": "https://github.com/Groppoxx/CVE-2024-36104-PoC",
+      "repo_description": "PoC for CVE-2024-36104 — unauthenticated Groovy RCE in Apache OFBiz (<18.12.14) via /%2e/%2e/ view path traversal to ProgramExport",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "Groppoxx",
+      "stars": 3,
+      "language": "Python",
+      "created_at": "2026-07-29T19:59:36Z",
+      "pushed_at": "2026-07-29T21:15:58Z",
+      "description_cn": "CVE-2024-36104 的 PoC — Apache OFBiz (<18.12.14) 中未经身份验证的 Groovy RCE 通过 /%2e/%2e/ 查看路径遍历到 ProgramExport",
+      "discovered_at": "2026-07-30 04:49:47",
+      "final_score": 7.61,
+      "relevance_score": 9.0,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve-2024-36104",
+        "exploit",
+        "path-traversal",
+        "poc",
+        "python",
+        "rce"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "Biiliiee/Indirect-Syscal",
+      "repo_url": "https://github.com/Biiliiee/Indirect-Syscal",
+      "repo_description": "Implementação completa de Indirect Syscalls em C e Assembly x64 sem dependências do windows.h. Inclui PEB Walker manual, PE Export Parser e resolução dinâmica de SSN/Gadget para evasão de EDRs.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), direct syscall(5S)",
+      "tags": "keyword",
+      "author": "Biiliiee",
+      "stars": 2,
+      "language": "C",
+      "created_at": "2026-07-28T11:35:53Z",
+      "pushed_at": "2026-07-29T00:37:59Z",
+      "description_cn": "在 C 程序集 x64 中实现完整的间接系统调用，它们依赖于 windows.h。包括 PEB Walker 手册、PE 导出解析器和 SSN/EDR 扩展工具解决方案。",
+      "discovered_at": "2026-07-30 04:47:45",
+      "final_score": 6.79,
+      "relevance_score": 9.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "indirect syscall(4S)",
+        "direct syscall(5S)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "direct syscall"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "VagabondSEC/s0p0wn3d-c2",
+      "repo_url": "https://github.com/VagabondSEC/s0p0wn3d-c2",
+      "repo_description": "C2 framework with EDR evasion: DLL hijacking, direct syscalls, encrypted traffic. Academic project.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "direct syscall(5S), c2(3A)",
+      "tags": "C2,免杀",
+      "author": "VagabondSEC",
+      "stars": 0,
+      "language": "C++",
+      "created_at": "2026-07-29T22:16:47Z",
+      "pushed_at": "2026-07-29T22:49:45Z",
+      "description_cn": "具有 EDR 规避功能的 C2 框架：DLL 劫持、直接系统调用、加密流量。学术项目。",
+      "discovered_at": "2026-07-30 04:46:55",
+      "final_score": 6.07,
+      "relevance_score": 8.75,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "direct syscall(5S)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "direct syscall",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 349,
-  "last_updated": "2026-07-29T20:45:21",
+  "total": 352,
+  "last_updated": "2026-07-30T04:50:03",
   "by_type": {
-    "keyword": 298,
+    "keyword": 301,
     "cve": 43,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 36,
-    "medium": 311,
+    "medium": 314,
     "low": 2
   },
   "meta": {
