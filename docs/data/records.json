@@ -14585,19 +14585,100 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "ReaJason/MemShellParty",
+      "repo_url": "https://github.com/ReaJason/MemShellParty",
+      "repo_description": "一款专注于 Java 主流 Web 中间件的内存马快速生成工具，致力于简化安全研究人员和红队成员的工作流程，提升攻防效率",
+      "monitor_type": "keyword",
+      "monitor_keyword": "webshell(3A), 红队工具(3S), 安全研究(1B), 红队(3A)",
+      "tags": "Webshell,红队",
+      "author": "ReaJason",
+      "stars": 1565,
+      "language": "Java",
+      "created_at": "2024-09-01T05:17:19Z",
+      "pushed_at": "2026-07-31T13:52:59Z",
+      "description_cn": "一款专注于 Java 主流 Web 中间件的内存马快速生成工具，致力于简化安全研究人员和红队成员的工作流程，提升攻防效率",
+      "discovered_at": "2026-07-31 15:55:51",
+      "final_score": 9.5,
+      "relevance_score": 10.0,
+      "quality_score": 8.9,
+      "confidence": "high",
+      "reasons": [
+        "webshell(3A)",
+        "红队工具(3S)",
+        "安全研究(1B)",
+        "红队(3A)",
+        "stars>=500",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "webshell",
+        "红队工具",
+        "安全研究",
+        "红队"
+      ],
+      "is_fork": false,
+      "topics": [
+        "asm",
+        "bytebuddy",
+        "javaagent",
+        "javasecurity",
+        "javassist",
+        "javaweb",
+        "memshell",
+        "payload",
+        "webshell"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "bloggins/chacha20-Shellcode-Loader",
+      "repo_url": "https://github.com/bloggins/chacha20-Shellcode-Loader",
+      "repo_description": "chacha20 Shellcode Loader",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode loader(4S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "bloggins",
+      "stars": 0,
+      "language": "C++",
+      "created_at": "2026-07-31T12:30:15Z",
+      "pushed_at": "2026-07-31T12:33:29Z",
+      "description_cn": "chacha20 Shellcode 加载器",
+      "discovered_at": "2026-07-31 15:54:32",
+      "final_score": 6.58,
+      "relevance_score": 10.0,
+      "quality_score": 2.4,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode loader(4S)",
+        "shellcode(4A)",
+        "stars=0",
+        "desc_short",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "shellcode loader",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 365,
-  "last_updated": "2026-07-31T05:27:05",
+  "total": 367,
+  "last_updated": "2026-07-31T15:56:24",
   "by_type": {
-    "keyword": 310,
+    "keyword": 312,
     "cve": 47,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
-    "high": 36,
-    "medium": 327,
+    "high": 37,
+    "medium": 328,
     "low": 2
   },
   "meta": {
