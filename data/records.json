@@ -14906,19 +14906,109 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "mynksh/c2lint",
+      "repo_url": "https://github.com/mynksh/c2lint",
+      "repo_description": "A lightweight, unofficial syntax linter, formatter, and version-compliance checker for Cobalt Strike Malleable C2 profiles — written in plain Python with no external dependencies.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "cobalt strike(5S), malleable c2(5S), c2(3A)",
+      "tags": "C2",
+      "author": "mynksh",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-01T15:13:41Z",
+      "pushed_at": "2026-08-01T15:18:26Z",
+      "description_cn": "用于 Cobalt Strike Malleable C2 配置文件的轻量级非官方语法 linter、格式化程序和版本合规性检查器 - 用纯 Python 编写，没有外部依赖项。",
+      "discovered_at": "2026-08-01 20:39:39",
+      "final_score": 7.86,
+      "relevance_score": 12.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "cobalt strike(5S)",
+        "malleable c2(5S)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "cobalt strike",
+        "malleable c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "ExtremeInjector-Cpp/ExtremeInjector",
+      "repo_url": "https://github.com/ExtremeInjector-Cpp/ExtremeInjector",
+      "repo_description": "Extreme  DLL injector for Windows 10/11. Supports Manual Map, LoadLibrary, stealth injection with thread hijacking and PE header wiping. x86 and x64 support. The most trusted dll injector windows tool on UnknownCheats. Extreme Injector v3 download free, portable, no install required.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "thread hijacking(3S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "ExtremeInjector-Cpp",
+      "stars": 1,
+      "language": "C++",
+      "created_at": "2026-08-01T18:01:52Z",
+      "pushed_at": "2026-08-01T19:13:15Z",
+      "description_cn": "适用于 Windows 10/11 的 Extreme DLL 注入器。支持手动映射、LoadLibrary、线程劫持和 PE 头擦除的隐形注入。 x86 和 x64 支持。 UnknownCheats 上最值得信赖的 dll 注入器 Windows 工具。 Extreme Injector v3 免费下载、便携、无需安装。",
+      "discovered_at": "2026-08-01 20:42:18",
+      "final_score": 6.15,
+      "relevance_score": 7.0,
+      "quality_score": 5.1,
+      "confidence": "medium",
+      "reasons": [
+        "thread hijacking(3S)",
+        "shellcode(4A)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "thread hijacking",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cpp-injector",
+        "dll-hooking-dll-plugin",
+        "dll-injection",
+        "dll-injection-tool",
+        "dll-injector-eac",
+        "dll-loader",
+        "extreme-injector",
+        "extreme-injector-2026",
+        "extreme-injector-3-7-3",
+        "extreme-injector-pc",
+        "extreme-injector-v3",
+        "game-dll-injector",
+        "injector-tool",
+        "injector-x32",
+        "injector-x64",
+        "process-injector",
+        "shellcode-injector",
+        "stealth-injector",
+        "windows-dll-injector",
+        "windows-injector"
+      ],
+      "archived": false
     }
   ],
-  "total": 373,
-  "last_updated": "2026-08-01T14:54:43",
+  "total": 375,
+  "last_updated": "2026-08-01T20:42:57",
   "by_type": {
-    "keyword": 316,
+    "keyword": 318,
     "cve": 49,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 38,
-    "medium": 333,
+    "medium": 335,
     "low": 2
   },
   "meta": {
