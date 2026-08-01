@@ -14666,19 +14666,142 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "TamatahYT/CVE-2026-53576",
+      "repo_url": "https://github.com/TamatahYT/CVE-2026-53576",
+      "repo_description": "Kestra Unauthenticated RCE Exploit (CVE-2026-53576)",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "TamatahYT",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-01T08:25:48Z",
+      "pushed_at": "2026-08-01T08:29:09Z",
+      "description_cn": "Kestra 未经身份验证的 RCE 漏洞 (CVE-2026-53576)",
+      "discovered_at": "2026-08-01 09:48:04",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "soverineg/cve-2026-41940-PoC",
+      "repo_url": "https://github.com/soverineg/cve-2026-41940-PoC",
+      "repo_description": "A cPanel and WHM authentication bypassing tool",
+      "monitor_type": "cve",
+      "monitor_keyword": "cve(2B), B_only(x0.5), cve_id(+)",
+      "tags": "免杀,POC,CVE",
+      "author": "soverineg",
+      "stars": 37,
+      "language": "Python",
+      "created_at": "2026-07-20T14:15:54Z",
+      "pushed_at": "2026-07-30T15:00:52Z",
+      "description_cn": "cPanel 和 WHM 身份验证绕过工具",
+      "discovered_at": "2026-08-01 09:48:04",
+      "final_score": 5.86,
+      "relevance_score": 5.0,
+      "quality_score": 6.9,
+      "confidence": "medium",
+      "reasons": [
+        "cve(2B)",
+        "B_only(x0.5)",
+        "cve_id(+)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "aunthentication",
+        "cpanel",
+        "cve-2026-41940",
+        "proof-of-concept",
+        "python"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "icedracon/adhammer",
+      "repo_url": "https://github.com/icedracon/adhammer",
+      "repo_description": "Active Directory security-assessment toolkit in Rust — PingCastle-class audit + authorized red-team validation, on a from-scratch DCE/RPC · NTLM · SMB2 · Kerberos stack. One static binary, from Kali or Windows.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "red team(3A), security_context(+1.5)",
+      "tags": "红队",
+      "author": "icedracon",
+      "stars": 30,
+      "language": "Rust",
+      "created_at": "2026-07-17T11:15:38Z",
+      "pushed_at": "2026-08-01T09:35:56Z",
+      "description_cn": "Rust 中的 Active Directory 安全评估工具包 — PingCastle 级审计 + 授权红队验证，在从头开始的 DCE/RPC · NTLM · SMB2 · Kerberos 堆栈上。一个静态二进制文件，来自 Kali 或 Windows。",
+      "discovered_at": "2026-08-01 09:51:24",
+      "final_score": 5.94,
+      "relevance_score": 4.5,
+      "quality_score": 7.7,
+      "confidence": "medium",
+      "reasons": [
+        "red team(3A)",
+        "security_context(+1.5)",
+        "stars>=20",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "red team"
+      ],
+      "is_fork": false,
+      "topics": [
+        "active-directory",
+        "adcs",
+        "bloodhound",
+        "dcerpc",
+        "infosec",
+        "kerberos",
+        "pentesting",
+        "red-team",
+        "rust",
+        "security",
+        "security-tools"
+      ],
+      "archived": false
     }
   ],
-  "total": 367,
-  "last_updated": "2026-07-31T15:56:24",
+  "total": 370,
+  "last_updated": "2026-08-01T09:51:25",
   "by_type": {
-    "keyword": 312,
-    "cve": 47,
+    "keyword": 313,
+    "cve": 49,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 37,
-    "medium": 328,
+    "medium": 331,
     "low": 2
   },
   "meta": {
