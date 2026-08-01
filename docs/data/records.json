@@ -14789,19 +14789,136 @@
         "security-tools"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "darkness215/darkcrypt",
+      "repo_url": "https://github.com/darkness215/darkcrypt",
+      "repo_description": "AES-256-CBC shellcode loader with Hell's Gate direct syscalls and Early Bird APC injection",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode loader(4S), direct syscall(5S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "darkness215",
+      "stars": 4,
+      "language": "C",
+      "created_at": "2026-02-27T05:41:11Z",
+      "pushed_at": "2026-08-01T13:42:54Z",
+      "description_cn": "带有 Hell's Gate 直接系统调用和 Early Bird APC 注入的 AES-256-CBC shellcode 加载器",
+      "discovered_at": "2026-08-01 14:51:35",
+      "final_score": 8.45,
+      "relevance_score": 12.0,
+      "quality_score": 4.1,
+      "confidence": "high",
+      "reasons": [
+        "shellcode loader(4S)",
+        "direct syscall(5S)",
+        "shellcode(4A)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode loader",
+        "direct syscall",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "NeverSight/NeverC",
+      "repo_url": "https://github.com/NeverSight/NeverC",
+      "repo_description": "The AI-friendly C23 compiler for security research, built on LLVM [WIP]",
+      "monitor_type": "keyword",
+      "monitor_keyword": "security research(1B), shellcode(4A), security_context(+1.5)",
+      "tags": "C2,Shellcode",
+      "author": "NeverSight",
+      "stars": 5,
+      "language": "C",
+      "created_at": "2026-05-16T16:33:50Z",
+      "pushed_at": "2026-08-01T13:56:00Z",
+      "description_cn": "用于安全研究的人工智能友好型 C23 编译器，基于 LLVM [WIP]",
+      "discovered_at": "2026-08-01 14:54:15",
+      "final_score": 6.59,
+      "relevance_score": 6.5,
+      "quality_score": 6.7,
+      "confidence": "medium",
+      "reasons": [
+        "security research(1B)",
+        "shellcode(4A)",
+        "security_context(+1.5)",
+        "stars>=5",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "security research",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [
+        "ai",
+        "android",
+        "c",
+        "compiler",
+        "driver",
+        "ios",
+        "kernel",
+        "llm",
+        "llvm",
+        "obfuscation",
+        "plugin",
+        "security",
+        "shellcode",
+        "windows"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "cocomelonc/tabby",
+      "repo_url": "https://github.com/cocomelonc/tabby",
+      "repo_description": "a minimal, position-independent C shellcode framework for Windows x64. compiles entirely on Linux",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), security_context(+1.5)",
+      "tags": "Shellcode",
+      "author": "cocomelonc",
+      "stars": 64,
+      "language": "C",
+      "created_at": "2026-06-11T09:35:13Z",
+      "pushed_at": "2026-08-01T10:45:37Z",
+      "description_cn": "适用于 Windows x64 的最小的、位置无关的 C shellcode 框架。完全在Linux上编译",
+      "discovered_at": "2026-08-01 14:54:15",
+      "final_score": 5.68,
+      "relevance_score": 5.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "security_context(+1.5)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 370,
-  "last_updated": "2026-08-01T09:51:25",
+  "total": 373,
+  "last_updated": "2026-08-01T14:54:43",
   "by_type": {
-    "keyword": 313,
+    "keyword": 316,
     "cve": 49,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
-    "high": 37,
-    "medium": 331,
+    "high": 38,
+    "medium": 333,
     "low": 2
   },
   "meta": {
