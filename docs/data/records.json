@@ -14996,19 +14996,123 @@
         "windows-injector"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "yellowkeybitlocker/YellowKey-Bitlocker-CVE-2026-45585",
+      "repo_url": "https://github.com/yellowkeybitlocker/YellowKey-Bitlocker-CVE-2026-45585",
+      "repo_description": "YellowKey BitLocker CVE-2026-45585 free open-source utility to extract, backup and view BitLocker recovery keys on Windows 10/11. BitLocker bypass vulnerability tool, remediation and mitigation. Tom's Hardware coverage. Check TPM status, protector types, encryption state. Download YellowKey free, portable, no install needed.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), cve(2B), B_only(x0.5), cve_id(+)",
+      "tags": "免杀,漏洞利用,CVE",
+      "author": "yellowkeybitlocker",
+      "stars": 12,
+      "language": "TypeScript",
+      "created_at": "2026-08-01T18:09:20Z",
+      "pushed_at": "2026-08-01T19:13:03Z",
+      "description_cn": "YellowKey BitLocker CVE-2026-45585 免费开源实用程序，用于在 Windows 10/11 上提取、备份和查看 BitLocker 恢复密钥。 BitLocker 绕过漏洞工具、修复和缓解。汤姆的硬件报道。检查 TPM 状态、保护器类型、加密状态。免费下载 YellowKey，便携式，无需安装。",
+      "discovered_at": "2026-08-02 05:16:00",
+      "final_score": 5.77,
+      "relevance_score": 5.0,
+      "quality_score": 6.7,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "cve(2B)",
+        "B_only(x0.5)",
+        "cve_id(+)",
+        "stars>=5",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "bitlocker",
+        "bitlocker-bypass",
+        "bitlocker-drive-encryption",
+        "bitlocker-drive-lock",
+        "bitlocker-drive-management",
+        "bitlocker-lock",
+        "bitlocker-yellowkey",
+        "cve-2026-45585",
+        "decryption-tool",
+        "full-disk-encryption",
+        "nightmare-eclipse",
+        "open-source-vulnerabilities",
+        "vulnerabilities",
+        "vulnerability",
+        "yellow",
+        "yellowkey",
+        "yellowkey-bitlocker",
+        "yellowkey-cve",
+        "yellowkey-exploit",
+        "yellowkey-vulnerability"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "Scratchappy/CVE-2025-68937",
+      "repo_url": "https://github.com/Scratchappy/CVE-2025-68937",
+      "repo_description": "Automated PoC exploit for CVE-2025-68937 — Gitea/Forgejo Template Symlink RCE. Any authenticated user can get a shell as the git service user.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "Scratchappy",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-02T03:14:20Z",
+      "pushed_at": "2026-08-02T03:14:26Z",
+      "description_cn": "CVE-2025-68937 的自动 PoC 漏洞 — Gitea/Forgejo 模板符号链接 RCE。任何经过身份验证的用户都可以作为 git 服务用户获得 shell。",
+      "discovered_at": "2026-08-02 05:19:09",
+      "final_score": 5.52,
+      "relevance_score": 9.0,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve-2025-68937",
+        "exploit",
+        "gitea",
+        "poc",
+        "proof-of-concept",
+        "rce",
+        "security"
+      ],
+      "archived": false
     }
   ],
-  "total": 375,
-  "last_updated": "2026-08-01T20:42:57",
+  "total": 377,
+  "last_updated": "2026-08-02T05:19:25",
   "by_type": {
-    "keyword": 318,
-    "cve": 49,
+    "keyword": 319,
+    "cve": 50,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 38,
-    "medium": 335,
+    "medium": 337,
     "low": 2
   },
   "meta": {
