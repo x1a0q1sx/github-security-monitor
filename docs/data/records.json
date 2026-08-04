@@ -16611,19 +16611,125 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "jaloliddin-sec/malware-analysis-lab",
+      "repo_url": "https://github.com/jaloliddin-sec/malware-analysis-lab",
+      "repo_description": "Static + dynamic analysis of a Cobalt Strike beacon loader: PE structure, Ghidra disassembly, x64dbg shellcode tracing, Wireshark C2 capture, and YARA detection rules.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "malware analysis(1B), cobalt strike(5S), shellcode(4A), beacon(2A), c2(3A)",
+      "tags": "C2,Shellcode",
+      "author": "jaloliddin-sec",
+      "stars": 0,
+      "language": "YARA",
+      "created_at": "2026-08-04T12:44:43Z",
+      "pushed_at": "2026-08-04T12:45:24Z",
+      "description_cn": "Cobalt Strike 信标加载器的静态+动态分析：PE 结构、Ghidra 反汇编、x64dbg shellcode 跟踪、Wireshark C2 捕获和 YARA 检测规则。",
+      "discovered_at": "2026-08-04 16:06:00",
+      "final_score": 7.86,
+      "relevance_score": 12.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "malware analysis(1B)",
+        "cobalt strike(5S)",
+        "shellcode(4A)",
+        "beacon(2A)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "malware analysis",
+        "cobalt strike",
+        "shellcode",
+        "beacon",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "0xROOTPLS/Fritter",
+      "repo_url": "https://github.com/0xROOTPLS/Fritter",
+      "repo_description": "Fritter is a heavily modified fork of TheWover and Odzhan's Donut shellcode generator.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), security_context(+1.5)",
+      "tags": "Shellcode",
+      "author": "0xROOTPLS",
+      "stars": 246,
+      "language": "C",
+      "created_at": "2026-03-08T21:51:40Z",
+      "pushed_at": "2026-08-04T15:36:31Z",
+      "description_cn": "Fritter 是 TheWover 和 Odzhan 的 Donut shellcode 生成器的一个经过大量修改的分支。",
+      "discovered_at": "2026-08-04 16:08:51",
+      "final_score": 6.13,
+      "relevance_score": 5.5,
+      "quality_score": 6.9,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "security_context(+1.5)",
+        "stars>=100",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "ilizavr/cossacks-back-to-war-exploit",
+      "repo_url": "https://github.com/ilizavr/cossacks-back-to-war-exploit",
+      "repo_description": "cossacks back to war RCE exploit",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), security_context(+1.5)",
+      "tags": "漏洞利用",
+      "author": "ilizavr",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-06-30T16:16:12Z",
+      "pushed_at": "2026-08-04T15:14:15Z",
+      "description_cn": "哥萨克重返战争 RCE 漏洞",
+      "discovered_at": "2026-08-04 16:09:03",
+      "final_score": 5.52,
+      "relevance_score": 7.0,
+      "quality_score": 3.7,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_short",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 410,
-  "last_updated": "2026-08-04T10:29:29",
+  "total": 413,
+  "last_updated": "2026-08-04T16:09:20",
   "by_type": {
-    "keyword": 339,
+    "keyword": 342,
     "cve": 63,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 42,
-    "medium": 366,
+    "medium": 369,
     "low": 2
   },
   "meta": {
