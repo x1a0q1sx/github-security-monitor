@@ -16717,19 +16717,58 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "aregowe/magento2-module-polyshell-protection",
+      "repo_url": "https://github.com/aregowe/magento2-module-polyshell-protection",
+      "repo_description": "Comprehensive defense-in-depth Magento 2 module that closes the PolyShell unrestricted file upload vulnerability (APSB25-94) — blocking polyglot webshell uploads across eight interception layers including request path blocking, controller-level upload prevention, polyglot file detection, and framework-level image hardening.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "webshell(3A), security_context(+1.5)",
+      "tags": "漏洞利用,Webshell",
+      "author": "aregowe",
+      "stars": 62,
+      "language": "PHP",
+      "created_at": "2026-04-14T17:13:56Z",
+      "pushed_at": "2026-08-04T16:34:54Z",
+      "description_cn": "全面的深度防御 Magento 2 模块可关闭 PolyShell 无限制文件上传漏洞 (APSB25-94) - 跨八个拦截层阻止多语言 Webshel​​l 上传，包括请求路径阻止、控制器级上传预防、多语言文件检测和框架级图像强化。",
+      "discovered_at": "2026-08-04 21:04:48",
+      "final_score": 5.94,
+      "relevance_score": 4.5,
+      "quality_score": 7.7,
+      "confidence": "medium",
+      "reasons": [
+        "webshell(3A)",
+        "security_context(+1.5)",
+        "stars>=20",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "webshell"
+      ],
+      "is_fork": false,
+      "topics": [
+        "magento",
+        "magento2",
+        "php",
+        "php8",
+        "security"
+      ],
+      "archived": false
     }
   ],
-  "total": 413,
-  "last_updated": "2026-08-04T16:09:20",
+  "total": 414,
+  "last_updated": "2026-08-04T21:05:13",
   "by_type": {
-    "keyword": 342,
+    "keyword": 343,
     "cve": 63,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 42,
-    "medium": 369,
+    "medium": 370,
     "low": 2
   },
   "meta": {
