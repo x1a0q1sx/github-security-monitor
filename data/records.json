@@ -16869,19 +16869,52 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "HackSpeak/p3-loader",
+      "repo_url": "https://github.com/HackSpeak/p3-loader",
+      "repo_description": "P3 (Process Parameter Poisoning) - Windows shellcode loader via CreateProcessW params + NtSetContextThread (EDR evasion research)",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode loader(4S), shellcode(4A)",
+      "tags": "免杀,Shellcode",
+      "author": "HackSpeak",
+      "stars": 1,
+      "language": "C",
+      "created_at": "2026-08-05T11:52:03Z",
+      "pushed_at": "2026-08-05T11:52:22Z",
+      "description_cn": "P3（进程参数中毒） - 通过 CreateProcessW params + NtSetContextThread 的 Windows shellcode 加载器（EDR 规避研究）",
+      "discovered_at": "2026-08-05 15:54:20",
+      "final_score": 6.25,
+      "relevance_score": 8.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode loader(4S)",
+        "shellcode(4A)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode loader",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 417,
-  "last_updated": "2026-08-05T10:26:52",
+  "total": 418,
+  "last_updated": "2026-08-05T15:56:09",
   "by_type": {
-    "keyword": 346,
+    "keyword": 347,
     "cve": 63,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 42,
-    "medium": 373,
+    "medium": 374,
     "low": 2
   },
   "meta": {
