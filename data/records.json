@@ -17175,19 +17175,59 @@
         "vulnerability-assessment"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "CreamyG31337/ncentral-compromise-ioc-triage",
+      "repo_url": "https://github.com/CreamyG31337/ncentral-compromise-ioc-triage",
+      "repo_description": "Read-only N-able N-central CVE-2026-18556/CVE-2026-18577 post-exploitation IoC hunter for Windows endpoints",
+      "monitor_type": "cve",
+      "monitor_keyword": "post exploitation(3A), exploitation(2B), exploit(2B), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "CreamyG31337",
+      "stars": 0,
+      "language": "PowerShell",
+      "created_at": "2026-08-06T00:01:06Z",
+      "pushed_at": "2026-08-06T03:44:58Z",
+      "description_cn": "适用于 Windows 端点的只读 N-able N-central CVE-2026-18556/CVE-2026-18577 后利用 IoC 猎人",
+      "discovered_at": "2026-08-06 04:54:10",
+      "final_score": 7.04,
+      "relevance_score": 10.5,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "post exploitation(3A)",
+        "exploitation(2B)",
+        "exploit(2B)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "post exploitation",
+        "exploitation",
+        "exploit",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 424,
-  "last_updated": "2026-08-05T20:59:22",
+  "total": 425,
+  "last_updated": "2026-08-06T04:54:11",
   "by_type": {
     "keyword": 352,
-    "cve": 64,
+    "cve": 65,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 42,
-    "medium": 380,
+    "medium": 381,
     "low": 2
   },
   "meta": {
