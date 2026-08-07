@@ -17575,19 +17575,140 @@
         "red-team"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "flames778/android-pentest-lab-metasploit",
+      "repo_url": "https://github.com/flames778/android-pentest-lab-metasploit",
+      "repo_description": "Controlled Android penetration testing lab built with Metasploit — payload deployment, Meterpreter sessions, and post-exploitation, for authorized security research.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "post exploitation(3A), security research(1B), exploitation(2B), meterpreter(4S), exploit(2B)",
+      "tags": "免杀,漏洞利用",
+      "author": "flames778",
+      "stars": 1,
+      "language": "Shell",
+      "created_at": "2026-08-07T08:07:34Z",
+      "pushed_at": "2026-08-07T08:09:34Z",
+      "description_cn": "使用 Metasploit 构建的受控 Android 渗透测试实验室 — 有效负载部署、Meterpreter 会话和后利用，用于授权安全研究。",
+      "discovered_at": "2026-08-07 08:45:45",
+      "final_score": 9.26,
+      "relevance_score": 12.0,
+      "quality_score": 5.9,
+      "confidence": "high",
+      "reasons": [
+        "post exploitation(3A)",
+        "security research(1B)",
+        "exploitation(2B)",
+        "meterpreter(4S)",
+        "exploit(2B)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "post exploitation",
+        "security research",
+        "exploitation",
+        "meterpreter",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [
+        "android-security",
+        "ethical-hacking",
+        "infosec",
+        "metasploit",
+        "network-security",
+        "penetration-testing",
+        "postgresql",
+        "python3",
+        "ubuntu-server"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "BC-SECURITY/Long-Live-The-Empire",
+      "repo_url": "https://github.com/BC-SECURITY/Long-Live-The-Empire",
+      "repo_description": "A comprehensive workshop aimed to equip participants with an in-depth understanding of modern Command and Control (C2) concepts, focusing on the open-source Empire C2 framework.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "empire c2(3S), c2(3A)",
+      "tags": "C2,漏洞利用",
+      "author": "BC-SECURITY",
+      "stars": 110,
+      "language": "",
+      "created_at": "2023-07-10T01:00:58Z",
+      "pushed_at": "2026-08-07T08:26:05Z",
+      "description_cn": "综合研讨会旨在让参与者深入了解现代指挥与控制 (C2) 概念，重点关注开源 Empire C2 框架。",
+      "discovered_at": "2026-08-07 08:46:36",
+      "final_score": 6.18,
+      "relevance_score": 6.0,
+      "quality_score": 6.4,
+      "confidence": "medium",
+      "reasons": [
+        "empire c2(3S)",
+        "c2(3A)",
+        "stars>=100",
+        "desc_ok",
+        "no_language",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "empire c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [
+        "defcon",
+        "empire"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "xy200303/webshell-client",
+      "repo_url": "https://github.com/xy200303/webshell-client",
+      "repo_description": "一个轻量的 PHP 一句话 Webshell 连接与管理工具，纯 Python 标准库实现，无需安装任何依赖。  面向授权渗透测试与靶场研究场景，除基础的命令执行 / 文件传输外，内置 PHP-FPM bypass 能力：在目标 disable_functions 禁掉全部命令执行函数时，通过直连本机 FPM socket 加载恶意扩展实现绕过",
+      "monitor_type": "keyword",
+      "monitor_keyword": "webshell(3A), 渗透测试(2B), security_context(+1.5)",
+      "tags": "免杀,Webshell",
+      "author": "xy200303",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-08-07T04:05:10Z",
+      "pushed_at": "2026-08-07T04:22:47Z",
+      "description_cn": "一个轻量的 PHP 一句话 Webshell 连接与管理工具，纯 Python 标准库实现，无需安装任何依赖。  面向授权渗透测试与靶场研究场景，除基础的命令执行 / 文件传输外，内置 PHP-FPM bypass 能力：在目标 disable_functions 禁掉全部命令执行函数时，通过直连本机 FPM socket 加载恶意扩展实现绕过",
+      "discovered_at": "2026-08-07 08:47:29",
+      "final_score": 5.83,
+      "relevance_score": 7.25,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "webshell(3A)",
+        "渗透测试(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "webshell",
+        "渗透测试"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 434,
-  "last_updated": "2026-08-07T00:53:18",
+  "total": 437,
+  "last_updated": "2026-08-07T08:47:54",
   "by_type": {
-    "keyword": 356,
+    "keyword": 359,
     "cve": 70,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
-    "high": 42,
-    "medium": 390,
+    "high": 43,
+    "medium": 392,
     "low": 2
   },
   "meta": {
