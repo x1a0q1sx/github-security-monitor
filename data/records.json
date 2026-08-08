@@ -18345,19 +18345,52 @@
         "pentestration-testing"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "dodonaeus/staticbypass",
+      "repo_url": "https://github.com/dodonaeus/staticbypass",
+      "repo_description": "Template-based, modular, multi-language, shellcode obfuscator and compiler",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode obfuscation(4S), shellcode(4A)",
+      "tags": "免杀,Shellcode",
+      "author": "dodonaeus",
+      "stars": 2,
+      "language": "Python",
+      "created_at": "2026-07-09T00:54:26Z",
+      "pushed_at": "2026-08-08T07:09:40Z",
+      "description_cn": "基于模板、模块化、多语言、shellcode 混淆器和编译器",
+      "discovered_at": "2026-08-08 08:28:02",
+      "final_score": 6.25,
+      "relevance_score": 8.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode obfuscation(4S)",
+        "shellcode(4A)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode obfuscation",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 452,
-  "last_updated": "2026-08-08T03:18:45",
+  "total": 453,
+  "last_updated": "2026-08-08T08:29:46",
   "by_type": {
-    "keyword": 372,
+    "keyword": 373,
     "cve": 72,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 44,
-    "medium": 406,
+    "medium": 407,
     "low": 2
   },
   "meta": {
