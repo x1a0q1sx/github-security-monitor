@@ -18206,19 +18206,158 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "imbas007/CVE-2026-64638-POC",
+      "repo_url": "https://github.com/imbas007/CVE-2026-64638-POC",
+      "repo_description": "CVE-2026-64638: WordPress Pre-auth XSS → RCE (XSS2Shell) PoC",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "imbas007",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-08T01:20:11Z",
+      "pushed_at": "2026-08-08T01:24:48Z",
+      "description_cn": "CVE-2026-64638：WordPress 预身份验证 XSS → RCE (XSS2Shell) PoC",
+      "discovered_at": "2026-08-08 03:15:30",
+      "final_score": 7.02,
+      "relevance_score": 9.0,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve",
+        "exploit",
+        "poc",
+        "rce",
+        "security-research",
+        "wordpress",
+        "xss",
+        "xss2shell"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "joaoaugustom/WordPress_Backup_Migration-RCE_Unauthenticated",
+      "repo_url": "https://github.com/joaoaugustom/WordPress_Backup_Migration-RCE_Unauthenticated",
+      "repo_description": "This exploit is based on CVE-2023-6553 and was built upon the original exploit by Chocapik, it was added that a direct reverse shell can be obtained.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "漏洞利用,CVE",
+      "author": "joaoaugustom",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-05-31T18:50:36Z",
+      "pushed_at": "2026-08-08T01:34:27Z",
+      "description_cn": "该漏洞基于CVE-2023-6553，并在Chocapik原始漏洞的基础上构建，并添加了可以获得直接反向shell的功能。",
+      "discovered_at": "2026-08-08 03:18:30",
+      "final_score": 5.66,
+      "relevance_score": 9.25,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "backup",
+        "backup-migration",
+        "cve",
+        "cve-2023-6553",
+        "exploit",
+        "penetration-testing",
+        "plugin",
+        "wordpress"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "joaoaugustom/IPFire_2.19_RCE_Authenticated",
+      "repo_url": "https://github.com/joaoaugustom/IPFire_2.19_RCE_Authenticated",
+      "repo_description": "This exploit is based on CVE-2017-9757 and was built upon the original exploit by 0x09AL.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "漏洞利用,CVE",
+      "author": "joaoaugustom",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-08T01:05:36Z",
+      "pushed_at": "2026-08-08T01:12:42Z",
+      "description_cn": "此漏洞基于 CVE-2017-9757，并基于 0x09AL 的原始漏洞构建。",
+      "discovered_at": "2026-08-08 03:18:30",
+      "final_score": 5.66,
+      "relevance_score": 9.25,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve",
+        "cve-2017-9757",
+        "exploit",
+        "ipfire",
+        "pentestration-testing"
+      ],
+      "archived": false
     }
   ],
-  "total": 449,
-  "last_updated": "2026-08-07T20:31:35",
+  "total": 452,
+  "last_updated": "2026-08-08T03:18:45",
   "by_type": {
-    "keyword": 370,
-    "cve": 71,
+    "keyword": 372,
+    "cve": 72,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 44,
-    "medium": 403,
+    "medium": 406,
     "low": 2
   },
   "meta": {
