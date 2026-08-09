@@ -18699,19 +18699,55 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "Boreas37/CVE-2026-34910-PoC",
+      "repo_url": "https://github.com/Boreas37/CVE-2026-34910-PoC",
+      "repo_description": "CVE-2026-34910/34909 — UniFi OS unauth RCE + file read via ..%2f auth bypass (CVSS 10.0, KEV, Mirai ITW)",
+      "monitor_type": "cve",
+      "monitor_keyword": "rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "免杀,POC,漏洞利用,CVE",
+      "author": "Boreas37",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-08-09T16:58:00Z",
+      "pushed_at": "2026-08-09T19:19:39Z",
+      "description_cn": "CVE-2026-34910/34909 — UniFi 操作系统未经身份验证 RCE + 通过 ..%2f 身份验证绕过读取文件（CVSS 10.0、KEV、Mirai ITW）",
+      "discovered_at": "2026-08-09 20:18:35",
+      "final_score": 5.7,
+      "relevance_score": 7.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 460,
-  "last_updated": "2026-08-09T14:23:21",
+  "total": 461,
+  "last_updated": "2026-08-09T20:18:38",
   "by_type": {
     "keyword": 375,
-    "cve": 77,
+    "cve": 78,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 45,
-    "medium": 413,
+    "medium": 414,
     "low": 2
   },
   "meta": {
