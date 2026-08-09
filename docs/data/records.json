@@ -18621,19 +18621,59 @@
         "web-security"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "Ahmall-sec/XSS2Shell",
+      "repo_url": "https://github.com/Ahmall-sec/XSS2Shell",
+      "repo_description": "XSS2Shell ULTIMATE v3.0 is a powerful exploitation tool that chains Cross-Site Scripting (XSS) vulnerabilities in WordPress to achieve Remote Code Execution (RCE). This tool exploits CVE-2026-64638 to gain full control over vulnerable WordPress installations.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploitation(2B), exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "Ahmall-sec",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-09T07:04:45Z",
+      "pushed_at": "2026-08-09T08:16:31Z",
+      "description_cn": "XSS2Shell ULTIMATE v3.0 是一款功能强大的利用工具，可链接 WordPress 中的跨站脚本 (XSS) 漏洞以实现远程代码执行 (RCE)。该工具利用 CVE-2026-64638 来完全控制易受攻击的 WordPress 安装。",
+      "discovered_at": "2026-08-09 08:28:59",
+      "final_score": 7.04,
+      "relevance_score": 10.5,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploitation(2B)",
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploitation",
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 458,
-  "last_updated": "2026-08-08T20:19:30",
+  "total": 459,
+  "last_updated": "2026-08-09T08:28:59",
   "by_type": {
     "keyword": 375,
-    "cve": 75,
+    "cve": 76,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 45,
-    "medium": 411,
+    "medium": 412,
     "low": 2
   },
   "meta": {
