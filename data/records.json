@@ -18661,19 +18661,57 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "Boreas37/CVE-2026-64638-PoC-XSS2Shell-",
+      "repo_url": "https://github.com/Boreas37/CVE-2026-64638-PoC-XSS2Shell-",
+      "repo_description": "XSS2Shell (CVE-2026-64638) WordPress pre-auth XSS to RCE chain — PoC exploit + defensive audit tool + nuclei template",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "Boreas37",
+      "stars": 13,
+      "language": "Python",
+      "created_at": "2026-08-07T17:07:17Z",
+      "pushed_at": "2026-08-09T14:03:24Z",
+      "description_cn": "XSS2Shell (CVE-2026-64638) WordPress 预身份验证 XSS 到 RCE 链 — PoC 漏洞 + 防御审计工具 + nuclei 模板",
+      "discovered_at": "2026-08-09 14:23:17",
+      "final_score": 7.16,
+      "relevance_score": 9.0,
+      "quality_score": 4.9,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 459,
-  "last_updated": "2026-08-09T08:28:59",
+  "total": 460,
+  "last_updated": "2026-08-09T14:23:21",
   "by_type": {
     "keyword": 375,
-    "cve": 76,
+    "cve": 77,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 45,
-    "medium": 412,
+    "medium": 413,
     "low": 2
   },
   "meta": {
