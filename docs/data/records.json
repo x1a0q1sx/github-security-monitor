@@ -18735,19 +18735,59 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "buffer/thug",
+      "repo_url": "https://github.com/buffer/thug",
+      "repo_description": "Python low-interaction honeyclient",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), security_context(+1.5)",
+      "tags": "Shellcode",
+      "author": "buffer",
+      "stars": 1039,
+      "language": "Python",
+      "created_at": "2012-02-20T11:56:54Z",
+      "pushed_at": "2026-08-07T19:32:54Z",
+      "description_cn": "Python低交互honeyclient",
+      "discovered_at": "2026-08-10 03:45:16",
+      "final_score": 6.85,
+      "relevance_score": 5.5,
+      "quality_score": 8.5,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "security_context(+1.5)",
+        "stars>=500",
+        "desc_short",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [
+        "client-honeypot",
+        "honeyclient",
+        "low-interaction",
+        "python",
+        "security-tools",
+        "shellcode",
+        "virustotal"
+      ],
+      "archived": false
     }
   ],
-  "total": 461,
-  "last_updated": "2026-08-09T20:18:38",
+  "total": 462,
+  "last_updated": "2026-08-10T03:45:43",
   "by_type": {
-    "keyword": 375,
+    "keyword": 376,
     "cve": 78,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 45,
-    "medium": 414,
+    "medium": 415,
     "low": 2
   },
   "meta": {
