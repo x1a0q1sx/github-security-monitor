@@ -19156,19 +19156,64 @@
         "webshell"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "ctkqiang/nezha_cyber",
+      "repo_url": "https://github.com/ctkqiang/nezha_cyber",
+      "repo_description": "哪吒网络安全是一款高性能终端 UI (TUI) 应用，专为从事红队演练、渗透测试和漏洞研究的网络安全专业人员打造。本应用作为智能指挥控制界面，利用 DeepSeek 大语言模型提供实时流式对话、基于函数调用 (Function Calling) 的自动化工具编排，以及多智能体会话管理——这一切均在轻量级终端环境中完成。 核心设计哲学：采用 Elm Architecture (Model-Update-View) 模式，纯函数状态转换，通过 tokio::sync::mpsc 通道传递事件，遵循零成本抽象的 Rust 惯用模式。",
+      "monitor_type": "keyword",
+      "monitor_keyword": "红队工具(3S), 渗透测试(2B), 红队(3A)",
+      "tags": "红队",
+      "author": "ctkqiang",
+      "stars": 21,
+      "language": "Rust",
+      "created_at": "2026-04-30T15:54:30Z",
+      "pushed_at": "2026-08-11T06:39:12Z",
+      "description_cn": "哪吒网络安全是一款高性能终端 UI (TUI) 应用，专为从事红队演练、渗透测试和漏洞研究的网络安全专业人员打造。本应用作为智能指挥控制界面，利用 DeepSeek 大语言模型提供实时流式对话、基于函数调用 (Function Calling) 的自动化工具编排，以及多智能体会话管理——这一切均在轻量级终端环境中完成。 核心设计哲学：采用 Elm Architecture (Model-Update-View) 模式，纯函数状态转换，通过 tokio::sync::mpsc 通道传递事件，遵循零成本抽象的 Rust 惯用模式。",
+      "discovered_at": "2026-08-11 08:45:03",
+      "final_score": 7.51,
+      "relevance_score": 8.0,
+      "quality_score": 6.9,
+      "confidence": "medium",
+      "reasons": [
+        "红队工具(3S)",
+        "渗透测试(2B)",
+        "红队(3A)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "红队工具",
+        "渗透测试",
+        "红队"
+      ],
+      "is_fork": false,
+      "topics": [
+        "china",
+        "chinese",
+        "ctkqiang",
+        "cybersecurity",
+        "deepseek",
+        "deepseek-v4",
+        "nezha",
+        "rust",
+        "tui"
+      ],
+      "archived": false
     }
   ],
-  "total": 470,
-  "last_updated": "2026-08-11T03:28:31",
+  "total": 471,
+  "last_updated": "2026-08-11T08:45:36",
   "by_type": {
-    "keyword": 383,
+    "keyword": 384,
     "cve": 79,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 46,
-    "medium": 422,
+    "medium": 423,
     "low": 2
   },
   "meta": {
