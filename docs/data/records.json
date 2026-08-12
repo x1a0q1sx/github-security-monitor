@@ -19476,19 +19476,102 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "KriyosArcane/TrustMeBro",
+      "repo_url": "https://github.com/KriyosArcane/TrustMeBro",
+      "repo_description": "Authenticode signature manipulation toolkit for Red Team operations and security research. Covers signature stealing, metadata cloning, SIP hijacking across 19 file types, WinVerifyTrust FinalPolicy bypass, PKCS#7 payload embedding, SIP execution surface implants, Smart App Control Bypass, and analyst-triggered persistence via OID handlers.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "security research(1B), red team(3A), implant(2A), security_context(+1.5)",
+      "tags": "免杀,红队",
+      "author": "KriyosArcane",
+      "stars": 89,
+      "language": "Python",
+      "created_at": "2025-12-23T12:00:36Z",
+      "pushed_at": "2026-08-12T03:56:00Z",
+      "description_cn": "用于红队运营和安全研究的 Authenticode 签名操作工具包。涵盖签名窃取、元数据克隆、跨 19 种文件类型的 SIP 劫持、WinVerifyTrust FinalPolicy 绕过、PKCS#7 有效负载嵌入、SIP 执行表面植入、智能应用程序控制绕过以及通过 OID 处理程序触发的分析师持久性。",
+      "discovered_at": "2026-08-12 03:56:55",
+      "final_score": 6.78,
+      "relevance_score": 7.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "security research(1B)",
+        "red team(3A)",
+        "implant(2A)",
+        "security_context(+1.5)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "security research",
+        "red team",
+        "implant"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "Gubarz/siren",
+      "repo_url": "https://github.com/Gubarz/siren",
+      "repo_description": "A fast, reactive graphical interface (GUI) for managing Sliver C2 operations, powered by Wails and Svelte.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "sliver c2(4S), c2(3A)",
+      "tags": "C2",
+      "author": "Gubarz",
+      "stars": 17,
+      "language": "Svelte",
+      "created_at": "2026-06-15T05:21:17Z",
+      "pushed_at": "2026-08-12T03:48:11Z",
+      "description_cn": "用于管理 Sliver C2 操作的快速反应式图形界面 (GUI)，由 Wails 和 Svelte 提供支持。",
+      "discovered_at": "2026-08-12 03:55:16",
+      "final_score": 6.51,
+      "relevance_score": 7.0,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "sliver c2(4S)",
+        "c2(3A)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "sliver c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [
+        "automation",
+        "c2",
+        "client",
+        "go",
+        "gui",
+        "offensive-security",
+        "red-team",
+        "sliver",
+        "sliver-c2",
+        "sliver-client",
+        "sliver-gui",
+        "svelete",
+        "wails"
+      ],
+      "archived": false
     }
   ],
-  "total": 478,
-  "last_updated": "2026-08-11T20:36:07",
+  "total": 480,
+  "last_updated": "2026-08-12T03:56:56",
   "by_type": {
-    "keyword": 390,
+    "keyword": 392,
     "cve": 80,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 46,
-    "medium": 430,
+    "medium": 432,
     "low": 2
   },
   "meta": {
