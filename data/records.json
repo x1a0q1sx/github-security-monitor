@@ -19651,19 +19651,190 @@
         "vulnerability-scanners"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "IlhomjonR/PluckCMS-CSRF-RCE",
+      "repo_url": "https://github.com/IlhomjonR/PluckCMS-CSRF-RCE",
+      "repo_description": "CVE-2026-70376 — Pluck CMS site-wide CSRF (fail-open Referer check) → RCE via double-extension upload. CWE-352/434, CVSS 8.0. Advisory + PoC by @IlhomjonR.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "IlhomjonR",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-12T11:53:33Z",
+      "pushed_at": "2026-08-12T12:02:18Z",
+      "description_cn": "CVE-2026-70376 — 通过双扩展上传提取 CMS 站点范围内的 CSRF（故障打开引用检查）→ RCE。 CWE-352/434，CVSS 8.0。咨询 + PoC，作者：@IlhomjonR。",
+      "discovered_at": "2026-08-12 14:49:14",
+      "final_score": 7.16,
+      "relevance_score": 9.25,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "csrf",
+        "cve",
+        "exploit",
+        "pluck-cms",
+        "poc",
+        "rce",
+        "security",
+        "vulnerability"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "Knz-source/CVE-2026-23111-POC-noddlenpottato",
+      "repo_url": "https://github.com/Knz-source/CVE-2026-23111-POC-noddlenpottato",
+      "repo_description": "CVE-2026-23111 nf_tables catchall UAF — unprivileged LPE for Linux 5.10-6.18. Auto-adaptive exploit with KASLR bypass, arbitrary kernel read, and ROP chain. Supports Debian, Ubuntu, RHEL, Fedora. C/Python/Rust + autopwn.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), cve(2B), B_only(x0.5), cve_id(+)",
+      "tags": "免杀,POC,漏洞利用,CVE",
+      "author": "Knz-source",
+      "stars": 5,
+      "language": "C",
+      "created_at": "2026-08-12T13:23:42Z",
+      "pushed_at": "2026-08-12T13:34:58Z",
+      "description_cn": "CVE-2026-23111 nf_tables 包罗万象的 UAF — 适用于 Linux 5.10-6.18 的非特权 LPE。具有 KASLR 绕过、任意内核读取和 ROP 链的自适应漏洞利用。支持 Debian、Ubuntu、RHEL、Fedora。 C/Python/Rust + autopwn。",
+      "discovered_at": "2026-08-12 14:49:10",
+      "final_score": 5.77,
+      "relevance_score": 5.0,
+      "quality_score": 6.7,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "cve(2B)",
+        "B_only(x0.5)",
+        "cve_id(+)",
+        "stars>=5",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve-2026-23111",
+        "exploit",
+        "kernel-exploit",
+        "linux-kernel",
+        "lpe",
+        "nftables",
+        "privilege-escalation",
+        "security-research",
+        "uaf"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "blah-blah-cell/broken-nest",
+      "repo_url": "https://github.com/blah-blah-cell/broken-nest",
+      "repo_description": "0-Day Research: Incomplete Fix Bypass in nested-property v4.0.0 — Array.prototype & Function.prototype Pollution | by Ojas Mehta",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), 0day(4A), security_context(+1.5)",
+      "tags": "免杀,POC,漏洞利用",
+      "author": "blah-blah-cell",
+      "stars": 1,
+      "language": "JavaScript",
+      "created_at": "2026-06-04T13:12:56Z",
+      "pushed_at": "2026-08-12T11:33:55Z",
+      "description_cn": "0 天研究：nested-property v4.0.0 中的不完整修复绕过 — Array.prototype 和 Function.prototype 污染 |作者：奥哈斯·梅塔",
+      "discovered_at": "2026-08-12 14:52:12",
+      "final_score": 6.42,
+      "relevance_score": 7.5,
+      "quality_score": 5.1,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "0day(4A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "0day"
+      ],
+      "is_fork": false,
+      "topics": [
+        "0day",
+        "exploit-poc",
+        "in-the-wild",
+        "npm",
+        "prototype-pollution",
+        "unpatched",
+        "zeroday"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "jll91950/zoom-c2",
+      "repo_url": "https://github.com/jll91950/zoom-c2",
+      "repo_description": "Mythic C2 profile that uses Zoom Team Chat (Server-to-Server OAuth) as a duplex command-and-control bus.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "mythic c2(4S), c2(3A)",
+      "tags": "C2",
+      "author": "jll91950",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-12T11:58:41Z",
+      "pushed_at": "2026-08-12T13:27:44Z",
+      "description_cn": "Mythic C2 配置文件使用 Zoom Team Chat（服务器到服务器 OAuth）作为双工命令和控制总线。",
+      "discovered_at": "2026-08-12 14:50:28",
+      "final_score": 5.52,
+      "relevance_score": 7.75,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "mythic c2(4S)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "mythic c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 482,
-  "last_updated": "2026-08-12T09:02:49",
+  "total": 486,
+  "last_updated": "2026-08-12T14:52:31",
   "by_type": {
-    "keyword": 394,
-    "cve": 80,
+    "keyword": 396,
+    "cve": 82,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 46,
-    "medium": 434,
+    "medium": 438,
     "low": 2
   },
   "meta": {
