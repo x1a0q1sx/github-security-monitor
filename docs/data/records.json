@@ -19559,19 +19559,111 @@
         "wails"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "Ashrafdev/MySQL-Remote-Root-Code-Execution",
+      "repo_url": "https://github.com/Ashrafdev/MySQL-Remote-Root-Code-Execution",
+      "repo_description": "0ldSQL_MySQL_RCE_exploit.py (ver. 1.0) (CVE-2016-6662) MySQL Remote Root Code Execution / Privesc PoC Exploit    For testing purposes only. Do no harm.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "Ashrafdev",
+      "stars": 9,
+      "language": "Python",
+      "created_at": "2016-09-20T08:03:40Z",
+      "pushed_at": "2026-08-12T06:00:11Z",
+      "description_cn": "0ldSQL_MySQL_RCE_exploit.py（版本 1.0）（CVE-2016-6662）MySQL 远程根代码执行/Privesc PoC 漏洞仅用于测试目的。不要造成伤害。",
+      "discovered_at": "2026-08-12 09:02:33",
+      "final_score": 6.88,
+      "relevance_score": 8.5,
+      "quality_score": 4.9,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "Unclecheng-li/DeepSec",
+      "repo_url": "https://github.com/Unclecheng-li/DeepSec",
+      "repo_description": "DeepSec — AI Security Offense & Defense Platform. Shield audits AI-generated code for hallucinated packages, missing safeguards & AI pattern errors in real time. Spear automates authorized penetration testing with 40+ skill packs, from recon to PoC. ",
+      "monitor_type": "keyword",
+      "monitor_keyword": "redteam(3A), scanner(1B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,红队",
+      "author": "Unclecheng-li",
+      "stars": 88,
+      "language": "Python",
+      "created_at": "2026-07-09T13:53:54Z",
+      "pushed_at": "2026-08-12T08:58:22Z",
+      "description_cn": "DeepSec — 人工智能安全攻防平台。 Shield 实时审核 AI 生成的代码中是否存在幻觉包、缺失的防护措施和 AI 模式错误。 Spear 使用 40 多个技能包（从侦察到 PoC）自动化授权渗透测试。",
+      "discovered_at": "2026-08-12 09:02:48",
+      "final_score": 6.49,
+      "relevance_score": 5.5,
+      "quality_score": 7.7,
+      "confidence": "medium",
+      "reasons": [
+        "redteam(3A)",
+        "scanner(1B)",
+        "security_context(+1.5)",
+        "stars>=20",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "redteam",
+        "scanner"
+      ],
+      "is_fork": false,
+      "topics": [
+        "agent",
+        "ai",
+        "ai-agents",
+        "aisecurity",
+        "coding",
+        "coding-agent",
+        "cybersecurity",
+        "hacker",
+        "plugin",
+        "redteam",
+        "safety",
+        "security",
+        "vibe-coding",
+        "vscode",
+        "vulnerabilities",
+        "vulnerability",
+        "vulnerability-detection",
+        "vulnerability-management",
+        "vulnerability-scanner",
+        "vulnerability-scanners"
+      ],
+      "archived": false
     }
   ],
-  "total": 480,
-  "last_updated": "2026-08-12T03:56:56",
+  "total": 482,
+  "last_updated": "2026-08-12T09:02:49",
   "by_type": {
-    "keyword": 392,
+    "keyword": 394,
     "cve": 80,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 46,
-    "medium": 432,
+    "medium": 434,
     "low": 2
   },
   "meta": {
