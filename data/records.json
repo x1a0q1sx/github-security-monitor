@@ -20210,19 +20210,166 @@
         "wordpress-exploit"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "pemarine/cve-2026-41940-PoC",
+      "repo_url": "https://github.com/pemarine/cve-2026-41940-PoC",
+      "repo_description": "A cPanel and WHM authentication bypassing tool",
+      "monitor_type": "cve",
+      "monitor_keyword": "cve(2B), B_only(x0.5), cve_id(+)",
+      "tags": "免杀,POC,CVE",
+      "author": "pemarine",
+      "stars": 23,
+      "language": "Python",
+      "created_at": "2026-08-13T16:03:48Z",
+      "pushed_at": "2026-08-13T16:09:49Z",
+      "description_cn": "cPanel 和 WHM 身份验证绕过工具",
+      "discovered_at": "2026-08-13 20:29:07",
+      "final_score": 5.86,
+      "relevance_score": 5.0,
+      "quality_score": 6.9,
+      "confidence": "medium",
+      "reasons": [
+        "cve(2B)",
+        "B_only(x0.5)",
+        "cve_id(+)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cpanel",
+        "cve",
+        "cve-2026-41940",
+        "cve-2026-41940-poc"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "damariion/CVE-2015-1925.RCE",
+      "repo_url": "https://github.com/damariion/CVE-2015-1925.RCE",
+      "repo_description": "Stack-based buffer overflow in the server in IBM Tivoli Storage Manager FastBack 6.1 before 6.1.12 allows remote attackers to cause a denial of service",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploitation(2B), exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "漏洞利用,CVE",
+      "author": "damariion",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-03-01T13:16:31Z",
+      "pushed_at": "2026-08-13T19:16:06Z",
+      "description_cn": "6.1.12 之前的 IBM Tivoli Storage Manager FastBack 6.1 中服务器中基于堆栈的缓冲区溢出允许远程攻击者导致拒绝服务",
+      "discovered_at": "2026-08-13 20:32:05",
+      "final_score": 6.34,
+      "relevance_score": 11.75,
+      "quality_score": 3.05,
+      "confidence": "medium",
+      "reasons": [
+        "exploitation(2B)",
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "exploitation",
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "exploitation"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "tahaafarooq/wintercms-authenticated-rce-exploit",
+      "repo_url": "https://github.com/tahaafarooq/wintercms-authenticated-rce-exploit",
+      "repo_description": "WinterCMS Authenticated RCE Exploit via Twig Sandbox Escape in CMS SecurityPolicy",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), security_context(+1.5)",
+      "tags": "漏洞利用",
+      "author": "tahaafarooq",
+      "stars": 2,
+      "language": "Python",
+      "created_at": "2026-04-20T14:34:19Z",
+      "pushed_at": "2026-08-13T15:49:46Z",
+      "description_cn": "WinterCMS 通过 CMS SecurityPolicy 中的 Twig 沙箱逃逸进行身份验证的 RCE 漏洞利用",
+      "discovered_at": "2026-08-13 20:32:05",
+      "final_score": 6.11,
+      "relevance_score": 7.75,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "ServiceNow/Dark-Agent",
+      "repo_url": "https://github.com/ServiceNow/Dark-Agent",
+      "repo_description": "Mythic C2 agent with a full in-memory BOF loader for macOS and Linux",
+      "monitor_type": "keyword",
+      "monitor_keyword": "mythic c2(4S), c2(3A)",
+      "tags": "C2",
+      "author": "ServiceNow",
+      "stars": 7,
+      "language": "Crystal",
+      "created_at": "2026-08-12T19:50:46Z",
+      "pushed_at": "2026-08-13T14:52:43Z",
+      "description_cn": "Mythic C2 代理，具有适用于 macOS 和 Linux 的完整内存 BOF 加载程序",
+      "discovered_at": "2026-08-13 20:30:22",
+      "final_score": 6.06,
+      "relevance_score": 7.0,
+      "quality_score": 4.9,
+      "confidence": "medium",
+      "reasons": [
+        "mythic c2(4S)",
+        "c2(3A)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "mythic c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 495,
-  "last_updated": "2026-08-13T14:52:44",
+  "total": 499,
+  "last_updated": "2026-08-13T20:32:23",
   "by_type": {
-    "keyword": 404,
-    "cve": 83,
+    "keyword": 407,
+    "cve": 84,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 47,
-    "medium": 446,
+    "medium": 450,
     "low": 2
   },
   "meta": {
