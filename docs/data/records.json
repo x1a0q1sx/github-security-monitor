@@ -20757,19 +20757,145 @@
         "windows-security"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "K3ysTr0K3R/CVE-2026-31816",
+      "repo_url": "https://github.com/K3ysTr0K3R/CVE-2026-31816",
+      "repo_description": "CVE-2026-31816 — Budibase Authentication Bypass → RCE",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploitation(2B), exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "免杀,漏洞利用,CVE",
+      "author": "K3ysTr0K3R",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-14T20:11:03Z",
+      "pushed_at": "2026-08-14T20:15:29Z",
+      "description_cn": "CVE-2026-31816 — Budibase 身份验证绕过 → RCE",
+      "discovered_at": "2026-08-14 20:20:33",
+      "final_score": 8.12,
+      "relevance_score": 11.0,
+      "quality_score": 4.6,
+      "confidence": "high",
+      "reasons": [
+        "exploitation(2B)",
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploitation",
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "budibase",
+        "cve",
+        "cve-2026-31816",
+        "exploit",
+        "exploit-code",
+        "exploitation",
+        "rce",
+        "rce-exploit"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "Semperis-Community/ResetNightmare",
+      "repo_url": "https://github.com/Semperis-Community/ResetNightmare",
+      "repo_description": "POC tool for ResetNightmare (CVE-2026-27912)",
+      "monitor_type": "cve",
+      "monitor_keyword": "cve(2B), B_only(x0.5), cve_id(+)",
+      "tags": "POC,CVE",
+      "author": "Semperis-Community",
+      "stars": 194,
+      "language": "PowerShell",
+      "created_at": "2026-08-02T12:36:16Z",
+      "pushed_at": "2026-08-14T17:19:10Z",
+      "description_cn": "ResetNightmare 的 POC 工具 (CVE-2026-27912)",
+      "discovered_at": "2026-08-14 20:20:36",
+      "final_score": 5.86,
+      "relevance_score": 5.0,
+      "quality_score": 6.9,
+      "confidence": "medium",
+      "reasons": [
+        "cve(2B)",
+        "B_only(x0.5)",
+        "cve_id(+)",
+        "stars>=100",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "portbuster1337/MassAcre",
+      "repo_url": "https://github.com/portbuster1337/MassAcre",
+      "repo_description": "MassAcre - masscan --banners: Remote Infinite-Loop DoS via Crafted TLS Certificate Record (0day at repo creation, Aug 14 2026)",
+      "monitor_type": "keyword",
+      "monitor_keyword": "0day(4A), security_context(+1.5)",
+      "tags": "POC,漏洞利用",
+      "author": "portbuster1337",
+      "stars": 3,
+      "language": "Python",
+      "created_at": "2026-08-14T19:05:23Z",
+      "pushed_at": "2026-08-14T19:11:37Z",
+      "description_cn": "MassAcre -masscan --banners：通过精心制作的 TLS 证书记录进行远程无限循环 DoS（存储库创建时为 0day，2026 年 8 月 14 日）",
+      "discovered_at": "2026-08-14 20:23:37",
+      "final_score": 5.68,
+      "relevance_score": 5.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "0day(4A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "0day"
+      ],
+      "is_fork": false,
+      "topics": [
+        "0day",
+        "dos",
+        "masscan",
+        "poc",
+        "reverse-engineering",
+        "security",
+        "tls",
+        "vulnerability-research"
+      ],
+      "archived": false
     }
   ],
-  "total": 506,
-  "last_updated": "2026-08-14T14:46:32",
+  "total": 509,
+  "last_updated": "2026-08-14T20:23:58",
   "by_type": {
-    "keyword": 414,
-    "cve": 84,
+    "keyword": 415,
+    "cve": 86,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
-    "high": 51,
-    "medium": 453,
+    "high": 52,
+    "medium": 455,
     "low": 2
   },
   "meta": {
