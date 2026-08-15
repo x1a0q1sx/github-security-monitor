@@ -21203,19 +21203,92 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "Excalibra/av-evasion-kit",
+      "repo_url": "https://github.com/Excalibra/av-evasion-kit",
+      "repo_description": "AV Evasion Kit is a comprehensive shellcode evasion framework using Indirect Syscalls, ETW patching, Module Stomping, .text code caves, compile-time string encryption, IPv4 obfuscation, XOR encryption, HeapAlloc buffering and direct function-pointer calls to bypass mainstream AV/EDR via static signatures, behavioural traces and EDR perception.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), module stomping(3S), direct syscall(5S), shellcode(4A)",
+      "tags": "免杀,Shellcode,漏洞利用",
+      "author": "Excalibra",
+      "stars": 3,
+      "language": "C",
+      "created_at": "2026-08-15T15:20:07Z",
+      "pushed_at": "2026-08-15T16:34:28Z",
+      "description_cn": "AV Evasion Kit 是一个全面的 shellcode 规避框架，使用间接系统调用、ETW 修补、模块 Stomping、.text 代码洞穴、编译时字符串加密、IPv4 混淆、XOR 加密、HeapAlloc 缓冲和直接函数指针调用，通过静态签名、行为跟踪和 EDR 感知绕过主流 AV/EDR。",
+      "discovered_at": "2026-08-15 20:11:09",
+      "final_score": 8.45,
+      "relevance_score": 12.0,
+      "quality_score": 4.1,
+      "confidence": "high",
+      "reasons": [
+        "indirect syscall(4S)",
+        "module stomping(3S)",
+        "direct syscall(5S)",
+        "shellcode(4A)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "module stomping",
+        "direct syscall",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "jiushill/godzilla-mcp",
+      "repo_url": "https://github.com/jiushill/godzilla-mcp",
+      "repo_description": "MCP server for Godzilla webshell management - multi-language C2 framework",
+      "monitor_type": "keyword",
+      "monitor_keyword": "godzilla webshell(5S), webshell(3A), c2(3A)",
+      "tags": "C2,Webshell",
+      "author": "jiushill",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-15T17:42:40Z",
+      "pushed_at": "2026-08-15T17:42:46Z",
+      "description_cn": "用于Godzilla webshel​​l管理的MCP服务器-多语言C2框架",
+      "discovered_at": "2026-08-15 20:10:30",
+      "final_score": 7.31,
+      "relevance_score": 11.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "godzilla webshell(5S)",
+        "webshell(3A)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "godzilla webshell",
+        "webshell",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 517,
-  "last_updated": "2026-08-15T14:14:44",
+  "total": 519,
+  "last_updated": "2026-08-15T20:13:21",
   "by_type": {
-    "keyword": 422,
+    "keyword": 424,
     "cve": 87,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
-    "high": 53,
-    "medium": 462,
+    "high": 54,
+    "medium": 463,
     "low": 2
   },
   "meta": {
