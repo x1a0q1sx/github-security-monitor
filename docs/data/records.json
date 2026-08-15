@@ -20883,19 +20883,139 @@
         "vulnerability-research"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "nataliadiak/windows-x86-shellcode-poc",
+      "repo_url": "https://github.com/nataliadiak/windows-x86-shellcode-poc",
+      "repo_description": "Windows x86 PoC: Stack‑based buffer overflow with custom shellcode on legacy 32-bit Windows.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), exploit(2B), security_context(+1.5)",
+      "tags": "Shellcode,POC,漏洞利用",
+      "author": "nataliadiak",
+      "stars": 8,
+      "language": "C",
+      "created_at": "2026-02-28T15:58:13Z",
+      "pushed_at": "2026-08-14T21:24:38Z",
+      "description_cn": "Windows x86 PoC：传统 32 位 Windows 上带有自定义 shellcode 的基于堆栈的缓冲区溢出。",
+      "discovered_at": "2026-08-15 02:45:18",
+      "final_score": 7.33,
+      "relevance_score": 8.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [
+        "assembly",
+        "buffer-overflow",
+        "c",
+        "exploit-development",
+        "reverse-engineering",
+        "security-research",
+        "shellcode"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "kresx/C2-Beaconing-Timing-Interval-Analyzer",
+      "repo_url": "https://github.com/kresx/C2-Beaconing-Timing-Interval-Analyzer",
+      "repo_description": "AI-augmented DFIR threat-hunting engine that analyzes raw PCAP/PCAPNG traffic, calculates timing metrics such as mean interval, standard deviation, and jitter, and uses Claude Opus 5 to identify stealthy C2 beaconing patterns linked to frameworks like Cobalt Strike, Mythic, and Sliver.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "threat hunting(1B), cobalt strike(5S), c2(3A)",
+      "tags": "C2",
+      "author": "kresx",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-14T20:23:21Z",
+      "pushed_at": "2026-08-14T20:37:46Z",
+      "description_cn": "AI 增强型 DFIR 威胁搜寻引擎可分析原始 PCAP/PCAPNG 流量，计算平均间隔、标准偏差和抖动等计时指标，并使用 Claude Opus 5 识别与 Cobalt Strike、Mythic 和 Sliver 等框架相关的隐形 C2 信标模式。",
+      "discovered_at": "2026-08-15 02:42:42",
+      "final_score": 7.07,
+      "relevance_score": 9.75,
+      "quality_score": 3.8,
+      "confidence": "medium",
+      "reasons": [
+        "threat hunting(1B)",
+        "cobalt strike(5S)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "threat hunting",
+        "cobalt strike",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [
+        "c2-detection",
+        "claude-ai",
+        "dfir",
+        "flask",
+        "packet-analysis",
+        "python",
+        "scapy",
+        "threat-hunting"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "PatchRequest/BrowserBoy",
+      "repo_url": "https://github.com/PatchRequest/BrowserBoy",
+      "repo_description": "Mythic C2 agent as a Manifest V3 Chrome extension",
+      "monitor_type": "keyword",
+      "monitor_keyword": "mythic c2(4S), c2(3A)",
+      "tags": "C2",
+      "author": "PatchRequest",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-08-14T18:33:37Z",
+      "pushed_at": "2026-08-14T20:27:05Z",
+      "description_cn": "Mythic C2 代理作为 Manifest V3 Chrome 扩展",
+      "discovered_at": "2026-08-15 02:43:46",
+      "final_score": 5.7,
+      "relevance_score": 7.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "mythic c2(4S)",
+        "c2(3A)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "mythic c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 509,
-  "last_updated": "2026-08-14T20:23:58",
+  "total": 512,
+  "last_updated": "2026-08-15T02:45:46",
   "by_type": {
-    "keyword": 415,
+    "keyword": 418,
     "cve": 86,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 52,
-    "medium": 455,
+    "medium": 458,
     "low": 2
   },
   "meta": {
