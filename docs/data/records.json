@@ -21552,19 +21552,141 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "YonLiud/geoserver-0day-rce",
+      "repo_url": "https://github.com/YonLiud/geoserver-0day-rce",
+      "repo_description": "Unauthenticated SQL injection to complete RCE",
+      "monitor_type": "keyword",
+      "monitor_keyword": "sql injection(2B), exploit(2B), 0day(4A), rce(3A), security_context(+1.5)",
+      "tags": "漏洞利用",
+      "author": "YonLiud",
+      "stars": 3,
+      "language": "Python",
+      "created_at": "2026-08-16T08:11:26Z",
+      "pushed_at": "2026-08-16T12:06:19Z",
+      "description_cn": "未经身份验证的SQL注入完成RCE",
+      "discovered_at": "2026-08-16 14:15:00",
+      "final_score": 9.26,
+      "relevance_score": 12.0,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "sql injection(2B)",
+        "exploit(2B)",
+        "0day(4A)",
+        "rce(3A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "sql injection",
+        "exploit",
+        "0day",
+        "rce"
+      ],
+      "is_fork": false,
+      "topics": [
+        "exploit",
+        "geoserver",
+        "rce",
+        "zero-day"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "d4w0d/WebShell-Compressor-Obfuscator",
+      "repo_url": "https://github.com/d4w0d/WebShell-Compressor-Obfuscator",
+      "repo_description": "A powerful, professional-grade tool for compressing and obfuscating web shells and exploit code. Designed for security researchers, penetration testers, and red teams.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "security research(1B), webshell(3A), red team(3A), exploit(2B), security_context(+1.5)",
+      "tags": "漏洞利用,Webshell,红队",
+      "author": "d4w0d",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-16T09:12:54Z",
+      "pushed_at": "2026-08-16T09:47:14Z",
+      "description_cn": "一个强大的专业级工具，用于压缩和混淆 Web shell 和漏洞利用代码。专为安全研究人员、渗透测试人员和红队而设计。",
+      "discovered_at": "2026-08-16 14:14:55",
+      "final_score": 5.95,
+      "relevance_score": 11.25,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "security research(1B)",
+        "webshell(3A)",
+        "red team(3A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "security research",
+        "webshell",
+        "red team",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "TheMalwareGuardian/CVE-2024-7344",
+      "repo_url": "https://github.com/TheMalwareGuardian/CVE-2024-7344",
+      "repo_description": "Research on CVE-2024-7344, a Secure Boot bypass affecting Howyar SysReturn through an untrusted EFI payload loading mechanism.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "payload loader(4S), cve(2B)",
+      "tags": "免杀,漏洞利用,CVE",
+      "author": "TheMalwareGuardian",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-02-08T17:39:48Z",
+      "pushed_at": "2026-08-16T11:20:20Z",
+      "description_cn": "对 CVE-2024-7344 的研究，这是一种通过不受信任的 EFI 负载加载机制影响 Howyar SysReturn 的安全启动旁路。",
+      "discovered_at": "2026-08-16 14:13:24",
+      "final_score": 5.53,
+      "relevance_score": 6.5,
+      "quality_score": 4.35,
+      "confidence": "medium",
+      "reasons": [
+        "payload loader(4S)",
+        "cve(2B)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "payload loader",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve-2024-7344",
+        "uefi",
+        "vulnerability"
+      ],
+      "archived": false
     }
   ],
-  "total": 525,
-  "last_updated": "2026-08-16T08:18:19",
+  "total": 528,
+  "last_updated": "2026-08-16T14:15:20",
   "by_type": {
-    "keyword": 429,
+    "keyword": 432,
     "cve": 88,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 54,
-    "medium": 469,
+    "medium": 472,
     "low": 2
   },
   "meta": {
