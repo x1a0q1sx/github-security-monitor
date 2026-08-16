@@ -21514,19 +21514,57 @@
         "shellcodes"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "AWY-Cipher/MrCipher",
+      "repo_url": "https://github.com/AWY-Cipher/MrCipher",
+      "repo_description": "**MrCipher 是一款一体化的综合漏洞扫描与资产测绘工具**，把\"主机发现 → 端口扫描 → 协议识别 → 子域枚举 → Web 指纹探测 → 漏洞检测 → 后渗透验证\"整合成一条流水线，面向红队 / 安服 / 授权自检场景，提供 **命令行、交互式控制台、Web 界面（-ui）** 三种使用方式。  它的核心特点是：**自带一套 Go 原生重新实现的 MSF（Metasploit）风格模块系统**，并且把多个知名开源安全工具的优秀思路融合进来，做成\"一个二进制、多种打法\"。",
+      "monitor_type": "keyword",
+      "monitor_keyword": "红队工具(3S), 端口扫描(1B), 漏洞扫描(1B), 红队(3A)",
+      "tags": "红队",
+      "author": "AWY-Cipher",
+      "stars": 0,
+      "language": "Go",
+      "created_at": "2026-08-16T07:58:41Z",
+      "pushed_at": "2026-08-16T08:14:28Z",
+      "description_cn": "**MrCipher 是一款一体化的综合漏洞扫描与资产测绘工具**，把\"主机发现 → 端口扫描 → 协议识别 → 子域枚举 → Web 指纹探测 → 漏洞检测 → 后渗透验证\"整合成一条流水线，面向红队 / 安服 / 授权自检场景，提供 **命令行、交互式控制台、Web 界面（-ui）** 三种使用方式。  它的核心特点是：**自带一套 Go 原生重新实现的 MSF（Metasploit）风格模块系统**，并且把多个知名开源安全工具的优秀思路融合进来，做成\"一个二进制、多种打法\"。",
+      "discovered_at": "2026-08-16 08:17:47",
+      "final_score": 5.66,
+      "relevance_score": 8.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "红队工具(3S)",
+        "端口扫描(1B)",
+        "漏洞扫描(1B)",
+        "红队(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "红队工具",
+        "端口扫描",
+        "漏洞扫描",
+        "红队"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 524,
-  "last_updated": "2026-08-16T02:54:32",
+  "total": 525,
+  "last_updated": "2026-08-16T08:18:19",
   "by_type": {
-    "keyword": 428,
+    "keyword": 429,
     "cve": 88,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 54,
-    "medium": 468,
+    "medium": 469,
     "low": 2
   },
   "meta": {
