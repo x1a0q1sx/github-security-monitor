@@ -22061,19 +22061,59 @@
         "rop-gadgets"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "y637F9QQ2x/NOFILTER-NFEXEC",
+      "repo_url": "https://github.com/y637F9QQ2x/NOFILTER-NFEXEC",
+      "repo_description": "Havoc C2 BOF — WFP kernel-space SYSTEM escalation + command execution with indirect syscalls, patchless AMSI/ETW bypass, and return address spoofing",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), direct syscall(5S), etw bypass(3S), havoc c2(4S), c2(3A)",
+      "tags": "C2,免杀",
+      "author": "y637F9QQ2x",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-03-22T14:00:57Z",
+      "pushed_at": "2026-08-17T16:42:56Z",
+      "description_cn": "Havoc C2 BOF — WFP 内核空间系统升级 + 使用间接系统调用、无补丁 AMSI/ETW 绕过和返回地址欺骗的命令执行",
+      "discovered_at": "2026-08-17 20:15:07",
+      "final_score": 7.86,
+      "relevance_score": 12.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "indirect syscall(4S)",
+        "direct syscall(5S)",
+        "etw bypass(3S)",
+        "havoc c2(4S)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "direct syscall",
+        "etw bypass",
+        "havoc c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 537,
-  "last_updated": "2026-08-17T14:21:08",
+  "total": 538,
+  "last_updated": "2026-08-17T20:17:21",
   "by_type": {
-    "keyword": 441,
+    "keyword": 442,
     "cve": 88,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 54,
-    "medium": 481,
+    "medium": 482,
     "low": 2
   },
   "meta": {
