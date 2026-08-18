@@ -22302,19 +22302,104 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "yora1928/cve-2026-15748",
+      "repo_url": "https://github.com/yora1928/cve-2026-15748",
+      "repo_description": "CVE-2026-15748 - Unauthenticated RCE exploit for WordPress Forminator plugin (≤1.56.1). Automated detection, deep crawl, nonce extraction, and safe upload test. For authorized testing only.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), scanner(1B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "yora1928",
+      "stars": 2,
+      "language": "Python",
+      "created_at": "2026-08-18T14:44:00Z",
+      "pushed_at": "2026-08-18T15:07:54Z",
+      "description_cn": "CVE-2026-15748 - WordPress Forminator 插件未经身份验证的 RCE 漏洞 (≤1.56.1)。自动检测、深度爬取、随机数提取、安全上传测试。仅用于授权测试。",
+      "discovered_at": "2026-08-18 20:11:00",
+      "final_score": 8.16,
+      "relevance_score": 10.0,
+      "quality_score": 5.9,
+      "confidence": "high",
+      "reasons": [
+        "exploit(2B)",
+        "scanner(1B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "scanner",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve",
+        "cve-2026-15748",
+        "cve-scanning",
+        "python",
+        "python3",
+        "vulnerability",
+        "wordpress-security",
+        "wordpress-security-plugin",
+        "wordpress-security-scanner"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "deguzmanjc/cobaltstrike_ringtones",
+      "repo_url": "https://github.com/deguzmanjc/cobaltstrike_ringtones",
+      "repo_description": "Add ringtones to your cobalt strike clients to make engagements more fun",
+      "monitor_type": "keyword",
+      "monitor_keyword": "cobalt strike(5S), cobaltstrike(5S)",
+      "tags": "C2",
+      "author": "deguzmanjc",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-18T14:44:28Z",
+      "pushed_at": "2026-08-18T15:07:51Z",
+      "description_cn": "为您的 cobalt Strike 客户添加铃声，让约会变得更有趣",
+      "discovered_at": "2026-08-18 20:11:09",
+      "final_score": 7.45,
+      "relevance_score": 11.25,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "cobalt strike(5S)",
+        "cobaltstrike(5S)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "cobalt strike",
+        "cobaltstrike"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 543,
-  "last_updated": "2026-08-18T14:24:37",
+  "total": 545,
+  "last_updated": "2026-08-18T20:14:11",
   "by_type": {
-    "keyword": 446,
-    "cve": 89,
+    "keyword": 447,
+    "cve": 90,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
-    "high": 54,
-    "medium": 487,
+    "high": 55,
+    "medium": 488,
     "low": 2
   },
   "meta": {
