@@ -22101,19 +22101,63 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "ctkqiang/MITRERedTeam",
+      "repo_url": "https://github.com/ctkqiang/MITRERedTeam",
+      "repo_description": "MITRERedTeam 是一个用 Go 编写的授权红队 / 漏洞赏金 CLI 安全工具。它把完整的评估流程拆分为**战术（Tactic）与技术（Technique）**两级，采用自研稳定编号（BBxx 战术、BBxx.xxx 技术）作为主键，用户显式选择单条技术或整个战术执行，应用绝不自动编排所有内容，也不扩大用户声明的目标范围。  战术与技术清单由 catalog/*.json 外部数据驱动，MITRE ATT&CK ID 仅作为对齐行业标准的元数据，不作为主标识符。当前目录覆盖 25 个战术、27 条技术，并已落地目录枚举执行器与六类外部工具适配层。",
+      "monitor_type": "keyword",
+      "monitor_keyword": "redteam(3A), 红队工具(3S), 红队(3A)",
+      "tags": "红队",
+      "author": "ctkqiang",
+      "stars": 1,
+      "language": "Go",
+      "created_at": "2026-08-16T12:00:05Z",
+      "pushed_at": "2026-08-18T02:45:26Z",
+      "description_cn": "MITRERedTeam 是一个用 Go 编写的授权红队 / 漏洞赏金 CLI 安全工具。它把完整的评估流程拆分为**战术（Tactic）与技术（Technique）**两级，采用自研稳定编号（BBxx 战术、BBxx.xxx 技术）作为主键，用户显式选择单条技术或整个战术执行，应用绝不自动编排所有内容，也不扩大用户声明的目标范围。  战术与技术清单由 catalog/*.json 外部数据驱动，MITRE ATT&CK ID 仅作为对齐行业标准的元数据，不作为主标识符。当前目录覆盖 25 个战术、27 条技术，并已落地目录枚举执行器与六类外部工具适配层。",
+      "discovered_at": "2026-08-18 02:48:38",
+      "final_score": 7.66,
+      "relevance_score": 9.75,
+      "quality_score": 5.1,
+      "confidence": "medium",
+      "reasons": [
+        "redteam(3A)",
+        "红队工具(3S)",
+        "红队(3A)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "redteam",
+        "红队工具",
+        "红队"
+      ],
+      "is_fork": false,
+      "topics": [
+        "china",
+        "chinese",
+        "ctkqiang",
+        "go",
+        "golang",
+        "mitre",
+        "mitre-attack",
+        "red-team"
+      ],
+      "archived": false
     }
   ],
-  "total": 538,
-  "last_updated": "2026-08-17T20:17:21",
+  "total": 539,
+  "last_updated": "2026-08-18T02:49:11",
   "by_type": {
-    "keyword": 442,
+    "keyword": 443,
     "cve": 88,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 54,
-    "medium": 482,
+    "medium": 483,
     "low": 2
   },
   "meta": {
