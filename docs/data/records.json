@@ -22145,19 +22145,56 @@
         "red-team"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "1neptune/ShieldBreak",
+      "repo_url": "https://github.com/1neptune/ShieldBreak",
+      "repo_description": "Windows Defender 0day vulnerability  CVE-2026-69414  ShieldBreak",
+      "monitor_type": "cve",
+      "monitor_keyword": "0day(4A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "1neptune",
+      "stars": 1,
+      "language": "",
+      "created_at": "2026-08-18T07:09:54Z",
+      "pushed_at": "2026-08-18T07:17:05Z",
+      "description_cn": "Windows Defender 0day 漏洞 CVE-2026-69414 ShieldBreak",
+      "discovered_at": "2026-08-18 08:22:38",
+      "final_score": 5.52,
+      "relevance_score": 7.5,
+      "quality_score": 3.1,
+      "confidence": "medium",
+      "reasons": [
+        "0day(4A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=1",
+        "desc_ok",
+        "no_language",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "0day",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 539,
-  "last_updated": "2026-08-18T02:49:11",
+  "total": 540,
+  "last_updated": "2026-08-18T08:22:39",
   "by_type": {
     "keyword": 443,
-    "cve": 88,
+    "cve": 89,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 54,
-    "medium": 483,
+    "medium": 484,
     "low": 2
   },
   "meta": {
