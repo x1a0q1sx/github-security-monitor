@@ -22182,19 +22182,139 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "Quincunx33/penbox",
+      "repo_url": "https://github.com/Quincunx33/penbox",
+      "repo_description": "72-in-1 Python CLI penetration testing toolbox — nmap-grade scanning, WPA2 handshake analysis, shellcode engine, hash cracking, OSINT & more. Zero dependencies, cross-platform.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), scanner(1B), security_context(+1.5)",
+      "tags": "免杀,Shellcode",
+      "author": "Quincunx33",
+      "stars": 7,
+      "language": "Python",
+      "created_at": "2026-08-15T10:42:04Z",
+      "pushed_at": "2026-08-18T10:47:27Z",
+      "description_cn": "72 合 1 Python CLI 渗透测试工具箱 — nmap 级扫描、WPA2 握手分析、shellcode 引擎、哈希破解、OSINT 等。零依赖、跨平台。",
+      "discovered_at": "2026-08-18 14:24:09",
+      "final_score": 6.59,
+      "relevance_score": 6.5,
+      "quality_score": 6.7,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "scanner(1B)",
+        "security_context(+1.5)",
+        "stars>=5",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "scanner"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cli",
+        "ctf",
+        "cybersecurity",
+        "ethical-hacking",
+        "forensics",
+        "hacking-tool",
+        "network-scanner",
+        "osint",
+        "password-cracking",
+        "penetration-testing",
+        "pentesting-toolbox",
+        "python",
+        "security",
+        "shellcode",
+        "wireless-audit",
+        "wpa2"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "sf0rzin/morgana",
+      "repo_url": "https://github.com/sf0rzin/morgana",
+      "repo_description": "Windows x64 internals lab focused on CET/HSP-aware stack trampolines, runtime unwind metadata, and indirect syscalls.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), direct syscall(5S)",
+      "tags": "keyword",
+      "author": "sf0rzin",
+      "stars": 0,
+      "language": "C++",
+      "created_at": "2026-08-15T17:47:33Z",
+      "pushed_at": "2026-08-18T13:08:28Z",
+      "description_cn": "Windows x64 内部实验室专注于 CET/HSP 感知堆栈蹦床、运行时展开元数据和间接系统调用。",
+      "discovered_at": "2026-08-18 14:22:26",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "indirect syscall(4S)",
+        "direct syscall(5S)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "direct syscall"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "bloggins/Sl1verLoader",
+      "repo_url": "https://github.com/bloggins/Sl1verLoader",
+      "repo_description": "AES Shellcode loader for Sliver. EXE and DLL",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode loader(4S), shellcode(4A)",
+      "tags": "C2,Shellcode",
+      "author": "bloggins",
+      "stars": 0,
+      "language": "C#",
+      "created_at": "2026-08-18T12:49:04Z",
+      "pushed_at": "2026-08-18T13:04:32Z",
+      "description_cn": "Sliver 的 AES Shellcode 加载器。可执行文件和动态链接库",
+      "discovered_at": "2026-08-18 14:22:51",
+      "final_score": 5.66,
+      "relevance_score": 8.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode loader(4S)",
+        "shellcode(4A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "shellcode loader",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 540,
-  "last_updated": "2026-08-18T08:22:39",
+  "total": 543,
+  "last_updated": "2026-08-18T14:24:37",
   "by_type": {
-    "keyword": 443,
+    "keyword": 446,
     "cve": 89,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 54,
-    "medium": 484,
+    "medium": 487,
     "low": 2
   },
   "meta": {
