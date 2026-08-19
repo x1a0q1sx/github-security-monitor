@@ -22387,19 +22387,93 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "CypherHippie/CVE-2026-34486---unauthenticated-RCE-via-Java-deserialization",
+      "repo_url": "https://github.com/CypherHippie/CVE-2026-34486---unauthenticated-RCE-via-Java-deserialization",
+      "repo_description": "EncryptInterceptor fail-open bypass in Apache Tomcat Tribes clustering leading to unauthenticated RCE via Java deserialization.",
+      "monitor_type": "cve",
+      "monitor_keyword": "rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "免杀,漏洞利用,CVE",
+      "author": "CypherHippie",
+      "stars": 0,
+      "language": "Java",
+      "created_at": "2026-08-19T00:39:18Z",
+      "pushed_at": "2026-08-19T00:52:25Z",
+      "description_cn": "Apache Tomcat Tribes 集群中的 EncryptInterceptor 故障开放旁路导致通过 Java 反序列化导致未经身份验证的 RCE。",
+      "discovered_at": "2026-08-19 02:48:17",
+      "final_score": 5.52,
+      "relevance_score": 7.75,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "sparflag/shellcode-injection",
+      "repo_url": "https://github.com/sparflag/shellcode-injection",
+      "repo_description": "picoclone CTF challenge: Shellcode Shack (binary exploitation · hard)",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode injection(4S), exploitation(2B), shellcode(4A), exploit(2B)",
+      "tags": "Shellcode,漏洞利用",
+      "author": "sparflag",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-07T10:50:05Z",
+      "pushed_at": "2026-08-18T23:50:16Z",
+      "description_cn": "picoclone CTF 挑战：Shellcode Shack（二进制利用·困难）",
+      "discovered_at": "2026-08-19 02:49:44",
+      "final_score": 7.86,
+      "relevance_score": 12.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode injection(4S)",
+        "exploitation(2B)",
+        "shellcode(4A)",
+        "exploit(2B)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "shellcode injection",
+        "exploitation",
+        "shellcode",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 545,
-  "last_updated": "2026-08-18T20:14:11",
+  "total": 547,
+  "last_updated": "2026-08-19T02:51:32",
   "by_type": {
-    "keyword": 447,
-    "cve": 90,
+    "keyword": 448,
+    "cve": 91,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 55,
-    "medium": 488,
+    "medium": 490,
     "low": 2
   },
   "meta": {
