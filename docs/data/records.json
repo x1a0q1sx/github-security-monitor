@@ -22998,19 +22998,57 @@
         "windows-injector"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "SneakyNachos/CVE-2026-2796-escape-wasm-by-using-wasm",
+      "repo_url": "https://github.com/SneakyNachos/CVE-2026-2796-escape-wasm-by-using-wasm",
+      "repo_description": "PoC exploit chain for CVE-2026-2796: SpiderMonkey WebAssembly sandbox escape (signature type confusion -> arbitrary R/W -> RCE)",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "SneakyNachos",
+      "stars": 0,
+      "language": "JavaScript",
+      "created_at": "2026-08-20T02:42:42Z",
+      "pushed_at": "2026-08-20T02:42:54Z",
+      "description_cn": "CVE-2026-2796 的 PoC 漏洞利用链：SpiderMonkey WebAssembly 沙箱逃逸（签名类型混淆 -> 任意 R/W -> RCE）",
+      "discovered_at": "2026-08-20 02:47:42",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 560,
-  "last_updated": "2026-08-19T20:17:22",
+  "total": 561,
+  "last_updated": "2026-08-20T02:47:45",
   "by_type": {
     "keyword": 457,
-    "cve": 95,
+    "cve": 96,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 56,
-    "medium": 502,
+    "medium": 503,
     "low": 2
   },
   "meta": {
