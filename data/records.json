@@ -23162,19 +23162,170 @@
         "study-notes"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "kim-kimani/burpsuite-ai-pentest-extension",
+      "repo_url": "https://github.com/kim-kimani/burpsuite-ai-pentest-extension",
+      "repo_description": "AI-powered Burp Suite extension for automated web app penetration testing. DeepSeek-driven payload generation, vulnerability detection (SQLi, XSS, SSRF, SSTI, XXE, RCE), scope-aware traffic capture, findings database, and HTML/CSV reporting,  for authorized pentesting & Application Security Works..",
+      "monitor_type": "keyword",
+      "monitor_keyword": "ssrf(2B), rce(3A), xxe(2B), security_context(+1.5)",
+      "tags": "漏洞利用",
+      "author": "kim-kimani",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-08-20T13:26:29Z",
+      "pushed_at": "2026-08-20T13:56:35Z",
+      "description_cn": "由 AI 驱动的 Burp Suite 扩展，用于自动化 Web 应用程序渗透测试。 DeepSeek 驱动的有效负载生成、漏洞检测（SQLi、XSS、SSRF、SSTI、XXE、RCE）、范围感知流量捕获、结果数据库和 HTML/CSV 报告，用于授权渗透测试和应用程序安全工作。",
+      "discovered_at": "2026-08-20 14:27:08",
+      "final_score": 6.97,
+      "relevance_score": 8.5,
+      "quality_score": 5.1,
+      "confidence": "medium",
+      "reasons": [
+        "ssrf(2B)",
+        "rce(3A)",
+        "xxe(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "ssrf",
+        "rce",
+        "xxe"
+      ],
+      "is_fork": false,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "application-security",
+        "burp-extensions",
+        "burp-suite",
+        "cyber-threat-intelligence",
+        "cybersecurity",
+        "cybersecurity-tools",
+        "pentest-tool",
+        "pentesting"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "pop-ecx/rango",
+      "repo_url": "https://github.com/pop-ecx/rango",
+      "repo_description": "Yet another Mythic C2 agent, written in Zig",
+      "monitor_type": "keyword",
+      "monitor_keyword": "mythic c2(4S), c2(3A)",
+      "tags": "C2",
+      "author": "pop-ecx",
+      "stars": 10,
+      "language": "Zig",
+      "created_at": "2025-07-03T18:41:33Z",
+      "pushed_at": "2026-08-20T13:11:36Z",
+      "description_cn": "另一种 Mythic C2 代理，用 Zig 编写",
+      "discovered_at": "2026-08-20 14:25:19",
+      "final_score": 6.51,
+      "relevance_score": 7.0,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "mythic c2(4S)",
+        "c2(3A)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "mythic c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [
+        "c2",
+        "offensive-security",
+        "red-team-tools",
+        "zig"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "Whispergate/Starburst",
+      "repo_url": "https://github.com/Whispergate/Starburst",
+      "repo_description": "PIC shellcode agent based on Stardust framework and Crystal Palace",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), security_context(+1.5)",
+      "tags": "Shellcode",
+      "author": "Whispergate",
+      "stars": 21,
+      "language": "C",
+      "created_at": "2026-07-05T03:36:09Z",
+      "pushed_at": "2026-08-20T07:43:51Z",
+      "description_cn": "基于Stardust框架和Crystal Palace的PIC shellcode代理",
+      "discovered_at": "2026-08-20 14:26:56",
+      "final_score": 5.68,
+      "relevance_score": 5.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "security_context(+1.5)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "elastic/FENIX",
+      "repo_url": "https://github.com/elastic/FENIX",
+      "repo_description": "Fileless Execution for NIX: Linux fileless-execution lab PoC framework",
+      "monitor_type": "keyword",
+      "monitor_keyword": "fileless execution(5S), fileless(3A)",
+      "tags": "POC",
+      "author": "elastic",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-20T09:21:13Z",
+      "pushed_at": "2026-08-20T09:46:33Z",
+      "description_cn": "NIX 无文件执行：Linux 无文件执行实验室 PoC 框架",
+      "discovered_at": "2026-08-20 14:24:27",
+      "final_score": 5.66,
+      "relevance_score": 8.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "fileless execution(5S)",
+        "fileless(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "fileless execution",
+        "fileless"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 564,
-  "last_updated": "2026-08-20T08:26:58",
+  "total": 568,
+  "last_updated": "2026-08-20T14:27:25",
   "by_type": {
-    "keyword": 460,
+    "keyword": 464,
     "cve": 96,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 56,
-    "medium": 506,
+    "medium": 510,
     "low": 2
   },
   "meta": {
