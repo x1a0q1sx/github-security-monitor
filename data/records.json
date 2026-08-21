@@ -23463,19 +23463,103 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "MatrixTM26/b4ckstabber",
+      "repo_url": "https://github.com/MatrixTM26/b4ckstabber",
+      "repo_description": "PHP Webshell backdoor for website penetration testing",
+      "monitor_type": "keyword",
+      "monitor_keyword": "webshell(3A), redteam(3A), exploit(2B), security_context(+1.5)",
+      "tags": "漏洞利用,Webshell,红队",
+      "author": "MatrixTM26",
+      "stars": 1,
+      "language": "PHP",
+      "created_at": "2026-05-25T14:54:56Z",
+      "pushed_at": "2026-08-21T12:41:59Z",
+      "description_cn": "用于网站渗透测试的PHP Webshel​​l后门",
+      "discovered_at": "2026-08-21 14:25:58",
+      "final_score": 7.88,
+      "relevance_score": 9.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "webshell(3A)",
+        "redteam(3A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "webshell",
+        "redteam",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [
+        "admin-panel",
+        "backdoor",
+        "exploit",
+        "hacking",
+        "php",
+        "redteam",
+        "shell",
+        "webshell",
+        "website"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "joaopedrofons/Local-Module-Stomping",
+      "repo_url": "https://github.com/joaopedrofons/Local-Module-Stomping",
+      "repo_description": "Educational Windows Internals & Red Team lab demonstrating local Module Stomping execution using WinExec.  Advanced defense evasion and code execution research implementation leveraging image-backed sections (SEC_IMAGE).  Windows Internals research project implementing local DLL/Module Stomping with custom PIC shellcode.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "module stomping(3S), shellcode(4A), red team(3A)",
+      "tags": "免杀,Shellcode,红队",
+      "author": "joaopedrofons",
+      "stars": 0,
+      "language": "",
+      "created_at": "2026-08-21T14:21:29Z",
+      "pushed_at": "2026-08-21T14:21:30Z",
+      "description_cn": "教育性 Windows 内部结构和红队实验室演示使用 WinExec 执行本地模块 Stomping。  利用图像支持部分 (SEC_IMAGE) 进行高级防御规避和代码执行研究实施。  Windows Internals 研究项目使用自定义 PIC shellcode 实现本地 DLL/模块 Stomping。",
+      "discovered_at": "2026-08-21 14:25:18",
+      "final_score": 6.72,
+      "relevance_score": 10.75,
+      "quality_score": 1.8,
+      "confidence": "medium",
+      "reasons": [
+        "module stomping(3S)",
+        "shellcode(4A)",
+        "red team(3A)",
+        "stars=0",
+        "desc_ok",
+        "no_language",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "module stomping",
+        "shellcode",
+        "red team"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 572,
-  "last_updated": "2026-08-21T08:29:11",
+  "total": 574,
+  "last_updated": "2026-08-21T14:26:23",
   "by_type": {
-    "keyword": 468,
+    "keyword": 470,
     "cve": 96,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 56,
-    "medium": 514,
+    "medium": 516,
     "low": 2
   },
   "meta": {
