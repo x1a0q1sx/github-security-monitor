@@ -23547,19 +23547,91 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "CerberusMrXi/JCEzploit-CVE-2026-48907",
+      "repo_url": "https://github.com/CerberusMrXi/JCEzploit-CVE-2026-48907",
+      "repo_description": "JCEzploit is a powerful, fully-automated RCE exploit for Joomla JCE (CVE-2026-48907) featuring interactive shell, batch command execution, file download capability, and proxy support. Built with Python & Rich for penetration testers. Ethical use only. By Sudeepa Wanigarathna.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "CerberusMrXi",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-08-21T17:33:06Z",
+      "pushed_at": "2026-08-21T18:25:53Z",
+      "description_cn": "JCEzploit 是针对 Joomla JCE (CVE-2026-48907) 的强大、全自动 RCE 漏洞，具有交互式 shell、批处理命令执行、文件下载功能和代理支持。使用 Python 和 Rich 为渗透测试人员构建。仅限合乎道德的使用。作者：苏迪帕·瓦尼加拉斯纳。",
+      "discovered_at": "2026-08-21 20:13:18",
+      "final_score": 6.79,
+      "relevance_score": 9.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "bloggins/PHL",
+      "repo_url": "https://github.com/bloggins/PHL",
+      "repo_description": "Process Hollowing DLL / EXE, AES encrypted shellcode",
+      "monitor_type": "keyword",
+      "monitor_keyword": "process hollowing(5S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "bloggins",
+      "stars": 0,
+      "language": "C++",
+      "created_at": "2026-06-24T11:30:39Z",
+      "pushed_at": "2026-08-21T18:33:34Z",
+      "description_cn": "Process Hollowing DLL / EXE、AES 加密 shellcode",
+      "discovered_at": "2026-08-21 20:14:01",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "process hollowing(5S)",
+        "shellcode(4A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "process hollowing",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 574,
-  "last_updated": "2026-08-21T14:26:23",
+  "total": 576,
+  "last_updated": "2026-08-21T20:16:36",
   "by_type": {
-    "keyword": 470,
-    "cve": 96,
+    "keyword": 471,
+    "cve": 97,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 56,
-    "medium": 516,
+    "medium": 518,
     "low": 2
   },
   "meta": {
