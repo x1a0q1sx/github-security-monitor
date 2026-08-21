@@ -23347,19 +23347,135 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "HasnainDarkNet/AndroRAT12",
+      "repo_url": "https://github.com/HasnainDarkNet/AndroRAT12",
+      "repo_description": "Advanced Android Remote Administration Tool (RAT) for Educational Security Testing | Meterpreter Payload Generator | Play Protect Bypass | Stealth Mode | Full Device Control",
+      "monitor_type": "keyword",
+      "monitor_keyword": "payload generator(2B), meterpreter(4S)",
+      "tags": "免杀",
+      "author": "HasnainDarkNet",
+      "stars": 32,
+      "language": "Python",
+      "created_at": "2026-03-27T04:14:29Z",
+      "pushed_at": "2026-08-21T05:01:40Z",
+      "description_cn": "用于教育安全测试的高级 Android 远程管理工具 (RAT) | Meterpreter 有效负载生成器 |播放保护绕过 |隐身模式|完整的设备控制",
+      "discovered_at": "2026-08-21 08:27:09",
+      "final_score": 6.41,
+      "relevance_score": 6.0,
+      "quality_score": 6.9,
+      "confidence": "medium",
+      "reasons": [
+        "payload generator(2B)",
+        "meterpreter(4S)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "payload generator",
+        "meterpreter"
+      ],
+      "is_fork": false,
+      "topics": [
+        "android-backdoor",
+        "android-hacking",
+        "android-security",
+        "cybersecurity",
+        "metasploit",
+        "meterpreter",
+        "penetration-testing",
+        "rat"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "soniciso1/LuaGB",
+      "repo_url": "https://github.com/soniciso1/LuaGB",
+      "repo_description": "LuaGB - Game Boy / Game Boy Color emulator for PS5 via Luac0re. fixGB running as userland shellcode, no kernel exploit.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), exploit(2B), security_context(+1.5)",
+      "tags": "Shellcode,漏洞利用",
+      "author": "soniciso1",
+      "stars": 1,
+      "language": "C",
+      "created_at": "2026-08-21T00:35:40Z",
+      "pushed_at": "2026-08-21T05:42:06Z",
+      "description_cn": "LuaGB - 通过 Luac0re 适用于 PS5 的 Game Boy / Game Boy Color 模拟器. fixGB 作为用户态 shellcode 运行，没有内核漏洞。",
+      "discovered_at": "2026-08-21 08:28:43",
+      "final_score": 5.97,
+      "relevance_score": 7.5,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "Gxmb0/xerxes-linux-pentesting",
+      "repo_url": "https://github.com/Gxmb0/xerxes-linux-pentesting",
+      "repo_description": "Penetration-testing walkthrough of the Xerxes vulnerable Linux VM, covering web enumeration, information disclosure, file-upload RCE, credential discovery, insecure Python deserialization, SSH key abuse, authentication weaknesses, privilege escalation, and post-exploitation analysis.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "post exploitation(3A), exploitation(2B), exploit(2B), rce(3A), security_context(+1.5)",
+      "tags": "漏洞利用",
+      "author": "Gxmb0",
+      "stars": 0,
+      "language": "",
+      "created_at": "2026-08-21T08:06:19Z",
+      "pushed_at": "2026-08-21T08:21:55Z",
+      "description_cn": "Xerxes 易受攻击的 Linux VM 的渗透测试演练，涵盖 Web 枚举、信息泄露、文件上传 RCE、凭证发现、不安全的 Python 反序列化、SSH 密钥滥用、身份验证弱点、权限升级和利用后分析。",
+      "discovered_at": "2026-08-21 08:28:55",
+      "final_score": 5.63,
+      "relevance_score": 11.5,
+      "quality_score": 1.8,
+      "confidence": "medium",
+      "reasons": [
+        "post exploitation(3A)",
+        "exploitation(2B)",
+        "exploit(2B)",
+        "rce(3A)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "no_language",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "post exploitation",
+        "exploitation",
+        "exploit",
+        "rce"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 569,
-  "last_updated": "2026-08-20T20:19:43",
+  "total": 572,
+  "last_updated": "2026-08-21T08:29:11",
   "by_type": {
-    "keyword": 465,
+    "keyword": 468,
     "cve": 96,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 56,
-    "medium": 511,
+    "medium": 514,
     "low": 2
   },
   "meta": {
