@@ -24537,19 +24537,121 @@
         "vulnerability-management"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "0xStalic/AES-Shellcode-Loader",
+      "repo_url": "https://github.com/0xStalic/AES-Shellcode-Loader",
+      "repo_description": "Generic Shellcode Loader which makes use of AES encryption.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode loader(4S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "0xStalic",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-08-24T15:09:32Z",
+      "pushed_at": "2026-08-24T15:11:29Z",
+      "description_cn": "使用 AES 加密的通用 Shellcode 加载器。",
+      "discovered_at": "2026-08-24 20:18:56",
+      "final_score": 6.76,
+      "relevance_score": 10.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode loader(4S)",
+        "shellcode(4A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "shellcode loader",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "mscupcakegkill-hue/sliver-c2-ui",
+      "repo_url": "https://github.com/mscupcakegkill-hue/sliver-c2-ui",
+      "repo_description": "Modern web UI for Sliver C2 framework with real binary integration - glassmorphism design, server/client management, command execution",
+      "monitor_type": "keyword",
+      "monitor_keyword": "sliver c2(4S), c2(3A)",
+      "tags": "C2",
+      "author": "mscupcakegkill-hue",
+      "stars": 0,
+      "language": "JavaScript",
+      "created_at": "2026-08-24T18:04:45Z",
+      "pushed_at": "2026-08-24T18:05:01Z",
+      "description_cn": "Sliver C2 框架的现代 Web UI 具有真正的二进制集成 - glassmorphism 设计、服务器/客户端管理、命令执行",
+      "discovered_at": "2026-08-24 20:19:02",
+      "final_score": 6.07,
+      "relevance_score": 8.75,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "sliver c2(4S)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "sliver c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "Inject0r77/cod-antirce-exploit-protect",
+      "repo_url": "https://github.com/Inject0r77/cod-antirce-exploit-protect",
+      "repo_description": "COD real time Anti-RCE exploit protector.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), security_context(+1.5)",
+      "tags": "漏洞利用",
+      "author": "Inject0r77",
+      "stars": 1,
+      "language": "C++",
+      "created_at": "2026-08-24T02:43:19Z",
+      "pushed_at": "2026-08-24T19:31:43Z",
+      "description_cn": "COD 实时反 RCE 漏洞保护器。",
+      "discovered_at": "2026-08-24 20:20:26",
+      "final_score": 5.7,
+      "relevance_score": 7.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 597,
-  "last_updated": "2026-08-24T14:34:04",
+  "total": 600,
+  "last_updated": "2026-08-24T20:20:44",
   "by_type": {
-    "keyword": 490,
+    "keyword": 493,
     "cve": 99,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 59,
-    "medium": 536,
+    "medium": 539,
     "low": 2
   },
   "meta": {
