@@ -24767,19 +24767,144 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "SnailSploit/Claude-Red",
+      "repo_url": "https://github.com/SnailSploit/Claude-Red",
+      "repo_description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), redteam(3A), exploit(2B), security_context(+1.5)",
+      "tags": "免杀,Shellcode,漏洞利用,红队",
+      "author": "SnailSploit",
+      "stars": 2963,
+      "language": "Python",
+      "created_at": "2026-03-04T05:52:35Z",
+      "pushed_at": "2026-08-25T15:37:53Z",
+      "description_cn": "claude-red 是一个专为 Claude 技能系统设计的进攻性安全技能库。每项技能都是一个结构化的 SKILL.md 文件，为 Claude 提供针对特定攻击面的专家级方法——从 SQLi 到 shellcode，从 EDR 规避到漏洞利用开发。",
+      "discovered_at": "2026-08-25 20:18:57",
+      "final_score": 10.14,
+      "relevance_score": 10.5,
+      "quality_score": 9.7,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "redteam(3A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars>=500",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "redteam",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [
+        "claude-ai",
+        "claude-pt",
+        "claude-skills",
+        "redteam",
+        "redteam-tools",
+        "skills"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "jonah791/dsh-red-team",
+      "repo_url": "https://github.com/jonah791/dsh-red-team",
+      "repo_description": "红队渗透辅助插件：侦察/枚举/指纹/CVE 匹配/敏感路径（8 工具，仅限授权测试）",
+      "monitor_type": "keyword",
+      "monitor_keyword": "red team(3A), 红队工具(3S), cve(2B), 红队(3A)",
+      "tags": "红队",
+      "author": "jonah791",
+      "stars": 0,
+      "language": "TypeScript",
+      "created_at": "2026-08-25T15:39:37Z",
+      "pushed_at": "2026-08-25T15:39:41Z",
+      "description_cn": "红队渗透辅助插件：侦察/枚举/指纹/CVE 匹配/敏感路径（8 工具，仅限授权测试）",
+      "discovered_at": "2026-08-25 20:18:51",
+      "final_score": 7.72,
+      "relevance_score": 11.75,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "red team(3A)",
+        "红队工具(3S)",
+        "cve(2B)",
+        "红队(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "red team",
+        "红队工具",
+        "cve",
+        "红队"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "shadow1ng/fscan",
+      "repo_url": "https://github.com/shadow1ng/fscan",
+      "repo_description": "一款内网综合扫描工具，方便一键自动化、全方位漏扫扫描。(An intranet comprehensive scanning tool, enabling one-click automated, all-round vulnerability scanning)",
+      "monitor_type": "tool_update",
+      "monitor_keyword": "pushed:2026-07-15T18:04:38Z->2026-08-25T16:07:02Z",
+      "tags": "工具更新,漏洞利用",
+      "author": "shadow1ng",
+      "stars": 14443,
+      "language": "Go",
+      "created_at": "2020-11-13T16:35:20Z",
+      "pushed_at": "2026-08-25T16:07:02Z",
+      "description_cn": "一款内网综合扫描工具，方便一键自动化、全方位扫描扫描。(内网综合扫描工具，实现一键自动化、全方位漏洞扫描)",
+      "discovered_at": "2026-08-25 20:19:37",
+      "final_score": 8.21,
+      "relevance_score": 7.0,
+      "quality_score": 9.7,
+      "confidence": "high",
+      "reasons": [
+        "pushed:2026-07-15T18:04:38Z->2026-08-25T16:07:02Z",
+        "source:tool_update",
+        "stars>=500",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d",
+        "release:v2.2.0"
+      ],
+      "matched_keywords": [
+        "pushed:2026-07-15T18:04:38Z->2026-08-25T16:07:02Z",
+        "source:tool_update"
+      ],
+      "is_fork": false,
+      "topics": [
+        "fscan",
+        "scanner",
+        "scanning",
+        "sec",
+        "security",
+        "security-tools"
+      ],
+      "archived": false
     }
   ],
-  "total": 603,
-  "last_updated": "2026-08-25T14:36:43",
+  "total": 606,
+  "last_updated": "2026-08-25T20:19:38",
   "by_type": {
-    "keyword": 496,
+    "keyword": 498,
     "cve": 99,
     "tool": 7,
-    "user_repo": 1
+    "user_repo": 1,
+    "tool_update": 1
   },
   "by_confidence": {
-    "high": 59,
-    "medium": 542,
+    "high": 60,
+    "medium": 544,
     "low": 2
   },
   "meta": {
