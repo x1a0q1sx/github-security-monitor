@@ -24733,19 +24733,53 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "bloggins/RemoteEvasiveShellcodeLoader",
+      "repo_url": "https://github.com/bloggins/RemoteEvasiveShellcodeLoader",
+      "repo_description": "AMSI patch, ETW patch,  jitter sleep, HTTP fetch of the AES-256-CBC blob,  PKCS7 decrypt, VirtualAlloc (RW) , VirtualProtect, CreateThread, WaitForSingleObject(INFINITE). ",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode loader(4S), shellcode(4A)",
+      "tags": "免杀,Shellcode",
+      "author": "bloggins",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-25T13:53:24Z",
+      "pushed_at": "2026-08-25T13:54:40Z",
+      "description_cn": "AMSI 补丁、ETW 补丁、抖动睡眠、AES-256-CBC blob 的 HTTP 获取、PKCS7 解密、VirtualAlloc (RW)、VirtualProtect、CreateThread、WaitForSingleObject(INFINITE)。",
+      "discovered_at": "2026-08-25 14:34:56",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode loader(4S)",
+        "shellcode(4A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "shellcode loader",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 602,
-  "last_updated": "2026-08-25T08:32:06",
+  "total": 603,
+  "last_updated": "2026-08-25T14:36:43",
   "by_type": {
-    "keyword": 495,
+    "keyword": 496,
     "cve": 99,
     "tool": 7,
     "user_repo": 1
   },
   "by_confidence": {
     "high": 59,
-    "medium": 541,
+    "medium": 542,
     "low": 2
   },
   "meta": {
