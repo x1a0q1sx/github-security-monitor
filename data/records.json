@@ -25025,20 +25025,96 @@
         "security-tools"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "ChiefYoru/Exploit-CVE-2026-56705",
+      "repo_url": "https://github.com/ChiefYoru/Exploit-CVE-2026-56705",
+      "repo_description": "CVE-2026-56705 — Adminer < 5.4.3 Unauthenticated RCE via MSSQL PDO DSN Injection",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "ChiefYoru",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-26T05:08:55Z",
+      "pushed_at": "2026-08-26T05:16:40Z",
+      "description_cn": "CVE-2026-56705 — 管理员 < 5.4.3 通过 MSSQL PDO DSN 注入未经身份验证的 RCE",
+      "discovered_at": "2026-08-26 08:29:26",
+      "final_score": 6.49,
+      "relevance_score": 9.5,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "gabrielunknown/CVE-2026-73570",
+      "repo_url": "https://github.com/gabrielunknown/CVE-2026-73570",
+      "repo_description": "Zimbra SNMP Notification OS Command Injection — Unauthenticated RCE via SMTP exploit (Poc)",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "gabrielunknown",
+      "stars": 0,
+      "language": "Perl",
+      "created_at": "2026-08-26T03:30:14Z",
+      "pushed_at": "2026-08-26T04:14:30Z",
+      "description_cn": "Zimbra SNMP 通知操作系统命令注入 - 通过 SMTP 漏洞进行未经身份验证的 RCE (Poc)",
+      "discovered_at": "2026-08-26 08:29:26",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 609,
-  "last_updated": "2026-08-26T02:59:06",
+  "total": 611,
+  "last_updated": "2026-08-26T08:29:32",
   "by_type": {
     "keyword": 499,
-    "cve": 100,
+    "cve": 102,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 2
   },
   "by_confidence": {
     "high": 62,
-    "medium": 545,
+    "medium": 547,
     "low": 2
   },
   "meta": {
