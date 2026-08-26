@@ -25101,12 +25101,90 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "Yaswanthkobaku09/binary-exploitation-mitigation-bypass-lab-v2",
+      "repo_url": "https://github.com/Yaswanthkobaku09/binary-exploitation-mitigation-bypass-lab-v2",
+      "repo_description": "Progressive x86-64 exploit dev lab: shellcode injection, NX/ret2libc, ASLR leak, stack canary bypass -- 4 levels, each with a working, tested exploit",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode injection(4S), exploitation(2B), shellcode(4A), exploit(2B)",
+      "tags": "免杀,Shellcode,漏洞利用",
+      "author": "Yaswanthkobaku09",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-26T11:56:40Z",
+      "pushed_at": "2026-08-26T11:56:44Z",
+      "description_cn": "渐进式 x86-64 漏洞利用开发实验室：shellcode 注入、NX/ret2libc、ASLR 泄漏、堆栈金丝雀绕过 - 4 个级别，每个级别都有一个有效且经过测试的漏洞利用程序",
+      "discovered_at": "2026-08-26 14:35:06",
+      "final_score": 7.86,
+      "relevance_score": 12.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode injection(4S)",
+        "exploitation(2B)",
+        "shellcode(4A)",
+        "exploit(2B)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "shellcode injection",
+        "exploitation",
+        "shellcode",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "theevilteam/XWormRCE",
+      "repo_url": "https://github.com/theevilteam/XWormRCE",
+      "repo_description": "Proof of concept Zero-click exploit in XWorm.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), security_context(+1.5)",
+      "tags": "POC,漏洞利用",
+      "author": "theevilteam",
+      "stars": 18,
+      "language": "C#",
+      "created_at": "2025-06-07T12:21:47Z",
+      "pushed_at": "2026-08-26T14:16:17Z",
+      "description_cn": "概念证明 XWorm 中的零点击漏洞利用。",
+      "discovered_at": "2026-08-26 14:36:40",
+      "final_score": 6.59,
+      "relevance_score": 6.5,
+      "quality_score": 6.7,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "security_context(+1.5)",
+        "stars>=5",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce"
+      ],
+      "is_fork": false,
+      "topics": [
+        "exploit",
+        "rce",
+        "xworm",
+        "xworm-rce"
+      ],
+      "archived": false
     }
   ],
-  "total": 611,
-  "last_updated": "2026-08-26T08:29:32",
+  "total": 613,
+  "last_updated": "2026-08-26T14:36:59",
   "by_type": {
-    "keyword": 499,
+    "keyword": 501,
     "cve": 102,
     "tool": 7,
     "user_repo": 1,
@@ -25114,7 +25192,7 @@
   },
   "by_confidence": {
     "high": 62,
-    "medium": 547,
+    "medium": 549,
     "low": 2
   },
   "meta": {
