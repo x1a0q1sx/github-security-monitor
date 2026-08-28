@@ -25782,20 +25782,135 @@
         "zimbra-server"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "e4zyy/Project-CVE-2026-33017",
+      "repo_url": "https://github.com/e4zyy/Project-CVE-2026-33017",
+      "repo_description": "CVE-2026-33017 - Langflow Unauthenticated RCE Exploit",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "e4zyy",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-28T06:38:22Z",
+      "pushed_at": "2026-08-28T06:55:10Z",
+      "description_cn": "CVE-2026-33017 - Langflow 未经身份验证的 RCE 漏洞",
+      "discovered_at": "2026-08-28 13:29:56",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "empsec/reverse-shell",
+      "repo_url": "https://github.com/empsec/reverse-shell",
+      "repo_description": "a list of linux and windows reverse shell script",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), redteam(3A), security_context(+1.5)",
+      "tags": "Shellcode,红队",
+      "author": "empsec",
+      "stars": 1,
+      "language": "C",
+      "created_at": "2026-08-04T12:59:07Z",
+      "pushed_at": "2026-08-27T19:37:26Z",
+      "description_cn": "Linux 和 Windows 反向 shell 脚本列表",
+      "discovered_at": "2026-08-28 13:32:43",
+      "final_score": 7.33,
+      "relevance_score": 8.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "redteam(3A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "redteam"
+      ],
+      "is_fork": false,
+      "topics": [
+        "backdoor",
+        "hacking",
+        "pentesting",
+        "redteam",
+        "reverse-engineering",
+        "reverse-shell",
+        "shellcode"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "0xStalic/StagedWebLoader",
+      "repo_url": "https://github.com/0xStalic/StagedWebLoader",
+      "repo_description": "A shellcode loader which visits a webpage, downloads the contents, and then attempts to allocate a remote thread to spawn the malicious process. ",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode loader(4S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "0xStalic",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-08-28T12:10:37Z",
+      "pushed_at": "2026-08-28T12:18:29Z",
+      "description_cn": "shellcode 加载器访问网页、下载内容，然后尝试分配远程线程来生成恶意进程。",
+      "discovered_at": "2026-08-28 13:31:26",
+      "final_score": 5.66,
+      "relevance_score": 8.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode loader(4S)",
+        "shellcode(4A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "shellcode loader",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 626,
-  "last_updated": "2026-08-27T23:22:53",
+  "total": 629,
+  "last_updated": "2026-08-28T13:33:11",
   "by_type": {
-    "keyword": 508,
-    "cve": 108,
+    "keyword": 510,
+    "cve": 109,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 2
   },
   "by_confidence": {
     "high": 62,
-    "medium": 562,
+    "medium": 565,
     "low": 2
   },
   "meta": {
