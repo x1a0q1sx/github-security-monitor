@@ -26591,12 +26591,90 @@
         "security-research"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "SkinwalkerSec/AI-Tooling",
+      "repo_url": "https://github.com/SkinwalkerSec/AI-Tooling",
+      "repo_description": "Original MCP servers for red-team tooling: Mythic C2, BloodHound, and nmap. Authorized use only.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "mythic c2(4S), red team(3A), c2(3A)",
+      "tags": "C2,红队",
+      "author": "SkinwalkerSec",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-08-30T02:41:54Z",
+      "pushed_at": "2026-08-31T04:46:03Z",
+      "description_cn": "用于红队工具的原始 MCP 服务器：Mythic C2、BloodHound 和 nmap。仅限授权使用。",
+      "discovered_at": "2026-08-31 07:52:16",
+      "final_score": 7.21,
+      "relevance_score": 10.0,
+      "quality_score": 3.8,
+      "confidence": "medium",
+      "reasons": [
+        "mythic c2(4S)",
+        "red team(3A)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "mythic c2",
+        "red team",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [
+        "ai-security",
+        "bloodhound",
+        "mcp",
+        "model-context-protocol",
+        "mythic-c2",
+        "nmap",
+        "offensive-security",
+        "red-team"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "T4riiiiq/Evasion",
+      "repo_url": "https://github.com/T4riiiiq/Evasion",
+      "repo_description": "Windows x64 direct syscall process injector for red team operations and EDR telemetry validation",
+      "monitor_type": "keyword",
+      "monitor_keyword": "direct syscall(5S), red team(3A)",
+      "tags": "免杀,红队",
+      "author": "T4riiiiq",
+      "stars": 1,
+      "language": "C++",
+      "created_at": "2026-08-30T11:17:05Z",
+      "pushed_at": "2026-08-31T03:03:49Z",
+      "description_cn": "用于红队操作和 EDR 遥测验证的 Windows x64 直接系统调用进程注入器",
+      "discovered_at": "2026-08-31 07:51:19",
+      "final_score": 6.25,
+      "relevance_score": 8.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "direct syscall(5S)",
+        "red team(3A)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "direct syscall",
+        "red team"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 646,
-  "last_updated": "2026-08-30T22:12:42",
+  "total": 648,
+  "last_updated": "2026-08-31T07:54:18",
   "by_type": {
-    "keyword": 523,
+    "keyword": 525,
     "cve": 113,
     "tool": 7,
     "user_repo": 1,
@@ -26604,7 +26682,7 @@
   },
   "by_confidence": {
     "high": 63,
-    "medium": 581,
+    "medium": 583,
     "low": 2
   },
   "meta": {
