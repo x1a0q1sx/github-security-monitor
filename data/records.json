@@ -27064,20 +27064,58 @@
         "wireguard"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "CyberAlp0/SmarterMail-CVE-2026-24423-",
+      "repo_url": "https://github.com/CyberAlp0/SmarterMail-CVE-2026-24423-",
+      "repo_description": "Exploit for CVE-2026-24423 — a critical unauthenticated RCE in SmarterMail's ConnectToHub API. Affects all builds prior to 9511.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "CyberAlp0",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-02T12:39:55Z",
+      "pushed_at": "2026-09-02T12:43:57Z",
+      "description_cn": "CVE-2026-24423 的利用——SmarterMail 的 ConnectToHub API 中的一个关键的未经身份验证的 RCE。影响 9511 之前的所有版本。",
+      "discovered_at": "2026-09-02 17:29:23",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 658,
-  "last_updated": "2026-09-02T06:38:19",
+  "total": 659,
+  "last_updated": "2026-09-02T17:29:27",
   "by_type": {
     "keyword": 533,
-    "cve": 114,
+    "cve": 115,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
     "high": 65,
-    "medium": 591,
+    "medium": 592,
     "low": 2
   },
   "meta": {
