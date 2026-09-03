@@ -27514,20 +27514,97 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "tc4dy/CVE-2026-65643-PoC-Toolkit",
+      "repo_url": "https://github.com/tc4dy/CVE-2026-65643-PoC-Toolkit",
+      "repo_description": "🧰 CVE-2026-65643 – cPanel Domain Parking RCE Toolkit (CVSS 8.7) | Red/Blue Team suite for unpatched cPanel & WHM 11.x (110,134,136,138). 2 tools: Full Exploit (reverse shell, webshell, persistence, root passwd, file R/W, mass scan, Tor), Blue Team PoC (detection, reporting, audit). w/Python. 🦾 Only Use Ethically, Stay Legal <3 ",
+      "monitor_type": "cve",
+      "monitor_keyword": "webshell(3A), exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,Webshell,CVE",
+      "author": "tc4dy",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-03T18:13:54Z",
+      "pushed_at": "2026-09-03T18:20:49Z",
+      "description_cn": "🧰 CVE-2026-65643 – cPanel 域停放 RCE 工具包 (CVSS 8.7) |适用于未修补的 cPanel 和 WHM 11.x 的红/蓝团队套件 (110,134,136,138)。 2 个工具：Full Exploit（反向 shell、webshel​​l、持久性、root 密码、文件读/写、批量扫描、Tor）、蓝队 PoC（检测、报告、审计）。使用Python。 🦾 仅合乎道德地使用，保持合法<3",
+      "discovered_at": "2026-09-03 21:58:44",
+      "final_score": 7.86,
+      "relevance_score": 12.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "webshell(3A)",
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "webshell",
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "RTS-Framework/GRT-MXLoader",
+      "repo_url": "https://github.com/RTS-Framework/GRT-MXLoader",
+      "repo_description": "A shellcode generator supporting common payload formats.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), security_context(+1.5)",
+      "tags": "Shellcode",
+      "author": "RTS-Framework",
+      "stars": 5,
+      "language": "C",
+      "created_at": "2025-04-13T12:54:00Z",
+      "pushed_at": "2026-09-03T19:10:33Z",
+      "description_cn": "支持常见负载格式的 shellcode 生成器。",
+      "discovered_at": "2026-09-03 22:01:29",
+      "final_score": 5.68,
+      "relevance_score": 5.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "security_context(+1.5)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [
+        "dotnet",
+        "jscript",
+        "powershell",
+        "vbscript"
+      ],
+      "archived": false
     }
   ],
-  "total": 669,
-  "last_updated": "2026-09-03T17:25:30",
+  "total": 671,
+  "last_updated": "2026-09-03T22:01:57",
   "by_type": {
-    "keyword": 540,
-    "cve": 118,
+    "keyword": 541,
+    "cve": 119,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
     "high": 66,
-    "medium": 601,
+    "medium": 603,
     "low": 2
   },
   "meta": {
