@@ -27264,20 +27264,105 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "r3xmax/Malleon",
+      "repo_url": "https://github.com/r3xmax/Malleon",
+      "repo_description": "Automated HTTP/HTTPS simulation for Cobalt Strike Malleable C2 profiles",
+      "monitor_type": "keyword",
+      "monitor_keyword": "cobalt strike(5S), malleable c2(5S), c2(3A)",
+      "tags": "C2",
+      "author": "r3xmax",
+      "stars": 6,
+      "language": "Python",
+      "created_at": "2026-09-03T07:18:12Z",
+      "pushed_at": "2026-09-03T09:23:21Z",
+      "description_cn": "Cobalt Strike Malleable C2 配置文件的自动 HTTP/HTTPS 模拟",
+      "discovered_at": "2026-09-03 12:19:43",
+      "final_score": 8.8,
+      "relevance_score": 12.0,
+      "quality_score": 4.9,
+      "confidence": "high",
+      "reasons": [
+        "cobalt strike(5S)",
+        "malleable c2(5S)",
+        "c2(3A)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "cobalt strike",
+        "malleable c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "digitalsurgn/CVE-2024-21546",
+      "repo_url": "https://github.com/digitalsurgn/CVE-2024-21546",
+      "repo_description": "This repository contains security assessment tooling, detection templates, and an automated exploit toolkit for identifying and exploiting Unauthenticated Remote Code Execution (RCE) in applications utilizing the `UniSharp/laravel-filemanager` package (Versions `< 2.9.1`).",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), scanner(1B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "漏洞利用,CVE",
+      "author": "digitalsurgn",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-03T10:59:42Z",
+      "pushed_at": "2026-09-03T11:02:53Z",
+      "description_cn": "该存储库包含安全评估工具、检测模板和自动利用工具包，用于在使用“UniSharp/laravel-filemanager”包（版本“< 2.9.1”）的应用程序中识别和利用未经身份验证的远程代码执行（RCE）。",
+      "discovered_at": "2026-09-03 12:22:33",
+      "final_score": 6.07,
+      "relevance_score": 10.0,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "scanner(1B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "scanner",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve-2024-21546",
+        "detection",
+        "exploit",
+        "fileupload",
+        "laravel",
+        "laravel-framework",
+        "nuclei",
+        "nuclei-templates",
+        "scanner"
+      ],
+      "archived": false
     }
   ],
-  "total": 663,
-  "last_updated": "2026-09-03T06:41:37",
+  "total": 665,
+  "last_updated": "2026-09-03T12:22:53",
   "by_type": {
-    "keyword": 536,
+    "keyword": 538,
     "cve": 116,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
-    "high": 65,
-    "medium": 596,
+    "high": 66,
+    "medium": 597,
     "low": 2
   },
   "meta": {
