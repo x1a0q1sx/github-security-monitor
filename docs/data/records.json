@@ -27155,20 +27155,129 @@
         "soc"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "CyberAlp0/SmarterMail-CVE-2026-24423",
+      "repo_url": "https://github.com/CyberAlp0/SmarterMail-CVE-2026-24423",
+      "repo_description": "Exploit for CVE-2026-24423 — a critical unauthenticated RCE in SmarterMail's ConnectToHub API. Affects all builds prior to 9511.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "CyberAlp0",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-02T12:39:55Z",
+      "pushed_at": "2026-09-02T12:43:57Z",
+      "description_cn": "CVE-2026-24423 的利用——SmarterMail 的 ConnectToHub API 中的一个关键的未经身份验证的 RCE。影响 9511 之前的所有版本。",
+      "discovered_at": "2026-09-03 06:38:19",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "kalantz/05-Metasploit-Framework",
+      "repo_url": "https://github.com/kalantz/05-Metasploit-Framework",
+      "repo_description": "Hands-on Metasploit Framework lab demonstrating vulnerability validation, controlled exploitation, Meterpreter session management, and post-exploitation enumeration against an isolated Metasploitable 2 environment.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "post exploitation(3A), exploitation(2B), meterpreter(4S), exploit(2B)",
+      "tags": "漏洞利用",
+      "author": "kalantz",
+      "stars": 0,
+      "language": "",
+      "created_at": "2026-09-02T22:09:50Z",
+      "pushed_at": "2026-09-02T22:16:41Z",
+      "description_cn": "Metasploit 框架实践实验室针对隔离的 Metasploitable 2 环境演示漏洞验证、受控利用、Meterpreter 会话管理和利用后枚举。",
+      "discovered_at": "2026-09-03 06:39:32",
+      "final_score": 6.86,
+      "relevance_score": 11.0,
+      "quality_score": 1.8,
+      "confidence": "medium",
+      "reasons": [
+        "post exploitation(3A)",
+        "exploitation(2B)",
+        "meterpreter(4S)",
+        "exploit(2B)",
+        "stars=0",
+        "desc_ok",
+        "no_language",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "post exploitation",
+        "exploitation",
+        "meterpreter",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "MSNightmare/FalconFlank",
+      "repo_url": "https://github.com/MSNightmare/FalconFlank",
+      "repo_description": "Crowdstrike Falcon 0day Privilege Escalation Vulnerability",
+      "monitor_type": "keyword",
+      "monitor_keyword": "0day(4A), security_context(+1.5)",
+      "tags": "漏洞利用",
+      "author": "MSNightmare",
+      "stars": 115,
+      "language": "C",
+      "created_at": "2026-09-03T02:48:22Z",
+      "pushed_at": "2026-09-03T03:44:38Z",
+      "description_cn": "Crowdstrike Falcon 0day 权限提升漏洞",
+      "discovered_at": "2026-09-03 06:41:17",
+      "final_score": 6.13,
+      "relevance_score": 5.5,
+      "quality_score": 6.9,
+      "confidence": "medium",
+      "reasons": [
+        "0day(4A)",
+        "security_context(+1.5)",
+        "stars>=100",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "0day"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 660,
-  "last_updated": "2026-09-02T22:09:49",
+  "total": 663,
+  "last_updated": "2026-09-03T06:41:37",
   "by_type": {
-    "keyword": 534,
-    "cve": 115,
+    "keyword": 536,
+    "cve": 116,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
     "high": 65,
-    "medium": 593,
+    "medium": 596,
     "low": 2
   },
   "meta": {
