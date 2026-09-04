@@ -27591,12 +27591,51 @@
         "vbscript"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "abraxas/veneficus-implant-public",
+      "repo_url": "https://github.com/abraxas/veneficus-implant-public",
+      "repo_description": "Spicy malware 0day. Full kill-chain malware: exploit, pivot, c2, persistence. Rust converted to pseudo-code - if you're smart you can build it youtself.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "implant(2A), exploit(2B), 0day(4A), c2(3A), security_context(+1.5)",
+      "tags": "C2,漏洞利用",
+      "author": "abraxas",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-04T00:05:27Z",
+      "pushed_at": "2026-09-04T01:14:44Z",
+      "description_cn": "辛辣的恶意软件 0day。完整的杀伤链恶意软件：漏洞利用、枢轴、c2、持久性。 Rust 转换为伪代码 - 如果您聪明，您可以自己构建它。",
+      "discovered_at": "2026-09-04 06:44:29",
+      "final_score": 6.36,
+      "relevance_score": 12.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "implant(2A)",
+        "exploit(2B)",
+        "0day(4A)",
+        "c2(3A)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "implant",
+        "exploit",
+        "0day",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 671,
-  "last_updated": "2026-09-03T22:01:57",
+  "total": 672,
+  "last_updated": "2026-09-04T06:44:50",
   "by_type": {
-    "keyword": 541,
+    "keyword": 542,
     "cve": 119,
     "tool": 7,
     "user_repo": 1,
@@ -27604,7 +27643,7 @@
   },
   "by_confidence": {
     "high": 66,
-    "medium": 603,
+    "medium": 604,
     "low": 2
   },
   "meta": {
