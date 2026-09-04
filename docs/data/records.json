@@ -27754,20 +27754,58 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "0xCyp1337/CVE-2026-63077",
+      "repo_url": "https://github.com/0xCyp1337/CVE-2026-63077",
+      "repo_description": "CVE-2026-63077 - Unauthenticated RCE exploit for JetBrains TeamCity via Agent Polling Deserialization. Supports mass scanning, multi-threading, and interactive shell. For authorized security testing only.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "0xCyp1337",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-04T13:32:31Z",
+      "pushed_at": "2026-09-04T13:35:09Z",
+      "description_cn": "CVE-2026-63077 - 通过代理轮询反序列化对 JetBrains TeamCity 进行未经身份验证的 RCE 攻击。支持批量扫描、多线程和交互式shell。仅用于授权的安全测试。",
+      "discovered_at": "2026-09-04 17:14:38",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 675,
-  "last_updated": "2026-09-04T12:23:31",
+  "total": 676,
+  "last_updated": "2026-09-04T17:14:43",
   "by_type": {
     "keyword": 545,
-    "cve": 119,
+    "cve": 120,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
     "high": 66,
-    "medium": 607,
+    "medium": 608,
     "low": 2
   },
   "meta": {
