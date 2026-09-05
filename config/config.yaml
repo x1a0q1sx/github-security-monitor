@@ -96,22 +96,24 @@ skills:
     seed: true
   skillhub:
     base_url: "https://lightmake.site"
+    # Security-focused queries only: the catalog is a security monitor, so
+    # generic queries (ui ux / testing / productivity) pulled in off-topic skills.
     queries:
       - security
       - pentest
-      - code review
       - cve
-      - devops
-      - git
-      - ui ux
-      - testing
-      - documentation
-      - productivity
-    limit_per_query: 10
+      - vulnerability
+      - osint
+      - malware
+      - exploit
+      - forensics
+    limit_per_query: 15
   github:
+    # repo search: qualify by topic/name (repo search cannot match file contents,
+    # so the old "SKILL.md path:/ filename:SKILL.md" query was invalid).
     queries:
-      - "SKILL.md path:/ filename:SKILL.md"
-      - "ai-skills in:topics"
-      - "claude skill in:readme stars:>5"
+      - "topic:claude-skills security"
+      - "topic:agent-skills security"
+      - "security skills claude in:name,description stars:>3"
     per_page: 20
   installed_slugs: []  # optional suppress list

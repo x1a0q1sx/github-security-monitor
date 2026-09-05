@@ -63,10 +63,12 @@ security_boost_terms:
   - 漏洞
 
 category_keywords:
-  security: [security, pentest, cve, vuln, malware, threat, appsec, osint]
-  design: [ui, ux, design, frontend, css, tailwind]
-  devops: [deploy, ci, cd, docker, kubernetes, github actions]
-  testing: [test, qa, e2e, playwright, jest]
-  productivity: [productivity, workflow, notes, todo]
-  documentation: [docs, readme, changelog, write]
-  git: [git, pr, review, commit]
+  # Word-boundary matched; avoid short ambiguous tokens (pr/test/css) —
+  # they false-hit "pattern"/"pentest"/"success".
+  security: [security, pentest, cve, vulnerability, exploit, malware, threat, appsec, osint, forensics, red team, blue team]
+  design: [ui, ux, design, frontend, css, tailwind, typography]
+  devops: [deploy, docker, kubernetes, terraform, ansible, ci/cd, github actions]
+  testing: [unit test, e2e, playwright, jest, pytest, quality assurance]
+  productivity: [productivity, workflow, notes, todo, task management]
+  documentation: [documentation, readme, changelog, technical writing]
+  git: [git, pull request, commit, branch, merge conflict]

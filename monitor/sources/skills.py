@@ -2,8 +2,8 @@
 from __future__ import annotations
 
 import re
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Sequence, Set, Tuple
-from urllib.parse import quote_plus
 
 import requests
 
@@ -16,21 +16,95 @@ def _norm_id(*parts: str) -> str:
     return re.sub(r"\s+", "-", raw.lower())
 
 
+def _match_term(term: str, text: str) -> bool:
+    """Word-boundary matching for ASCII terms; substring for CJK terms.
+
+    Prevents pollution like css∈"success", pr∈"pattern", test∈"pentest",
+    threat∈"thread" — the main cause of bogus skill categories.
+    """
+    term = (term or "").strip().lower()
+    text = (text or "").lower()
+    if not term:
+        return False
+    if any("\u4e00" <= ch <= "\u9fff" for ch in term):
+        return term in text
+    # tolerate English plural ("unit test" matches "unit tests") but nothing else:
+    # "test" still refuses "testing" because the s/es suffix can't cover "in"
+    pattern = re.compile(rf"(?<![a-z0-9]){re.escape(term)}(?:es|s)?(?![a-z0-9])")
+    return pattern.search(text) is not None
+
+
 def _security_score(text: str, boost_terms: Sequence[str]) -> float:
+    """0..1 security relevance.
+
+    Saturating curve: 1 hit=0.25, 2=0.40 (>=0.4 counts as security-relevant,
+    same threshold semantics as before), 3=0.55 ... 6+=1.0.
+    """
     t = (text or "").lower()
-    hits = sum(1 for term in boost_terms if term.lower() in t)
+    hits = sum(1 for term in boost_terms if _match_term(term, t))
     if hits <= 0:
         return 0.0
-    return min(1.0, 0.2 * hits)
+    return min(1.0, 0.25 + 0.15 * (hits - 1))
 
 
-def _categorize(text: str, category_keywords: Dict[str, List[str]]) -> List[str]:
+def _categorize(
+    text: str,
+    category_keywords: Dict[str, List[str]],
+    max_cats: int = 3,
+    primary: str = "security",
+) -> List[str]:
+    """Category assignment by word-boundary keyword hits.
+
+    - sorted by hit count desc, capped at max_cats
+    - primary category (security) suppresses weak categories: when security
+      hits, another category needs >=2 distinct keyword hits to be attached
+      (so "penetration testing" no longer drags skills into `testing`)
+    """
     t = (text or "").lower()
-    cats = []
+    hits: Dict[str, int] = {}
     for cat, kws in (category_keywords or {}).items():
-        if any(k.lower() in t for k in kws):
+        n = sum(1 for k in kws if _match_term(k, t))
+        if n:
+            hits[cat] = n
+
+    cats: List[str] = []
+    if primary in hits:
+        cats.append(primary)
+        for cat, n in sorted(hits.items(), key=lambda x: (-x[1], x[0])):
+            if cat == primary:
+                continue
+            if n >= 2:
+                cats.append(cat)
+    else:
+        for cat, n in sorted(hits.items(), key=lambda x: (-x[1], x[0])):
             cats.append(cat)
-    return cats or ["general"]
+    return cats[:max_cats] or ["general"]
+
+
+def _freshness_score(updated_at: str) -> float:
+    """Time-decay freshness: recently updated skills rank higher.
+
+    <=30d: 6.0, <=90d: 5.0, <=365d: 4.0, older: 2.0, unknown: 3.0.
+    """
+    if not updated_at or not str(updated_at).strip():
+        return 3.0
+    s = str(updated_at).strip()
+    if s.endswith("Z"):
+        s = s[:-1] + "+00:00"
+    try:
+        dt = datetime.fromisoformat(s)
+    except ValueError:
+        return 4.0
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    days = (datetime.now(timezone.utc) - dt).days
+    if days <= 30:
+        return 6.0
+    if days <= 90:
+        return 5.0
+    if days <= 365:
+        return 4.0
+    return 2.0
 
 
 def score_skill(
@@ -61,9 +135,7 @@ def score_skill(
     else:
         pop = 1.0 if card.source == "seed" else 0.5
 
-    freshness = 4.0
-    if card.updated_at:
-        freshness = 6.0
+    freshness = _freshness_score(card.updated_at)
 
     relevance = 3.0 + card.security_relevant * 5.0
     if "security" in (card.category or []):
@@ -76,6 +148,11 @@ def score_skill(
     final = pop * 0.4 + freshness * 0.15 + relevance * 0.45
     if card.security_relevant >= 0.4:
         final *= prefer_security_weight
+    else:
+        # non-security skills must clear a higher bar in a security-focused
+        # catalog; curated seeds are exempt (find-skills etc. are intentional)
+        if card.source != "seed":
+            final *= 0.85
 
     reasons = []
     if installs:
@@ -100,6 +177,12 @@ def score_skill(
     }
     card.reasons = reasons
     return card
+
+
+def _display_key(card: SkillCard) -> str:
+    """Normalized display name for same-name merging across sources."""
+    name = (card.display_name or card.name or "").strip().lower()
+    return re.sub(r"\s+", "", name)
 
 
 def fetch_skillhub(
@@ -144,7 +227,7 @@ def fetch_skillhub(
             cats = _categorize(text, category_keywords)
             if sec >= 0.4 and "security" not in cats:
                 cats.insert(0, "security")
-            install = f"# skillhub slug: {slug}"
+            install = f"npx skills add {slug} -g -y"
             homepage = item.get("homepage") or f"{base_url}/skills/{slug}"
             cards.append(
                 SkillCard(
@@ -183,18 +266,19 @@ def fetch_github_skills(
     seen: Set[str] = set()
     for q in queries:
         print(f"  [github-skills] {q}")
-        # search code is better but needs special preview; use repo search fallback
         repos = client.search_repos(q, sort="updated", per_page=per_page)
         for repo in repos:
             full = repo.get("full_name") or ""
             if not full or full in seen:
+                continue
+            if repo.get("fork"):
                 continue
             seen.add(full)
             desc = repo.get("description") or ""
             topics = repo.get("topics") or []
             text = f"{full} {desc} {' '.join(topics)}"
             # heuristic: skill-like repos
-            if not any(k in text.lower() for k in ("skill", "claude", "agent", "cursor", "codex")):
+            if not any(_match_term(k, text) for k in ("skill", "claude", "agent", "cursor", "codex")):
                 # still keep if strong security tool skill naming
                 if "skill" not in (repo.get("name") or "").lower():
                     continue
@@ -280,7 +364,7 @@ def run_skills(
             fetch_skillhub(
                 base_url=sh.get("base_url") or "https://lightmake.site",
                 queries=sh.get("queries") or ["security"],
-                limit_per_query=int(sh.get("limit_per_query") or 10),
+                limit_per_query=int(sh.get("limit_per_query") or 15),
                 boost_terms=boost,
                 category_keywords=cat_kw,
             )
@@ -291,14 +375,14 @@ def run_skills(
         all_cards.extend(
             fetch_github_skills(
                 client,
-                queries=gh.get("queries") or ['"SKILL.md" skill'],
+                queries=gh.get("queries") or ['"claude skill" security'],
                 per_page=int(gh.get("per_page") or 20),
                 boost_terms=boost,
                 category_keywords=cat_kw,
             )
         )
 
-    # dedupe by id/name
+    # dedupe by id/name, then merge same display_name across sources/slugs
     best: Dict[str, SkillCard] = {}
     for c in all_cards:
         c = score_skill(c, prefer_security_weight=prefer, installed=installed)
@@ -307,7 +391,20 @@ def run_skills(
         if not prev or (c.scores or {}).get("final", 0) > (prev.scores or {}).get("final", 0):
             best[key] = c
 
-    ranked = sorted(best.values(), key=lambda x: (x.scores or {}).get("final", 0), reverse=True)
+    merged_names = 0
+    by_display: Dict[str, SkillCard] = {}
+    for c in best.values():
+        dk = _display_key(c)
+        prev = by_display.get(dk)
+        if prev is None:
+            by_display[dk] = c
+        else:
+            merged_names += 1
+            if (c.scores or {}).get("final", 0) > (prev.scores or {}).get("final", 0):
+                by_display[dk] = c
+    unique_cards = list(by_display.values())
+
+    ranked = sorted(unique_cards, key=lambda x: (x.scores or {}).get("final", 0), reverse=True)
     ranked = [c for c in ranked if (c.scores or {}).get("final", 0) >= min_final][:max_items]
 
     # Fill description_cn when missing (reuse free multi-provider translator)
@@ -334,13 +431,22 @@ def run_skills(
     except Exception as e:
         print(f"  [skills] translate skipped: {e}")
 
+    non_security = sum(
+        1 for c in ranked
+        if c.security_relevant < 0.4 and "security" not in (c.category or [])
+    )
     stats = {
         "source": "skills",
         "collected": len(all_cards),
-        "unique": len(best),
+        "unique": len(unique_cards),
+        "merged_names": merged_names,
         "kept": len(ranked),
         "security": sum(1 for c in ranked if c.security_relevant >= 0.4 or "security" in (c.category or [])),
+        "non_security": non_security,
         "translated": translated,
     }
-    print(f"[SKILLS] collected={stats['collected']} unique={stats['unique']} kept={stats['kept']}")
+    print(
+        f"[SKILLS] collected={stats['collected']} unique={stats['unique']} "
+        f"merged={merged_names} kept={stats['kept']} non_security={non_security}"
+    )
     return ranked, stats
