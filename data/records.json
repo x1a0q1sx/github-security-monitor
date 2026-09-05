@@ -27982,12 +27982,95 @@
         "xss"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "HackfutSecRoot/defacer",
+      "repo_url": "https://github.com/HackfutSecRoot/defacer",
+      "repo_description": "defacer tool by hackfut",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), 0day(4A), cve(2B), security_context(+1.5)",
+      "tags": "漏洞利用",
+      "author": "HackfutSecRoot",
+      "stars": 1,
+      "language": "",
+      "created_at": "2026-09-05T20:37:58Z",
+      "pushed_at": "2026-09-05T20:47:45Z",
+      "description_cn": "hackfut 的破坏工具",
+      "discovered_at": "2026-09-05 21:50:38",
+      "final_score": 7.25,
+      "relevance_score": 9.5,
+      "quality_score": 4.5,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "0day(4A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_short",
+        "no_language",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "0day",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "0day",
+        "bugbounty",
+        "cve",
+        "ethical-hacking",
+        "exploit",
+        "exploratory-data-analysis",
+        "hackerrank",
+        "python",
+        "server",
+        "xss"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "Ahmedf000/RemoteMappingInjection",
+      "repo_url": "https://github.com/Ahmedf000/RemoteMappingInjection",
+      "repo_description": "Crapy Process Enumeration tool with Calc.exe Shellcode injection through FileMapping ",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode injection(4S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "Ahmedf000",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-09-05T17:34:45Z",
+      "pushed_at": "2026-09-05T17:41:11Z",
+      "description_cn": "Crapy 进程枚举工具，通过 FileMapping 进行 Calc.exe Shellcode 注入",
+      "discovered_at": "2026-09-05 21:48:26",
+      "final_score": 5.66,
+      "relevance_score": 8.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode injection(4S)",
+        "shellcode(4A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "shellcode injection",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 680,
-  "last_updated": "2026-09-05T16:26:56",
+  "total": 682,
+  "last_updated": "2026-09-05T21:50:58",
   "by_type": {
-    "keyword": 548,
+    "keyword": 550,
     "cve": 121,
     "tool": 7,
     "user_repo": 1,
@@ -27995,7 +28078,7 @@
   },
   "by_confidence": {
     "high": 66,
-    "medium": 612,
+    "medium": 614,
     "low": 2
   },
   "meta": {
