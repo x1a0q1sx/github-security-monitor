@@ -120,6 +120,14 @@ def run_keyword(
 
         total = int(meta.get("total_count") or 0)
         items = meta.get("items") or []
+
+        # S-tier single-keyword queries can exceed one page (per_page hits cap);
+        # fetch page 2 once when the first page is full and total_count is larger.
+        if tier == "S" and len(items) == per_page and total > per_page:
+            meta2 = client.search_repos(q, sort="updated", per_page=per_page, page=2, return_meta=True)
+            if meta2.get("ok"):
+                items.extend(meta2.get("items") or [])
+
         sum_total_count += total
         fetched_raw += len(items)
         windowed = 0

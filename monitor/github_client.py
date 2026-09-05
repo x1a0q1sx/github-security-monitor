@@ -8,13 +8,25 @@ from urllib.parse import quote_plus
 import requests
 
 
+class CircuitOpenError(RuntimeError):
+    """Raised when the circuit breaker trips: too many consecutive failures."""
+
+
 class GitHubClient:
     """Thin GitHub API wrapper with basic pacing.
 
     GitHub Search has a separate, much lower rate budget than core API
     (authenticated: ~30 req/min; anonymous: ~10 req/min). We therefore use a
     dedicated, slower pacing for search endpoints than for core GETs.
+
+    V5 additions:
+    - per-run request budget (search_budget / core_budget, 0 = unlimited)
+    - circuit breaker: consecutive 403/429 >= 3 or network errors >= 5 stops the run
+    - request metrics exposed via metrics() for executions.json
     """
+
+    RATE_LIMIT_TRIP = 3
+    NETWORK_TRIP = 5
 
     def __init__(
         self,
@@ -23,14 +35,33 @@ class GitHubClient:
         min_interval_ms: int = 350,
         search_min_interval_ms: int = 2200,
         max_retries: int = 3,
+        search_budget: int = 0,
+        core_budget: int = 0,
     ):
         self.token = token or ""
         self.timeout = timeout
         self.min_interval = max(min_interval_ms, 0) / 1000.0
         self.search_min_interval = max(search_min_interval_ms, 0) / 1000.0
         self.max_retries = max_retries
+        self.search_budget = max(int(search_budget), 0)
+        self.core_budget = max(int(core_budget), 0)
         self._last_request = 0.0
         self._last_search = 0.0
+        # circuit breaker state
+        self._consec_rate_limited = 0
+        self._consec_network_errors = 0
+        self._open = False
+        # metrics
+        self._metrics = {
+            "requests": 0,
+            "search_requests": 0,
+            "core_requests": 0,
+            "success": 0,
+            "rate_limited": 0,
+            "network_errors": 0,
+            "budget_exhausted": 0,
+            "circuit_open": 0,
+        }
         self.session = requests.Session()
         headers = {
             "Accept": "application/vnd.github+json",
@@ -43,6 +74,25 @@ class GitHubClient:
     @property
     def has_token(self) -> bool:
         return bool(self.token)
+
+    def metrics(self) -> Dict[str, int]:
+        return dict(self._metrics)
+
+    def reset_run_state(self) -> None:
+        """Reset budget + circuit breaker at the start of a new run."""
+        self._open = False
+        self._consec_rate_limited = 0
+        self._consec_network_errors = 0
+        self._metrics = {
+            "requests": 0,
+            "search_requests": 0,
+            "core_requests": 0,
+            "success": 0,
+            "rate_limited": 0,
+            "network_errors": 0,
+            "budget_exhausted": 0,
+            "circuit_open": 0,
+        }
 
     def _throttle(self, search: bool = False) -> None:
         interval = self.search_min_interval if search else self.min_interval
@@ -76,6 +126,20 @@ class GitHubClient:
         search: bool = False,
         **kwargs,
     ) -> Optional[requests.Response]:
+        # circuit breaker: once open, refuse everything for the rest of the run
+        if self._open:
+            self._metrics["circuit_open"] += 1
+            raise CircuitOpenError(f"circuit open, refusing {url}")
+
+        # per-run budget check (search is the scarce resource; counters are separate)
+        budget = self.search_budget if search else self.core_budget
+        used = self._metrics["search_requests" if search else "core_requests"]
+        if budget and used >= budget:
+            self._metrics["budget_exhausted"] += 1
+            raise CircuitOpenError(
+                f"{'search' if search else 'core'} budget {budget} exhausted, skipping {url}"
+            )
+
         kwargs.setdefault("timeout", self.timeout)
         for attempt in range(self.max_retries):
             self._throttle(search=search)
@@ -88,13 +152,29 @@ class GitHubClient:
                     self._last_request = now
             except requests.RequestException as e:
                 print(f"  [github] network error: {e}")
+                self._metrics["network_errors"] += 1
+                self._consec_network_errors += 1
+                if self._consec_network_errors >= self.NETWORK_TRIP:
+                    self._open = True
+                    print(f"  [github] circuit OPEN after {self._consec_network_errors} network errors")
                 time.sleep(1.5 * (attempt + 1))
                 continue
 
+            self._metrics["requests"] += 1
+            self._metrics["search_requests" if search else "core_requests"] += 1
+            self._consec_network_errors = 0
+
             if resp.status_code == 200:
+                self._metrics["success"] += 1
+                self._consec_rate_limited = 0
                 return resp
 
             if resp.status_code in (403, 429):
+                self._metrics["rate_limited"] += 1
+                self._consec_rate_limited += 1
+                if self._consec_rate_limited >= self.RATE_LIMIT_TRIP:
+                    self._open = True
+                    print(f"  [github] circuit OPEN after {self._consec_rate_limited} consecutive rate limits")
                 wait = self._rate_wait_seconds(resp, attempt)
                 kind = "search" if search else "core"
                 print(f"  [github] rate limited {kind} ({resp.status_code}), sleep {wait}s")

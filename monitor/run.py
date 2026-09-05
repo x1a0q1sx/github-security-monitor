@@ -26,9 +26,9 @@ from monitor.config import (
     load_noise_config,
     load_skills_config,
 )
-from monitor.github_client import GitHubClient
+from monitor.github_client import CircuitOpenError, GitHubClient
 from monitor.models import Record
-from monitor.notify import notify_new_records, notify_skills, notify_summary
+from monitor.notify import alert_from_results, notify_new_records, notify_skills, notify_summary
 from monitor.scoring import Scorer
 from monitor.storage import Storage
 
@@ -42,6 +42,8 @@ def build_client(cfg: Dict[str, Any]) -> GitHubClient:
         # Search API ~30/min authenticated → default ~2.2s between search calls
         search_min_interval_ms=int(gh.get("search_min_interval_ms") or 2200),
         max_retries=int(gh.get("max_retries") or 3),
+        search_budget=int(gh.get("search_budget") or 0),
+        core_budget=int(gh.get("core_budget") or 0),
     )
 
 
@@ -179,6 +181,9 @@ def run_daily(cfg: Dict[str, Any], storage: Storage, hours: int | None = None) -
         results["tool"] = {"kept": -1, "error": str(e)}
 
     notify_new_records(cfg, all_new, prefix="Daily")
+    # expose API usage metrics so executions.json shows WHY a source found nothing
+    results["api"] = client.metrics()
+    alert_from_results(cfg, client, results)
     return results
 
 
@@ -252,6 +257,21 @@ def run_suggest_keywords(storage: Storage) -> Dict[str, Any]:
     }
 
 
+def _record_status(results: Dict[str, Any]) -> str:
+    """Derive execution status from per-source results.
+
+    success: no source failed; partial: some sources failed but others produced
+    records; failed: every selected source failed (or nothing succeeded).
+    """
+    failed = [k for k, v in results.items()
+              if isinstance(v, dict) and int(v.get("kept") or 0) < 0]
+    if not failed:
+        return "success"
+    produced = [k for k, v in results.items()
+                if isinstance(v, dict) and int(v.get("kept") or 0) > 0]
+    return "partial" if produced else "failed"
+
+
 def main(argv: List[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="GitHub Security Monitor V5")
     parser.add_argument("--daily", action="store_true", help="CVE + keyword + user + tool")
@@ -300,93 +320,113 @@ def main(argv: List[str] | None = None) -> int:
         parser.print_help()
         return 2
 
-    if args.migrate_only:
-        results["migrate"] = run_migrate(storage, cfg)
+    fatal_error = ""
+    try:
+        if args.migrate_only:
+            results["migrate"] = run_migrate(storage, cfg)
 
-    if args.all or args.daily:
-        results.update(run_daily(cfg, storage, hours=args.hours or None))
-    if args.all or args.trending:
-        results.update(run_trending(cfg, storage))
-    if args.all or args.skills:
-        results.update(run_skills(cfg, storage))
-    if args.suggest_keywords or args.all:
-        results["suggest_keywords"] = run_suggest_keywords(storage)
+        if args.all or args.daily:
+            results.update(run_daily(cfg, storage, hours=args.hours or None))
+        if args.all or args.trending:
+            results.update(run_trending(cfg, storage))
+        if args.all or args.skills:
+            results.update(run_skills(cfg, storage))
+        if args.suggest_keywords or args.all:
+            results["suggest_keywords"] = run_suggest_keywords(storage)
 
-    # individual sources
-    if args.cve or args.keyword or args.user or args.tool:
-        # reuse daily pieces
-        mon = cfg.get("monitor") or {}
-        client = build_client(cfg)
-        scorer = build_scorer(cfg)
-        known = storage.known_urls()
-        min_final = float(mon.get("min_final_score") or 6.0)
-        soft_limit = int(mon.get("records_soft_limit") or 8000)
-        if args.cve:
-            from monitor.sources.cve import run_cve
-
-            kept, stats = run_cve(client, scorer, known, window_days=int(mon.get("cve_window_days") or 2), min_final=min_final)
-            added = _save_new(storage, kept, soft_limit, cfg)
-            results["cve"] = {**stats, "kept": len(added)}
-        if args.keyword:
-            from monitor.sources.keyword import run_keyword
-
+        # individual sources
+        if args.cve or args.keyword or args.user or args.tool:
+            # reuse daily pieces
+            mon = cfg.get("monitor") or {}
+            client = build_client(cfg)
+            scorer = build_scorer(cfg)
             known = storage.known_urls()
-            kept, stats = run_keyword(
-                client, scorer, load_keywords_config(), known,
-                window_days=int(mon.get("keyword_window_days") or 3), min_final=min_final,
-            )
-            added = _save_new(storage, kept, soft_limit, cfg)
-            results["keyword"] = {**stats, "kept": len(added)}
-        if args.user:
-            from monitor.sources.user import run_user
+            min_final = float(mon.get("min_final_score") or 6.0)
+            soft_limit = int(mon.get("records_soft_limit") or 8000)
+            if args.cve:
+                from monitor.sources.cve import run_cve
 
-            known = storage.known_urls()
-            kept, stats = run_user(client, scorer, cfg.get("users") or [], known, window_days=int(mon.get("user_window_days") or 7))
-            added = _save_new(storage, kept, soft_limit, cfg)
-            results["user"] = {**stats, "kept": len(added)}
-        if args.tool:
-            from monitor.sources.tool import run_tool
+                kept, stats = run_cve(client, scorer, known, window_days=int(mon.get("cve_window_days") or 2), min_final=min_final)
+                added = _save_new(storage, kept, soft_limit, cfg)
+                results["cve"] = {**stats, "kept": len(added)}
+            if args.keyword:
+                from monitor.sources.keyword import run_keyword
 
-            known = storage.known_urls()
-            state = storage.load_tool_state()
-            kept, new_state, stats = run_tool(client, scorer, cfg.get("tools") or [], known, state)
-            storage.save_tool_state(new_state)
-            added = _save_new(storage, kept, soft_limit, cfg)
-            results["tool"] = {**stats, "kept": len(added)}
+                known = storage.known_urls()
+                kept, stats = run_keyword(
+                    client, scorer, load_keywords_config(), known,
+                    window_days=int(mon.get("keyword_window_days") or 3), min_final=min_final,
+                )
+                added = _save_new(storage, kept, soft_limit, cfg)
+                results["keyword"] = {**stats, "kept": len(added)}
+            if args.user:
+                from monitor.sources.user import run_user
 
-    notify_summary(cfg, {k: (v.get("kept") if isinstance(v, dict) else v) for k, v in results.items()})
+                known = storage.known_urls()
+                kept, stats = run_user(client, scorer, cfg.get("users") or [], known, window_days=int(mon.get("user_window_days") or 7))
+                added = _save_new(storage, kept, soft_limit, cfg)
+                results["user"] = {**stats, "kept": len(added)}
+            if args.tool:
+                from monitor.sources.tool import run_tool
 
-    if args.publish or args.daily or args.trending or args.skills or args.all or args.migrate_only:
-        storage.publish_to_docs()
+                known = storage.known_urls()
+                state = storage.load_tool_state()
+                kept, new_state, stats = run_tool(client, scorer, cfg.get("tools") or [], known, state)
+                storage.save_tool_state(new_state)
+                added = _save_new(storage, kept, soft_limit, cfg)
+                results["tool"] = {**stats, "kept": len(added)}
 
-    end = datetime.now()
-    total_new = 0
-    for v in results.values():
-        if isinstance(v, dict):
+        notify_summary(cfg, {k: (v.get("kept") if isinstance(v, dict) else v) for k, v in results.items()})
+    except KeyboardInterrupt:
+        fatal_error = "interrupted by user"
+        print(f"[FATAL] {fatal_error}")
+    except Exception as e:
+        # Uncaught error must still land in executions.json, not vanish silently
+        fatal_error = f"{type(e).__name__}: {e}"
+        print(f"[FATAL] {fatal_error}")
+        traceback.print_exc()
+    finally:
+        if args.publish or args.daily or args.trending or args.skills or args.all or args.migrate_only:
             try:
-                total_new += max(int(v.get("kept") or 0), 0)
-            except Exception:
-                pass
+                storage.publish_to_docs()
+            except Exception as e:
+                print(f"[ERROR] publish_to_docs: {e}")
 
-    storage.append_execution(
-        {
-            "type": "all" if args.all else "daily" if args.daily else "custom",
-            "status": "success",
-            "started_at": start.isoformat(timespec="seconds"),
-            "finished_at": end.isoformat(timespec="seconds"),
-            "duration_seconds": (end - start).total_seconds(),
-            "results": results,
-            "total_new": total_new,
-            "version": 5,
-        }
-    )
+        end = datetime.now()
+        total_new = 0
+        for v in results.values():
+            if isinstance(v, dict):
+                try:
+                    total_new += max(int(v.get("kept") or 0), 0)
+                except Exception:
+                    pass
 
-    print("=" * 50)
-    print(f"COMPLETED in {(end - start).total_seconds():.1f}s")
-    print(f"Results: {results}")
-    print(f"Total new/kept: {total_new}")
-    print("=" * 50)
-    return 0
+        status = _record_status(results)
+        if fatal_error and not results:
+            status = "failed"
+
+        storage.append_execution(
+            {
+                "type": "all" if args.all else "daily" if args.daily else "custom",
+                "status": status,
+                "started_at": start.isoformat(timespec="seconds"),
+                "finished_at": end.isoformat(timespec="seconds"),
+                "duration_seconds": (end - start).total_seconds(),
+                "results": results,
+                "total_new": total_new,
+                "version": 5,
+                **({"error": fatal_error} if fatal_error else {}),
+            }
+        )
+
+        print("=" * 50)
+        print(f"COMPLETED in {(end - start).total_seconds():.1f}s")
+        print(f"Status: {status}")
+        print(f"Results: {results}")
+        print(f"Total new/kept: {total_new}")
+        print("=" * 50)
+
+    return 1 if fatal_error and not results else 0
 
 
 if __name__ == "__main__":
