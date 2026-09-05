@@ -27892,20 +27892,110 @@
         "threat-modeling"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "tc4dy/CVE-2026-0073-PoC-Exploit",
+      "repo_url": "https://github.com/tc4dy/CVE-2026-0073-PoC-Exploit",
+      "repo_description": "🚀 CVE-2026-0073 - Android ADB Wireless Debugging Exploit (CVSS 8.8) 🔓 Zero-click authentication bypass via TLS type confusion. Gain interactive shell, execute commands, scan networks. Educational red-team tool. 🐚⚡",
+      "monitor_type": "cve",
+      "monitor_keyword": "red team(3A), exploit(2B), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "免杀,POC,漏洞利用,红队,CVE",
+      "author": "tc4dy",
+      "stars": 11,
+      "language": "Python",
+      "created_at": "2026-05-13T14:28:00Z",
+      "pushed_at": "2026-09-05T13:42:41Z",
+      "description_cn": "🚀 CVE-2026-0073 - Android ADB 无线调试漏洞 (CVSS 8.8) 🔓 通过 TLS 类型混淆绕过零点击身份验证。获得交互式 shell、执行命令、扫描网络。教育红队工具。 🐚⚡",
+      "discovered_at": "2026-09-05 16:22:06",
+      "final_score": 7.43,
+      "relevance_score": 9.5,
+      "quality_score": 4.9,
+      "confidence": "medium",
+      "reasons": [
+        "red team(3A)",
+        "exploit(2B)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "red team",
+        "exploit",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "aw-junaid/bug-bounty",
+      "repo_url": "https://github.com/aw-junaid/bug-bounty",
+      "repo_description": "Documenting my security research journey: This repository contains detailed vulnerability write-ups, proof-of-concept (PoC) exploits, and the custom automation tools I use for reconnaissance and system assessment.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "security research(1B), redteam(3A), exploit(2B), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,红队",
+      "author": "aw-junaid",
+      "stars": 147,
+      "language": "PHP",
+      "created_at": "2026-04-16T11:04:31Z",
+      "pushed_at": "2026-09-05T16:19:55Z",
+      "description_cn": "记录我的安全研究之旅：该存储库包含详细的漏洞记录、概念验证 (PoC) 漏洞以及我用于侦察和系统评估的自定义自动化工具。",
+      "discovered_at": "2026-09-05 16:26:55",
+      "final_score": 9.14,
+      "relevance_score": 9.5,
+      "quality_score": 8.7,
+      "confidence": "medium",
+      "reasons": [
+        "security research(1B)",
+        "redteam(3A)",
+        "exploit(2B)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=100",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "security research",
+        "redteam",
+        "exploit",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "bug-bounty",
+        "cve",
+        "cyber-security",
+        "idor",
+        "kali-linux",
+        "nmap",
+        "penetration-testing",
+        "python",
+        "redteam",
+        "sql",
+        "vulnerability",
+        "xss"
+      ],
+      "archived": false
     }
   ],
-  "total": 678,
-  "last_updated": "2026-09-05T06:31:26",
+  "total": 680,
+  "last_updated": "2026-09-05T16:26:56",
   "by_type": {
-    "keyword": 547,
-    "cve": 120,
+    "keyword": 548,
+    "cve": 121,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
     "high": 66,
-    "medium": 610,
+    "medium": 612,
     "low": 2
   },
   "meta": {
