@@ -28934,12 +28934,51 @@
         "xss"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "qinglove777/CVE-2024-2961-XXE-Exploit",
+      "repo_url": "https://github.com/qinglove777/CVE-2024-2961-XXE-Exploit",
+      "repo_description": "CVE-2024-2961 (CNEXT) PHP file-read to RCE exploit adapted to an XXE/CTF channel",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), xxe(2B), security_context(+1.5)",
+      "tags": "漏洞利用,CVE",
+      "author": "qinglove777",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-09T04:14:08Z",
+      "pushed_at": "2026-09-09T04:14:19Z",
+      "description_cn": "CVE-2024-2961 (CNEXT) PHP 文件读取 RCE 漏洞，适用于 XXE/CTF 通道",
+      "discovered_at": "2026-09-09 12:38:50",
+      "final_score": 6.36,
+      "relevance_score": 12.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "xxe(2B)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "xxe"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 702,
-  "last_updated": "2026-09-09T06:57:03",
+  "total": 703,
+  "last_updated": "2026-09-09T12:39:06",
   "by_type": {
-    "keyword": 566,
+    "keyword": 567,
     "cve": 125,
     "tool": 7,
     "user_repo": 1,
@@ -28947,7 +28986,7 @@
   },
   "by_confidence": {
     "high": 67,
-    "medium": 633,
+    "medium": 634,
     "low": 2
   },
   "meta": {
