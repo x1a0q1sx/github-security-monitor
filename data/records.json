@@ -29244,19 +29244,60 @@
         "cybersecurity"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "VoidSecSoftwares/voidsyscall",
+      "repo_url": "https://github.com/VoidSecSoftwares/voidsyscall",
+      "repo_description": "Cross-platform syscall-powered implant & C2 — direct syscalls (Win), raw syscalls (Linux), HTTPS/DNS/ICMP channels. No winapi layer.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "direct syscall(5S), implant(2A), c2(3A)",
+      "tags": "C2,免杀",
+      "author": "VoidSecSoftwares",
+      "stars": 5,
+      "language": "Go",
+      "created_at": "2026-09-10T14:56:14Z",
+      "pushed_at": "2026-09-10T16:12:22Z",
+      "description_cn": "跨平台系统调用驱动的植入和 C2 — 直接系统调用 (Win)、原始系统调用 (Linux)、HTTPS/DNS/ICMP 通道。没有 winapi 层。",
+      "discovered_at": "2026-09-10 17:23:36",
+      "final_score": 8.16,
+      "relevance_score": 10.0,
+      "quality_score": 5.9,
+      "confidence": "high",
+      "reasons": [
+        "direct syscall(5S)",
+        "implant(2A)",
+        "c2(3A)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "direct syscall",
+        "implant",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [
+        "c2",
+        "edr-evasion",
+        "golang",
+        "red-team",
+        "syscall"
+      ],
+      "archived": false
     }
   ],
-  "total": 709,
-  "last_updated": "2026-09-10T06:53:24",
+  "total": 710,
+  "last_updated": "2026-09-10T17:28:43",
   "by_type": {
-    "keyword": 572,
+    "keyword": 573,
     "cve": 126,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
-    "high": 68,
+    "high": 69,
     "medium": 639,
     "low": 2
   },
