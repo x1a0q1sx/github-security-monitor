@@ -29285,20 +29285,106 @@
         "syscall"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "ZeroDayVPN/CVE-2026-41089-Netlogon",
+      "repo_url": "https://github.com/ZeroDayVPN/CVE-2026-41089-Netlogon",
+      "repo_description": "🛡️ Official AI Security Tool diagnostic module for CVE-2026-41089 (Windows Netlogon Stack Buffer Overflow RCE). Features technical writeup, attack architecture, IoCs, and mitigation strategy.",
+      "monitor_type": "cve",
+      "monitor_keyword": "scanner(1B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "ZeroDayVPN",
+      "stars": 0,
+      "language": "",
+      "created_at": "2026-09-10T21:39:19Z",
+      "pushed_at": "2026-09-10T21:55:15Z",
+      "description_cn": "🛡️ CVE-2026-41089（Windows Netlogon 堆栈缓冲区溢出 RCE）的官方 AI 安全工具诊断模块。包含技术文章、攻击架构、IoC 和缓解策略。",
+      "discovered_at": "2026-09-10 22:02:39",
+      "final_score": 5.66,
+      "relevance_score": 8.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "scanner(1B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "no_language",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "scanner",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "active-directory",
+        "ai-security-tool",
+        "buffer-overflow",
+        "cve-2026-41089",
+        "cybersecurity",
+        "netlogon",
+        "poc",
+        "rce-scanner",
+        "red-team",
+        "threat-hunting",
+        "vulnerability-scanner",
+        "windows-security"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "0xans/SysHaze",
+      "repo_url": "https://github.com/0xans/SysHaze",
+      "repo_description": "Rust no_std! indirect syscall engine that resolves SSNs at runtime via PEB export walking, Halo's Gate, and per function ntdll syscall gadgets with an obfuscated trampoline.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), direct syscall(5S)",
+      "tags": "keyword",
+      "author": "0xans",
+      "stars": 0,
+      "language": "Rust",
+      "created_at": "2026-08-27T14:07:36Z",
+      "pushed_at": "2026-09-10T19:53:12Z",
+      "description_cn": "生锈 no_std！间接系统调用引擎，通过 PEB 导出行走、Halo's Gate 和带有模糊蹦床的每个函数 ntdll 系统调用小工具在运行时解析 SSN。",
+      "discovered_at": "2026-09-10 22:04:35",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "indirect syscall(4S)",
+        "direct syscall(5S)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "direct syscall"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 710,
-  "last_updated": "2026-09-10T17:28:43",
+  "total": 712,
+  "last_updated": "2026-09-10T22:08:09",
   "by_type": {
-    "keyword": 573,
-    "cve": 126,
+    "keyword": 574,
+    "cve": 127,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
     "high": 69,
-    "medium": 639,
+    "medium": 641,
     "low": 2
   },
   "meta": {
