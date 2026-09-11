@@ -29454,20 +29454,130 @@
         "xss"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "SyntaxMethod/CVE-2026-41089-Netlogon-RCE-PoC",
+      "repo_url": "https://github.com/SyntaxMethod/CVE-2026-41089-Netlogon-RCE-PoC",
+      "repo_description": "Description: Unauthenticated Netlogon RCE vulnerability scanner & PoC research for CVE-2026-41089 (CVSS 9.8). Integrated module for AI Security Tool.",
+      "monitor_type": "cve",
+      "monitor_keyword": "scanner(1B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "SyntaxMethod",
+      "stars": 0,
+      "language": "",
+      "created_at": "2026-09-11T10:34:35Z",
+      "pushed_at": "2026-09-11T10:43:52Z",
+      "description_cn": "描述：未经身份验证的 Netlogon RCE 漏洞扫描程序和 CVE-2026-41089 (CVSS 9.8) 的 PoC 研究。 AI安全工具的集成模块。",
+      "discovered_at": "2026-09-11 12:25:30",
+      "final_score": 5.62,
+      "relevance_score": 8.75,
+      "quality_score": 1.8,
+      "confidence": "medium",
+      "reasons": [
+        "scanner(1B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "no_language",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "scanner",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "hanzla2006/Process-Injection-with-Indirect-Syscalls-and-Tartarus-Gate",
+      "repo_url": "https://github.com/hanzla2006/Process-Injection-with-Indirect-Syscalls-and-Tartarus-Gate",
+      "repo_description": "Low-level Windows process injection using indirect syscalls and Tartarus Gate-style SSN resolution.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), direct syscall(5S)",
+      "tags": "keyword",
+      "author": "hanzla2006",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-09-11T06:57:20Z",
+      "pushed_at": "2026-09-11T07:13:28Z",
+      "description_cn": "使用间接系统调用和 Tartarus Gate 式 SSN 解析的低级 Windows 进程注入。",
+      "discovered_at": "2026-09-11 12:27:30",
+      "final_score": 7.45,
+      "relevance_score": 11.25,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "indirect syscall(4S)",
+        "direct syscall(5S)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "direct syscall"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "rhimavanth32-max/Windows-7-EternalBlue-Exploitation-and-Meterpreter-Keylogging-Lab",
+      "repo_url": "https://github.com/rhimavanth32-max/Windows-7-EternalBlue-Exploitation-and-Meterpreter-Keylogging-Lab",
+      "repo_description": "Hands-on lab exploiting MS17-010 (EternalBlue) on Windows 7 and demonstrating Meterpreter-based keystroke capture.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploitation(2B), meterpreter(4S), exploit(2B)",
+      "tags": "漏洞利用",
+      "author": "rhimavanth32-max",
+      "stars": 0,
+      "language": "",
+      "created_at": "2026-09-11T07:54:07Z",
+      "pushed_at": "2026-09-11T08:51:18Z",
+      "description_cn": "动手实验室在 Windows 7 上利用 MS17-010 (EternalBlue) 并演示基于 Meterpreter 的击键捕获。",
+      "discovered_at": "2026-09-11 12:27:44",
+      "final_score": 6.31,
+      "relevance_score": 10.0,
+      "quality_score": 1.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploitation(2B)",
+        "meterpreter(4S)",
+        "exploit(2B)",
+        "stars=0",
+        "desc_ok",
+        "no_language",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "exploitation",
+        "meterpreter",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 714,
-  "last_updated": "2026-09-11T06:53:12",
+  "total": 717,
+  "last_updated": "2026-09-11T12:31:04",
   "by_type": {
-    "keyword": 575,
-    "cve": 128,
+    "keyword": 577,
+    "cve": 129,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
     "high": 69,
-    "medium": 643,
+    "medium": 646,
     "low": 2
   },
   "meta": {
