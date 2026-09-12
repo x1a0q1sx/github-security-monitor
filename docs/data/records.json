@@ -29714,20 +29714,110 @@
         "remote-code-execution"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "qmadev/CrabLoader",
+      "repo_url": "https://github.com/qmadev/CrabLoader",
+      "repo_description": "A PoC Cobalt Strike UDRL written in Rust",
+      "monitor_type": "keyword",
+      "monitor_keyword": "cobalt strike(5S), cobaltstrike(5S), c2(3A)",
+      "tags": "C2,POC",
+      "author": "qmadev",
+      "stars": 34,
+      "language": "Rust",
+      "created_at": "2026-03-07T20:12:34Z",
+      "pushed_at": "2026-09-12T14:52:27Z",
+      "description_cn": "用 Rust 编写的 PoC Cobalt Strike UDRL",
+      "discovered_at": "2026-09-12 16:36:12",
+      "final_score": 9.71,
+      "relevance_score": 12.0,
+      "quality_score": 6.9,
+      "confidence": "high",
+      "reasons": [
+        "cobalt strike(5S)",
+        "cobaltstrike(5S)",
+        "c2(3A)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "cobalt strike",
+        "cobaltstrike",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [
+        "c2",
+        "cobaltstrike",
+        "reflective-loader",
+        "udrl"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "Ap6pack/outrider-recon",
+      "repo_url": "https://github.com/Ap6pack/outrider-recon",
+      "repo_description": "Claude-native, governed offensive-OSINT & external attack-surface platform for authorized red-team and bug-bounty. Multi-agent recon across web, identity, cloud, secrets & breach intel under deterministic scope/evidence/approval controls, with human-reviewed findings for hand-off to pen-testing. Not an exploitation framework.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploitation(2B), red team(3A), exploit(2B), security_context(+1.5)",
+      "tags": "漏洞利用,红队",
+      "author": "Ap6pack",
+      "stars": 12,
+      "language": "Python",
+      "created_at": "2026-04-29T18:12:25Z",
+      "pushed_at": "2026-09-12T16:30:47Z",
+      "description_cn": "Claude 原生、受监管的进攻性 OSINT 和外部攻击面平台，用于授权红队和错误赏金。在确定性范围/证据/批准控制下跨网络、身份、云、秘密和泄露情报进行多代理侦察，并将经过人工审查的结果移交给渗透测试。不是一个利用框架。",
+      "discovered_at": "2026-09-12 16:41:09",
+      "final_score": 7.69,
+      "relevance_score": 8.5,
+      "quality_score": 6.7,
+      "confidence": "medium",
+      "reasons": [
+        "exploitation(2B)",
+        "red team(3A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars>=5",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploitation",
+        "red team",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [
+        "attack-surface",
+        "bug-bounty",
+        "claude",
+        "claude-code",
+        "claude-skills",
+        "mcp-server",
+        "osint",
+        "pentesting",
+        "recon",
+        "reconnaissance",
+        "red-team",
+        "security"
+      ],
+      "archived": false
     }
   ],
-  "total": 720,
-  "last_updated": "2026-09-12T11:46:49",
+  "total": 722,
+  "last_updated": "2026-09-12T16:41:12",
   "by_type": {
-    "keyword": 579,
+    "keyword": 581,
     "cve": 130,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
-    "high": 69,
-    "medium": 649,
+    "high": 70,
+    "medium": 650,
     "low": 2
   },
   "meta": {
