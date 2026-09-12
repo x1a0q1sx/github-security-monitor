@@ -29663,20 +29663,71 @@
         "shellcode"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "jithinkrishnanrs/CVE-2026-86218-N-central-IOC-Toolkit",
+      "repo_url": "https://github.com/jithinkrishnanrs/CVE-2026-86218-N-central-IOC-Toolkit",
+      "repo_description": "Defensive IOC and detection toolkit for CVE-2026-86218, a critical pre-auth RCE in N-able N-central. Includes IOCs, log scanner, Sigma, Splunk, Elastic/KQL detections, and incident response guidance.",
+      "monitor_type": "cve",
+      "monitor_keyword": "incident response(1B), scanner(1B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "jithinkrishnanrs",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-12T11:01:24Z",
+      "pushed_at": "2026-09-12T11:01:28Z",
+      "description_cn": "针对 CVE-2026-86218 的防御性 IOC 和检测工具包，这是 N-able N-central 中的一个关键预授权 RCE。包括 IOC、日志扫描器、Sigma、Splunk、Elastic/KQL 检测和事件响应指南。",
+      "discovered_at": "2026-09-12 11:46:45",
+      "final_score": 6.66,
+      "relevance_score": 9.0,
+      "quality_score": 3.8,
+      "confidence": "medium",
+      "reasons": [
+        "incident response(1B)",
+        "scanner(1B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "incident response",
+        "scanner",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cybersecurity",
+        "detection-rules",
+        "elastic",
+        "incident-response",
+        "ioc",
+        "n-able",
+        "n-central",
+        "pre-auth-rce",
+        "rce",
+        "remote-code-execution"
+      ],
+      "archived": false
     }
   ],
-  "total": 719,
-  "last_updated": "2026-09-12T06:45:11",
+  "total": 720,
+  "last_updated": "2026-09-12T11:46:49",
   "by_type": {
     "keyword": 579,
-    "cve": 129,
+    "cve": 130,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
     "high": 69,
-    "medium": 648,
+    "medium": 649,
     "low": 2
   },
   "meta": {
