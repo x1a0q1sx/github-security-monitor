@@ -29804,20 +29804,110 @@
         "security"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "n4uu/husk",
+      "repo_url": "https://github.com/n4uu/husk",
+      "repo_description": "Cobalt Strike Beacon configuration extractor: clean-room Go implementation with XOR key recovery, TLV decoding, and Malleable C2 instruction parsing",
+      "monitor_type": "keyword",
+      "monitor_keyword": "cobalt strike(5S), malleable c2(5S), beacon(2A), c2(3A)",
+      "tags": "C2",
+      "author": "n4uu",
+      "stars": 0,
+      "language": "Go",
+      "created_at": "2026-09-12T18:39:14Z",
+      "pushed_at": "2026-09-12T21:31:47Z",
+      "description_cn": "Cobalt Strike Beacon 配置提取器：具有 XOR 密钥恢复、TLV 解码和 Malleable C2 指令解析的洁净室 Go 实现",
+      "discovered_at": "2026-09-12 21:48:06",
+      "final_score": 8.31,
+      "relevance_score": 12.0,
+      "quality_score": 3.8,
+      "confidence": "high",
+      "reasons": [
+        "cobalt strike(5S)",
+        "malleable c2(5S)",
+        "beacon(2A)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "cobalt strike",
+        "malleable c2",
+        "beacon",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cobalt-strike",
+        "dfir",
+        "golang",
+        "incident-response",
+        "malleable-c2",
+        "malware-analysis",
+        "reverse-engineering",
+        "threat-intelligence"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "n4uu/wraith",
+      "repo_url": "https://github.com/n4uu/wraith",
+      "repo_description": "eBPF sensor for fileless execution and process injection on Linux: six tracepoint-level rules mapped to MITRE ATT&CK",
+      "monitor_type": "keyword",
+      "monitor_keyword": "fileless execution(5S), fileless(3A)",
+      "tags": "keyword",
+      "author": "n4uu",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-09-12T17:51:54Z",
+      "pushed_at": "2026-09-12T21:31:48Z",
+      "description_cn": "用于 Linux 上无文件执行和进程注入的 eBPF 传感器：映射到 MITRE ATT&CK 的六个跟踪点级规则",
+      "discovered_at": "2026-09-12 21:48:31",
+      "final_score": 6.11,
+      "relevance_score": 8.0,
+      "quality_score": 3.8,
+      "confidence": "medium",
+      "reasons": [
+        "fileless execution(5S)",
+        "fileless(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "fileless execution",
+        "fileless"
+      ],
+      "is_fork": false,
+      "topics": [
+        "detection-engineering",
+        "ebpf",
+        "golang",
+        "linux-security",
+        "malware-analysis",
+        "mitre-attack",
+        "process-injection",
+        "threat-detection"
+      ],
+      "archived": false
     }
   ],
-  "total": 722,
-  "last_updated": "2026-09-12T16:41:12",
+  "total": 724,
+  "last_updated": "2026-09-12T21:53:09",
   "by_type": {
-    "keyword": 581,
+    "keyword": 583,
     "cve": 130,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
-    "high": 70,
-    "medium": 650,
+    "high": 71,
+    "medium": 651,
     "low": 2
   },
   "meta": {
