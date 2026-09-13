@@ -29894,19 +29894,52 @@
         "threat-detection"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "0xf-0/indirect-syscall",
+      "repo_url": "https://github.com/0xf-0/indirect-syscall",
+      "repo_description": "lightweight x64 indirect syscall resolver with halo's gate in c++17",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), direct syscall(5S)",
+      "tags": "keyword",
+      "author": "0xf-0",
+      "stars": 1,
+      "language": "C++",
+      "created_at": "2026-09-13T05:27:26Z",
+      "pushed_at": "2026-09-13T05:28:03Z",
+      "description_cn": "C++17 中带有 halo 门的轻量级 x64 间接系统调用解析器",
+      "discovered_at": "2026-09-13 06:58:50",
+      "final_score": 8.03,
+      "relevance_score": 11.25,
+      "quality_score": 4.1,
+      "confidence": "high",
+      "reasons": [
+        "indirect syscall(4S)",
+        "direct syscall(5S)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "direct syscall"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 724,
-  "last_updated": "2026-09-12T21:53:09",
+  "total": 725,
+  "last_updated": "2026-09-13T07:02:16",
   "by_type": {
-    "keyword": 583,
+    "keyword": 584,
     "cve": 130,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
-    "high": 71,
+    "high": 72,
     "medium": 651,
     "low": 2
   },
