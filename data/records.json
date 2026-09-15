@@ -30365,19 +30365,77 @@
         "threat-emulation"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "tc4dy/CVE-2026-82329-PoC-Exploit",
+      "repo_url": "https://github.com/tc4dy/CVE-2026-82329-PoC-Exploit",
+      "repo_description": "🧰 CVE-2026-82329 – JFrog Artifactory Auth Bypass Toolkit (CVSS 9.8) | Red/Blue Team suite for self-hosted Artifactory 7.x (111-161). 2 tools: Full Exploit (JWTforge, admin token, user create, mass scan, stealth, interactive menu, resistence, WAF bypass etc.), SafeChecker (version detect, audit, JSON report). 🦾 Use Ethically, Stay Legal :V",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploitation(2B), redteam(3A), exploit(2B), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "免杀,POC,漏洞利用,红队,CVE",
+      "author": "tc4dy",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-15T20:15:28Z",
+      "pushed_at": "2026-09-15T20:31:11Z",
+      "description_cn": "🧰 CVE-2026-82329 – JFrog Artifactory Auth Bypass Toolkit （ CVSS 9.8 ） |用于自托管Artifactory 7.x （ 111-161 ）的红色/蓝色团队套件。2个工具：完全利用（ JWTforge、管理员令牌、用户创建、批量扫描、隐藏、交互式菜单、阻力、WAF旁路等。）、SafeChecker （版本检测、审核、JSON报告）。合乎道德🦾地使用，保持合法： V",
+      "discovered_at": "2026-09-15 22:31:09",
+      "final_score": 8.39,
+      "relevance_score": 11.5,
+      "quality_score": 4.6,
+      "confidence": "high",
+      "reasons": [
+        "exploitation(2B)",
+        "redteam(3A)",
+        "exploit(2B)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploitation",
+        "redteam",
+        "exploit",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "blue-team",
+        "cve",
+        "cve-2026-82329",
+        "cve-scanning",
+        "exploit",
+        "exploit-code",
+        "exploit-development",
+        "exploit-kit",
+        "exploitation",
+        "jfrog",
+        "jfrog-artifactory",
+        "poc",
+        "proof-of-concept",
+        "redteam",
+        "toolkit",
+        "toolkits"
+      ],
+      "archived": false
     }
   ],
-  "total": 735,
-  "last_updated": "2026-09-15T17:54:27",
+  "total": 736,
+  "last_updated": "2026-09-15T22:31:14",
   "by_type": {
     "keyword": 593,
-    "cve": 131,
+    "cve": 132,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
-    "high": 73,
+    "high": 74,
     "medium": 660,
     "low": 2
   },
