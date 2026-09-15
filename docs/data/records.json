@@ -30282,20 +30282,103 @@
         "zero-dependencies"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "Oscar-Collado/langflow-CVE-2026-17633-PoC",
+      "repo_url": "https://github.com/Oscar-Collado/langflow-CVE-2026-17633-PoC",
+      "repo_description": "PoC for CVE-2026-17633 — Authenticated RCE in IBM Langflow OSS 1.0.0–1.10.3 via custom_component endpoint. Includes CVE-2026-17632 AST scanner bypass research.",
+      "monitor_type": "cve",
+      "monitor_keyword": "scanner(1B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "免杀,POC,漏洞利用,CVE",
+      "author": "Oscar-Collado",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-15T16:06:55Z",
+      "pushed_at": "2026-09-15T17:47:17Z",
+      "description_cn": "CVE-2026-17633的PoC —通过CUSTOM_COMPONENT端点在IBM Langflow OSS 1.0.0-1.10.3中验证RCE。包括CVE-2026-17632 AST扫描仪旁路研究。",
+      "discovered_at": "2026-09-15 17:49:00",
+      "final_score": 5.66,
+      "relevance_score": 8.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "scanner(1B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "scanner",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "darch244/CRTO-Certified-Red-Team-Operator-study-notes",
+      "repo_url": "https://github.com/darch244/CRTO-Certified-Red-Team-Operator-study-notes",
+      "repo_description": "Certified Red Team Operator (CRTO) laboratory tradecraft — Cobalt Strike C2 operations, Kerberos abuse, cross-forest trust hopping, and domain persistence.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "cobalt strike(5S), red team(3A), c2(3A)",
+      "tags": "C2,红队",
+      "author": "darch244",
+      "stars": 2,
+      "language": "",
+      "created_at": "2026-07-04T12:08:32Z",
+      "pushed_at": "2026-09-15T16:01:49Z",
+      "description_cn": "认证红队运营商(CRTO)实验室工艺— Cobalt Strike C2操作、Kerberos滥用、跨林信任跳跃和域持久性。",
+      "discovered_at": "2026-09-15 17:49:18",
+      "final_score": 7.86,
+      "relevance_score": 11.75,
+      "quality_score": 3.1,
+      "confidence": "medium",
+      "reasons": [
+        "cobalt strike(5S)",
+        "red team(3A)",
+        "c2(3A)",
+        "stars>=1",
+        "desc_ok",
+        "no_language",
+        "pushed_7d",
+        "penalty:notes"
+      ],
+      "matched_keywords": [
+        "cobalt strike",
+        "red team",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [
+        "active-directory",
+        "c2-operations",
+        "cobalt-strike",
+        "crto",
+        "domain-dominance",
+        "red-team",
+        "threat-emulation"
+      ],
+      "archived": false
     }
   ],
-  "total": 733,
-  "last_updated": "2026-09-15T07:00:57",
+  "total": 735,
+  "last_updated": "2026-09-15T17:54:27",
   "by_type": {
-    "keyword": 592,
-    "cve": 130,
+    "keyword": 593,
+    "cve": 131,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 3
   },
   "by_confidence": {
     "high": 73,
-    "medium": 658,
+    "medium": 660,
     "low": 2
   },
   "meta": {
