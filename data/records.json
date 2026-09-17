@@ -30778,20 +30778,136 @@
         "security-tools"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "winrarzipsexploit/CVE-2026-48908",
+      "repo_url": "https://github.com/winrarzipsexploit/CVE-2026-48908",
+      "repo_description": "CVE-2026-48908 SP Page Builder (Joomla) unauth RCE suite — authorized testing only",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "winrarzipsexploit",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-17T17:48:56Z",
+      "pushed_at": "2026-09-17T17:49:00Z",
+      "description_cn": "CVE-2026-48908 SP页面生成器（ Joomla ）未授权RCE套件—仅限授权测试",
+      "discovered_at": "2026-09-17 17:49:32",
+      "final_score": 6.49,
+      "relevance_score": 9.5,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "jesuismarie/RainFall",
+      "repo_url": "https://github.com/jesuismarie/RainFall",
+      "repo_description": "[⚠️ In Progress] RainFall is a reverse engineering and binary exploitation challenge, designed as a progression from the Snow Crash project. This challenge will test your understanding of low-level system behavior, memory management, and your ability to think like an attacker.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "reverse engineering(1B), exploitation(2B), shellcode(4A), exploit(2B), security_context(+1.5)",
+      "tags": "Shellcode,漏洞利用",
+      "author": "jesuismarie",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2025-06-25T14:51:39Z",
+      "pushed_at": "2026-09-17T13:30:39Z",
+      "description_cn": "[进行⚠️中] RainFall是一个逆向工程和二进制开发挑战，设计为Snow Crash项目的进展。这个挑战将测试你对低级系统行为、内存管理的理解，以及你像攻击者一样思考的能力。",
+      "discovered_at": "2026-09-17 17:54:35",
+      "final_score": 5.99,
+      "relevance_score": 10.5,
+      "quality_score": 3.8,
+      "confidence": "medium",
+      "reasons": [
+        "reverse engineering(1B)",
+        "exploitation(2B)",
+        "shellcode(4A)",
+        "exploit(2B)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "reverse engineering",
+        "exploitation",
+        "shellcode",
+        "exploit"
+      ],
+      "is_fork": false,
+      "topics": [
+        "42school",
+        "cybersecurity",
+        "shellcode",
+        "suid-exploitation"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "f8al/ShrimpInjector",
+      "repo_url": "https://github.com/f8al/ShrimpInjector",
+      "repo_description": "Unified .NET assembly & shellcode payload builder — msfvenom-style CLI for LOLBin injection (MSBuild, InstallUtil, RegAsm, RegSvcs, CSC, PowerShell, VBScript, HTA, VBA, Workflow Compiler)",
+      "monitor_type": "keyword",
+      "monitor_keyword": "payload builder(2B), shellcode(4A), security_context(+1.5)",
+      "tags": "Shellcode",
+      "author": "f8al",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-09-17T14:25:00Z",
+      "pushed_at": "2026-09-17T17:15:34Z",
+      "description_cn": "Unified .NET程序集和外壳代码负载生成器—用于LOLBin注入的msfvenom样式CLI （ MSBuild、InstallUtil、RegAsm、RegSvcs、CSC、PowerShell、VBScript、HTA、VBA、工作流编译器）",
+      "discovered_at": "2026-09-17 17:54:35",
+      "final_score": 5.97,
+      "relevance_score": 7.5,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "payload builder(2B)",
+        "shellcode(4A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "payload builder",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 744,
-  "last_updated": "2026-09-17T06:58:34",
+  "total": 747,
+  "last_updated": "2026-09-17T17:55:06",
   "by_type": {
-    "keyword": 597,
-    "cve": 135,
+    "keyword": 599,
+    "cve": 136,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 4
   },
   "by_confidence": {
     "high": 75,
-    "medium": 667,
+    "medium": 670,
     "low": 2
   },
   "meta": {
