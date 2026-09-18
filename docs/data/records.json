@@ -31156,20 +31156,64 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "arvindear/wp2shell-PoC",
+      "repo_url": "https://github.com/arvindear/wp2shell-PoC",
+      "repo_description": "CVE-2026-63030 & CVE-2026-60137 RCE chain proof-of-concept",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "arvindear",
+      "stars": 6,
+      "language": "Python",
+      "created_at": "2026-09-18T16:35:32Z",
+      "pushed_at": "2026-09-18T16:37:22Z",
+      "description_cn": "CVE-2026-63030和CVE-2026-60137 RCE链概念验证",
+      "discovered_at": "2026-09-18 17:20:57",
+      "final_score": 7.33,
+      "relevance_score": 8.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve-2026-60137",
+        "cve-2026-63030",
+        "wp2shell",
+        "wp2shell-exploit",
+        "wp2shell-poc"
+      ],
+      "archived": false
     }
   ],
-  "total": 753,
-  "last_updated": "2026-09-18T06:55:38",
+  "total": 754,
+  "last_updated": "2026-09-18T17:20:59",
   "by_type": {
     "keyword": 602,
-    "cve": 139,
+    "cve": 140,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 4
   },
   "by_confidence": {
     "high": 77,
-    "medium": 674,
+    "medium": 675,
     "low": 2
   },
   "meta": {
