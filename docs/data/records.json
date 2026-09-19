@@ -31505,12 +31505,48 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "arensballiu/Flowise-RCE-CVE-2025-59528",
+      "repo_url": "https://github.com/arensballiu/Flowise-RCE-CVE-2025-59528",
+      "repo_description": "Authenticated Remote Code Execution (RCE) exploit for Flowise AI versions ≤ 3.0.4. Leverages a vulnerability in the /api/v1/node-load-method/customMCP endpoint to execute arbitrary system commands via Node.js child_process.execSync(). Includes full PoC script and remediation steps.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "arensballiu",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-04-15T12:47:25Z",
+      "pushed_at": "2026-09-19T19:44:30Z",
+      "description_cn": "Flowise AI 版本 ≤ 3.0.4 的经过身份验证的远程代码执行 (RCE) 漏洞。利用 /api/v1/node-load-method/customMCP 端点中的漏洞通过 Node.js child_process.execSync() 执行任意系统命令。包括完整的 PoC 脚本和修复步骤。",
+      "discovered_at": "2026-09-19 21:58:30",
+      "final_score": 7.21,
+      "relevance_score": 9.75,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 762,
-  "last_updated": "2026-09-19T16:58:03",
+  "total": 763,
+  "last_updated": "2026-09-19T21:58:45",
   "by_type": {
-    "keyword": 610,
+    "keyword": 611,
     "cve": 140,
     "tool": 7,
     "user_repo": 1,
@@ -31518,7 +31554,7 @@
   },
   "by_confidence": {
     "high": 77,
-    "medium": 683,
+    "medium": 684,
     "low": 2
   },
   "meta": {
