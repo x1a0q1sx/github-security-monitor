@@ -31775,20 +31775,66 @@
         "zoneminder"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "murrez/CVE-2026-90817",
+      "repo_url": "https://github.com/murrez/CVE-2026-90817",
+      "repo_description": "Unauth REDCap RCE (CVE-2026-90817) mass check PoC — requires public survey hash for full validation.",
+      "monitor_type": "cve",
+      "monitor_keyword": "scanner(1B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "murrez",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-09-21T04:05:26Z",
+      "pushed_at": "2026-09-21T04:08:12Z",
+      "description_cn": "Unauth REDCap RCE (CVE-2026-90817) 大规模检查 PoC — 需要公共调查哈希进行全面验证。",
+      "discovered_at": "2026-09-21 07:23:03",
+      "final_score": 7.06,
+      "relevance_score": 8.0,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "scanner(1B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "scanner",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve-2026-90817",
+        "poc",
+        "python",
+        "redcap",
+        "security",
+        "vulnerability-scanner"
+      ],
+      "archived": false
     }
   ],
-  "total": 768,
-  "last_updated": "2026-09-20T22:06:38",
+  "total": 769,
+  "last_updated": "2026-09-21T07:23:07",
   "by_type": {
     "keyword": 616,
-    "cve": 140,
+    "cve": 141,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 4
   },
   "by_confidence": {
     "high": 78,
-    "medium": 688,
+    "medium": 689,
     "low": 2
   },
   "meta": {
