@@ -31941,20 +31941,147 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "1ndevelopment/ghostlock-s26",
+      "repo_url": "https://github.com/1ndevelopment/ghostlock-s26",
+      "repo_description": "GhostLock (CVE-2026-43499) app for the Galaxy S26 series",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), cve(2B), B_only(x0.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "1ndevelopment",
+      "stars": 7,
+      "language": "C",
+      "created_at": "2026-09-12T04:24:35Z",
+      "pushed_at": "2026-09-21T19:23:07Z",
+      "description_cn": "适用于Galaxy S26系列的GhostLock (CVE-2026-43499)应用",
+      "discovered_at": "2026-09-21 22:54:56",
+      "final_score": 5.77,
+      "relevance_score": 5.0,
+      "quality_score": 6.7,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "cve(2B)",
+        "B_only(x0.5)",
+        "cve_id(+)",
+        "stars>=5",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "android",
+        "android-16",
+        "cve-2026-43499",
+        "exploit",
+        "galaxy",
+        "ghostlock",
+        "kernelsu",
+        "kotlin",
+        "root",
+        "s26",
+        "samsung",
+        "shizuku",
+        "temp",
+        "wrapper"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "madfxr/xss2shell-poc",
+      "repo_url": "https://github.com/madfxr/xss2shell-poc",
+      "repo_description": "XSS2Shell: WordPress Preauth XSS to RCE Chain (CVE-2026-64638)",
+      "monitor_type": "keyword",
+      "monitor_keyword": "rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "madfxr",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-09-21T22:35:30Z",
+      "pushed_at": "2026-09-21T22:55:15Z",
+      "description_cn": "XSS2Shell ： WordPress预认证XSS到RCE链（ CVE-2026-64638 ）",
+      "discovered_at": "2026-09-21 22:59:57",
+      "final_score": 5.87,
+      "relevance_score": 6.5,
+      "quality_score": 5.1,
+      "confidence": "medium",
+      "reasons": [
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "poc",
+        "proof-of-concept",
+        "whitebox-penetration-testing",
+        "wordpress",
+        "xss2shell"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "0xROOTPLS/Jinx-C2",
+      "repo_url": "https://github.com/0xROOTPLS/Jinx-C2",
+      "repo_description": "Jinx is an advanced, expansive, malleable C2 framework. [Release TBD]",
+      "monitor_type": "keyword",
+      "monitor_keyword": "malleable c2(5S), c2(3A)",
+      "tags": "C2",
+      "author": "0xROOTPLS",
+      "stars": 0,
+      "language": "",
+      "created_at": "2026-05-08T15:13:22Z",
+      "pushed_at": "2026-09-21T15:58:24Z",
+      "description_cn": "JINX是一个先进的、扩展的、可塑的C2框架。[Release TBD]",
+      "discovered_at": "2026-09-21 22:55:52",
+      "final_score": 5.62,
+      "relevance_score": 8.75,
+      "quality_score": 1.8,
+      "confidence": "medium",
+      "reasons": [
+        "malleable c2(5S)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "no_language",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "malleable c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 772,
-  "last_updated": "2026-09-21T14:45:01",
+  "total": 775,
+  "last_updated": "2026-09-21T23:00:15",
   "by_type": {
-    "keyword": 619,
-    "cve": 141,
+    "keyword": 621,
+    "cve": 142,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 4
   },
   "by_confidence": {
     "high": 78,
-    "medium": 692,
+    "medium": 695,
     "low": 2
   },
   "meta": {
