@@ -32257,12 +32257,98 @@
         "xss-vulnerability"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "SecureWithUmer/CVE-2026-PoCs",
+      "repo_url": "https://github.com/SecureWithUmer/CVE-2026-PoCs",
+      "repo_description": "A community-curated, verified collection of Proof-of-Concept exploits for CVEs disclosed in 2026.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "SecureWithUmer",
+      "stars": 49,
+      "language": "C++",
+      "created_at": "2026-07-08T09:14:07Z",
+      "pushed_at": "2026-09-22T12:50:55Z",
+      "description_cn": "2026年披露的由社区策划、经过验证的CVE概念验证漏洞集合。",
+      "discovered_at": "2026-09-22 12:59:54",
+      "final_score": 8.42,
+      "relevance_score": 9.0,
+      "quality_score": 7.7,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=20",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "2026-active",
+        "all",
+        "cve",
+        "cvss",
+        "database",
+        "exploit",
+        "exploit-db",
+        "latest",
+        "list",
+        "poc",
+        "proof-of-concept",
+        "rce",
+        "securewithumer",
+        "vulnerability"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "YMich/Workshop-Intrusion-Detection-ML",
+      "repo_url": "https://github.com/YMich/Workshop-Intrusion-Detection-ML",
+      "repo_description": "Machine-learning intrusion detection project for Cobalt Strike HTTPS C2 using flow metadata.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "cobalt strike(5S), c2(3A)",
+      "tags": "C2",
+      "author": "YMich",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-21T17:31:17Z",
+      "pushed_at": "2026-09-21T17:41:25Z",
+      "description_cn": "使用流元数据的Cobalt Strike HTTPS C2机器学习入侵检测项目。",
+      "discovered_at": "2026-09-22 12:54:58",
+      "final_score": 5.66,
+      "relevance_score": 8.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "cobalt strike(5S)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "cobalt strike",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 779,
-  "last_updated": "2026-09-22T07:05:50",
+  "total": 781,
+  "last_updated": "2026-09-22T13:00:13",
   "by_type": {
-    "keyword": 623,
+    "keyword": 625,
     "cve": 144,
     "tool": 7,
     "user_repo": 1,
@@ -32270,7 +32356,7 @@
   },
   "by_confidence": {
     "high": 78,
-    "medium": 699,
+    "medium": 701,
     "low": 2
   },
   "meta": {
