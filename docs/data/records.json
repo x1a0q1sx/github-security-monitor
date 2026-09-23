@@ -32509,12 +32509,64 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "BardLaudian/CVE-2024-37054",
+      "repo_url": "https://github.com/BardLaudian/CVE-2024-37054",
+      "repo_description": "Generic PoC for MLflow pickle deserialization RCE (CVE-2024-37054-style). Poisons a registered model via the MLflow REST API to achieve code execution when the model is loaded.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "redteam(3A), exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,红队,CVE",
+      "author": "BardLaudian",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-23T17:05:04Z",
+      "pushed_at": "2026-09-23T17:06:58Z",
+      "description_cn": "用于MLflow酸洗反序列化RCE的通用PoC （ CVE-2024-37054样式）。通过MLflow REST API毒化注册模型，以便在加载模型时实现代码执行。",
+      "discovered_at": "2026-09-23 18:08:05",
+      "final_score": 7.17,
+      "relevance_score": 12.0,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "redteam(3A)",
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "redteam",
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve-2024-37054",
+        "exploit",
+        "machine-learning-security",
+        "mlflow",
+        "mlops-security",
+        "pentest",
+        "pickle-deserialization",
+        "poc",
+        "python",
+        "rce",
+        "redteam"
+      ],
+      "archived": false
     }
   ],
-  "total": 785,
-  "last_updated": "2026-09-23T13:11:38",
+  "total": 786,
+  "last_updated": "2026-09-23T18:08:22",
   "by_type": {
-    "keyword": 628,
+    "keyword": 629,
     "cve": 145,
     "tool": 7,
     "user_repo": 1,
@@ -32522,7 +32574,7 @@
   },
   "by_confidence": {
     "high": 78,
-    "medium": 705,
+    "medium": 706,
     "low": 2
   },
   "meta": {
