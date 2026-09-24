@@ -32808,20 +32808,70 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "Lutfifakee-Project/CVE-2026-87902",
+      "repo_url": "https://github.com/Lutfifakee-Project/CVE-2026-87902",
+      "repo_description": "CVE-2026-87902 PoC — WordPress Path Traversal → LFI → Conditional RCE",
+      "monitor_type": "cve",
+      "monitor_keyword": "scanner(1B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "Lutfifakee-Project",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-23T21:06:20Z",
+      "pushed_at": "2026-09-24T07:08:17Z",
+      "description_cn": "CVE-2026-87902 PoC — WordPress 路径遍历 → LFI → 条件 RCE",
+      "discovered_at": "2026-09-24 12:59:38",
+      "final_score": 6.11,
+      "relevance_score": 8.0,
+      "quality_score": 3.8,
+      "confidence": "medium",
+      "reasons": [
+        "scanner(1B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "scanner",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve-2026-87902",
+        "lfi",
+        "local-file-inclusion",
+        "path-traversal",
+        "python",
+        "rce",
+        "security-research",
+        "security-scanner",
+        "vulnerability-research",
+        "wordpress",
+        "wordpress-security"
+      ],
+      "archived": false
     }
   ],
-  "total": 792,
-  "last_updated": "2026-09-24T06:59:18",
+  "total": 793,
+  "last_updated": "2026-09-24T12:59:42",
   "by_type": {
     "keyword": 632,
-    "cve": 148,
+    "cve": 149,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 4
   },
   "by_confidence": {
     "high": 79,
-    "medium": 711,
+    "medium": 712,
     "low": 2
   },
   "meta": {
