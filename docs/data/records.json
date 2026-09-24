@@ -33096,20 +33096,60 @@
         "security-tools"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "MateusVerass/nGixshell",
+      "repo_url": "https://github.com/MateusVerass/nGixshell",
+      "repo_description": "nginx CVE scanner + RCE exploit framework (CVE-2026-42945 + 16 others)",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), scanner(1B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "MateusVerass",
+      "stars": 25,
+      "language": "Python",
+      "created_at": "2026-05-16T14:25:39Z",
+      "pushed_at": "2026-09-24T22:02:07Z",
+      "description_cn": "nginx CVE扫描程序+ RCE漏洞利用框架（ CVE-2026-42945 + 16个其他）",
+      "discovered_at": "2026-09-24 22:48:31",
+      "final_score": 7.88,
+      "relevance_score": 9.5,
+      "quality_score": 5.9,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "scanner(1B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "scanner",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 798,
-  "last_updated": "2026-09-24T18:07:34",
+  "total": 799,
+  "last_updated": "2026-09-24T22:48:33",
   "by_type": {
     "keyword": 636,
-    "cve": 150,
+    "cve": 151,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 4
   },
   "by_confidence": {
     "high": 79,
-    "medium": 717,
+    "medium": 718,
     "low": 2
   },
   "meta": {
