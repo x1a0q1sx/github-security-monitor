@@ -32627,20 +32627,201 @@
         "wordpress-vulnerable"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "fl0ydsec/CVE-2026-63030",
+      "repo_url": "https://github.com/fl0ydsec/CVE-2026-63030",
+      "repo_description": "WP2Shell - CVE-2026-63030 + CVE-2026-60137 WordPress Core pre-auth RCE mass exploit",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "fl0ydsec",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-24T01:04:05Z",
+      "pushed_at": "2026-09-24T01:13:08Z",
+      "description_cn": "WP2Shell - CVE-2026-63030 + CVE-2026-60137 WordPress核心预授权RCE批量利用",
+      "discovered_at": "2026-09-24 06:54:01",
+      "final_score": 7.02,
+      "relevance_score": 9.0,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "cve",
+        "cve-2026-63030",
+        "exploit",
+        "rce",
+        "wordpress",
+        "wp2shell"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "hmascs/KSuRoot",
+      "repo_url": "https://github.com/hmascs/KSuRoot",
+      "repo_description": "KSuRoot 3.0 — 基于 CVE-2026-43499(GhostLock) 的一键 KernelSU 提权工具。新增「载荷构建」：用本机 boot.img 解析内核偏移并打出适配本机的载荷（通用方案 / vivo 专用）；内核 6.6+ 免 ADB；内置载荷固定上游 v1.0.0。Mod by hmascs",
+      "monitor_type": "cve",
+      "monitor_keyword": "cve(2B), B_only(x0.5), cve_id(+)",
+      "tags": "CVE",
+      "author": "hmascs",
+      "stars": 111,
+      "language": "Kotlin",
+      "created_at": "2026-08-14T10:51:50Z",
+      "pushed_at": "2026-09-24T04:58:38Z",
+      "description_cn": "KSuRoot 3.0 — 基于 CVE-2026-43499(GhostLock) 的一键 KernelSU 提权工具。新增「载荷构建」：用本机 boot.img 解析内核偏移并打出适配本机的载荷（通用方案 / vivo 专用）；内核 6.6+ 免 ADB；内置载荷固定上游 v1.0.0。Mod by hmascs",
+      "discovered_at": "2026-09-24 06:54:05",
+      "final_score": 5.86,
+      "relevance_score": 5.0,
+      "quality_score": 6.9,
+      "confidence": "medium",
+      "reasons": [
+        "cve(2B)",
+        "B_only(x0.5)",
+        "cve_id(+)",
+        "stars>=100",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "MythicAgents/thanatos",
+      "repo_url": "https://github.com/MythicAgents/thanatos",
+      "repo_description": "Mythic C2 agent targeting Linux and Windows hosts written in Rust",
+      "monitor_type": "keyword",
+      "monitor_keyword": "mythic c2(4S), c2(3A)",
+      "tags": "C2",
+      "author": "MythicAgents",
+      "stars": 408,
+      "language": "Rust",
+      "created_at": "2022-03-07T20:35:33Z",
+      "pushed_at": "2026-09-24T02:23:41Z",
+      "description_cn": "用Rust编写的针对Linux和Windows主机的Mythic C2代理",
+      "discovered_at": "2026-09-24 06:56:13",
+      "final_score": 6.96,
+      "relevance_score": 7.0,
+      "quality_score": 6.9,
+      "confidence": "medium",
+      "reasons": [
+        "mythic c2(4S)",
+        "c2(3A)",
+        "stars>=100",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "mythic c2",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "SuperScripter1337/zeek-c2-behavioural-ml",
+      "repo_url": "https://github.com/SuperScripter1337/zeek-c2-behavioural-ml",
+      "repo_description": "Machine-learning analysis of Zeek-derived network metadata for detecting and attributing C2 frameworks including Cobalt Strike, Havoc, Mythic and Sliver.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "cobalt strike(5S), c2(3A)",
+      "tags": "C2,免杀",
+      "author": "SuperScripter1337",
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "created_at": "2026-09-24T06:03:16Z",
+      "pushed_at": "2026-09-24T06:29:38Z",
+      "description_cn": "Zeek衍生网络元数据的机器学习分析，用于检测和归因C2框架，包括Cobalt Strike、Havoc、Mythic和Sliver。",
+      "discovered_at": "2026-09-24 06:54:17",
+      "final_score": 6.07,
+      "relevance_score": 8.75,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "cobalt strike(5S)",
+        "c2(3A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "cobalt strike",
+        "c2"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "godylockz/CVE-2024-42327",
+      "repo_url": "https://github.com/godylockz/CVE-2024-42327",
+      "repo_description": "Proof of concept for CVE-2024-42327: Zabbix privilege escalation to RCE",
+      "monitor_type": "keyword",
+      "monitor_keyword": "rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "godylockz",
+      "stars": 9,
+      "language": "Python",
+      "created_at": "2025-02-16T07:33:38Z",
+      "pushed_at": "2026-09-24T04:17:13Z",
+      "description_cn": "CVE-2024-42327的概念验证： Zabbix特权升级至RCE",
+      "discovered_at": "2026-09-24 06:58:59",
+      "final_score": 6.06,
+      "relevance_score": 7.0,
+      "quality_score": 4.9,
+      "confidence": "medium",
+      "reasons": [
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=5",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 787,
-  "last_updated": "2026-09-23T22:32:18",
+  "total": 792,
+  "last_updated": "2026-09-24T06:59:18",
   "by_type": {
-    "keyword": 629,
-    "cve": 146,
+    "keyword": 632,
+    "cve": 148,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 4
   },
   "by_confidence": {
     "high": 79,
-    "medium": 706,
+    "medium": 711,
     "low": 2
   },
   "meta": {
