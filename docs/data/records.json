@@ -33751,12 +33751,59 @@
         "x16"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "biowalkerdev/windows-codeinjector",
+      "repo_url": "https://github.com/biowalkerdev/windows-codeinjector",
+      "repo_description": "Hex/base64/shell code injector using Unhooking + Indirect Syscalls + Special User APC for Windows processes",
+      "monitor_type": "keyword",
+      "monitor_keyword": "indirect syscall(4S), direct syscall(5S)",
+      "tags": "免杀",
+      "author": "biowalkerdev",
+      "stars": 0,
+      "language": "C#",
+      "created_at": "2026-07-17T12:43:44Z",
+      "pushed_at": "2026-09-27T15:38:30Z",
+      "description_cn": "使用Unhooking + Indirect Syscalls + Special User APC for Windows进程的Hex/base64/shell代码注入器",
+      "discovered_at": "2026-09-27 18:00:18",
+      "final_score": 7.02,
+      "relevance_score": 9.0,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "indirect syscall(4S)",
+        "direct syscall(5S)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "indirect syscall",
+        "direct syscall"
+      ],
+      "is_fork": false,
+      "topics": [
+        "code-injection",
+        "code-injection-tools",
+        "csharp",
+        "cybersecurity",
+        "indirect-syscalls",
+        "injector-tool",
+        "pentest",
+        "red-team",
+        "red-team-tools",
+        "windows-app",
+        "windows-injector"
+      ],
+      "archived": false
     }
   ],
-  "total": 812,
-  "last_updated": "2026-09-27T13:28:38",
+  "total": 813,
+  "last_updated": "2026-09-27T18:03:35",
   "by_type": {
-    "keyword": 643,
+    "keyword": 644,
     "cve": 157,
     "tool": 7,
     "user_repo": 1,
@@ -33764,7 +33811,7 @@
   },
   "by_confidence": {
     "high": 82,
-    "medium": 728,
+    "medium": 729,
     "low": 2
   },
   "meta": {
