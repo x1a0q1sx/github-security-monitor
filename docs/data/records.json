@@ -33798,20 +33798,60 @@
         "windows-injector"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "murrez/CVE-2026-88772",
+      "repo_url": "https://github.com/murrez/CVE-2026-88772",
+      "repo_description": "CVE-2026-88772 PoC: Citrix NetScaler ADC/Gateway DTLS memory overflow (RCE/DoS, CVSS 9.5). Fingerprints Gateway, build vs 14.1-73.37 / 13.1-64.23, UDP/443 DTLS probe. CTX697096; active exploitation reported. https://pocbit.org/pocs/cve-2026-88772",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploitation(2B), exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "murrez",
+      "stars": 2,
+      "language": "Python",
+      "created_at": "2026-09-27T20:24:56Z",
+      "pushed_at": "2026-09-27T20:26:07Z",
+      "description_cn": "CVE-2026-88772 PoC：Citrix NetScaler ADC/网关 DTLS 内存溢出（RCE/DoS、CVSS 9.5）。指纹网关，构建 vs 14.1-73.37 / 13.1-64.23，UDP/443 DTLS 探针。 CTX697096;报告称存在积极的利用行为。 https://pocbit.org/pocs/cve-2026-88772",
+      "discovered_at": "2026-09-27 22:39:57",
+      "final_score": 7.9,
+      "relevance_score": 11.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "exploitation(2B)",
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploitation",
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 813,
-  "last_updated": "2026-09-27T18:03:35",
+  "total": 814,
+  "last_updated": "2026-09-27T22:40:01",
   "by_type": {
     "keyword": 644,
-    "cve": 157,
+    "cve": 158,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 4
   },
   "by_confidence": {
     "high": 82,
-    "medium": 729,
+    "medium": 730,
     "low": 2
   },
   "meta": {
