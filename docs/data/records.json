@@ -35328,20 +35328,132 @@
         "security-tools"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "dorkerdevil/wpforms-xss-fix-bypass",
+      "repo_url": "https://github.com/dorkerdevil/wpforms-xss-fix-bypass",
+      "repo_description": "Unauthenticated reflected XSS in WPForms <= 2.0.2.1 — bypass of the CVE-2026-88996 Smart Tag escaping at attribute-name position",
+      "monitor_type": "cve",
+      "monitor_keyword": "0day(4A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "免杀,CVE",
+      "author": "dorkerdevil",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-09-28T15:32:12Z",
+      "pushed_at": "2026-10-01T13:37:59Z",
+      "description_cn": "WPForms <= 2.0.2.1 中未经身份验证的反射型 XSS — 绕过在属性名称位置转义的 CVE-2026-88996 智能标记",
+      "discovered_at": "2026-10-01 15:01:30",
+      "final_score": 6.2,
+      "relevance_score": 7.5,
+      "quality_score": 4.6,
+      "confidence": "medium",
+      "reasons": [
+        "0day(4A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "0day",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "0day",
+        "cve-2026-88996",
+        "security",
+        "wordpress",
+        "wpforms",
+        "xss"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "alternat0r/pe-sieve-gui",
+      "repo_url": "https://github.com/alternat0r/pe-sieve-gui",
+      "repo_description": "GUI version of PE-Sieve. Scans a given process. Recognizes and dumps a variety of potentially malicious implants (replaced/injected PEs, shellcodes, hooks, in-memory patches).",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), implant(2A), security_context(+1.5)",
+      "tags": "Shellcode",
+      "author": "alternat0r",
+      "stars": 2,
+      "language": "C++",
+      "created_at": "2026-10-01T11:22:56Z",
+      "pushed_at": "2026-10-01T13:44:25Z",
+      "description_cn": "PE-Sieve 的 GUI 版本。扫描给定进程。识别并转储各种潜在的恶意植入（替换/注入的 PE、shellcode、挂钩、内存补丁）。",
+      "discovered_at": "2026-10-01 15:06:24",
+      "final_score": 5.97,
+      "relevance_score": 7.5,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "implant(2A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "implant"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "3SC0133/CVE-2025-55182-React2Shell",
+      "repo_url": "https://github.com/3SC0133/CVE-2025-55182-React2Shell",
+      "repo_description": "Technical analysis and proof of concept (PoC) for CVE-2025-55182 (React2Shell), a critical RCE vulnerability in React Server Components. Includes a Python tool, Docker lab, and documentation for reproduction and validation in authorized environments.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "3SC0133",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-08-04T16:40:51Z",
+      "pushed_at": "2026-10-01T12:21:17Z",
+      "description_cn": "针对 CVE-2025-55182 (React2Shell) 的技术分析和概念验证 (PoC)，CVE-2025-55182 是 React Server 组件中的一个关键 RCE 漏洞。包括 Python 工具、Docker 实验室以及用于在授权环境中进行复制和验证的文档。",
+      "discovered_at": "2026-10-01 15:06:36",
+      "final_score": 5.7,
+      "relevance_score": 7.0,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 847,
-  "last_updated": "2026-10-01T08:03:24",
+  "total": 850,
+  "last_updated": "2026-10-01T15:06:52",
   "by_type": {
-    "keyword": 657,
-    "cve": 177,
+    "keyword": 659,
+    "cve": 178,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 5
   },
   "by_confidence": {
     "high": 88,
-    "medium": 757,
+    "medium": 760,
     "low": 2
   },
   "meta": {
