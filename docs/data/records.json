@@ -36220,20 +36220,141 @@
         "wordpress"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "HackfutSecRoot/-GOTENBERG-RCE-CHAIN",
+      "repo_url": "https://github.com/HackfutSecRoot/-GOTENBERG-RCE-CHAIN",
+      "repo_description": "Gotenberg RCE Chain — CVE-2026-42589 + CVE-2026-40281",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "HackfutSecRoot",
+      "stars": 1,
+      "language": "Python",
+      "created_at": "2026-10-03T21:40:17Z",
+      "pushed_at": "2026-10-03T21:58:38Z",
+      "description_cn": "Gotenberg RCE 链 — CVE-2026-42589 + CVE-2026-40281",
+      "discovered_at": "2026-10-03 22:31:03",
+      "final_score": 7.38,
+      "relevance_score": 9.25,
+      "quality_score": 5.1,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [
+        "bugbounty",
+        "cve-2026-40281",
+        "cve-2026-42589",
+        "cybersecurity",
+        "ethical-hacking",
+        "gotenberg",
+        "hackfut",
+        "python",
+        "rce",
+        "rce-exploit",
+        "rce-testing",
+        "tools"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "hanez/foo",
+      "repo_url": "https://github.com/hanez/foo",
+      "repo_description": "A clean example with lot of comments that shows how ACE/RCE/RCX and shellcode execution works and how SUID binaries can be exploited to get a root shell. (mirror from: https://git.xw3.org/hanez/foo) ",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), exploit(2B), rce(3A), security_context(+1.5)",
+      "tags": "Shellcode,漏洞利用",
+      "author": "hanez",
+      "stars": 1,
+      "language": "C",
+      "created_at": "2026-10-03T19:58:16Z",
+      "pushed_at": "2026-10-03T21:31:37Z",
+      "description_cn": "一个带有大量注释的简洁示例，展示了 ACE/RCE/RCX 和 shellcode 执行的工作原理以及如何利用 SUID 二进制文件来获取 root shell。 （镜像来自：https://git.xw3.org/hanez/foo）",
+      "discovered_at": "2026-10-03 22:35:36",
+      "final_score": 7.62,
+      "relevance_score": 10.5,
+      "quality_score": 4.1,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "exploit(2B)",
+        "rce(3A)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode",
+        "exploit",
+        "rce"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "narkisiuria/Custom-Win11-Defender-Bypass-Research-Lab-Pipeline",
+      "repo_url": "https://github.com/narkisiuria/Custom-Win11-Defender-Bypass-Research-Lab-Pipeline",
+      "repo_description": "A Windows 11 evasion research pipeline. Includes detailed documentation on how to set up custom payload loaders, encryption and runner scripts, stagers, and memory injection on a Windows 11 machine",
+      "monitor_type": "keyword",
+      "monitor_keyword": "defender bypass(3S), payload loader(4S)",
+      "tags": "免杀",
+      "author": "narkisiuria",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-10-03T22:05:07Z",
+      "pushed_at": "2026-10-03T22:33:03Z",
+      "description_cn": "Windows 11 规避研究管道。包括有关如何在 Windows 11 计算机上设置自定义负载加载器、加密和运行程序脚本、stagers 以及内存注入的详细文档",
+      "discovered_at": "2026-10-03 22:33:12",
+      "final_score": 5.52,
+      "relevance_score": 7.75,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "defender bypass(3S)",
+        "payload loader(4S)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "defender bypass",
+        "payload loader"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 868,
-  "last_updated": "2026-10-03T17:45:41",
+  "total": 871,
+  "last_updated": "2026-10-03T22:36:04",
   "by_type": {
-    "keyword": 674,
-    "cve": 181,
+    "keyword": 676,
+    "cve": 182,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 5
   },
   "by_confidence": {
     "high": 91,
-    "medium": 775,
+    "medium": 778,
     "low": 2
   },
   "meta": {
