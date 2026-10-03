@@ -35949,12 +35949,90 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "thankgod4rob/CVEs",
+      "repo_url": "https://github.com/thankgod4rob/CVEs",
+      "repo_description": "CVE proof of concept exploits",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用,CVE",
+      "author": "thankgod4rob",
+      "stars": 2,
+      "language": "Python",
+      "created_at": "2026-10-03T04:13:38Z",
+      "pushed_at": "2026-10-03T05:31:58Z",
+      "description_cn": "CVE 概念验证漏洞",
+      "discovered_at": "2026-10-03 07:19:20",
+      "final_score": 7.15,
+      "relevance_score": 8.5,
+      "quality_score": 5.5,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=1",
+        "desc_short",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "apache",
+        "cve",
+        "cve-2026-42356",
+        "exploit",
+        "poc",
+        "rce"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "joaovarelas/p3-crystal",
+      "repo_url": "https://github.com/joaovarelas/p3-crystal",
+      "repo_description": "Crystal Palace PICO implementation of Process Parameter Poisoning (P³) — null-free shellcode injection via CreateProcessW parameter fields without VirtualAllocEx or WriteProcessMemory.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode injection(4S), shellcode(4A)",
+      "tags": "Shellcode",
+      "author": "joaovarelas",
+      "stars": 0,
+      "language": "C",
+      "created_at": "2026-10-03T07:08:56Z",
+      "pushed_at": "2026-10-03T07:11:31Z",
+      "description_cn": "水晶宫 PICO 实现了进程参数中毒 (P³) — 通过 CreateProcessW 参数字段进行无空 shellcode 注入，无需 VirtualAllocEx 或 WriteProcessMemory。",
+      "discovered_at": "2026-10-03 07:16:56",
+      "final_score": 5.66,
+      "relevance_score": 8.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode injection(4S)",
+        "shellcode(4A)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_precise_ok"
+      ],
+      "matched_keywords": [
+        "shellcode injection",
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 862,
-  "last_updated": "2026-10-02T23:29:15",
+  "total": 864,
+  "last_updated": "2026-10-03T07:19:37",
   "by_type": {
-    "keyword": 669,
+    "keyword": 671,
     "cve": 180,
     "tool": 7,
     "user_repo": 1,
@@ -35962,7 +36040,7 @@
   },
   "by_confidence": {
     "high": 91,
-    "medium": 769,
+    "medium": 771,
     "low": 2
   },
   "meta": {
