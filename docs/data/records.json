@@ -36027,12 +36027,108 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "SecureWithUmer/Exploit-Index",
+      "repo_url": "https://github.com/SecureWithUmer/Exploit-Index",
+      "repo_description": "A community-curated, verified collection of Proof-of-Concept exploits for CVEs disclosed in 2026.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5)",
+      "tags": "POC,漏洞利用",
+      "author": "SecureWithUmer",
+      "stars": 63,
+      "language": "Python",
+      "created_at": "2026-07-08T09:14:07Z",
+      "pushed_at": "2026-10-03T11:36:06Z",
+      "description_cn": "2026 年披露的由社区策划、经过验证的 CVE 概念验证漏洞利用集合。",
+      "discovered_at": "2026-10-03 12:54:10",
+      "final_score": 8.42,
+      "relevance_score": 9.0,
+      "quality_score": 7.7,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "stars>=20",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve"
+      ],
+      "is_fork": false,
+      "topics": [
+        "2026-active",
+        "all",
+        "cve",
+        "cvss",
+        "database",
+        "exploit",
+        "exploit-db",
+        "latest",
+        "list",
+        "poc",
+        "proof-of-concept",
+        "rce",
+        "securewithumer",
+        "vulnerability"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "scadastrangelove/awesome-ai-security-tools",
+      "repo_url": "https://github.com/scadastrangelove/awesome-ai-security-tools",
+      "repo_description": "A curated list of public-source, research, and commercial tools for AI security and AI-assisted cybersecurity — autotriage, agent security, AI/ML supply chain, pentest agents, AI SAST, LLM-driven fuzzing, threat intelligence, SOC/SIEM triage, reverse engineering, LLM red-teaming, and more.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "reverse engineering(1B), red team(3A), security_context(+1.5)",
+      "tags": "漏洞利用,红队",
+      "author": "scadastrangelove",
+      "stars": 1574,
+      "language": "Python",
+      "created_at": "2026-05-27T12:52:20Z",
+      "pushed_at": "2026-10-03T12:45:11Z",
+      "description_cn": "用于人工智能安全和人工智能辅助网络安全的公共源、研究和商业工具的精选列表——自动分类、代理安全、人工智能/机器学习供应链、渗透测试代理、人工智能 SAST、LLM 驱动的模糊测试、威胁情报、SOC/SIEM 分类、逆向工程、LLM 红队等等。",
+      "discovered_at": "2026-10-03 12:54:25",
+      "final_score": 7.17,
+      "relevance_score": 5.5,
+      "quality_score": 9.2,
+      "confidence": "medium",
+      "reasons": [
+        "reverse engineering(1B)",
+        "red team(3A)",
+        "security_context(+1.5)",
+        "stars>=500",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d",
+        "penalty:awesome-"
+      ],
+      "matched_keywords": [
+        "reverse engineering",
+        "red team"
+      ],
+      "is_fork": false,
+      "topics": [
+        "agentic-ai",
+        "agents",
+        "awesome",
+        "awesome-list",
+        "awesome-lists",
+        "llm",
+        "security"
+      ],
+      "archived": false
     }
   ],
-  "total": 864,
-  "last_updated": "2026-10-03T07:19:37",
+  "total": 866,
+  "last_updated": "2026-10-03T12:54:25",
   "by_type": {
-    "keyword": 671,
+    "keyword": 673,
     "cve": 180,
     "tool": 7,
     "user_repo": 1,
@@ -36040,7 +36136,7 @@
   },
   "by_confidence": {
     "high": 91,
-    "medium": 771,
+    "medium": 773,
     "low": 2
   },
   "meta": {
