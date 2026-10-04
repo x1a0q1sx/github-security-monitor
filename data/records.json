@@ -36542,20 +36542,164 @@
         "rag-security"
       ],
       "archived": false
+    },
+    {
+      "repo_name": "K52-ai/CVE-2026-83627",
+      "repo_url": "https://github.com/K52-ai/CVE-2026-83627",
+      "repo_description": "CVE-2026-83627 — Hummingbird Performance <= 3.21.0 Unauthenticated RCE. Pure Python exploit. by K52-ai.",
+      "monitor_type": "cve",
+      "monitor_keyword": "exploit(2B), rce(3A), cve(2B), security_context(+1.5), cve_id(+)",
+      "tags": "漏洞利用,CVE",
+      "author": "K52-ai",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-10-04T17:25:32Z",
+      "pushed_at": "2026-10-04T17:27:23Z",
+      "description_cn": "CVE-2026-83627 —蜂鸟性能< = 3.21.0未经验证的RCE。K52-ai的Pure Python漏洞利用。",
+      "discovered_at": "2026-10-04 17:54:20",
+      "final_score": 6.21,
+      "relevance_score": 9.0,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "exploit(2B)",
+        "rce(3A)",
+        "cve(2B)",
+        "security_context(+1.5)",
+        "cve_id(+)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "exploit",
+        "rce",
+        "cve",
+        "cve_id"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "CodeXTF2/Cobaltstrike_BOFLoader",
+      "repo_url": "https://github.com/CodeXTF2/Cobaltstrike_BOFLoader",
+      "repo_description": "open source port/reimplementation of the Cobalt Strike BOF Loader as is",
+      "monitor_type": "keyword",
+      "monitor_keyword": "cobalt strike(5S), cobaltstrike(5S)",
+      "tags": "C2,漏洞利用",
+      "author": "CodeXTF2",
+      "stars": 73,
+      "language": "C",
+      "created_at": "2026-02-03T09:25:03Z",
+      "pushed_at": "2026-10-04T17:23:03Z",
+      "description_cn": "Cobalt Strike BOF Loader 的开源端口/重新实现",
+      "discovered_at": "2026-10-04 17:54:36",
+      "final_score": 9.18,
+      "relevance_score": 11.25,
+      "quality_score": 6.65,
+      "confidence": "high",
+      "reasons": [
+        "cobalt strike(5S)",
+        "cobaltstrike(5S)",
+        "stars>=20",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "cobalt strike",
+        "cobaltstrike"
+      ],
+      "is_fork": false,
+      "topics": [
+        "bof",
+        "cobaltstrike",
+        "coffloader"
+      ],
+      "archived": false
+    },
+    {
+      "repo_name": "Joe1sn/S-inject",
+      "repo_url": "https://github.com/Joe1sn/S-inject",
+      "repo_description": "支持x86/x64的DLL和Shellcode 的Windows注入的免杀工具，支持图形化界面",
+      "monitor_type": "keyword",
+      "monitor_keyword": "shellcode(4A), security_context(+1.5)",
+      "tags": "免杀,Shellcode",
+      "author": "Joe1sn",
+      "stars": 626,
+      "language": "C++",
+      "created_at": "2024-02-05T04:39:10Z",
+      "pushed_at": "2026-10-04T15:47:50Z",
+      "description_cn": "支持x86/x64的DLL和Shellcode 的Windows注入的免杀工具，支持图形化界面",
+      "discovered_at": "2026-10-04 17:58:54",
+      "final_score": 6.58,
+      "relevance_score": 5.5,
+      "quality_score": 7.9,
+      "confidence": "medium",
+      "reasons": [
+        "shellcode(4A)",
+        "security_context(+1.5)",
+        "stars>=500",
+        "desc_ok",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "shellcode"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
+    },
+    {
+      "repo_name": "Justinuse1/hermes-redteam",
+      "repo_url": "https://github.com/Justinuse1/hermes-redteam",
+      "repo_description": "Red-team ops ledger plugin for Hermes Agent — assets / vulns / creds / webshells / tunnels / attack chains, target cards, preflight checks, reports, self-test.",
+      "monitor_type": "keyword",
+      "monitor_keyword": "webshell(3A), red team(3A), redteam(3A), security_context(+1.5)",
+      "tags": "Webshell,红队",
+      "author": "Justinuse1",
+      "stars": 0,
+      "language": "Python",
+      "created_at": "2026-10-04T14:25:52Z",
+      "pushed_at": "2026-10-04T14:27:39Z",
+      "description_cn": "Hermes Agent 的红队操作账本插件 — 资产/漏洞/信用/webshel​​l/隧道/攻击链、目标卡、飞行前检查、报告、自测试。",
+      "discovered_at": "2026-10-04 17:58:57",
+      "final_score": 5.95,
+      "relevance_score": 11.25,
+      "quality_score": 2.8,
+      "confidence": "medium",
+      "reasons": [
+        "webshell(3A)",
+        "red team(3A)",
+        "redteam(3A)",
+        "security_context(+1.5)",
+        "stars=0",
+        "desc_ok",
+        "pushed_7d",
+        "zero_star_soft_penalty"
+      ],
+      "matched_keywords": [
+        "webshell",
+        "red team",
+        "redteam"
+      ],
+      "is_fork": false,
+      "topics": [],
+      "archived": false
     }
   ],
-  "total": 875,
-  "last_updated": "2026-10-04T13:37:54",
+  "total": 879,
+  "last_updated": "2026-10-04T17:59:22",
   "by_type": {
-    "keyword": 679,
-    "cve": 183,
+    "keyword": 682,
+    "cve": 184,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 5
   },
   "by_confidence": {
-    "high": 92,
-    "medium": 781,
+    "high": 93,
+    "medium": 784,
     "low": 2
   },
   "meta": {
