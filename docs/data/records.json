@@ -36341,19 +36341,73 @@
       "is_fork": false,
       "topics": [],
       "archived": false
+    },
+    {
+      "repo_name": "youmulijiang/jsowl",
+      "repo_url": "https://github.com/youmulijiang/jsowl",
+      "repo_description": "JsOwl —— Go 编写的 Web 安全信息收集利器。集 JavaScript 信息收集、API 端点提取、敏感信息扫描、攻击面梳理 于一体，同时提供 CLI 工具与 Go 库。内置 direct / browser / auto 三种采集模式，兼容 HaE 规则，支持登录态扫描、运行时交互、AI 辅助分析与 MCP Server，输出 JSON 与交互式 HTML 报告，是渗透测试、红队信息收集与 Web 安全测试的高效自动化方案。",
+      "monitor_type": "keyword",
+      "monitor_keyword": "scanner(1B), 红队工具(3S), 渗透测试(2B), 信息收集(1B), 红队(3A)",
+      "tags": "红队",
+      "author": "youmulijiang",
+      "stars": 3,
+      "language": "Go",
+      "created_at": "2026-09-27T01:13:47Z",
+      "pushed_at": "2026-10-04T07:31:54Z",
+      "description_cn": "JsOwl —— Go 编写的 Web 安全信息收集利器。集 JavaScript 信息收集、API 端点提取、敏感信息扫描、攻击面梳理 于一体，同时提供 CLI 工具与 Go 库。内置 direct / browser / auto 三种采集模式，兼容 HaE 规则，支持登录态扫描、运行时交互、AI 辅助分析与 MCP Server，输出 JSON 与交互式 HTML 报告，是渗透测试、红队信息收集与 Web 安全测试的高效自动化方案。",
+      "discovered_at": "2026-10-04 07:37:13",
+      "final_score": 8.16,
+      "relevance_score": 10.0,
+      "quality_score": 5.9,
+      "confidence": "high",
+      "reasons": [
+        "scanner(1B)",
+        "红队工具(3S)",
+        "渗透测试(2B)",
+        "信息收集(1B)",
+        "红队(3A)",
+        "stars>=1",
+        "desc_ok",
+        "security_topic",
+        "pushed_7d"
+      ],
+      "matched_keywords": [
+        "scanner",
+        "红队工具",
+        "渗透测试",
+        "信息收集",
+        "红队"
+      ],
+      "is_fork": false,
+      "topics": [
+        "bugbounty",
+        "cybersecurity",
+        "go",
+        "golang",
+        "js",
+        "mcp",
+        "mcp-server",
+        "pentest",
+        "pentesting",
+        "recon",
+        "security",
+        "security-scanner",
+        "security-tools"
+      ],
+      "archived": false
     }
   ],
-  "total": 871,
-  "last_updated": "2026-10-03T22:36:04",
+  "total": 872,
+  "last_updated": "2026-10-04T07:37:50",
   "by_type": {
-    "keyword": 676,
+    "keyword": 677,
     "cve": 182,
     "tool": 7,
     "user_repo": 1,
     "tool_update": 5
   },
   "by_confidence": {
-    "high": 91,
+    "high": 92,
     "medium": 778,
     "low": 2
   },
