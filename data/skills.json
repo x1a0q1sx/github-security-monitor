@@ -2,76 +2,6 @@
   "version": 5,
   "items": [
     {
-      "id": "security-auditor",
-      "name": "Security Auditor",
-      "display_name": "Security Auditor",
-      "description": "Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection prevention, XSS protection, or any security-related code review.",
-      "description_cn": "用于代码安全漏洞审查、身份验证流程实现、OWASP Top 10审计、CORS/CSP 头部配置、密钥处理、输入验证、SQL 注入防护、XSS 防护及其他安全相关代码审查。",
-      "source": "skillhub",
-      "repo_url": "",
-      "homepage": "https://api.skillhub.cn/clawhub_jgarrison929/security-auditor",
-      "install": "npx skills add security-auditor -g -y",
-      "category": [
-        "security"
-      ],
-      "tags": [],
-      "stats": {
-        "stars": 51,
-        "installs": 3734,
-        "downloads": 33061
-      },
-      "scores": {
-        "popularity": 8.0,
-        "freshness": 4.0,
-        "relevance": 7.5,
-        "final": 9.69
-      },
-      "reasons": [
-        "installs:3734",
-        "stars:51",
-        "security:0.70",
-        "source:skillhub"
-      ],
-      "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:02",
-      "updated_at": "1791888584190"
-    },
-    {
-      "id": "skill-vetter",
-      "name": "Skill Vetter",
-      "display_name": "Skill Vetter",
-      "description": "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope, and suspicious patterns.",
-      "description_cn": "AI智能体技能安全预审工具。安装ClawdHub、GitHub等来源技能前，检查风险信号、权限范围及可疑模式。",
-      "source": "skillhub",
-      "repo_url": "",
-      "homepage": "https://api.skillhub.cn/clawhub_spclaudehome/skill-vetter",
-      "install": "npx skills add skill-vetter -g -y",
-      "category": [
-        "security"
-      ],
-      "tags": [],
-      "stats": {
-        "stars": 1325,
-        "installs": 37273,
-        "downloads": 361537
-      },
-      "scores": {
-        "popularity": 9.5,
-        "freshness": 4.0,
-        "relevance": 6.0,
-        "final": 9.59
-      },
-      "reasons": [
-        "installs:37273",
-        "stars:1325",
-        "security:0.40",
-        "source:skillhub"
-      ],
-      "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:02",
-      "updated_at": "1791888582612"
-    },
-    {
       "id": "pentest-commands",
       "name": "Pentest Commands",
       "display_name": "Pentest Commands",
@@ -88,7 +18,7 @@
       "stats": {
         "stars": 4,
         "installs": 65,
-        "downloads": 3257
+        "downloads": 3263
       },
       "scores": {
         "popularity": 6.5,
@@ -103,8 +33,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.85,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791888532844"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791918465725"
     },
     {
       "id": "trailofbits/skills",
@@ -123,7 +53,7 @@
         "agent-skills"
       ],
       "stats": {
-        "stars": 7503,
+        "stars": 7511,
         "installs": 0,
         "downloads": 0
       },
@@ -134,54 +64,13 @@
         "final": 9.18
       },
       "reasons": [
-        "stars:7503",
+        "stars:7511",
         "security:0.40",
         "source:github"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:12",
-      "updated_at": "2026-10-13T09:41:44Z"
-    },
-    {
-      "id": "SnailSploit/Claude-Red",
-      "name": "Claude-Red",
-      "display_name": "Claude-Red",
-      "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-      "description_cn": "claude-red 是一个专为 Claude 技能系统设计的进攻性安全技能库。每项技能都是一个结构化的 SKILL.md 文件，为 Claude 提供针对特定攻击面的专家级方法——从 SQLi 到 shellcode，从 EDR 规避到漏洞利用开发。",
-      "source": "github",
-      "repo_url": "https://github.com/SnailSploit/Claude-Red",
-      "homepage": "https://github.com/SnailSploit/Claude-Red",
-      "install": "npx skills add SnailSploit/Claude-Red -g -y",
-      "category": [
-        "security"
-      ],
-      "tags": [
-        "claude-ai",
-        "claude-pt",
-        "claude-skills",
-        "redteam",
-        "redteam-tools",
-        "skills"
-      ],
-      "stats": {
-        "stars": 7466,
-        "installs": 0,
-        "downloads": 0
-      },
-      "scores": {
-        "popularity": 8.0,
-        "freshness": 6.0,
-        "relevance": 6.0,
-        "final": 9.18
-      },
-      "reasons": [
-        "stars:7466",
-        "security:0.40",
-        "source:github"
-      ],
-      "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:12",
-      "updated_at": "2026-10-13T10:43:26Z"
+      "discovered_at": "2026-10-13 20:44:47",
+      "updated_at": "2026-10-13T19:13:58Z"
     },
     {
       "id": "pentest-workbench",
@@ -200,7 +89,7 @@
       "stats": {
         "stars": 2,
         "installs": 37,
-        "downloads": 1822
+        "downloads": 1824
       },
       "scores": {
         "popularity": 5.0,
@@ -215,8 +104,8 @@
         "source:skillhub"
       ],
       "security_relevant": 1.0,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791888532209"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791914373275"
     },
     {
       "id": "awesome-pentest",
@@ -235,7 +124,7 @@
       "stats": {
         "stars": 0,
         "installs": 37,
-        "downloads": 1684
+        "downloads": 1687
       },
       "scores": {
         "popularity": 5.0,
@@ -249,8 +138,63 @@
         "source:skillhub"
       ],
       "security_relevant": 1.0,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791888531691"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791909163824"
+    },
+    {
+      "id": "NoorQureshi/security-skills",
+      "name": "securitys",
+      "display_name": "securitys",
+      "description": "An open library of 206 security skills for AI agents — pentest, bug bounty, CTF, reversing & defense across 23 domains, with CI-verified routing and Sigma detections. 面向 AI 智能体的开源安全技能库:渗透测试 · 漏洞赏金 · CTF · 逆向 · 蓝队检测。Load into Claude Code, Codex, Gemini, Cursor.",
+      "description_cn": "一个包含 206 种 AI 代理安全技能的开放库 - 跨 23 个域的渗透测试、漏洞赏金、CTF、逆向和防御，并具有 CI 验证的路由和 Sigma 检测。 面向AI智能体的开源安全技能库：渗透测试·漏洞赏金·CTF·逆向·蓝队检测。加载到Claude Code、Codex、Gemini、Cursor中。",
+      "source": "github",
+      "repo_url": "https://github.com/NoorQureshi/security-skills",
+      "homepage": "https://github.com/NoorQureshi/security-skills",
+      "install": "npx skills add NoorQureshi/security-skills -g -y",
+      "category": [
+        "security"
+      ],
+      "tags": [
+        "agent-skills",
+        "ai-agents",
+        "ai-security",
+        "application-security",
+        "blue-team",
+        "bug-bounty",
+        "claude-code",
+        "codex",
+        "ctf",
+        "detection-engineering",
+        "gemini",
+        "hacking",
+        "llm",
+        "llm-security",
+        "offensive-security",
+        "ollama",
+        "pentesting",
+        "red-team",
+        "security-tools",
+        "sigma-rules"
+      ],
+      "stats": {
+        "stars": 21,
+        "installs": 0,
+        "downloads": 0
+      },
+      "scores": {
+        "popularity": 5.0,
+        "freshness": 6.0,
+        "relevance": 8.25,
+        "final": 8.93
+      },
+      "reasons": [
+        "stars:21",
+        "security:0.85",
+        "source:github"
+      ],
+      "security_relevant": 0.85,
+      "discovered_at": "2026-10-13 20:44:47",
+      "updated_at": "2026-10-13T17:41:37Z"
     },
     {
       "id": "go-security-vulnerability",
@@ -269,7 +213,7 @@
       "stats": {
         "stars": 2,
         "installs": 90,
-        "downloads": 3385
+        "downloads": 3391
       },
       "scores": {
         "popularity": 6.5,
@@ -284,8 +228,42 @@
         "source:skillhub"
       ],
       "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791883249925"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791923075905"
+    },
+    {
+      "id": "sql-injection-testing",
+      "name": "SQL Injection Testing",
+      "display_name": "SQL Injection Testing",
+      "description": "Perform authorized security tests to detect, exploit, and validate defenses against SQL injection vulnerabilities in web applications.",
+      "description_cn": "执行授权安全测试，检测、利用并验证Web应用程序中的SQL注入漏洞防御。",
+      "source": "skillhub",
+      "repo_url": "",
+      "homepage": "https://api.skillhub.cn/clawhub_brandonwise/sql-injection-testing",
+      "install": "npx skills add sql-injection-testing -g -y",
+      "category": [
+        "security"
+      ],
+      "tags": [],
+      "stats": {
+        "stars": 0,
+        "installs": 89,
+        "downloads": 3260
+      },
+      "scores": {
+        "popularity": 6.5,
+        "freshness": 4.0,
+        "relevance": 7.5,
+        "final": 8.88
+      },
+      "reasons": [
+        "installs:89",
+        "security:0.70",
+        "source:skillhub"
+      ],
+      "security_relevant": 0.7,
+      "discovered_at": "2026-10-13 20:44:39",
+      "updated_at": "1791924277752"
     },
     {
       "id": "openqodex/openqodex",
@@ -323,7 +301,7 @@
         "static-analysis"
       ],
       "stats": {
-        "stars": 636,
+        "stars": 649,
         "installs": 0,
         "downloads": 0
       },
@@ -334,101 +312,13 @@
         "final": 8.83
       },
       "reasons": [
-        "stars:636",
+        "stars:649",
         "security:0.55",
         "source:github"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:05",
-      "updated_at": "2026-10-13T07:54:08Z"
-    },
-    {
-      "id": "moltguard",
-      "name": "MoltGuard - Security & Antivirus & Guardrails",
-      "display_name": "MoltGuard - Security & Antivirus & Guardrails",
-      "description": "MoltGuard — OpenClaw security guard by OpenGuardrails. Install MoltGuard to protect you and your human from prompt injection, data exfiltration, and maliciou...",
-      "description_cn": "MoltGuard — OpenClaw 安全守卫，由 OpenGuardrails 提供。安装后可防止您和您的用户受到提示注入、数据泄露及恶意行为的侵害。",
-      "source": "skillhub",
-      "repo_url": "",
-      "homepage": "https://api.skillhub.cn/clawhub_thomaslwang/moltguard",
-      "install": "npx skills add moltguard -g -y",
-      "category": [
-        "security"
-      ],
-      "tags": [],
-      "stats": {
-        "stars": 116,
-        "installs": 3498,
-        "downloads": 37344
-      },
-      "scores": {
-        "popularity": 8.0,
-        "freshness": 4.0,
-        "relevance": 6.0,
-        "final": 8.78
-      },
-      "reasons": [
-        "installs:3498",
-        "stars:116",
-        "security:0.40",
-        "source:skillhub"
-      ],
-      "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:02",
-      "updated_at": "1791888600708"
-    },
-    {
-      "id": "jaskaranhundal/usap-skills",
-      "name": "usaps",
-      "display_name": "usaps",
-      "description": "Open-source AI cybersecurity agent skills for SOC, incident response, threat hunting, red team, blue team, and DevSecOps. 79 skills + 12 cs-* orchestrator agents across 12 security domains. Mapped to MITRE ATT&CK and NIST CSF 2.0. Runs in Claude, ChatGPT, Gemini, Ollama, and AnythingLLM with no SaaS lock-in.",
-      "description_cn": "适用于 SOC、事件响应、威胁搜寻、红队、蓝队和 DevSecOps 的开源 AI 网络安全代理技能。 79 项技能 + 12 个跨 12 个安全域的 cs-* Orchestrator 代理。映射到 MITRE ATT&CK 和 NIST CSF 2.0。在 Claude、ChatGPT、Gemini、Ollama 和 AnythingLLM 中运行，没有 SaaS 锁定。",
-      "source": "github",
-      "repo_url": "https://github.com/jaskaranhundal/usap-skills",
-      "homepage": "https://github.com/jaskaranhundal/usap-skills",
-      "install": "npx skills add jaskaranhundal/usap-skills -g -y",
-      "category": [
-        "security"
-      ],
-      "tags": [
-        "ai-security",
-        "blue-team",
-        "ciso",
-        "claude-code",
-        "cybersecurity",
-        "devsecops",
-        "incident-response",
-        "llm-agents",
-        "mcp",
-        "mitre-attack",
-        "nist-csf",
-        "open-source",
-        "pentest",
-        "prompt-engineering",
-        "red-team",
-        "security-automation",
-        "soc-automation",
-        "threat-hunting"
-      ],
-      "stats": {
-        "stars": 4,
-        "installs": 0,
-        "downloads": 0
-      },
-      "scores": {
-        "popularity": 3.5,
-        "freshness": 6.0,
-        "relevance": 9.0,
-        "final": 8.57
-      },
-      "reasons": [
-        "stars:4",
-        "security:1.00",
-        "source:github"
-      ],
-      "security_relevant": 1.0,
-      "discovered_at": "2026-10-13 10:50:12",
-      "updated_at": "2026-10-12T18:07:41Z"
+      "discovered_at": "2026-10-13 20:44:41",
+      "updated_at": "2026-10-13T20:35:52Z"
     },
     {
       "id": "security-guardian-pro",
@@ -460,7 +350,7 @@
       "stats": {
         "stars": 1,
         "installs": 0,
-        "downloads": 736
+        "downloads": 740
       },
       "scores": {
         "popularity": 5.0,
@@ -474,8 +364,76 @@
         "source:skillhub"
       ],
       "security_relevant": 0.85,
-      "discovered_at": "2026-10-13 10:50:02",
-      "updated_at": "1791886898649"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791912242479"
+    },
+    {
+      "id": "security-plus",
+      "name": "Security Plus",
+      "display_name": "Security Plus",
+      "description": "Enhanced security with OWASP Top 10, dependency scanning, SAST/DAST, secrets detection, compliance checks, and security hardening guides.",
+      "description_cn": "增强安全性，涵盖 OWASP Top 10、依赖扫描、SAST/DAST、密钥检测、合规检查以及安全加固指南。",
+      "source": "skillhub",
+      "repo_url": "",
+      "homepage": "https://api.skillhub.cn/clawhub_534422530/security-plus",
+      "install": "npx skills add security-plus -g -y",
+      "category": [
+        "security"
+      ],
+      "tags": [],
+      "stats": {
+        "stars": 0,
+        "installs": 6,
+        "downloads": 550
+      },
+      "scores": {
+        "popularity": 5.0,
+        "freshness": 4.0,
+        "relevance": 8.25,
+        "final": 8.52
+      },
+      "reasons": [
+        "installs:6",
+        "security:0.85",
+        "source:skillhub"
+      ],
+      "security_relevant": 0.85,
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791886846160"
+    },
+    {
+      "id": "laosi-mcp-security-audit",
+      "name": "Laosi Mcp Security Audit",
+      "display_name": "Laosi Mcp Security Audit",
+      "description": "Performs comprehensive security audits on MCP servers including vulnerability scans, malware detection, compliance checks, and detailed remediation reports.",
+      "description_cn": "对MCP服务器执行全面的安全审计，包括漏洞扫描、恶意软件检测、合规性检查和详细的修复报告。",
+      "source": "skillhub",
+      "repo_url": "",
+      "homepage": "https://api.skillhub.cn/clawhub_534422530/laosi-mcp-security-audit",
+      "install": "npx skills add laosi-mcp-security-audit -g -y",
+      "category": [
+        "security"
+      ],
+      "tags": [],
+      "stats": {
+        "stars": 0,
+        "installs": 19,
+        "downloads": 1258
+      },
+      "scores": {
+        "popularity": 5.0,
+        "freshness": 4.0,
+        "relevance": 8.25,
+        "final": 8.52
+      },
+      "reasons": [
+        "installs:19",
+        "security:0.85",
+        "source:skillhub"
+      ],
+      "security_relevant": 0.85,
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791924274763"
     },
     {
       "id": "pentest-interactive",
@@ -499,7 +457,7 @@
       "stats": {
         "stars": 1,
         "installs": 14,
-        "downloads": 913
+        "downloads": 915
       },
       "scores": {
         "popularity": 5.0,
@@ -514,8 +472,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.85,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791888533767"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791899081793"
     },
     {
       "id": "cnnvd-cve-report-generator",
@@ -534,7 +492,7 @@
       "stats": {
         "stars": 0,
         "installs": 0,
-        "downloads": 386
+        "downloads": 388
       },
       "scores": {
         "popularity": 5.0,
@@ -547,8 +505,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.85,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791810195987"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791916060651"
     },
     {
       "id": "openclaw-vulnerability-checker",
@@ -573,7 +531,7 @@
       "stats": {
         "stars": 2,
         "installs": 29,
-        "downloads": 1322
+        "downloads": 1325
       },
       "scores": {
         "popularity": 5.0,
@@ -588,8 +546,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.85,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791847002173"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791908670311"
     },
     {
       "id": "26zl/cybersec-toolkit",
@@ -643,7 +601,7 @@
         "source:github"
       ],
       "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:12",
+      "discovered_at": "2026-10-13 20:44:47",
       "updated_at": "2026-10-12T21:59:08Z"
     },
     {
@@ -663,7 +621,7 @@
       "stats": {
         "stars": 0,
         "installs": 11,
-        "downloads": 804
+        "downloads": 805
       },
       "scores": {
         "popularity": 5.0,
@@ -677,8 +635,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791857558140"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791899082463"
     },
     {
       "id": "osv-ui",
@@ -711,7 +669,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791856429766"
     },
     {
@@ -731,7 +689,7 @@
       "stats": {
         "stars": 0,
         "installs": 30,
-        "downloads": 1308
+        "downloads": 1311
       },
       "scores": {
         "popularity": 5.0,
@@ -745,8 +703,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791847249781"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791915114640"
     },
     {
       "id": "snyk-vulnerability-scanner",
@@ -785,8 +743,44 @@
         "source:skillhub"
       ],
       "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791856977610"
+    },
+    {
+      "id": "security-scanning-security-hardening",
+      "name": "security-scanning-security-hardening",
+      "display_name": "security-scanning-security-hardening",
+      "description": "协调跨应用、基础设施与合规控制的多层安全扫描与加固。",
+      "description_cn": "协调跨应用、基础设施与合规控制的多层安全扫描与加固。",
+      "source": "skillhub",
+      "repo_url": "",
+      "homepage": "https://api.skillhub.cn/org-02qudk26/security-scanning-security-hardening",
+      "install": "npx skills add security-scanning-security-hardening -g -y",
+      "category": [
+        "security"
+      ],
+      "tags": [
+        "ai",
+        "自动化"
+      ],
+      "stats": {
+        "stars": 0,
+        "installs": 0,
+        "downloads": 371
+      },
+      "scores": {
+        "popularity": 5.0,
+        "freshness": 4.0,
+        "relevance": 6.75,
+        "final": 7.61
+      },
+      "reasons": [
+        "security:0.55",
+        "source:skillhub"
+      ],
+      "security_relevant": 0.55,
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791915843691"
     },
     {
       "id": "pentest-api-attacker",
@@ -805,7 +799,7 @@
       "stats": {
         "stars": 2,
         "installs": 78,
-        "downloads": 2679
+        "downloads": 2683
       },
       "scores": {
         "popularity": 5.0,
@@ -820,8 +814,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791822721147"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791908985104"
     },
     {
       "id": "pentest-checklist",
@@ -843,7 +837,7 @@
       "stats": {
         "stars": 0,
         "installs": 0,
-        "downloads": 429
+        "downloads": 430
       },
       "scores": {
         "popularity": 5.0,
@@ -856,8 +850,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791886896927"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791914810765"
     },
     {
       "id": "cve-alerts",
@@ -889,7 +883,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791886852852"
     },
     {
@@ -923,7 +917,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791856965383"
     },
     {
@@ -957,7 +951,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791886845160"
     },
     {
@@ -977,7 +971,7 @@
       "stats": {
         "stars": 0,
         "installs": 1,
-        "downloads": 386
+        "downloads": 387
       },
       "scores": {
         "popularity": 5.0,
@@ -991,8 +985,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791802345173"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791915544777"
     },
     {
       "id": "vulnerability-scanner",
@@ -1011,7 +1005,7 @@
       "stats": {
         "stars": 2,
         "installs": 75,
-        "downloads": 2894
+        "downloads": 2898
       },
       "scores": {
         "popularity": 5.0,
@@ -1026,8 +1020,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791886899977"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791923265725"
     },
     {
       "id": "vulnerability-prioritizer",
@@ -1061,7 +1055,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791856128838"
     },
     {
@@ -1084,7 +1078,7 @@
       "stats": {
         "stars": 0,
         "installs": 0,
-        "downloads": 556
+        "downloads": 557
       },
       "scores": {
         "popularity": 5.0,
@@ -1097,43 +1091,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791886802287"
-    },
-    {
-      "id": "agent-bom-vulnerability-intel",
-      "name": "agent-bom vulnerability intel",
-      "display_name": "agent-bom vulnerability intel",
-      "description": "Use agent-bom to check package, SBOM, inventory, and agent dependency exposure against OSV, GitHub Security Advisories, NVD, EPSS, and CISA KEV with explicit...",
-      "description_cn": "使用 agent-bom 检查包、SBOM、库存和代理依赖的暴露，针对OSV、GitHub 安全公告、NVD、EPSS 和 CISA KEV，明确...",
-      "source": "skillhub",
-      "repo_url": "",
-      "homepage": "https://api.skillhub.cn/clawhub_msaad00/agent-bom-vulnerability-intel",
-      "install": "npx skills add agent-bom-vulnerability-intel -g -y",
-      "category": [
-        "security"
-      ],
-      "tags": [],
-      "stats": {
-        "stars": 2,
-        "installs": 42,
-        "downloads": 2914
-      },
-      "scores": {
-        "popularity": 5.0,
-        "freshness": 4.0,
-        "relevance": 6.75,
-        "final": 7.61
-      },
-      "reasons": [
-        "installs:42",
-        "stars:2",
-        "security:0.55",
-        "source:skillhub"
-      ],
-      "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791885349518"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791915851483"
     },
     {
       "id": "ai-vulnerability-tracker",
@@ -1166,7 +1125,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791861880384"
     },
     {
@@ -1204,7 +1163,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:39",
       "updated_at": "1791860881017"
     },
     {
@@ -1224,7 +1183,7 @@
       "stats": {
         "stars": 0,
         "installs": 31,
-        "downloads": 1433
+        "downloads": 1436
       },
       "scores": {
         "popularity": 5.0,
@@ -1238,8 +1197,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:04",
-      "updated_at": "1791845804340"
+      "discovered_at": "2026-10-13 20:44:39",
+      "updated_at": "1791913474728"
     },
     {
       "id": "toolweb-malware-defense-roadmap",
@@ -1272,7 +1231,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:04",
+      "discovered_at": "2026-10-13 20:44:39",
       "updated_at": "1791856501413"
     },
     {
@@ -1312,7 +1271,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:04",
+      "discovered_at": "2026-10-13 20:44:39",
       "updated_at": "1791886807762"
     },
     {
@@ -1346,61 +1305,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:04",
+      "discovered_at": "2026-10-13 20:44:39",
       "updated_at": "1791882067181"
-    },
-    {
-      "id": "alexgreensh/repo-forensics",
-      "name": "repo-forensics",
-      "display_name": "repo-forensics",
-      "description": "Offline security scanner for AI-agent repos, skills, plugins, and MCP servers.",
-      "description_cn": "适用于 AI 代理存储库、技能、插件和 MCP 服务器的离线安全扫描器。",
-      "source": "github",
-      "repo_url": "https://github.com/alexgreensh/repo-forensics",
-      "homepage": "https://github.com/alexgreensh/repo-forensics",
-      "install": "npx skills add alexgreensh/repo-forensics -g -y",
-      "category": [
-        "security"
-      ],
-      "tags": [
-        "agent-security",
-        "agent-skill",
-        "agent-skills",
-        "ai-agent-security",
-        "claude-code",
-        "claude-skills",
-        "codex",
-        "developer-tools",
-        "forensics",
-        "mcp-security",
-        "openclaw-skills",
-        "plugins",
-        "security",
-        "security-audit",
-        "security-scanner",
-        "security-tools",
-        "static-analysis",
-        "supply-chain-security"
-      ],
-      "stats": {
-        "stars": 191,
-        "installs": 0,
-        "downloads": 0
-      },
-      "scores": {
-        "popularity": 5.0,
-        "freshness": 6.0,
-        "relevance": 6.0,
-        "final": 7.56
-      },
-      "reasons": [
-        "stars:191",
-        "security:0.40",
-        "source:github"
-      ],
-      "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:05",
-      "updated_at": "2026-10-13T06:02:39Z"
     },
     {
       "id": "yjkj-security-plus",
@@ -1419,7 +1325,7 @@
       "stats": {
         "stars": 0,
         "installs": 0,
-        "downloads": 293
+        "downloads": 294
       },
       "scores": {
         "popularity": 3.5,
@@ -1432,8 +1338,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:02",
-      "updated_at": "1791846052189"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791918766866"
     },
     {
       "id": "superagent-ai-skills-vulnerability-triage",
@@ -1465,7 +1371,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791886852838"
     },
     {
@@ -1520,7 +1426,7 @@
         "source:github"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:12",
+      "discovered_at": "2026-10-13 20:44:47",
       "updated_at": "2026-10-13T08:53:47Z"
     },
     {
@@ -1540,7 +1446,7 @@
       "stats": {
         "stars": 0,
         "installs": 15,
-        "downloads": 936
+        "downloads": 938
       },
       "scores": {
         "popularity": 5.0,
@@ -1554,8 +1460,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:02",
-      "updated_at": "1791857204099"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791920371682"
     },
     {
       "id": "agent-runtime-security",
@@ -1580,7 +1486,7 @@
       "stats": {
         "stars": 0,
         "installs": 50,
-        "downloads": 2022
+        "downloads": 2024
       },
       "scores": {
         "popularity": 5.0,
@@ -1594,8 +1500,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:02",
-      "updated_at": "1791884503072"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791923678383"
     },
     {
       "id": "ralph-security",
@@ -1614,7 +1520,7 @@
       "stats": {
         "stars": 0,
         "installs": 40,
-        "downloads": 1550
+        "downloads": 1555
       },
       "scores": {
         "popularity": 5.0,
@@ -1628,8 +1534,42 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:02",
-      "updated_at": "1791844914852"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791921462174"
+    },
+    {
+      "id": "claw-security-suite",
+      "name": "Claw Security Suite",
+      "display_name": "Claw Security Suite",
+      "description": "Provides four-layer security for OpenClaw including static code scanning, logic audit, runtime protection, and periodic security patrols with automated reports.",
+      "description_cn": "为OpenClaw提供四层安全防护，包括静态代码扫描、逻辑审计、运行时保护和定期安全巡逻，并生成自动化报告。",
+      "source": "skillhub",
+      "repo_url": "",
+      "homepage": "https://api.skillhub.cn/clawhub_kenz1117/claw-security-suite",
+      "install": "npx skills add claw-security-suite -g -y",
+      "category": [
+        "security"
+      ],
+      "tags": [],
+      "stats": {
+        "stars": 0,
+        "installs": 25,
+        "downloads": 1214
+      },
+      "scores": {
+        "popularity": 5.0,
+        "freshness": 4.0,
+        "relevance": 6.0,
+        "final": 7.16
+      },
+      "reasons": [
+        "installs:25",
+        "security:0.40",
+        "source:skillhub"
+      ],
+      "security_relevant": 0.4,
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791924274540"
     },
     {
       "id": "cve-scanner",
@@ -1662,7 +1602,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791856665651"
     },
     {
@@ -1696,7 +1636,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791886803810"
     },
     {
@@ -1716,7 +1656,7 @@
       "stats": {
         "stars": 0,
         "installs": 57,
-        "downloads": 2214
+        "downloads": 2218
       },
       "scores": {
         "popularity": 5.0,
@@ -1730,8 +1670,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791886906757"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791923561142"
     },
     {
       "id": "yjkj-uos-cve-checker",
@@ -1750,7 +1690,7 @@
       "stats": {
         "stars": 0,
         "installs": 0,
-        "downloads": 510
+        "downloads": 513
       },
       "scores": {
         "popularity": 5.0,
@@ -1763,8 +1703,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791886810583"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791916013103"
     },
     {
       "id": "web-vulnerability-assessment",
@@ -1783,7 +1723,7 @@
       "stats": {
         "stars": 0,
         "installs": 45,
-        "downloads": 1779
+        "downloads": 1783
       },
       "scores": {
         "popularity": 5.0,
@@ -1797,8 +1737,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791886904530"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791908863137"
     },
     {
       "id": "ctf-malware",
@@ -1817,7 +1757,7 @@
       "stats": {
         "stars": 0,
         "installs": 17,
-        "downloads": 2298
+        "downloads": 2306
       },
       "scores": {
         "popularity": 5.0,
@@ -1831,8 +1771,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
-      "updated_at": "1791887746634"
+      "discovered_at": "2026-10-13 20:44:39",
+      "updated_at": "1791920204144"
     },
     {
       "id": "ctf-pwn",
@@ -1851,7 +1791,7 @@
       "stats": {
         "stars": 0,
         "installs": 24,
-        "downloads": 1880
+        "downloads": 1892
       },
       "scores": {
         "popularity": 5.0,
@@ -1865,8 +1805,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
-      "updated_at": "1791888177388"
+      "discovered_at": "2026-10-13 20:44:39",
+      "updated_at": "1791904246773"
     },
     {
       "id": "memory-forensics",
@@ -1885,7 +1825,7 @@
       "stats": {
         "stars": 1,
         "installs": 30,
-        "downloads": 1389
+        "downloads": 1392
       },
       "scores": {
         "popularity": 5.0,
@@ -1900,8 +1840,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
-      "updated_at": "1791886899600"
+      "discovered_at": "2026-10-13 20:44:40",
+      "updated_at": "1791912713702"
     },
     {
       "id": "session-logs-forensics",
@@ -1928,7 +1868,7 @@
       "stats": {
         "stars": 0,
         "installs": 17,
-        "downloads": 1095
+        "downloads": 1098
       },
       "scores": {
         "popularity": 5.0,
@@ -1942,8 +1882,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
-      "updated_at": "1791856544671"
+      "discovered_at": "2026-10-13 20:44:40",
+      "updated_at": "1791911226490"
     },
     {
       "id": "s3-memory-forensics",
@@ -1981,7 +1921,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
+      "discovered_at": "2026-10-13 20:44:40",
       "updated_at": "1791886855536"
     },
     {
@@ -2016,7 +1956,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
+      "discovered_at": "2026-10-13 20:44:40",
       "updated_at": "1791886900930"
     },
     {
@@ -2055,7 +1995,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
+      "discovered_at": "2026-10-13 20:44:40",
       "updated_at": "1791884509265"
     },
     {
@@ -2094,7 +2034,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
+      "discovered_at": "2026-10-13 20:44:40",
       "updated_at": "1791856148794"
     },
     {
@@ -2144,8 +2084,48 @@
         "source:github"
       ],
       "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:05",
-      "updated_at": "2026-10-13T10:20:51Z"
+      "discovered_at": "2026-10-13 20:44:41",
+      "updated_at": "2026-10-13T19:13:54Z"
+    },
+    {
+      "id": "omaromar9091/Security-Analyst",
+      "name": "Security-Analyst",
+      "display_name": "Security-Analyst",
+      "description": "cybersecurity analysis skill for any AI model or agent — recon, code vulnerabilities, AI-generated code review, threat analysis, social engineering, remediation.",
+      "description_cn": "适用于任何人工智能模型或代理的网络安全分析技能——侦察、代码漏洞、人工智能生成的代码审查、威胁分析、社会工程、补救。",
+      "source": "github",
+      "repo_url": "https://github.com/omaromar9091/Security-Analyst",
+      "homepage": "https://github.com/omaromar9091/Security-Analyst",
+      "install": "npx skills add omaromar9091/Security-Analyst -g -y",
+      "category": [
+        "security"
+      ],
+      "tags": [
+        "ai-agent-skill",
+        "claude-skills",
+        "cybersecurity",
+        "llm-security",
+        "penetration-testing"
+      ],
+      "stats": {
+        "stars": 1,
+        "installs": 0,
+        "downloads": 0
+      },
+      "scores": {
+        "popularity": 2.0,
+        "freshness": 6.0,
+        "relevance": 7.5,
+        "final": 6.85
+      },
+      "reasons": [
+        "stars:1",
+        "security:0.70",
+        "source:github"
+      ],
+      "security_relevant": 0.7,
+      "discovered_at": "2026-10-13 20:44:41",
+      "updated_at": "2026-10-13T12:45:43Z"
     },
     {
       "id": "security-best-practices",
@@ -2177,7 +2157,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:02",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791817612715"
     },
     {
@@ -2210,7 +2190,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791815514780"
     },
     {
@@ -2230,7 +2210,7 @@
       "stats": {
         "stars": 0,
         "installs": 0,
-        "downloads": 54
+        "downloads": 55
       },
       "scores": {
         "popularity": 3.5,
@@ -2243,8 +2223,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:04",
-      "updated_at": "1791886970760"
+      "discovered_at": "2026-10-13 20:44:39",
+      "updated_at": "1791920509306"
     },
     {
       "id": "uttej-badwane/secure-cloud-prompt-engineering",
@@ -2289,8 +2269,8 @@
         "source:github"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:05",
-      "updated_at": "2026-10-13T07:08:57Z"
+      "discovered_at": "2026-10-13 20:44:41",
+      "updated_at": "2026-10-13T16:29:54Z"
     },
     {
       "id": "shrav89/skill-scanner",
@@ -2342,8 +2322,8 @@
         "source:github"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:09",
-      "updated_at": "2026-10-13T10:06:57Z"
+      "discovered_at": "2026-10-13 20:44:44",
+      "updated_at": "2026-10-13T18:59:59Z"
     },
     {
       "id": "nextlevelbuilder/ui-ux-pro-max",
@@ -2380,54 +2360,8 @@
         "source:seed"
       ],
       "security_relevant": 0.0,
-      "discovered_at": "2026-10-13 10:50:01",
+      "discovered_at": "2026-10-13 20:44:36",
       "updated_at": ""
-    },
-    {
-      "id": "ikooky/velric-agent",
-      "name": "velric-agent",
-      "display_name": "velric-agent",
-      "description": "Agent 自主渗透测试工具: SPA/MPA 接口枚举、运行时流量捕获、权限树还原、参数矩阵合并。",
-      "description_cn": "Agent 自主渗透测试工具: SPA/MPA 接口枚举、运行时流量捕获、权限树还原、参数矩阵合并。",
-      "source": "github",
-      "repo_url": "https://github.com/ikooky/velric-agent",
-      "homepage": "https://github.com/ikooky/velric-agent",
-      "install": "npx skills add ikooky/velric-agent -g -y",
-      "category": [
-        "security"
-      ],
-      "tags": [
-        "agent-skills",
-        "api-discovery",
-        "cli",
-        "mcp",
-        "mcp-server",
-        "model-context-protocol",
-        "pentest",
-        "playwright",
-        "recon",
-        "security",
-        "typescript"
-      ],
-      "stats": {
-        "stars": 1,
-        "installs": 0,
-        "downloads": 0
-      },
-      "scores": {
-        "popularity": 2.0,
-        "freshness": 6.0,
-        "relevance": 6.75,
-        "final": 6.4
-      },
-      "reasons": [
-        "stars:1",
-        "security:0.55",
-        "source:github"
-      ],
-      "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:09",
-      "updated_at": "2026-10-13T10:46:54Z"
     },
     {
       "id": "security-scanning-security-dependencies-v1-1",
@@ -2446,7 +2380,7 @@
       "stats": {
         "stars": 0,
         "installs": 0,
-        "downloads": 70
+        "downloads": 71
       },
       "scores": {
         "popularity": 3.5,
@@ -2459,8 +2393,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:02",
-      "updated_at": "1791886964672"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791919963625"
     },
     {
       "id": "vulnerability-scanner-v1-1",
@@ -2479,7 +2413,7 @@
       "stats": {
         "stars": 0,
         "installs": 0,
-        "downloads": 58
+        "downloads": 59
       },
       "scores": {
         "popularity": 3.5,
@@ -2492,8 +2426,8 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791886956060"
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791920341041"
     },
     {
       "id": "dependency-vulnerability-scanner-agent",
@@ -2525,7 +2459,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791886854091"
     },
     {
@@ -2538,39 +2472,6 @@
       "repo_url": "",
       "homepage": "https://api.skillhub.cn/org-sb0eogd5/conducting-malware-incident-response-v1-1",
       "install": "npx skills add conducting-malware-incident-response-v1-1 -g -y",
-      "category": [
-        "security"
-      ],
-      "tags": [],
-      "stats": {
-        "stars": 0,
-        "installs": 0,
-        "downloads": 55
-      },
-      "scores": {
-        "popularity": 3.5,
-        "freshness": 4.0,
-        "relevance": 6.0,
-        "final": 6.35
-      },
-      "reasons": [
-        "security:0.40",
-        "source:skillhub"
-      ],
-      "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
-      "updated_at": "1791886963030"
-    },
-    {
-      "id": "php-exploit-chain-audit-v10",
-      "name": "php exploit chain audit v1.0",
-      "display_name": "php exploit chain audit v1.0",
-      "description": "PHP 利用链/POP(回弹)链聚合器。把已产出的各类漏洞报告按“前置条件满足”串成可利用链路叙事（不新增证据点字典）。",
-      "description_cn": "PHP 利用链/POP(回弹)链聚合器。把已产出的各类漏洞报告按“前置条件满足”串成可利用链路叙事（不新增证据点字典）。",
-      "source": "skillhub",
-      "repo_url": "",
-      "homepage": "https://api.skillhub.cn/org-sb0eogd5/php-exploit-chain-audit-v10",
-      "install": "npx skills add php-exploit-chain-audit-v10 -g -y",
       "category": [
         "security"
       ],
@@ -2591,8 +2492,41 @@
         "source:skillhub"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
-      "updated_at": "1791883010463"
+      "discovered_at": "2026-10-13 20:44:39",
+      "updated_at": "1791920503326"
+    },
+    {
+      "id": "php-exploit-chain-audit-v10",
+      "name": "php exploit chain audit v1.0",
+      "display_name": "php exploit chain audit v1.0",
+      "description": "PHP 利用链/POP(回弹)链聚合器。把已产出的各类漏洞报告按“前置条件满足”串成可利用链路叙事（不新增证据点字典）。",
+      "description_cn": "PHP 利用链/POP(回弹)链聚合器。把已产出的各类漏洞报告按“前置条件满足”串成可利用链路叙事（不新增证据点字典）。",
+      "source": "skillhub",
+      "repo_url": "",
+      "homepage": "https://api.skillhub.cn/org-sb0eogd5/php-exploit-chain-audit-v10",
+      "install": "npx skills add php-exploit-chain-audit-v10 -g -y",
+      "category": [
+        "security"
+      ],
+      "tags": [],
+      "stats": {
+        "stars": 0,
+        "installs": 0,
+        "downloads": 57
+      },
+      "scores": {
+        "popularity": 3.5,
+        "freshness": 4.0,
+        "relevance": 6.0,
+        "final": 6.35
+      },
+      "reasons": [
+        "security:0.40",
+        "source:skillhub"
+      ],
+      "security_relevant": 0.4,
+      "discovered_at": "2026-10-13 20:44:39",
+      "updated_at": "1791920504915"
     },
     {
       "id": "languagezoneenterprise545/awesome-ai-agent-incidents",
@@ -2641,8 +2575,47 @@
         "source:github"
       ],
       "security_relevant": 0.7,
-      "discovered_at": "2026-10-13 10:50:09",
-      "updated_at": "2026-10-13T10:20:51Z"
+      "discovered_at": "2026-10-13 20:44:44",
+      "updated_at": "2026-10-13T19:13:55Z"
+    },
+    {
+      "id": "nanocoai/nanoclaw",
+      "name": "nanoclaw",
+      "display_name": "nanoclaw",
+      "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
+      "description_cn": "OpenClaw 的轻量级替代品，在容器中运行以确保安全。连接到 WhatsApp、Telegram、Slack、Discord、Gmail 和其他消息应用程序，具有内存、计划作业，并直接在 Anthropic 的 Agents SDK 上运行",
+      "source": "github",
+      "repo_url": "https://github.com/nanocoai/nanoclaw",
+      "homepage": "https://github.com/nanocoai/nanoclaw",
+      "install": "npx skills add nanocoai/nanoclaw -g -y",
+      "category": [
+        "security"
+      ],
+      "tags": [
+        "ai-agents",
+        "ai-assistant",
+        "claude-code",
+        "claude-skills",
+        "openclaw"
+      ],
+      "stats": {
+        "stars": 30937,
+        "installs": 0,
+        "downloads": 0
+      },
+      "scores": {
+        "popularity": 9.5,
+        "freshness": 6.0,
+        "relevance": 5.25,
+        "final": 6.0
+      },
+      "reasons": [
+        "stars:30937",
+        "source:github"
+      ],
+      "security_relevant": 0.25,
+      "discovered_at": "2026-10-13 20:44:41",
+      "updated_at": "2026-10-13T17:58:09Z"
     },
     {
       "id": "NVIDIA/SkillSpector",
@@ -2671,7 +2644,7 @@
         "supply-chain-security"
       ],
       "stats": {
-        "stars": 20100,
+        "stars": 20129,
         "installs": 0,
         "downloads": 0
       },
@@ -2682,12 +2655,12 @@
         "final": 6.0
       },
       "reasons": [
-        "stars:20100",
+        "stars:20129",
         "source:github"
       ],
       "security_relevant": 0.25,
-      "discovered_at": "2026-10-13 10:50:12",
-      "updated_at": "2026-10-13T10:34:12Z"
+      "discovered_at": "2026-10-13 20:44:44",
+      "updated_at": "2026-10-13T20:33:45Z"
     },
     {
       "id": "security-scan",
@@ -2719,7 +2692,7 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:02",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791855248517"
     },
     {
@@ -2752,60 +2725,19 @@
         "source:skillhub"
       ],
       "security_relevant": 0.55,
-      "discovered_at": "2026-10-13 10:50:03",
+      "discovered_at": "2026-10-13 20:44:38",
       "updated_at": "1791815523085"
     },
     {
-      "id": "Akshay7273/skill-advisories",
-      "name": "skill-advisories",
-      "display_name": "skill-advisories",
-      "description": "Open advisory database for AI agent skills, plugins, and MCP servers — machine-readable threat data for the agent ecosystem.",
-      "description_cn": "开放人工智能代理技能、插件和 MCP 服务器的咨询数据库——代理生态系统的机器可读威胁数据。",
-      "source": "github",
-      "repo_url": "https://github.com/Akshay7273/skill-advisories",
-      "homepage": "https://github.com/Akshay7273/skill-advisories",
-      "install": "npx skills add Akshay7273/skill-advisories -g -y",
-      "category": [
-        "security"
-      ],
-      "tags": [
-        "agent-skills",
-        "claude",
-        "mcp",
-        "security",
-        "supply-chain",
-        "threat-intelligence"
-      ],
-      "stats": {
-        "stars": 1,
-        "installs": 0,
-        "downloads": 0
-      },
-      "scores": {
-        "popularity": 2.0,
-        "freshness": 6.0,
-        "relevance": 6.0,
-        "final": 5.94
-      },
-      "reasons": [
-        "stars:1",
-        "security:0.40",
-        "source:github"
-      ],
-      "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:09",
-      "updated_at": "2026-10-13T10:36:02Z"
-    },
-    {
-      "id": "php-exploit-chain-audit-v1-1",
-      "name": "php-exploit-chain-audit v1.1",
-      "display_name": "php-exploit-chain-audit v1.1",
-      "description": "PHP 利用链/POP(回弹)链聚合器。把已产出的各类漏洞报告按“前置条件满足”串成可利用链路叙事（不新增证据点字典）。",
-      "description_cn": "PHP 利用链/POP(回弹)链聚合器。把已产出的各类漏洞报告按“前置条件满足”串成可利用链路叙事（不新增证据点字典）。",
+      "id": "pentest-commands-v1-1",
+      "name": "pentest-commands v1.1",
+      "display_name": "pentest-commands v1.1",
+      "description": "Provide a comprehensive command reference for penetration testing tools including network scanning, exploitation, password cracking, and web application testing. Enable quick command lookup during security assessments.",
+      "description_cn": "提供网络扫描、漏洞利用、密码破解、Web应用测试等渗透测试工具的全面命令参考。在安全评估期间启用快速命令查找。",
       "source": "skillhub",
       "repo_url": "",
-      "homepage": "https://api.skillhub.cn/org-sb0eogd5/php-exploit-chain-audit-v1-1",
-      "install": "npx skills add php-exploit-chain-audit-v1-1 -g -y",
+      "homepage": "https://api.skillhub.cn/org-sb0eogd5/pentest-commands-v1-1",
+      "install": "npx skills add pentest-commands-v1-1 -g -y",
       "category": [
         "security"
       ],
@@ -2813,21 +2745,54 @@
       "stats": {
         "stars": 0,
         "installs": 0,
-        "downloads": 30
+        "downloads": 29
       },
       "scores": {
         "popularity": 2.0,
         "freshness": 4.0,
-        "relevance": 6.0,
-        "final": 5.54
+        "relevance": 6.75,
+        "final": 5.99
       },
       "reasons": [
-        "security:0.40",
+        "security:0.55",
         "source:skillhub"
       ],
-      "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:04",
-      "updated_at": "1791887054417"
+      "security_relevant": 0.55,
+      "discovered_at": "2026-10-13 20:44:38",
+      "updated_at": "1791815518302"
+    },
+    {
+      "id": "exploiting-nopac-cve-2021-42278-42287-v1-1",
+      "name": "exploiting-nopac-cve-2021-42278-42287 v1.1",
+      "display_name": "exploiting-nopac-cve-2021-42278-42287 v1.1",
+      "description": "Exploit the noPac vulnerability chain (CVE-2021-42278 sAMAccountName spoofing and CVE-2021-42287 KDC PAC confusion) to escalate from standard domain user to Domain Admin in Active Directory environments.",
+      "description_cn": "利用 noPac 漏洞链（CVE-2021-42278 sAMAccountName 欺骗和 CVE-2021-42287 KDC PAC 混淆）在 Active Directory 环境中从标准域用户升级为域管理员。",
+      "source": "skillhub",
+      "repo_url": "",
+      "homepage": "https://api.skillhub.cn/org-sb0eogd5/exploiting-nopac-cve-2021-42278-42287-v1-1",
+      "install": "npx skills add exploiting-nopac-cve-2021-42278-42287-v1-1 -g -y",
+      "category": [
+        "security"
+      ],
+      "tags": [],
+      "stats": {
+        "stars": 0,
+        "installs": 0,
+        "downloads": 32
+      },
+      "scores": {
+        "popularity": 2.0,
+        "freshness": 4.0,
+        "relevance": 6.75,
+        "final": 5.99
+      },
+      "reasons": [
+        "security:0.55",
+        "source:skillhub"
+      ],
+      "security_relevant": 0.55,
+      "discovered_at": "2026-10-13 20:44:39",
+      "updated_at": "1791886896431"
     },
     {
       "id": "gadievron/raptor",
@@ -2844,7 +2809,7 @@
       ],
       "tags": [],
       "stats": {
-        "stars": 3899,
+        "stars": 3903,
         "installs": 0,
         "downloads": 0
       },
@@ -2855,45 +2820,12 @@
         "final": 5.49
       },
       "reasons": [
-        "stars:3899",
+        "stars:3903",
         "source:github"
       ],
       "security_relevant": 0.25,
-      "discovered_at": "2026-10-13 10:50:12",
-      "updated_at": "2026-10-13T09:05:29Z"
-    },
-    {
-      "id": "dev-expert",
-      "name": "编程专家.Skill",
-      "display_name": "编程专家.Skill",
-      "description": "编程专家.Skill P8级编程助手,25年实战经验技能Skill，全栈：Java/Php网站/软件项目、API设计、Bug诊断、代码生成、代码审查、重构、测试用例、性能基准、技术选型、文档生成、任务拆解、Spec驱动、Karpathy规范、CMS二次开发、前端设计、MySQL/Mariadb、项目知识图谱，以及工程纪律层（根因调试硬闭环、阶段导航、事故复盘/SLO、威胁建模/供应链安全、生产就绪/渐进式发布、AI编码治理、面向Agent代码可读性、LLM应用安全）。支持 @标识 显式调用跳过路由。",
-      "description_cn": "编程专家.Skill P8级编程助手,25年实战经验技能Skill，全栈：Java/Php网站/软件项目、API设计、Bug诊断、代码生成、代码审查、重构、测试用例、性能基准、技术选型、文档生成、任务拆解、Spec驱动、Karpathy规范、CMS二次开发、前端设计、MySQL/Mariadb、项目知识图谱，以及工程纪律层（根因调试硬闭环、阶段导航、事故复盘/SLO、威胁建模/供应链安全、生产就绪/渐进式发布、AI编码治理、面向Agent代码可读性、LLM应用安全）。支持 @标识 显式调用跳过路由。",
-      "source": "skillhub",
-      "repo_url": "",
-      "homepage": "https://api.skillhub.cn/indiv-ebandao/dev-expert",
-      "install": "npx skills add dev-expert -g -y",
-      "category": [
-        "general"
-      ],
-      "tags": [],
-      "stats": {
-        "stars": 342,
-        "installs": 0,
-        "downloads": 2944042
-      },
-      "scores": {
-        "popularity": 9.5,
-        "freshness": 4.0,
-        "relevance": 4.25,
-        "final": 5.37
-      },
-      "reasons": [
-        "stars:342",
-        "source:skillhub"
-      ],
-      "security_relevant": 0.25,
-      "discovered_at": "2026-10-13 10:50:03",
-      "updated_at": "1791888603305"
+      "discovered_at": "2026-10-13 20:44:47",
+      "updated_at": "2026-10-13T19:26:10Z"
     },
     {
       "id": "techfleetworks/enterprise-software-AI-skills",
@@ -2937,8 +2869,61 @@
         "source:github"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:05",
-      "updated_at": "2026-10-13T04:54:06Z"
+      "discovered_at": "2026-10-13 20:44:41",
+      "updated_at": "2026-10-13T20:12:33Z"
+    },
+    {
+      "id": "aksheyw/claude-code-ship-gate",
+      "name": "claude-code-ship-gate",
+      "display_name": "claude-code-ship-gate",
+      "description": "Pre-push quality gate for Claude Code that runs above git, so git push --no-verify can't skip it. Tests, code review, security, and a secret scan must pass before any push to your protected branch. Say 'ship it' to run it.",
+      "description_cn": "为在 git 之上运行的 Claude Code 预先推送质量门，因此 git push --no-verify 无法跳过它。在向受保护的分支推送任何内容之前，必须通过测试、代码审查、安全性和秘密扫描。说“运送它”即可运行它。",
+      "source": "github",
+      "repo_url": "https://github.com/aksheyw/claude-code-ship-gate",
+      "homepage": "https://github.com/aksheyw/claude-code-ship-gate",
+      "install": "npx skills add aksheyw/claude-code-ship-gate -g -y",
+      "category": [
+        "security",
+        "git"
+      ],
+      "tags": [
+        "agent-skills",
+        "ai-agents",
+        "anthropic",
+        "ci",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-code-plugins",
+        "claude-skills",
+        "code-review",
+        "developer-tools",
+        "git-hooks",
+        "guardrails",
+        "hooks",
+        "pre-push",
+        "quality-gate",
+        "quality-gates",
+        "secret-scanning",
+        "security"
+      ],
+      "stats": {
+        "stars": 0,
+        "installs": 0,
+        "downloads": 0
+      },
+      "scores": {
+        "popularity": 0.5,
+        "freshness": 6.0,
+        "relevance": 6.0,
+        "final": 5.13
+      },
+      "reasons": [
+        "security:0.40",
+        "source:github"
+      ],
+      "security_relevant": 0.4,
+      "discovered_at": "2026-10-13 20:44:41",
+      "updated_at": "2026-10-13T12:52:19Z"
     },
     {
       "id": "davzpogi01/claude-security-research-skill",
@@ -2989,43 +2974,26 @@
         "source:github"
       ],
       "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:09",
-      "updated_at": "2026-10-13T10:23:14Z"
+      "discovered_at": "2026-10-13 20:44:44",
+      "updated_at": "2026-10-13T19:16:10Z"
     },
     {
-      "id": "cndoin/re-perception",
-      "name": "re-perception",
-      "display_name": "re-perception",
-      "description": "Agent Skill · AI 驱动的全平台逆向工程工具箱：识别、反汇编、符号还原未知文件。Zero third-party deps, pure Python stdlib.",
-      "description_cn": "Agent Skill · AI 驱动的全平台逆向工程工具箱：识别、反汇编、符号还原未知文件。Zero third-party deps, pure Python stdlib.",
-      "source": "github",
-      "repo_url": "https://github.com/cndoin/re-perception",
-      "homepage": "https://github.com/cndoin/re-perception",
-      "install": "npx skills add cndoin/re-perception -g -y",
+      "id": "anthropics/frontend-design",
+      "name": "frontend-design",
+      "display_name": "Frontend Design",
+      "description": "Official-style frontend design guidance for polished UI implementation.",
+      "description_cn": "官方风格的前端设计指南，用于完善 UI 实现。",
+      "source": "seed",
+      "repo_url": "https://github.com/anthropics/claude-plugins-official",
+      "homepage": "https://github.com/anthropics/claude-plugins-official",
+      "install": "Use Claude plugin marketplace: frontend-design",
       "category": [
-        "security"
+        "design",
+        "frontend"
       ],
       "tags": [
-        "agent-skills",
-        "ai-agent",
-        "apk",
-        "binary-analysis",
-        "claude-code",
-        "codex",
-        "dex",
-        "disassembler",
-        "elf",
-        "firmware",
-        "infosec",
-        "macho",
-        "malware-analysis",
-        "no-dependencies",
-        "pe",
-        "python",
-        "reverse-engineering",
-        "security",
-        "skill",
-        "static-analysis"
+        "frontend",
+        "ui"
       ],
       "stats": {
         "stars": 0,
@@ -3033,33 +3001,32 @@
         "downloads": 0
       },
       "scores": {
-        "popularity": 0.5,
-        "freshness": 6.0,
-        "relevance": 6.0,
-        "final": 5.13
+        "popularity": 6.0,
+        "freshness": 3.0,
+        "relevance": 5.0,
+        "final": 5.1
       },
       "reasons": [
-        "security:0.40",
-        "source:github"
+        "source:seed"
       ],
-      "security_relevant": 0.4,
-      "discovered_at": "2026-10-13 10:50:09",
-      "updated_at": "2026-10-13T09:52:33Z"
+      "security_relevant": 0.0,
+      "discovered_at": "2026-10-13 20:44:36",
+      "updated_at": ""
     }
   ],
   "total": 80,
-  "last_updated": "2026-10-13T10:50:34",
+  "last_updated": "2026-10-13T20:44:58",
   "by_source": {
-    "skillhub": 61,
-    "github": 18,
-    "seed": 1
+    "skillhub": 62,
+    "github": 16,
+    "seed": 2
   },
   "by_category": {
     "security": 78,
     "devops": 1,
-    "design": 1,
-    "frontend": 1,
-    "general": 1,
+    "design": 2,
+    "frontend": 2,
+    "git": 1,
     "productivity": 1
   }
 }
